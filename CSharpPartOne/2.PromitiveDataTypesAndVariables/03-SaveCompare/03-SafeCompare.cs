@@ -7,6 +7,7 @@ class SafeCompare
 {
     static void Main()
     {
+        // NOTE: This solution works only with numbers that have x <= 7 digits
         Console.WriteLine("Please enter the first real number:");
         float number1 = float.Parse(Console.ReadLine());
 

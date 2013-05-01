@@ -7,10 +7,7 @@ class CharUnicode
 {
     static void Main()
     {
-        int decNumber = 72;
-        string HexNumber = "0x00" + decNumber.ToString("X");
-        char unicodeChar = (char)0x0048; // trqbva da namerq nachin da oburna HexNumber vav Char
-        Console.WriteLine("The symbol that represents the value {0} or {1} in the Unicode table is: {2}",decNumber,HexNumber,unicodeChar);
+        Console.WriteLine((char)0x48);
     }
 }
 
