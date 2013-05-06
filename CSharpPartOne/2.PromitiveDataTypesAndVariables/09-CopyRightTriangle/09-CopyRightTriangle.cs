@@ -36,7 +36,7 @@ class CopyRightTriangle
             symbolIncrement = symbolIncrement +2; // The count of the symbols used in every next row is increased by 2
             Console.WriteLine(); // New line / Row
         }
-        
+        Console.ReadLine();
     }
 }
 
