@@ -13,7 +13,7 @@ class withinACircle
 
         Console.Write("Y: ");
         double y = double.Parse(Console.ReadLine());
-        Console.Write("Circle radius: ");
+        Console.Write("Circle radius: "); // Please enter 5 for circle with radius of 5
         double circleRadius = double.Parse(Console.ReadLine()); ;
 
         if ((x * x + y * y) <= (circleRadius * circleRadius))
