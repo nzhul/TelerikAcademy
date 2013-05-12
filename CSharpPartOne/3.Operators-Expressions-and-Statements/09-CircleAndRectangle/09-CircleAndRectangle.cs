@@ -19,7 +19,7 @@ class CircleAndRectangle
 
         if ((circlePointX * circlePointX + circlePointY * circlePointY) <= (circleRadius * circleRadius)) // x*x + y*y = radius*radius
         {
-            Console.WriteLine("The given point IS within a circle with radius of {0}!", circleRadius);
+            Console.WriteLine("The given point IS within a circle with radius of {0}!\n\n", circleRadius);
         }
         else
         {
