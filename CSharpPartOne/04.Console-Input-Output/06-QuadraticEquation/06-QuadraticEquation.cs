@@ -13,24 +13,29 @@ class quadraticEquation
         Console.Write("c: ");
         double c = double.Parse(Console.ReadLine());
 
-        double discriminant = (b * b) - (4 * a * c);
-
-        if (discriminant > 0)
+        if (a == 0)
         {
-            double x1 = (-b + Math.Sqrt(discriminant)) / (2 * a);
-            double x2 = (-b - Math.Sqrt(discriminant)) / (2 * a);
-            Console.WriteLine("The equation roots are:\nX1: {0}\nX2: {1}", x1, x2);
+            Console.WriteLine("This is not an quadratic equation!");
         }
-        else if (discriminant == 0)
+        else
         {
-            double x1 = -b / (2 * a);
-            double x2 = x1;
-            Console.WriteLine("The equation roots are:\nX1: {0}\nX2: {1}", x1, x2);
+            double discriminant = (b * b) - (4 * a * c);
+            if (discriminant > 0)
+            {
+                double x1 = (-b + Math.Sqrt(discriminant)) / (2 * a);
+                double x2 = (-b - Math.Sqrt(discriminant)) / (2 * a);
+                Console.WriteLine("The equation roots are:\nX1: {0}\nX2: {1}", x1, x2);
+            }
+            else if (discriminant == 0)
+            {
+                double x1 = -b / (2 * a);
+                double x2 = x1;
+                Console.WriteLine("The equation roots are:\nX1: {0}\nX2: {1}", x1, x2);
+            }
+            else if (discriminant < 0)
+            {
+                Console.WriteLine("This equations doesn't have solution!");
+            }
         }
-        else if (discriminant < 0)
-        {
-            Console.WriteLine("This equations doesn't have solution!");
-        }
-
     }
 }
