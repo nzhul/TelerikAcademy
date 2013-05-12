@@ -17,10 +17,10 @@ class bit3
 
         if (addMask != 0)
         {
-            Console.WriteLine("The 3th bit is 1");
+            Console.WriteLine("The bit in position {0} is 1",bitPosition);
         }
         else {
-            Console.WriteLine("The 3th bit is 0"); // It isn't 1 
+            Console.WriteLine("The bit in position {0} is 0",bitPosition); // It isn't 1 
         }
 
 
