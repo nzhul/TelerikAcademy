@@ -17,8 +17,8 @@ class quadraticEquation
 
         if (discriminant > 0)
         {
-            double x1 = (-b + Math.Sqrt(discriminant)) / 2 * a;
-            double x2 = (-b - Math.Sqrt(discriminant)) / 2 * a;
+            double x1 = (-b + Math.Sqrt(discriminant)) / (2 * a);
+            double x2 = (-b - Math.Sqrt(discriminant)) / (2 * a);
             Console.WriteLine("The equation roots are:\nX1: {0}\nX2: {1}", x1, x2);
         }
         else if (discriminant == 0)
