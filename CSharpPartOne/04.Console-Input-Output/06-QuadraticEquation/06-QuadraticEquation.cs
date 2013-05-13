@@ -2,7 +2,7 @@
 
 using System;
 
-class quadraticEquation
+class QuadraticEquation
 {
     static void Main()
     {
@@ -28,9 +28,8 @@ class quadraticEquation
             }
             else if (discriminant == 0)
             {
-                double x1 = -b / (2 * a);
-                double x2 = x1;
-                Console.WriteLine("The equation roots are:\nX1: {0}\nX2: {1}", x1, x2);
+                double x = -b / (2 * a);
+                Console.WriteLine("The equaltion has only one root: {0}", x);
             }
             else if (discriminant < 0)
             {
