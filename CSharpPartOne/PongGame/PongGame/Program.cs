@@ -9,8 +9,8 @@ namespace PongGame
 {
     class Program
     {
-       static int firstPlayerPadSize = 20;
-       static int secondPlayerPadSize = 20;
+       static int firstPlayerPadSize = 10;
+       static int secondPlayerPadSize = 10;
        static int ballPositionX = 5;
        static int ballPositionY = 5;
        static bool ballDirectionUp = true; // determines if the ball direction is up
