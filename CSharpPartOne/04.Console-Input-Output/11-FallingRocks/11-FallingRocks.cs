@@ -49,7 +49,7 @@ class FallingRocksSolo
         ResetBuffer();
         Random randomGenerator = new Random();
         List<Unit> RocksList = new List<Unit>();
-        int livesCount = 5;
+        int livesCount = 1;
         int score = 0;
         char[] symbolList = { '^', '*', '&', '+', '%', '$', '#', '!', '.', ';' };
         int speed = 0;
@@ -135,6 +135,12 @@ class FallingRocksSolo
                     livesCount--;
                     hitted = true;
                     speed = 0;
+                    if (livesCount <= 0)
+                    {
+                        PrintStringAtPosition(42, 2, "GAME OVER", ConsoleColor.Red);
+                        PrintStringAtPosition(33, 3, "Press [enter] to continue", ConsoleColor.Red);
+                        Console.ReadLine();
+                    }
                 }
                 if (NewMovedRock.y < Console.WindowHeight)
                 {
