@@ -49,7 +49,7 @@ class FallingRocksSolo
         ResetBuffer();
         Random randomGenerator = new Random();
         List<Unit> RocksList = new List<Unit>();
-        int livesCount = 1;
+        int livesCount = 5;
         int score = 0;
         char[] symbolList = { '^', '*', '&', '+', '%', '$', '#', '!', '.', ';' };
         int speed = 0;

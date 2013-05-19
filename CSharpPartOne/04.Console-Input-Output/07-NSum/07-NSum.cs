@@ -6,10 +6,12 @@ class NSum
 {
     static void Main()
     {
+        Console.Write("Please enter the number count: ");
         int readCount = int.Parse(Console.ReadLine());
         int[] numbers = new int[readCount];
         for (int index = 0; index < readCount; index++)
         {
+            Console.Write("Number {0}: ", index + 1);
             numbers[index] = int.Parse(Console.ReadLine());
         }
         int result = 0;
@@ -17,7 +19,7 @@ class NSum
         {
             result = result + i;
         }
-        Console.WriteLine("The Result is: {0}", result);
+        Console.WriteLine("The Sum is: {0}", result);
 
         // Second Solution
         /*
