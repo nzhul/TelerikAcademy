@@ -1,4 +1,5 @@
-﻿// 02. Write a program that shows the sign (+ or -) of the product of three real numbers without calculating it. Use a sequence of if statements.
+﻿// 02. Write a program that shows the sign (+ or -) of the product of 
+// three real numbers without calculating it. Use a sequence of if statements.
 
 using System;
 
@@ -20,3 +21,5 @@ class ProductSign
         }
     }
 }
+
+// If we have only one negative number - the product of the multiplication will be negative!

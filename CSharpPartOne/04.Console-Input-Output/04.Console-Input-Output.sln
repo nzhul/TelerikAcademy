@@ -23,6 +23,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "10-CalcSum", "10-CalcSum\10
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "11-FallingRocks", "11-FallingRocks\11-FallingRocks.csproj", "{3EAE954F-B90C-4B23-8D0C-8498819CDCA1}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "12-FallingRocksSolo", "12-FallingRocksSolo\12-FallingRocksSolo.csproj", "{16180485-C5D1-4F48-8F9F-8DC60F3A42C6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -73,6 +75,10 @@ Global
 		{3EAE954F-B90C-4B23-8D0C-8498819CDCA1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3EAE954F-B90C-4B23-8D0C-8498819CDCA1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3EAE954F-B90C-4B23-8D0C-8498819CDCA1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{16180485-C5D1-4F48-8F9F-8DC60F3A42C6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{16180485-C5D1-4F48-8F9F-8DC60F3A42C6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{16180485-C5D1-4F48-8F9F-8DC60F3A42C6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{16180485-C5D1-4F48-8F9F-8DC60F3A42C6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
