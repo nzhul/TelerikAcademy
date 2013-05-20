@@ -27,6 +27,9 @@ class CircleAndRectangle
         }
 
         // Rectangle Sides Coordinates
+        // !!! Important - This solution is based on the assumption that the given variables "top=1" and "left=-1" represent the shift of the rectancle from the center of the coordinate system.
+        // Also we assume that the Default ANCHOR POINT of the rectangle is his CENTER
+        // The solution depends on the ANCHOR POINT of the rectangle and the coordinates of that point!
         double rectangleHeight = 2;
         double rectangleWidth = 6;
         double topY = 0 + (rectangleHeight / 2);

@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{095248DF-B5FF-4AAE-B9E7-F4F761DB0D7E}</ProjectGuid>
+    <ProjectGuid>{A2A99022-511D-45EA-92C3-C3D37FAFC142}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>_09_SubSet</RootNamespace>
-    <AssemblyName>09-SubSet</AssemblyName>
+    <RootNamespace>_10_BonusScore</RootNamespace>
+    <AssemblyName>10-BonusScore</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -41,7 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="09-SubSet.cs" />
+    <Compile Include="10-BonusScore.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
