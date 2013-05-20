@@ -54,6 +54,6 @@ class GreatestNumber
         {
             BiggestNumber = fifthNumber;
         }
-        Console.WriteLine("The greatest variable is: {0}", greatestNumber);
+        Console.WriteLine("The greatest variable is: {0}", BiggestNumber);
     }
 }
