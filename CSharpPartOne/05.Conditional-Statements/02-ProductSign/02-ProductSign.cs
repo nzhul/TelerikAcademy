@@ -3,23 +3,58 @@
 
 using System;
 
-class ProductSign
-{
-    static void Main()
-    {
-        int a = 5;
-        int b = 2;
-        int c = -6;
 
-        if (a < 0 || b < 0 || c < 0)
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        Console.Write("Please enter the number count: ");
+        int readCount = int.Parse(Console.ReadLine());
+        int[] numberArray = new int[readCount];
+        for (int index = 0; index < readCount; index++)
         {
-            Console.WriteLine("The sign of the product is NEGATIVE (-), because one or more of the numbers are negative!");
+            Console.Write("Number {0}: ", index + 1);
+            numberArray[index] = int.Parse(Console.ReadLine());
+        }
+
+
+        int negativeCount = 0;
+        int product = 1;
+        bool zeroInArray = false;
+        foreach (var number in numberArray)
+        {
+            if (number < 0)
+            {
+                negativeCount++;
+            }
+            product *= number;
+            if (number == 0)
+            {
+                zeroInArray = true;
+            }
+        }
+        if (zeroInArray)
+        {
+            Console.WriteLine("The product is ZERO!");
         }
         else
         {
-            Console.WriteLine("The sign of the product is POSITIVE (+), because none of the numbers are negative!");
+            if (negativeCount % 2 == 0)
+            {
+                Console.WriteLine("The product IS POSITIVE!");
+            }
+            else
+            {
+                Console.WriteLine("The product is NEGATIVE!");
+            }
         }
+
+
+        Console.WriteLine("PRODUCT: {0}", product);
+        Console.WriteLine("Negative Count: {0}", negativeCount);
     }
 }
 
-// If we have only one negative number - the product of the multiplication will be negative!
+// If the negative numbers count is ODD then we have POSITIVE product
+// and vice versa - If the negative numbers cound is EVEN, then we have NEGATIVE PRODUCT
