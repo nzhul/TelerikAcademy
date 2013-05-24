@@ -1,4 +1,5 @@
-﻿// 09. Write an expression that checks for given point (x, y) if it is within the circle K( (1,1), 3) and out of the rectangle R(top=1, left=-1, width=6, height=2).
+﻿// 09. Write an expression that checks for given point (x, y) if it is 
+// within the circle K( (1,1), 3) and out of the rectangle R(top=1, left=-1, width=6, height=2).
 
 using System;
 
@@ -30,6 +31,7 @@ class CircleAndRectangle
         // !!! Important - This solution is based on the assumption that the given variables "top=1" and "left=-1" represent the shift of the rectancle from the center of the coordinate system.
         // Also we assume that the Default ANCHOR POINT of the rectangle is his CENTER
         // The solution depends on the ANCHOR POINT of the rectangle and the coordinates of that point!
+        // WATCH MY EXPLANATION ABOUT MY SOLUTION: http://www.youtube.com/watch?v=Mc7R3Ksihvc&feature=youtu.be
         double rectangleHeight = 2;
         double rectangleWidth = 6;
         double topY = 0 + (rectangleHeight / 2);
