@@ -15,6 +15,7 @@ class TrailingZeros
 {
     static void Main()
     {
+        Console.WriteLine("Enter N: ");
         int n = int.Parse(Console.ReadLine());
         BigInteger nFact = 1; // I Use BigInteger Only for Comparison purpoise and not for solving the problem!!!
         for (int i = 1; i <= n; i++)

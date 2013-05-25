@@ -24,7 +24,7 @@ class CatalanNumbers
         Console.Write("Enter N: ");
         double n = int.Parse(Console.ReadLine());
         double catalanNumber = Factorial(2 * n) / Factorial(n + 1) * Factorial(n);
-        Console.WriteLine(catalanNumber);
+        Console.WriteLine("Catalan Number = {0}", catalanNumber);
     }
 }
 

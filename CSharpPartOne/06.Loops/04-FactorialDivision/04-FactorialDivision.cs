@@ -16,6 +16,6 @@ class FactorialDivision
         {
             result = result * (k - i);
         }
-        Console.WriteLine(1 / result);
+        Console.WriteLine("{0}!/{1}! = {2}",n , k,1 / result);
     }
 }
