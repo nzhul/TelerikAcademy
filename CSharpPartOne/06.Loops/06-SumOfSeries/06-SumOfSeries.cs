@@ -12,8 +12,8 @@ class SumOfSeries
         Console.Write("Enter X: ");
         double x = double.Parse(Console.ReadLine());
 
-        double nomerator = 1;
-        double denomenator = 1;
+        double numerator = 1;
+        double denominator = 1;
         double singleResult = 0;
         double totalResult = 0;
 
@@ -21,13 +21,13 @@ class SumOfSeries
         {
             for (double j = 1; j <= i; j++)
             {
-                nomerator = nomerator * j;
-                denomenator = denomenator * x;
+                numerator = numerator * j;
+                denominator = denominator * x;
             }
-            singleResult = nomerator / denomenator;
-            Console.WriteLine("{0}!/{1}^{0} = {2} / {3} = {4}", i, x, nomerator, denomenator, singleResult);
-            nomerator = 1;
-            denomenator = 1;
+            singleResult = numerator / denominator;
+            Console.WriteLine("{0}!/{1}^{0} = {2} / {3} = {4}", i, x, numerator, denominator, singleResult);
+            numerator = 1;
+            denominator = 1;
             totalResult += singleResult;
         }
         Console.WriteLine("-----------");
