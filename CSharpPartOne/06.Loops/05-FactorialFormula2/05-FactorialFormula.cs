@@ -1,4 +1,4 @@
-﻿// 05. Write a program that calculates N!/K! for given N and K (1<K<N).
+﻿// 05. Write a program that calculates N!*K! / (K-N)! for given N and K (1<N<K).
 
 using System;
 
