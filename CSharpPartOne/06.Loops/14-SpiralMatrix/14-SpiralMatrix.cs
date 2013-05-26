@@ -8,6 +8,9 @@ class SpiralMatrix
 {
     static void Main()
     {
+
+        // !!! ЗАДАЧАТА НЕ Е ГОТОВА!
+        //
         int n = 5;
         int[,] matrix = new int[n, n];
 
