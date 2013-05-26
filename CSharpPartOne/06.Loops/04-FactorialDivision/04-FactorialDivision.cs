@@ -7,15 +7,15 @@ class FactorialDivision
     static void Main()
     {
         Console.Write("Enter N: ");
-        decimal n = decimal.Parse(Console.ReadLine());
+        int n = int.Parse(Console.ReadLine());
         Console.Write("Enter K: ");
-        decimal k = decimal.Parse(Console.ReadLine());
+        int k = int.Parse(Console.ReadLine());
 
-        decimal result = 1;
-        for (decimal i = 0; i < (k - n); i++)
+        int result = 1;
+        for (int i = 0; i < (n - k); i++)
         {
-            result = result * (k - i);
+            result = result * (n - i);
         }
-        Console.WriteLine("{0}!/{1}! = {2}",n , k, 1 / result);
+        Console.WriteLine("{0}!/{1}! = {2}",n , k, result);
     }
 }
