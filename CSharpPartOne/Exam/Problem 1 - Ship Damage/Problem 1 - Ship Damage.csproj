@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{D1D14C76-26D0-4834-B684-E4816D077756}</ProjectGuid>
+    <ProjectGuid>{5086C83E-8B7B-47ED-BFD3-6A31C37E71F0}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Problem_5___Pillars</RootNamespace>
-    <AssemblyName>Problem 5 - Pillars</AssemblyName>
+    <RootNamespace>Problem_1___Ship_Damage</RootNamespace>
+    <AssemblyName>Problem 1 - Ship Damage</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -41,7 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Pillars.cs" />
+    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

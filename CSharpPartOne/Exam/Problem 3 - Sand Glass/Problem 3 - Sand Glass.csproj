@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{D1D14C76-26D0-4834-B684-E4816D077756}</ProjectGuid>
+    <ProjectGuid>{2FA2ACE0-CACF-4460-A367-D89B7BC9D9B4}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Problem_5___Pillars</RootNamespace>
-    <AssemblyName>Problem 5 - Pillars</AssemblyName>
+    <RootNamespace>Problem_3___Sand_Glass</RootNamespace>
+    <AssemblyName>Problem 3 - Sand Glass</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -41,7 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Pillars.cs" />
+    <Compile Include="Sand Glass.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
