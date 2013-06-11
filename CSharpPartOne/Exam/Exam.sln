@@ -44,7 +44,6 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Problem 2 - A-nacci", "Problem 2 - A-nacci\Problem 2 - A-nacci.csproj", "{D0AF87F0-7908-4AA3-AAFF-66BD82F1F184}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "05 - Angry Bits", "05 - Angry Bits\05 - Angry Bits.csproj", "{0E3A4A60-52E6-4794-9C85-E053FA2E8DC7}"
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "05 - Angry Bits", "05 - Angry Bits\05 - Angry Bits.csproj", "{79921F00-9574-4A2F-BCCC-2F7753208864}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -140,10 +139,6 @@ Global
 		{0E3A4A60-52E6-4794-9C85-E053FA2E8DC7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0E3A4A60-52E6-4794-9C85-E053FA2E8DC7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0E3A4A60-52E6-4794-9C85-E053FA2E8DC7}.Release|Any CPU.Build.0 = Release|Any CPU
-		{79921F00-9574-4A2F-BCCC-2F7753208864}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{79921F00-9574-4A2F-BCCC-2F7753208864}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{79921F00-9574-4A2F-BCCC-2F7753208864}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{79921F00-9574-4A2F-BCCC-2F7753208864}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

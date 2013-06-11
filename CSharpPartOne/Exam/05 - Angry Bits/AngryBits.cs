@@ -7,12 +7,16 @@ class AngryBits
     {
         string[] binaries = new string[8];
         char[,] charBinaries = new char[8, 16];
+        int[] birdPositions = {9, 9, 9, 9, 9, 9, 9, 9}; // We fill the matrix with 9ns so we can detect if there is bird in that column or not!
+        int finalScore = 0;
+        string victory = "";
 
         for (int i = 0; i < 8; i++)
         {
             binaries[i] = Convert.ToString(ushort.Parse(Console.ReadLine()), 2).PadLeft(16, '0');
         }
 
+        // use the string Array to populate 16x8 char matrix
         for (int r = 0; r < 8; r++)
         {
             for (int c = 0; c < 16; c++)
@@ -20,6 +24,27 @@ class AngryBits
                 charBinaries[r, c] = binaries[r][c];
             }
         }
+
+
+        // Determine the row position of every bird
+        for (int i = 0; i <= 7; i++)
+        {
+            for (int j = 0; j <= 7; j++)
+            {
+                if (charBinaries[i, j] == '1')
+                {
+                    birdPositions[j] = i;
+                }
+            }
+        }
+
+        // Display the bird positions
+        for (int i = 0; i <= 7; i++)
+        {
+            Console.Write(birdPositions[i]);
+        }
+        Console.Write(" :Bird Row Positions");
+        Console.WriteLine();
 
         // Display The Starting PlayField
         for (int i = 0; i < 8; i++)
@@ -32,16 +57,55 @@ class AngryBits
         }
         Console.WriteLine();
 
-        // Може да подавам Starting параметрите на birds като аргументи на метод.
+        // THE MAIN LOOP!!!
+        for (int birdCol = 7; birdCol >= 0; birdCol--)
+        {
+            finalScore += BirdLauncher(charBinaries, birdPositions[birdCol], birdCol);   
+        }
 
-        int birdStartingRow = 4; // starting from 0
-        int currentCol = 7; // Трябва за използваме намаляващ цикъл.
+        // Display The FinalField PlayField
+        for (int i = 0; i < 8; i++)
+        {
+            for (int j = 0; j < 16; j++)
+            {
+                Console.Write(charBinaries[i, j]);
+            }
+            Console.WriteLine();
+        }
+
+        // Check if the Playfield is empty or not
+        for (int i = 0; i < 8; i++)
+        {
+            for (int j = 0; j < 16; j++)
+            {
+                if (charBinaries[i, j] == '1')
+                {
+                    victory = "No";
+                    break;
+                }
+                else
+                {
+                    victory = "Yes";
+                }
+            }
+        }
+
+        // Display the score
+        Console.WriteLine("{0} {1}", finalScore, victory);
+    }
+
+    static int BirdLauncher(char[,] charBinaries, int birdStartingRow, int birdStartingCol)
+    {
+        if (birdStartingRow == 9) // if there is no bird in that column we return 0 as score
+        {
+            return 0;
+        }
 
         int birdRow = birdStartingRow;
-        int birdCol = currentCol;
+        int birdCol = birdStartingCol;
         charBinaries[birdRow, birdCol] = '0';
         byte direction = 1; // 1 for up and 2 for down
-        int flightLength = 0;
+        int flightLength = -1; // This is kinda CHEAT because the flight must be shorter by 1 and i decided to subtract 1 at the begining
         int pigKills = 0;
         int score = 0;
 
@@ -80,7 +144,7 @@ class AngryBits
                         {
                             pigKills++;
                             charBinaries[birdRow - 1, birdCol + 1] = '0';// Remove the pig
-                        } 
+                        }
                     }
 
                 }
@@ -122,8 +186,8 @@ class AngryBits
 
                 }
 
-                score = flightLength * pigKills;
-                break;
+                return score = flightLength * pigKills;
+                //break;
             }
 
 
@@ -139,15 +203,6 @@ class AngryBits
                 birdRow++;
             }
         } while (birdRow <= 8 || birdCol <= 16);
-
-        // Display The PlayField
-        for (int i = 0; i < 8; i++)
-        {
-            for (int j = 0; j < 16; j++)
-            {
-                Console.Write(charBinaries[i, j]);
-            }
-            Console.WriteLine();
-        }
+        return 0;
     }
 }
