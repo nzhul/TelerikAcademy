@@ -43,6 +43,7 @@ class AngryBits
         byte direction = 1; // 1 for up and 2 for down
         int flightLength = 0;
         int pigKills = 0;
+        int score = 0;
 
         do
         {
@@ -120,6 +121,8 @@ class AngryBits
                     }
 
                 }
+
+                score = flightLength * pigKills;
                 break;
             }
 
@@ -135,7 +138,7 @@ class AngryBits
                 birdCol++;
                 birdRow++;
             }
-        } while (birdRow <= 8 || birdCol <= 16); // Тук има проблем.
+        } while (birdRow <= 8 || birdCol <= 16);
 
         // Display The PlayField
         for (int i = 0; i < 8; i++)
