@@ -38,24 +38,24 @@ class AngryBits
             }
         }
 
-        // Display the bird positions
-        for (int i = 0; i <= 7; i++)
-        {
-            Console.Write(birdPositions[i]);
-        }
-        Console.Write(" :Bird Row Positions");
-        Console.WriteLine();
+        //// Display the bird positions
+        //for (int i = 0; i <= 7; i++)
+        //{
+        //    Console.Write(birdPositions[i]);
+        //}
+        //Console.Write(" :Bird Row Positions");
+        //Console.WriteLine();
 
-        // Display The Starting PlayField
-        for (int i = 0; i < 8; i++)
-        {
-            for (int j = 0; j < 16; j++)
-            {
-                Console.Write(charBinaries[i, j]);
-            }
-            Console.WriteLine();
-        }
-        Console.WriteLine();
+        //// Display The Starting PlayField
+        //for (int i = 0; i < 8; i++)
+        //{
+        //    for (int j = 0; j < 16; j++)
+        //    {
+        //        Console.Write(charBinaries[i, j]);
+        //    }
+        //    Console.WriteLine();
+        //}
+        //Console.WriteLine();
 
         // THE MAIN LOOP!!!
         for (int birdCol = 7; birdCol >= 0; birdCol--)
@@ -63,25 +63,32 @@ class AngryBits
             finalScore += BirdLauncher(charBinaries, birdPositions[birdCol], birdCol);   
         }
 
-        // Display The FinalField PlayField
-        for (int i = 0; i < 8; i++)
-        {
-            for (int j = 0; j < 16; j++)
-            {
-                Console.Write(charBinaries[i, j]);
-            }
-            Console.WriteLine();
-        }
+        //// Display The FinalField PlayField
+        //for (int i = 0; i < 8; i++)
+        //{
+        //    for (int j = 0; j < 16; j++)
+        //    {
+        //        Console.Write(charBinaries[i, j]);
+        //    }
+        //    Console.WriteLine();
+        //}
 
         // Check if the Playfield is empty or not
+        victory = CheckVictory(charBinaries, victory);
+
+        // Display the score
+        Console.WriteLine("{0} {1}", finalScore, victory);
+    }
+
+    static string CheckVictory(char[,] charBinaries, string victory)
+    {
         for (int i = 0; i < 8; i++)
         {
             for (int j = 0; j < 16; j++)
             {
                 if (charBinaries[i, j] == '1')
                 {
-                    victory = "No";
-                    break;
+                    return victory = "No";
                 }
                 else
                 {
@@ -89,9 +96,7 @@ class AngryBits
                 }
             }
         }
-
-        // Display the score
-        Console.WriteLine("{0} {1}", finalScore, victory);
+        return victory;
     }
 
     static int BirdLauncher(char[,] charBinaries, int birdStartingRow, int birdStartingCol)
@@ -187,7 +192,6 @@ class AngryBits
                 }
 
                 return score = flightLength * pigKills;
-                //break;
             }
 
 
@@ -202,7 +206,7 @@ class AngryBits
                 birdCol++;
                 birdRow++;
             }
-        } while (birdRow <= 8 || birdCol <= 16);
+        } while (birdRow < 8 && birdCol < 16);
         return 0;
     }
 }
