@@ -49,6 +49,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "05 - AngryBitsTests", "05 -
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Problem 4 - UKFlag", "Problem 4 - UKFlag\Problem 4 - UKFlag.csproj", "{EF45141D-4AFA-4679-952D-38765F341782}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "05-BitBall", "05-BitBall\05-BitBall.csproj", "{78CCA346-6E10-48A1-931B-AA7BA4CE5529}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -151,6 +153,10 @@ Global
 		{EF45141D-4AFA-4679-952D-38765F341782}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EF45141D-4AFA-4679-952D-38765F341782}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EF45141D-4AFA-4679-952D-38765F341782}.Release|Any CPU.Build.0 = Release|Any CPU
+		{78CCA346-6E10-48A1-931B-AA7BA4CE5529}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{78CCA346-6E10-48A1-931B-AA7BA4CE5529}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{78CCA346-6E10-48A1-931B-AA7BA4CE5529}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{78CCA346-6E10-48A1-931B-AA7BA4CE5529}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
