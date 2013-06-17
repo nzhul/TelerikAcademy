@@ -53,6 +53,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "05-BitBall", "05-BitBall\05
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "05-FormulaBit", "05-FormulaBit\05-FormulaBit.csproj", "{B97EA5E9-E1A4-40CA-A698-E28C12F4702F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Problem 5 - Lines", "Problem 5 - Lines\Problem 5 - Lines.csproj", "{724D5439-1481-43EF-8B4E-6B054335C69F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -163,6 +165,10 @@ Global
 		{B97EA5E9-E1A4-40CA-A698-E28C12F4702F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B97EA5E9-E1A4-40CA-A698-E28C12F4702F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B97EA5E9-E1A4-40CA-A698-E28C12F4702F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{724D5439-1481-43EF-8B4E-6B054335C69F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{724D5439-1481-43EF-8B4E-6B054335C69F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{724D5439-1481-43EF-8B4E-6B054335C69F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{724D5439-1481-43EF-8B4E-6B054335C69F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
