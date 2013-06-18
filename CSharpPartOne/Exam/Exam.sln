@@ -55,6 +55,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "05-FormulaBit", "05-Formula
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Problem 5 - Lines", "Problem 5 - Lines\Problem 5 - Lines.csproj", "{724D5439-1481-43EF-8B4E-6B054335C69F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Problem 4 - DancingBits", "Problem 4 - DancingBits\Problem 4 - DancingBits.csproj", "{D79AFBA2-D2E6-4DCC-A338-BEC575B61D9A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -169,6 +171,10 @@ Global
 		{724D5439-1481-43EF-8B4E-6B054335C69F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{724D5439-1481-43EF-8B4E-6B054335C69F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{724D5439-1481-43EF-8B4E-6B054335C69F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D79AFBA2-D2E6-4DCC-A338-BEC575B61D9A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D79AFBA2-D2E6-4DCC-A338-BEC575B61D9A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D79AFBA2-D2E6-4DCC-A338-BEC575B61D9A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D79AFBA2-D2E6-4DCC-A338-BEC575B61D9A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
