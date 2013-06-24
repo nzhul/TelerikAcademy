@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01-ArrayX5", "01-ArrayX5\01-ArrayX5.csproj", "{0B88978D-F785-40B5-B4D5-29E26E5BB5B6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02-CompareArrays", "02-CompareArrays\02-CompareArrays.csproj", "{EDD86E72-0D07-41E1-B3AB-7748CBFEFEB9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "03-CharArrayCompare", "03-CharArrayCompare\03-CharArrayCompare.csproj", "{EE4DDC8E-7EE6-4DFB-9540-7B4E761F6B2A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0B88978D-F785-40B5-B4D5-29E26E5BB5B6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0B88978D-F785-40B5-B4D5-29E26E5BB5B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0B88978D-F785-40B5-B4D5-29E26E5BB5B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0B88978D-F785-40B5-B4D5-29E26E5BB5B6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EDD86E72-0D07-41E1-B3AB-7748CBFEFEB9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EDD86E72-0D07-41E1-B3AB-7748CBFEFEB9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EDD86E72-0D07-41E1-B3AB-7748CBFEFEB9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EDD86E72-0D07-41E1-B3AB-7748CBFEFEB9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EE4DDC8E-7EE6-4DFB-9540-7B4E761F6B2A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EE4DDC8E-7EE6-4DFB-9540-7B4E761F6B2A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EE4DDC8E-7EE6-4DFB-9540-7B4E761F6B2A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EE4DDC8E-7EE6-4DFB-9540-7B4E761F6B2A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
