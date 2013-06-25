@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("03-CharArrayCompare")]
+[assembly: AssemblyTitle("04-MaximalSequence")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("03-CharArrayCompare")]
+[assembly: AssemblyProduct("04-MaximalSequence")]
 [assembly: AssemblyCopyright("Copyright ©  2013")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("9e81ab56-4a23-47cd-bb6d-26753df65142")]
+[assembly: Guid("0a5ba2eb-bf0c-4ef6-9d45-c0e37e12b2a4")]
 
 // Version information for an assembly consists of the following four values:
 //

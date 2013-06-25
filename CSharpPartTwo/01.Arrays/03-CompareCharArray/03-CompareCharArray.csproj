@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{EE4DDC8E-7EE6-4DFB-9540-7B4E761F6B2A}</ProjectGuid>
+    <ProjectGuid>{8CA39332-CD17-4291-9657-8AA584E2461B}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>_03_CharArrayCompare</RootNamespace>
-    <AssemblyName>03-CharArrayCompare</AssemblyName>
+    <RootNamespace>_03_CompareCharArray</RootNamespace>
+    <AssemblyName>03-CompareCharArray</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -41,7 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Program.cs" />
+    <Compile Include="03-CompareCharArray.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
