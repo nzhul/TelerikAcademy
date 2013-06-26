@@ -65,6 +65,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Problem 2 - QuadronacciRect
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "2013 - Problem 1 - Garden", "2013 - Problem 1 - Garden\2013 - Problem 1 - Garden.csproj", "{E93B941D-F631-4796-82A0-A6A401EDAD3C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "2013 - Problem 2 - Secrets", "2013 - Problem 2 - Secrets\2013 - Problem 2 - Secrets.csproj", "{34E1809D-6A11-47E9-A29B-A116B416F705}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "2013 - Problem 4 - BatGoikoTower", "2013 - Problem 4 - BatGoikoTower\2013 - Problem 4 - BatGoikoTower.csproj", "{E6FFF086-515B-4F00-B499-380716A3DB8F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -199,6 +203,14 @@ Global
 		{E93B941D-F631-4796-82A0-A6A401EDAD3C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E93B941D-F631-4796-82A0-A6A401EDAD3C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E93B941D-F631-4796-82A0-A6A401EDAD3C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{34E1809D-6A11-47E9-A29B-A116B416F705}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{34E1809D-6A11-47E9-A29B-A116B416F705}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{34E1809D-6A11-47E9-A29B-A116B416F705}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{34E1809D-6A11-47E9-A29B-A116B416F705}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E6FFF086-515B-4F00-B499-380716A3DB8F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E6FFF086-515B-4F00-B499-380716A3DB8F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E6FFF086-515B-4F00-B499-380716A3DB8F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E6FFF086-515B-4F00-B499-380716A3DB8F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

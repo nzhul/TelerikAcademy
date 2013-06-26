@@ -20,7 +20,7 @@ class Garden
         double TotalCost = tomatoSeeds * 0.5 + cucumberSeeds * 0.4 + potatoSeeds * 0.25 + carrotSeeds * 0.6 + cabbageSeeds * 0.3 + beansSeeds * 0.4;
         int TotalArea = tomatoArea + cucumberArea + potatoArea + carrotArea + cabbageArea;
         int areaLeft = peshoArea - TotalArea;
-        Console.WriteLine("Total Cost: {0:F2}", TotalCost);
+        Console.WriteLine("Total costs: {0:F2}", TotalCost);
         if (areaLeft > 0)
         {
             // Print the Beans Area
