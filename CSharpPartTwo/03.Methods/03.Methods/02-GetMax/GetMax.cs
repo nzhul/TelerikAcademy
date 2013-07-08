@@ -1,0 +1,28 @@
+﻿using System;
+
+class GetMaxMethod
+{
+    static void Main()
+    {
+        Console.Write("Enter a: ");
+        int a = int.Parse(Console.ReadLine());
+        Console.Write("Enter b: ");
+        int b = int.Parse(Console.ReadLine());
+        Console.WriteLine("Enter c: ");
+        int c = int.Parse(Console.ReadLine());
+
+        Console.WriteLine(GetMax(GetMax(a, b), c));
+    }
+
+    static int GetMax(int a, int b)
+    {
+        if (a > b)
+        {
+            return a;
+        }
+        else
+        {
+            return b;
+        }
+    }
+}
