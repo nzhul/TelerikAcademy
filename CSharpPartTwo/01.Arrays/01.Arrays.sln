@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "04-MaximalSequence", "04-Ma
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "05-MaxIncreasingSequence", "05-MaxIncreasingSequence\05-MaxIncreasingSequence.csproj", "{D8143583-153E-4613-A87A-E86A3B78831D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "20-AllVariations", "20-AllVariations\20-AllVariations.csproj", "{57C34FE1-4EB4-4BD1-A576-75C30239B08B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -37,6 +39,10 @@ Global
 		{D8143583-153E-4613-A87A-E86A3B78831D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D8143583-153E-4613-A87A-E86A3B78831D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D8143583-153E-4613-A87A-E86A3B78831D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{57C34FE1-4EB4-4BD1-A576-75C30239B08B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{57C34FE1-4EB4-4BD1-A576-75C30239B08B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{57C34FE1-4EB4-4BD1-A576-75C30239B08B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{57C34FE1-4EB4-4BD1-A576-75C30239B08B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
