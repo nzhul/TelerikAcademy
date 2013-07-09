@@ -5,7 +5,7 @@ class QuickSort
 {
     static void Main()
     {
-        string[] array = { "Dobri", "Evdoki", "Alex", "Cvetan", "Mincho", "Gosho", "Boris" };
+        string[] array = { "Dobri", "Evdoki", "Alex", "Cvetan", "Pesho", "Gosho", "Boris" };
         Printing(array);
 
         // Apply Quicksort
