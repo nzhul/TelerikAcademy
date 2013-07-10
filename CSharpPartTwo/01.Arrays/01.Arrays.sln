@@ -36,7 +36,10 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "15-SieveEratosthenes", "15-SieveEratosthenes\15-SieveEratosthenes.csproj", "{7E9C92ED-5ECD-4DFD-8BB5-DAA1315FC050}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "16-SubsetSum", "16-SubsetSum\16-SubsetSum.csproj", "{3BFA490A-0FD4-4AD7-B8F5-1B769A957E62}"
+EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "19-Permutations", "19-Permutations\19-Permutations.csproj", "{A017B07D-3C80-4CE5-B3A2-21460FD2E2DC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "17-SubsetSumInput", "17-SubsetSumInput\17-SubsetSumInput.csproj", "{03C91961-77DB-4FD4-AC0F-DE1D4EDD595C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -120,6 +123,10 @@ Global
 		{A017B07D-3C80-4CE5-B3A2-21460FD2E2DC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A017B07D-3C80-4CE5-B3A2-21460FD2E2DC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A017B07D-3C80-4CE5-B3A2-21460FD2E2DC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{03C91961-77DB-4FD4-AC0F-DE1D4EDD595C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{03C91961-77DB-4FD4-AC0F-DE1D4EDD595C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{03C91961-77DB-4FD4-AC0F-DE1D4EDD595C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{03C91961-77DB-4FD4-AC0F-DE1D4EDD595C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
