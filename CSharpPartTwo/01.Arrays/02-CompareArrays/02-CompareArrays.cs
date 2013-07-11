@@ -1,4 +1,7 @@
-﻿using System;
+﻿//02. Write a program that reads two arrays from the console and compares them element by element.
+
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;

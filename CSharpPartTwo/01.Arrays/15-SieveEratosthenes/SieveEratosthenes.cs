@@ -1,10 +1,13 @@
-﻿using System;
+﻿//15. Write a program that finds all prime numbers in the range 
+//    [1...10 000 000]. Use the sieve of Eratosthenes algorithm (find it in Wikipedia).
+
+
+using System;
 
 class SieveEratosthenes
 {
     static void Main()
     {
-        long sum = 0;
         long n = 10000000;
         bool[] e = new bool[n];//by default they're all false
         for (int i = 2; i < n; i++)

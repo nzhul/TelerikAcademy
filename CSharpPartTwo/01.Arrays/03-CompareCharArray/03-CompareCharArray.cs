@@ -1,4 +1,8 @@
-﻿using System;
+﻿//03. Write a program that compares two char arrays lexicographically (letter by letter).
+
+
+
+using System;
 
 class CharArrayCompare
 {
