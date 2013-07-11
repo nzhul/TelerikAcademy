@@ -6,6 +6,15 @@ using System;
 
 class MergeSortAlgorithm
 {
+    static void Main()
+    {
+
+        int[] arrayOfIntegers = { 1, 5, 7, 8, 9, 3, 5, 6, 7 };
+        int[] sortedArray = MergeSort(arrayOfIntegers);
+
+        PrintArray(sortedArray);
+    }
+
     //merges two arrays
     static int[] MergeArrays(int[] left, int[] right)
     {
@@ -66,14 +75,5 @@ class MergeSortAlgorithm
             Console.Write(array[i] + " ");
         }
         Console.WriteLine();
-    }
-
-    static void Main()
-    {
-
-        int[] arrayOfIntegers = { 1, 5, 7, 8, 9, 3, 5, 6, 7 };
-        int[] sortedArray = MergeSort(arrayOfIntegers);
-
-        PrintArray(sortedArray);
     }
 }

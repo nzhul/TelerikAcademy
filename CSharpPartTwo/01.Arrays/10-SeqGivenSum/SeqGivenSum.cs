@@ -9,8 +9,9 @@ class SeqGivenSum
 {
     static void Main()
     {
+        Console.Write("Enter the desired sum (s): ");
+        int sum = int.Parse(Console.ReadLine()); // try with 11
         int[] numbers = { 4, 3, 1, 4, 2, 5, 8 };
-        int sum = 11;
         int start = 0;
         int currentSum = 0;
         for (int i = 0; i < numbers.Length - 1; i++)

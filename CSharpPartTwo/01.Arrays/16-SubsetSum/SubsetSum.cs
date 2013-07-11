@@ -11,8 +11,8 @@ class SubsetSum
 {
     static void Main()
     {
+        Console.Write("Enter the desired sum (s):");
         int s = int.Parse(Console.ReadLine());
-        //int[] numbers = { 5, -2, -1, 1, 2, 3, 4 };
         int[] numbers = { 2, 1, 2, 4, 3, 5, 2, 6 };
         List<List<int>> list = new List<List<int>>();
 

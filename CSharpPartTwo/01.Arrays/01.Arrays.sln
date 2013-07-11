@@ -41,6 +41,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "19-Permutations", "19-Permu
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "17-SubsetSumInput", "17-SubsetSumInput\17-SubsetSumInput.csproj", "{03C91961-77DB-4FD4-AC0F-DE1D4EDD595C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "18-LongestIncreasingSubsequence", "18-LongestIncreasingSubsequence\18-LongestIncreasingSubsequence.csproj", "{C4E6F1DC-8F95-457F-9862-6597A79A774E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -127,6 +129,10 @@ Global
 		{03C91961-77DB-4FD4-AC0F-DE1D4EDD595C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{03C91961-77DB-4FD4-AC0F-DE1D4EDD595C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{03C91961-77DB-4FD4-AC0F-DE1D4EDD595C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C4E6F1DC-8F95-457F-9862-6597A79A774E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C4E6F1DC-8F95-457F-9862-6597A79A774E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C4E6F1DC-8F95-457F-9862-6597A79A774E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C4E6F1DC-8F95-457F-9862-6597A79A774E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
