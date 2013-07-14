@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{57C34FE1-4EB4-4BD1-A576-75C30239B08B}</ProjectGuid>
+    <ProjectGuid>{321756FC-B635-439F-9A2F-7E90847C7FD9}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>_20_AllVariations</RootNamespace>
-    <AssemblyName>20-AllVariations</AssemblyName>
+    <RootNamespace>_21_Combinations</RootNamespace>
+    <AssemblyName>21-Combinations</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -41,7 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Variations.cs" />
+    <Compile Include="Combinations.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

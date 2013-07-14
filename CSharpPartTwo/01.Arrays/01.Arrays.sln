@@ -43,6 +43,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "17-SubsetSumInput", "17-Sub
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "18-LongestIncreasingSubsequence", "18-LongestIncreasingSubsequence\18-LongestIncreasingSubsequence.csproj", "{C4E6F1DC-8F95-457F-9862-6597A79A774E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "21-Combinations", "21-Combinations\21-Combinations.csproj", "{321756FC-B635-439F-9A2F-7E90847C7FD9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -133,6 +135,10 @@ Global
 		{C4E6F1DC-8F95-457F-9862-6597A79A774E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C4E6F1DC-8F95-457F-9862-6597A79A774E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C4E6F1DC-8F95-457F-9862-6597A79A774E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{321756FC-B635-439F-9A2F-7E90847C7FD9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{321756FC-B635-439F-9A2F-7E90847C7FD9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{321756FC-B635-439F-9A2F-7E90847C7FD9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{321756FC-B635-439F-9A2F-7E90847C7FD9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
