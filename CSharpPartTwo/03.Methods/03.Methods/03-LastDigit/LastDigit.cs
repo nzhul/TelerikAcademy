@@ -11,7 +11,7 @@ class LastDigit
 
     static string GetLastDigit(int number)
     {
-        string[] words = { "zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nice" };
+        string[] words = { "Zero", "One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nice" };
         number %= 10;
         return words[number];
     }

@@ -77,9 +77,68 @@ class PrintMatrix
         }
 
         Printing(n, matrix);
+        int[,] newMatrix = new int[n, n];
+        counter = 1;
+        Console.WriteLine();
+        Console.WriteLine("Printing Matrix d)");
+        row = 0;
+        col = 0;
+        string direction = "right";
+        int maxRotations = n * n;
+
+
+        for (int i = 1; i <= maxRotations; i++)
+        {
+            if (direction == "right" && (col > n - 1 || newMatrix[row, col] != 0))
+            {
+                direction = "down";
+                col--;
+                row++;
+            }
+            if (direction == "down" && (row > n - 1 || newMatrix[row, col] != 0))
+            {
+                direction = "left";
+                row--;
+                col--;
+            }
+            if (direction == "left" && (col < 0 || newMatrix[row, col] != 0))
+            {
+                direction = "up";
+                col++;
+                row--;
+            }
+
+            if (direction == "up" && row < 0 || newMatrix[row, col] != 0)
+            {
+                direction = "right";
+                row++;
+                col++;
+            }
+
+            newMatrix[row, col] = i;
+
+            if (direction == "right")
+            {
+                col++;
+            }
+            if (direction == "down")
+            {
+                row++;
+            }
+            if (direction == "left")
+            {
+                col--;
+            }
+            if (direction == "up")
+            {
+                row--;
+            }
+        }
+
+        Printing(n, newMatrix);
     }
 
-    private static void Printing(int n, int[,] matrix)
+    static void Printing(int n, int[,] matrix)
     {
         for (int i = 0; i < n; i++)
         {

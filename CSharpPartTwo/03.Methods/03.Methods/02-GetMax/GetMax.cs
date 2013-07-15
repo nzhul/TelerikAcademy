@@ -11,7 +11,7 @@ class GetMaxMethod
         Console.WriteLine("Enter c: ");
         int c = int.Parse(Console.ReadLine());
 
-        Console.WriteLine(GetMax(GetMax(a, b), c));
+        Console.WriteLine("The maximum number is: {0}", GetMax(GetMax(a, b), c));
     }
 
     static int GetMax(int a, int b)

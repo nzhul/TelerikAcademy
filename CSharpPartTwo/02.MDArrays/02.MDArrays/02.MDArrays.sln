@@ -3,6 +3,10 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01-PrintMatrix", "01-PrintMatrix\01-PrintMatrix.csproj", "{D0046B47-C223-4BB0-99AD-C8F915555C03}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02-MaxSubMatrix", "02-MaxSubMatrix\02-MaxSubMatrix.csproj", "{21CCFE57-2B50-404B-A6F6-6DDA5D3A7CFB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "03-LongestSequence", "03-LongestSequence\03-LongestSequence.csproj", "{696FAE66-80F1-42D0-B63D-045FD5446831}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -13,6 +17,14 @@ Global
 		{D0046B47-C223-4BB0-99AD-C8F915555C03}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D0046B47-C223-4BB0-99AD-C8F915555C03}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D0046B47-C223-4BB0-99AD-C8F915555C03}.Release|Any CPU.Build.0 = Release|Any CPU
+		{21CCFE57-2B50-404B-A6F6-6DDA5D3A7CFB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{21CCFE57-2B50-404B-A6F6-6DDA5D3A7CFB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{21CCFE57-2B50-404B-A6F6-6DDA5D3A7CFB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{21CCFE57-2B50-404B-A6F6-6DDA5D3A7CFB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{696FAE66-80F1-42D0-B63D-045FD5446831}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{696FAE66-80F1-42D0-B63D-045FD5446831}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{696FAE66-80F1-42D0-B63D-045FD5446831}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{696FAE66-80F1-42D0-B63D-045FD5446831}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
