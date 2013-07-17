@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 
 
 class LongestSequence
@@ -16,6 +16,7 @@ class LongestSequence
         int bestSeqRow = 0;
         int bestSeqCol = 0;
         int bestSeqDirection = 0;
+        int test = 0;
 
         for (int i = 0; i < elements.GetLength(0); i++)
         {
@@ -32,7 +33,7 @@ class LongestSequence
 
                 if (bestSeq > currentSeq)
                 {
-                    
+
                 }
             }
         }
