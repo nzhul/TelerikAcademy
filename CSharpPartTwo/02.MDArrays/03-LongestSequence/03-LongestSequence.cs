@@ -5,19 +5,19 @@ class LongestSequence
 {
     static void Main()
     {
-        //string[,] elements = 
-        //{
-        //    {"ha", "fifi", "ho", "hi"},
-        //    {"fo", "ha", "hi", "xx"},
-        //    {"xxx", "ho", "ha", "xx"}
-        //};
         string[,] elements = 
         {
-            {"z", "xw", "xz", "xs"},
-            {"xxx-", "f", "hi", "xx"},
-            {"xxx", "ho", "x", "xx"},
-            {"xxx", "ho", "ha", "x"}
+            {"ha", "fifi", "ho", "hi"},
+            {"fo", "ha", "hi", "xx"},
+            {"xxx", "ho", "ha", "xx"}
         };
+        //string[,] elements = 
+        //{
+        //    {"u", "z", "s", "g",},
+        //    {"o", "q", "g", "v"},
+        //    {"v", "g", "q", "i"},
+        //    {"g", "w", "h", "p",}
+        //};
         int currentSeq = 1;
         int bestSeq = int.MinValue;
         int bestSeqRow = 0;
@@ -42,7 +42,7 @@ class LongestSequence
                 {
                     bestSeq = currentSeq;
                     bestSeqRow = row;
-                    bestSeqCol = col;
+                    bestSeqCol = col + 1;
                     bestSeqDirection = "horizontal";
                 }
             }
@@ -67,7 +67,7 @@ class LongestSequence
                 {
                     bestSeq = currentSeq;
                     bestSeqCol = col;
-                    bestSeqRow = row;
+                    bestSeqRow = row + 1;
                     bestSeqDirection = "down";
                 }
             }
@@ -93,8 +93,8 @@ class LongestSequence
                     if (currentSeq > bestSeq )
                     {
                         bestSeq = currentSeq;
-                        bestSeqRow = row;
-                        bestSeqCol = col;
+                        bestSeqRow = row + 1;
+                        bestSeqCol = col + 1;
                         bestSeqDirection = "TLBR"; // diagonal Top Left Bottom Down
                     }
                 }
@@ -121,8 +121,8 @@ class LongestSequence
                     if (currentSeq > bestSeq)
                     {
                         bestSeq = currentSeq;
-                        bestSeqRow = row;
-                        bestSeqCol = col;
+                        bestSeqRow = row + 1;
+                        bestSeqCol = col - 1;
                         bestSeqDirection = "TRBL";
                     }
                 }
@@ -130,14 +130,55 @@ class LongestSequence
             }
         }
 
-        Console.WriteLine("Best Seq Count: {0}", bestSeq);
-        Console.WriteLine("Best Seq Direction: {0}", bestSeqDirection);
-        Console.WriteLine("Best Seq Row: {0}", bestSeqRow);
-        Console.WriteLine("Best Seq Col: {0}", bestSeqCol);
+        // Populate the bool matrix for selected cells
+        bool[,] selectedCells = new bool[elements.GetLength(0), elements.GetLength(1)];
+        switch (bestSeqDirection)
+        {
+            case "horizontal":
+                for (int i = bestSeqCol; i >= Math.Abs(bestSeq - bestSeqCol - 1); i--)
+                {
+                    selectedCells[bestSeqRow, i] = true;
+                }
+                break;
+            case "down":
+                for (int i = bestSeqRow; i >= Math.Abs(bestSeq - bestSeqRow - 1); i--)
+                {
+                    selectedCells[i, bestSeqCol] = true;
+                }
+                break;
+            case "TLBR":
+                for (int row = bestSeqRow, col = bestSeqCol; row >= Math.Abs(bestSeq - bestSeqRow - 1) && col >= Math.Abs(bestSeq - bestSeqCol - 1); row--, col--) // 1 obsht cikal trqbva row-- col--
+                {
+                    selectedCells[row, col] = true;
+                }
+                break;
+            case "TRBL":
+                for (int row = bestSeqRow, col = bestSeqCol; row >= Math.Abs(bestSeq - bestSeqRow - 1); row--, col++) // 1 obsht cikal trqbva row-- col--
+                {
+                    selectedCells[row, col] = true;
+                }
+                break;
+            default:
+                break;
+        }
 
-        // TODO: да направя цветно отпечатване на реда!!!
-        // в момента bestRow и bestCol не записват нужните позиции
-
-
+        for (int i = 0; i < elements.GetLength(0); i++)
+        {
+            for (int j = 0; j < elements.GetLength(1); j++)
+            {
+                if (selectedCells[i, j] == true)
+                {
+                    Console.ForegroundColor = ConsoleColor.Yellow;
+                    Console.Write("{0, 4} ", elements[i, j]);
+                    Console.ForegroundColor = ConsoleColor.Gray;
+                }
+                else
+                {
+                    // Print Without color
+                    Console.Write("{0, 4} ", elements[i, j]);
+                }
+            }
+            Console.WriteLine();
+        }
     }
 }
