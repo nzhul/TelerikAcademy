@@ -3,15 +3,25 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameFolder", "GameFolder\GameFolder.csproj", "{388784A8-937F-4DA4-B621-3C33DFBFBC4A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JewelTests", "JewelTests\JewelTests.csproj", "{1078924B-0F4D-4993-9EE7-DCB754842CE6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JustJewels-32x32", "JustJewels-32x32\JustJewels-32x32.csproj", "{E9101F4D-D43B-4C4C-8E47-1E70C33D4577}"
+EndProject
 Global
 	GlobalSection(TeamFoundationVersionControl) = preSolution
-		SccNumberOfProjects = 2
+		SccNumberOfProjects = 4
 		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
 		SccTeamFoundationServer = https://nzhul.visualstudio.com/defaultcollection
 		SccLocalPath0 = .
 		SccProjectUniqueName1 = GameFolder\\GameFolder.csproj
 		SccProjectName1 = GameFolder
 		SccLocalPath1 = GameFolder
+		SccProjectUniqueName2 = JewelTests\\JewelTests.csproj
+		SccProjectName2 = JewelTests
+		SccLocalPath2 = JewelTests
+		SccProjectUniqueName3 = JustJewels-32x32\\JustJewels-32x32.csproj
+		SccProjectName3 = JustJewels-32x32
+		SccLocalPath3 = JustJewels-32x32
 	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -22,6 +32,14 @@ Global
 		{388784A8-937F-4DA4-B621-3C33DFBFBC4A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{388784A8-937F-4DA4-B621-3C33DFBFBC4A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{388784A8-937F-4DA4-B621-3C33DFBFBC4A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1078924B-0F4D-4993-9EE7-DCB754842CE6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1078924B-0F4D-4993-9EE7-DCB754842CE6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1078924B-0F4D-4993-9EE7-DCB754842CE6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1078924B-0F4D-4993-9EE7-DCB754842CE6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E9101F4D-D43B-4C4C-8E47-1E70C33D4577}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E9101F4D-D43B-4C4C-8E47-1E70C33D4577}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E9101F4D-D43B-4C4C-8E47-1E70C33D4577}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E9101F4D-D43B-4C4C-8E47-1E70C33D4577}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
