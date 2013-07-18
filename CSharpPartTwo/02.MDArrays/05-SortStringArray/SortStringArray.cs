@@ -23,3 +23,9 @@ class SortStringArray
        return;
     }
 }
+
+//Сортирането става на база този overload на метода Array.Sort: http://msdn.microsoft.com/en-us/library/aa311214(v=vs.71).aspx
+//Sorts a pair of one-dimensional Array objects (one contains the keys and the other contains the corresponding items)
+//based on the keys in the first Array using the IComparable interface implemented by each key.
+
+//Или накратко сортирането става чрез два масива: първия са indexите по които искаме до сортираме, а втория е самия масив който искаме да се сортира.
