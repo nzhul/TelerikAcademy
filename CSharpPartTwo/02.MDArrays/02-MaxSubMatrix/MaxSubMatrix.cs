@@ -1,38 +1,43 @@
-﻿using System;
+﻿// 02. Write a program that reads a rectangular matrix of size N x M and finds in 
+// it the square 3 x 3 that has maximal sum of its elements.
+
+
+using System;
 
 class MaxSubMatrix
 {
     static void Main()
     {
-        Console.Write("Enter N: ");
-        int n = int.Parse(Console.ReadLine());
-        Console.Write("Enter M: ");
-        int m = int.Parse(Console.ReadLine());
-        int[,] matrix = new int[n, m];
+        //// Uncomment for manual input
+        //Console.Write("Enter N: ");
+        //int n = int.Parse(Console.ReadLine());
+        //Console.Write("Enter M: ");
+        //int m = int.Parse(Console.ReadLine());
+        //int[,] matrix = new int[n, m];
 
-        for (int i = 0; i < n; i++)
-        {
-            for (int j = 0; j < m; j++)
-            {
-                Console.Write("Enter Element[{0}, {1}]: ", i, j);
-                matrix[i, j] = int.Parse(Console.ReadLine());
-            }
-        }
-
-        //// Hardcoded Test5
-        //int n = 4;
-        //int m = 6;
-        //int[,] matrix = 
+        //for (int i = 0; i < n; i++)
+        //{
+        //    for (int j = 0; j < m; j++)
         //    {
-        //        { 0, 2, 4, 0, 9, 5 },
+        //        Console.Write("Enter Element[{0}, {1}]: ", i, j);
+        //        matrix[i, j] = int.Parse(Console.ReadLine());
+        //    }
+        //}
 
-        //        { 7, 1, 3, 3, 2, 1 },
+        // Hardcoded Test5
+        int n = 4;
+        int m = 6;
+        int[,] matrix = 
+            {
+                { 0, 2, 4, 0, 9, 5 },
 
-        //        { 1, 3, 9, 8, 5, 6 },
+                { 7, 1, 3, 3, 2, 1 },
 
-        //        { 4, 6, 7, 9, 1, 0 }
+                { 1, 3, 9, 8, 5, 6 },
 
-        //    };
+                { 4, 6, 7, 9, 1, 0 }
+
+            };
 
         for (int i = 0; i < n; i++)
         {

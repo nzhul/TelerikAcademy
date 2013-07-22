@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "04-LargestNumberLTK", "04-L
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "06-ClassMatrix", "06-ClassMatrix\06-ClassMatrix.csproj", "{B23F3147-66AA-4980-88C8-A09365FBDA56}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "07-DFS", "07-DFS\07-DFS.csproj", "{7AC27DEF-A0A5-4A57-9982-C64E6E692B30}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -43,6 +45,10 @@ Global
 		{B23F3147-66AA-4980-88C8-A09365FBDA56}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B23F3147-66AA-4980-88C8-A09365FBDA56}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B23F3147-66AA-4980-88C8-A09365FBDA56}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7AC27DEF-A0A5-4A57-9982-C64E6E692B30}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7AC27DEF-A0A5-4A57-9982-C64E6E692B30}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7AC27DEF-A0A5-4A57-9982-C64E6E692B30}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7AC27DEF-A0A5-4A57-9982-C64E6E692B30}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

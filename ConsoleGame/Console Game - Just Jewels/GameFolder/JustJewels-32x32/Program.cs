@@ -7,7 +7,7 @@ namespace ConsoleApplication1
         static void Main(string[] args)
         {
             string[] colorNames = ConsoleColor.GetNames(typeof(ConsoleColor));
-            char[] symbols = new char[] { '@', '#', '$', '%', '^', '\u2588' };
+            char[] symbols = new char[] { '\u2588' }; // '@', '#', '$', '%', '^',
             Random rand = new Random();
 
             for (int r = 0; r < 32; r += 4)

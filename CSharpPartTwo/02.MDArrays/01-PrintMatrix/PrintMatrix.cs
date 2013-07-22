@@ -1,4 +1,7 @@
-﻿using System;
+﻿// 01. Write a program that fills and prints a matrix of size (n, n) as shown below: (examples for n = 4)
+
+
+using System;
 
 
 class PrintMatrix
