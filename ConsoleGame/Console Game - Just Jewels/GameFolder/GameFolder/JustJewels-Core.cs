@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ConsoleApplication1
 {
@@ -10,47 +6,214 @@ namespace ConsoleApplication1
     {
         static void Main(string[] args)
         {
-            Cell asd = new Cell(4, 3, '#', ConsoleColor.Green);
-            asd.DrawCell();
-        }
-    }
+            Console.BufferHeight = Console.WindowHeight = 50;
+            Console.BufferWidth = Console.WindowWidth = 60;
 
-    public class Cell
-    {
-        public int Width { get; set; }
-        public int Height { get; set; }
-        public char Symbol { get; set; }
-        public ConsoleColor Color { get; set; }
+            Box[,] playField = new Box[8, 8];
 
-        public Cell(int width, int height, char symbol, ConsoleColor color)
-        {
-            this.Width = width;
-            this.Height = height;
-            this.Symbol = symbol;
-            this.Color = color;
-        }
-
-        public void DrawCell()
-        {
-            Console.ForegroundColor = Color;
-
-            for (int r = 0; r < Height; r++)
+            for (int i = 0; i < playField.GetLength(0); i++)
             {
-                Console.WriteLine(new string(this.Symbol, Width));
+                for (int j = 0; j < playField.GetLength(1); j++)
+                {
+                    playField[i, j] = new Box(i * 4 + 1, j * 4 + 1, ConsoleColor.Yellow);
+                    playField[i, j].InitBox('\u2588');
+                    playField[i, j].DrawBox();
+                }
             }
 
-            Console.ForegroundColor = ConsoleColor.Gray;
+            int cursorX = 0;
+            int cursorY = 0;
+            while (true)
+            {
+                if (Console.KeyAvailable)
+                {
+                    ConsoleKeyInfo keyPressed = Console.ReadKey(true);
+                    if (keyPressed.Key == ConsoleKey.LeftArrow)
+                    {
+                        if (cursorX > 0)
+                        {
+                            cursorX--;
+                        }
+                    }
+                    if (keyPressed.Key == ConsoleKey.RightArrow)
+                    {
+                        if (cursorX < 7)
+                        {
+                            cursorX++;
+                        }
+                    }
+                    if (keyPressed.Key == ConsoleKey.UpArrow)
+                    {
+                        if (cursorY > 0)
+                        {
+                            cursorY--;
+                        }
+                    }
+                    if (keyPressed.Key == ConsoleKey.DownArrow)
+                    {
+                        if (cursorY < 7)
+                        {
+                            cursorY++;
+                        }
+                    }
+                    if (keyPressed.Key == ConsoleKey.Spacebar)
+                    {
+                        playField[cursorX, cursorY].boxState = 1; // isSelected
+                        playField[cursorX, cursorY].DrawBox();
+                    }
+                    else
+                    {
+                        for (int i = 0; i < playField.GetLength(0); i++)
+                        {
+                            for (int j = 0; j < playField.GetLength(1); j++)
+                            {
+                                if (playField[i, j].boxState != 1)
+                                {
+                                    playField[i, j].boxState = 0;
+                                }
+                                playField[i, j].DrawBox();
+                            }
+                        }
+                        playField[cursorX, cursorY].boxState = 2;
+                        playField[cursorX, cursorY].DrawBox();
+                    }
+
+
+
+
+                }
+
+
+            }
         }
     }
 }
 
-//int[,][,] matrix = new int[8,8][,];
-//[10:20:25] alexander_tri: tova trqbva da ti e sintaksira
-//[10:20:44] alexander_tri: i posle obhojdash elementite ot matricata s 2 for cikula i za vsqka stoinost si suzdavash vutreshna matrica
+class Box
+{
+    public Box(int x, int y, ConsoleColor color)
+    {
+        this.x = x;
+        this.y = y;
+        this.color = color;
+        this.boxState = 0; // 0 - not selected; 1 - isSelected; 2 - isCursor
+    }
 
-//for (int r = 0; r < matrix.GetLength(0); r++)
-//[10:21:43] alexander_tri: for c ----/-- -/--
-//[10:21:57] alexander_tri: matrix[r,c] = new int[3,3];
-//[10:22:06] alexander_tri: ili 4/4.. kakto iskash
+    public int x;
+    public int y;
+    public ConsoleColor color;
+    public byte boxState;
+    char[,] symbols = new char[3, 3];
 
-//znachi pravish si 2 poleta width i heighth, moje edno za simvol i edno za cvqt.. posle override-vash .ToString() za da znae kak da se risuva i taka
+    public void InitBox(char symbol)
+    {
+        for (int i = 0; i < symbols.GetLength(0); i++)
+        {
+            for (int j = 0; j < symbols.GetLength(1); j++)
+            {
+                symbols[i, j] = symbol;
+            }
+        }
+    }
+
+
+    public void DrawBox()
+    {
+
+        Console.ForegroundColor = this.color;
+        for (int i = 0; i < this.symbols.GetLength(0); i++)
+        {
+            for (int j = 0; j < this.symbols.GetLength(1); j++)
+            {
+                Console.SetCursorPosition(this.x + i, this.y + j);
+                Console.Write(this.symbols[i, j]);
+            }
+        }
+
+        switch (boxState)
+        {
+            case 0: // Not Selected
+                Console.SetCursorPosition(this.x - 1, this.y - 1);
+                Console.Write(' ');
+                Console.SetCursorPosition(this.x + 3, this.y - 1);
+                Console.Write(' ');
+                Console.SetCursorPosition(this.x + 3, this.y + 3);
+                Console.Write(' ');
+                Console.SetCursorPosition(this.x - 1, this.y + 3);
+                Console.Write(' ');
+                break;
+            case 1: // isSelected
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.SetCursorPosition(this.x - 1, this.y - 1);
+                Console.Write('\u250c');
+                Console.SetCursorPosition(this.x + 3, this.y - 1);
+                Console.Write('\u2510');
+                Console.SetCursorPosition(this.x + 3, this.y + 3);
+                Console.Write('\u2518');
+                Console.SetCursorPosition(this.x - 1, this.y + 3);
+                Console.Write('\u2514');
+                break;
+            case 2: // isCursor
+                Console.ForegroundColor = ConsoleColor.White;
+                Console.SetCursorPosition(this.x - 1, this.y - 1);
+                Console.Write('\u250c');
+                Console.SetCursorPosition(this.x + 3, this.y - 1);
+                Console.Write('\u2510');
+                Console.SetCursorPosition(this.x + 3, this.y + 3);
+                Console.Write('\u2518');
+                Console.SetCursorPosition(this.x - 1, this.y + 3);
+                Console.Write('\u2514');
+                break;
+        }
+
+        //if (isCursor)
+        //{
+        //    Console.ForegroundColor = ConsoleColor.White;
+        //    Console.SetCursorPosition(this.x - 1, this.y - 1);
+        //    Console.Write('\u250c');
+        //    Console.SetCursorPosition(this.x + 3, this.y - 1);
+        //    Console.Write('\u2510');
+        //    Console.SetCursorPosition(this.x + 3, this.y + 3);
+        //    Console.Write('\u2518');
+        //    Console.SetCursorPosition(this.x - 1, this.y + 3);
+        //    Console.Write('\u2514');
+        //}
+        //else
+        //{
+        //    Console.SetCursorPosition(this.x - 1, this.y - 1);
+        //    Console.Write(' ');
+        //    Console.SetCursorPosition(this.x + 3, this.y - 1);
+        //    Console.Write(' ');
+        //    Console.SetCursorPosition(this.x + 3, this.y + 3);
+        //    Console.Write(' ');
+        //    Console.SetCursorPosition(this.x - 1, this.y + 3);
+        //    Console.Write(' ');
+        //}
+
+        //if (isSelected)
+        //{
+        //    Console.ForegroundColor = ConsoleColor.Red;
+        //    Console.SetCursorPosition(this.x - 1, this.y - 1);
+        //    Console.Write('\u250c');
+        //    Console.SetCursorPosition(this.x + 3, this.y - 1);
+        //    Console.Write('\u2510');
+        //    Console.SetCursorPosition(this.x + 3, this.y + 3);
+        //    Console.Write('\u2518');
+        //    Console.SetCursorPosition(this.x - 1, this.y + 3);
+        //    Console.Write('\u2514');
+        //}
+        //else
+        //{
+        //    Console.SetCursorPosition(this.x - 1, this.y - 1);
+        //    Console.Write(' ');
+        //    Console.SetCursorPosition(this.x + 3, this.y - 1);
+        //    Console.Write(' ');
+        //    Console.SetCursorPosition(this.x + 3, this.y + 3);
+        //    Console.Write(' ');
+        //    Console.SetCursorPosition(this.x - 1, this.y + 3);
+        //    Console.Write(' ');
+        //}
+    }
+
+    // Selected
+}
