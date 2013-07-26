@@ -21,18 +21,24 @@ class BigFactorial
             }
             Console.WriteLine();
         }
+
+        // Трябва да направя метод който да върти цикъл с дължината на последния
     }
 
     static List<List<byte>> Multiply(byte[] numberOne, byte[] numberTwo)
     {
         byte carry = 0;
         byte product = 0;
+        int shift = 0;
         List<List<byte>> rowsForSum = new List<List<byte>>();
 
         for (int i = numberOne.Length - 1; i >= 0; i--)
         {
             List<byte> sublist = new List<byte>();
-
+            for (int s = 0; s < shift; s++)
+            {
+                sublist.Add(0);
+            }
             for (int j = numberTwo.Length - 1; j >= 0; j--) // moje bi trqbva da vartq na obratno cikala
             {
                 product = (byte)(numberOne[i] * numberTwo[j] + carry);
@@ -53,7 +59,9 @@ class BigFactorial
                 sublist.Add(carry);
                 carry = 0;
             }
+            sublist.Reverse();
             rowsForSum.Add(sublist);
+            shift++;
         }
 
         return rowsForSum;
