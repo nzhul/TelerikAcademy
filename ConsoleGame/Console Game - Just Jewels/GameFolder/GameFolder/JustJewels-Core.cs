@@ -11,11 +11,14 @@ namespace ConsoleApplication1
 
             Box[,] playField = new Box[8, 8];
 
+            ConsoleColor[] colors = { ConsoleColor.Yellow, ConsoleColor.Blue, ConsoleColor.Red, ConsoleColor.Green, ConsoleColor.Cyan, ConsoleColor.Magenta };
+            Random randColor = new Random();
+
             for (int i = 0; i < playField.GetLength(0); i++)
             {
                 for (int j = 0; j < playField.GetLength(1); j++)
                 {
-                    playField[i, j] = new Box(i * 4 + 1, j * 4 + 1, ConsoleColor.Yellow);
+                    playField[i, j] = new Box(i * 4 + 1, j * 4 + 1, colors[randColor.Next(0, colors.Length)]);
                     playField[i, j].InitBox('\u2588');
                     playField[i, j].DrawBox();
                 }
@@ -58,7 +61,7 @@ namespace ConsoleApplication1
                     }
                     if (keyPressed.Key == ConsoleKey.Spacebar)
                     {
-                        playField[cursorX, cursorY].boxState = 1; // isSelected
+                        playField[cursorX, cursorY].isSelected = true; // isSelected
                         playField[cursorX, cursorY].DrawBox();
                     }
                     else
@@ -67,20 +70,20 @@ namespace ConsoleApplication1
                         {
                             for (int j = 0; j < playField.GetLength(1); j++)
                             {
-                                if (playField[i, j].boxState != 1)
+                                //if (playField[i, j].isSelected) {
+                                //  playField[i, j].isSelected = false;
+                                //  playField[i, j].DrawBox();
+                                //}
+                                if (playField[i, j].isCursorPosition)
                                 {
-                                    playField[i, j].boxState = 0;
+                                    playField[i, j].isCursorPosition = false;
                                 }
                                 playField[i, j].DrawBox();
                             }
                         }
-                        playField[cursorX, cursorY].boxState = 2;
+                        playField[cursorX, cursorY].isCursorPosition = true;
                         playField[cursorX, cursorY].DrawBox();
                     }
-
-
-
-
                 }
 
 
@@ -96,13 +99,15 @@ class Box
         this.x = x;
         this.y = y;
         this.color = color;
-        this.boxState = 0; // 0 - not selected; 1 - isSelected; 2 - isCursor
+        this.isSelected = false; // 0 - not selected; 1 - isSelected; 2 - isCursor
+        this.isCursorPosition = false;
     }
 
     public int x;
     public int y;
     public ConsoleColor color;
-    public byte boxState;
+    public bool isSelected;
+    public bool isCursorPosition;
     char[,] symbols = new char[3, 3];
 
     public void InitBox(char symbol)
@@ -130,9 +135,10 @@ class Box
             }
         }
 
-        switch (boxState)
+        // da go napravq s if i da izpolzvam CLEAR ' ' samo na edno mqsto
+        switch (this.isSelected)
         {
-            case 0: // Not Selected
+            case false: // Not Selected
                 Console.SetCursorPosition(this.x - 1, this.y - 1);
                 Console.Write(' ');
                 Console.SetCursorPosition(this.x + 3, this.y - 1);
@@ -142,18 +148,33 @@ class Box
                 Console.SetCursorPosition(this.x - 1, this.y + 3);
                 Console.Write(' ');
                 break;
-            case 1: // isSelected
+            case true: // isSelected
                 Console.ForegroundColor = ConsoleColor.Red;
-                Console.SetCursorPosition(this.x - 1, this.y - 1);
-                Console.Write('\u250c');
-                Console.SetCursorPosition(this.x + 3, this.y - 1);
-                Console.Write('\u2510');
-                Console.SetCursorPosition(this.x + 3, this.y + 3);
-                Console.Write('\u2518');
-                Console.SetCursorPosition(this.x - 1, this.y + 3);
-                Console.Write('\u2514');
+                Console.SetCursorPosition(this.x + 1, this.y - 1);
+                Console.Write('+');
+                Console.SetCursorPosition(this.x + 3, this.y + 1);
+                Console.Write('+');
+                Console.SetCursorPosition(this.x + 1, this.y + 3);
+                Console.Write('+');
+                Console.SetCursorPosition(this.x - 1, this.y + 1);
+                Console.Write('+');
+                //Console.Write("WZ");
                 break;
-            case 2: // isCursor
+        }
+
+        switch (isCursorPosition)
+        {
+            case false: // Not Selected
+                Console.SetCursorPosition(this.x - 1, this.y - 1);
+                Console.Write(' ');
+                Console.SetCursorPosition(this.x + 3, this.y - 1);
+                Console.Write(' ');
+                Console.SetCursorPosition(this.x + 3, this.y + 3);
+                Console.Write(' ');
+                Console.SetCursorPosition(this.x - 1, this.y + 3);
+                Console.Write(' ');
+                break;
+            case true: // isSelected
                 Console.ForegroundColor = ConsoleColor.White;
                 Console.SetCursorPosition(this.x - 1, this.y - 1);
                 Console.Write('\u250c');
@@ -165,6 +186,8 @@ class Box
                 Console.Write('\u2514');
                 break;
         }
+
+
 
         //if (isCursor)
         //{
