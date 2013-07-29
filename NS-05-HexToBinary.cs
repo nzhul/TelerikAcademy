@@ -7,7 +7,7 @@ class BinaryToDecimal
     {
         Console.Write("Enter Hex Number: ");
         string hexNumber = Console.ReadLine();
-        hexNumber = hexNumber.ToUpper();
+        hexNumber = hexNumber.ToUpper(); // Removes the problem with lower case
         StringBuilder result = new StringBuilder();
 
         for (int i = 0; i < hexNumber.Length; i++)
@@ -32,6 +32,8 @@ class BinaryToDecimal
                 case 'F': result.Append("1111"); break;
             }
         }
-        Console.WriteLine(result);
+        // TrimStart removes the zeros in front of the binary number
+        string finalBit = result.ToString().TrimStart('0');
+        Console.WriteLine(finalBit);
     }
 }
