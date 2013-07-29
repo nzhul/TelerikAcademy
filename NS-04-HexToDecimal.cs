@@ -7,6 +7,7 @@ class BinaryToDecimal
     {
         Console.Write("Enter Hex Number: ");
         string hexNumber = Console.ReadLine();
+        hexNumber = hexNumber.ToUpper(); // Removes the problem with the lower case
         byte[]convertedHex = new byte[hexNumber.Length];
 
         for (int i = 0; i < convertedHex.Length; i++)
@@ -14,27 +15,21 @@ class BinaryToDecimal
             switch (hexNumber[i])
             {
                 case 'A':
-                case 'a':
                     convertedHex[i] = 10;
                     break;
                 case 'B':
-                case 'b':
                     convertedHex[i] = 11;
                     break;
                 case 'C':
-                case 'c':
                     convertedHex[i] = 12;
                     break;
                 case 'D':
-                case 'd':
                     convertedHex[i] = 13;
                     break;
                 case 'E':
-                case 'e':
                     convertedHex[i] = 14;
                     break;
                 case 'F':
-                case 'f':
                     convertedHex[i] = 15;
                     break;
                 default:
