@@ -1,70 +1,117 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿// 10. Write a program to calculate n! for each n in the range [1..100]. 
+//     Hint: Implement first a method that multiplies a number represented as array of digits by given integer number. 
 
-class BigFactorial
+
+using System;
+using System.Collections.Generic;
+
+
+
+class BigFactoriel
 {
     static void Main()
     {
-        Console.Write("Enter the First Number: ");
-        byte[] numberOne = Console.ReadLine().ToCharArray().Select(c => byte.Parse(c.ToString())).ToArray();
-        Console.Write("Enter the Second Number: ");
-        byte[] numberTwo = Console.ReadLine().ToCharArray().Select(c => byte.Parse(c.ToString())).ToArray();
-
-        List<List<byte>> nestedList = Multiply(numberOne, numberTwo);
-
-        for (int i = 0; i < nestedList.Count(); i++)
+        Console.Write("Enter N to Calculate N!: ");
+        int n = int.Parse(Console.ReadLine());
+        List<int> result = new List<int>();
+        int[] temp1 = { 1 };
+        for (int i = 1; i <= n; i++)
         {
-            for (int j = 0; j < nestedList[i].Count(); j++)
-            {
-                Console.Write(nestedList[i][j]);
-            }
-            Console.WriteLine();
+            int[] temp2 = ToCharArray(i);
+            result = MultiplyArrays(temp2, temp1);
+            temp1 = result.ToArray();
+            Console.WriteLine(string.Join("", result));
         }
-
-        // Трябва да направя метод който да върти цикъл с дължината на последния
     }
 
-    static List<List<byte>> Multiply(byte[] numberOne, byte[] numberTwo)
+    // Метод с който събираме получените списъци от първоначалното умножение
+    static List<int> AddingLists(List<int> shorter, List<int> longer)
     {
-        byte carry = 0;
-        byte product = 0;
-        int shift = 0;
-        List<List<byte>> rowsForSum = new List<List<byte>>();
+        List<int> result = new List<int>();
+        shorter.Reverse();
+        longer.Reverse();
+        int carry = 0;
 
-        for (int i = numberOne.Length - 1; i >= 0; i--)
+        for (int i = 0; i < shorter.Count; i++)
         {
-            List<byte> sublist = new List<byte>();
-            for (int s = 0; s < shift; s++)
-            {
-                sublist.Add(0);
-            }
-            for (int j = numberTwo.Length - 1; j >= 0; j--) // moje bi trqbva da vartq na obratno cikala
-            {
-                product = (byte)(numberOne[i] * numberTwo[j] + carry);
-                if (product >= 10)
-                {
-                    carry = (byte)(product / 10);
-                    product %= 10;
-                    sublist.Add(product);
-                }
-                else
-                {
-                    carry = 0;
-                    sublist.Add(product);
-                }
-            }
-            if (carry > 0)
-            {
-                sublist.Add(carry);
-                carry = 0;
-            }
-            sublist.Reverse();
-            rowsForSum.Add(sublist);
-            shift++;
+            result.Add((shorter[i] + longer[i] + carry) % 10);
+            carry = ((shorter[i] + longer[i] + carry) / 10);
         }
 
-        return rowsForSum;
+        for (int i = shorter.Count; i < longer.Count; i++)
+        {
+            result.Add((longer[i] + carry) % 10);
+            carry = (longer[i] + carry) / 10;
+        }
 
+        // Специален случай който покриваме ако стигнем края на longer и все още имаме carry ("1 на ум")
+        if (carry > 0)
+        {
+            result.Add(carry);
+        }
+        result.Reverse();
+        return result;
+    }
+
+    // Този метод умножава едно число от първия масив по всички числа от втория масив
+    // Използва се в MultiplyArrays метода
+    static List<int> SimpleMultiply(int[] array, int number)
+    {
+        List<int> product = new List<int>();
+        int carry = 0;
+        for (int i = array.Length - 1; i >= 0; i--)
+        {
+            product.Add((number * array[i] + carry) % 10);
+            carry = (number * array[i]) / 10;
+        }
+
+        if (carry > 0)
+        {
+            product.Add(carry);
+        }
+
+        product.Reverse();
+        return product;
+    }
+
+    // Тук имплементираме стандартното умножение, както сме го учили в училище.
+    // ВЖ. “karatsuba multiplication“ за по-добро решение.
+    static List<int> MultiplyArrays(int[] first, int[] second)
+    {
+        List<int> result = new List<int>();
+        List<List<int>> temp = new List<List<int>>();
+        for (int i = first.Length - 1, listNum = 0; i >= 0; i--, listNum++)
+        {
+            temp.Add(SimpleMultiply(second, first[i]));
+            for (int shift = first.Length - 1; shift > i; shift--)
+            {
+                temp[listNum].Add(0);
+            }
+        }
+        if (temp.Count > 1)
+        {
+            for (int i = 0; i < temp.Count - 1; i++)
+            {
+                result = AddingLists(temp[i], temp[i + 1]);
+                temp[i + 1] = result;
+            }
+
+            return result;
+        }
+        else
+        {
+            return temp[0];
+        }
+    }
+
+    static int[] ToCharArray(int num)
+    {
+        string stringNum = num.ToString();
+        int[] result = new int[stringNum.Length];
+        for (int i = 0; i < result.Length; i++)
+        {
+            result[i] = stringNum[i] - '0';
+        }
+        return result;
     }
 }
