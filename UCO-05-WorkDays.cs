@@ -30,7 +30,7 @@ class WorkDays
 
         // The program calculates correctly the workdays only for furure that
         // that is in the year of 2013.
-        // It must be fixed to work for any future year.!
+        // It must be fixed to work for any future year.
         DateTime[] officialHolidays = 
         {
             new DateTime(2013, 1, 1), // Нова година
@@ -61,7 +61,7 @@ class WorkDays
                 // Ако текущия ден не е част равен на някой от официалните празници
                 for (int j = 0; j < officialHolidays.Length; j++)
                 {
-                    if (startDate == officialHolidays[j])
+                    if (startDate.Day == officialHolidays[j].Day && startDate.Month == officialHolidays[j].Month)
                     {
                         isHolyday = true;
                         break;
