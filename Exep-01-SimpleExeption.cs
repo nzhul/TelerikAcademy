@@ -13,7 +13,7 @@ class SimpleExeption
         catch (ArgumentException)
         {
 
-            Console.WriteLine("Invalid number");
+            Console.WriteLine("Invalid number (Ctrl+Z)");
         }
         catch (FormatException)
         {
