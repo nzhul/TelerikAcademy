@@ -6,14 +6,15 @@ namespace ConsoleApplication1
     {
         public static bool selectionExist = false;
         public static int[] lastSelection = { -1, -1 };
+        public static int cursorX = 0;
+        public static int cursorY = 0;
 
         static void Main(string[] args)
         {
             Console.BufferHeight = Console.WindowHeight = 50;
             Console.BufferWidth = Console.WindowWidth = 60;
 
-            
-            
+
 
             Box[,] playField = new Box[8, 8];
 
@@ -30,8 +31,6 @@ namespace ConsoleApplication1
                 }
             }
 
-            int cursorX = 0;
-            int cursorY = 0;
             while (true)
             {
                 if (Console.KeyAvailable)
@@ -55,6 +54,10 @@ namespace ConsoleApplication1
                         {
                             cursorX++;
                         }
+                        if (selectionExist)
+                        {
+                            Swap(playField[lastSelection[0], lastSelection[1]], playField[cursorX, cursorY], playField);
+                        }
                     }
                     if (keyPressed.Key == ConsoleKey.UpArrow)
                     {
@@ -62,12 +65,20 @@ namespace ConsoleApplication1
                         {
                             cursorY--;
                         }
+                        if (selectionExist)
+                        {
+                            Swap(playField[lastSelection[0], lastSelection[1]], playField[cursorX, cursorY], playField);
+                        }
                     }
                     if (keyPressed.Key == ConsoleKey.DownArrow)
                     {
                         if (cursorY < 7)
                         {
                             cursorY++;
+                        }
+                        if (selectionExist)
+                        {
+                            Swap(playField[lastSelection[0], lastSelection[1]], playField[cursorX, cursorY], playField);
                         }
                     }
                     if (keyPressed.Key == ConsoleKey.Spacebar)
@@ -84,10 +95,6 @@ namespace ConsoleApplication1
                         {
                             for (int j = 0; j < playField.GetLength(1); j++)
                             {
-                                //if (playField[i, j].isSelected) {
-                                //  playField[i, j].isSelected = false;
-                                //  playField[i, j].DrawBox();
-                                //}
                                 if (playField[i, j].isCursorPosition)
                                 {
                                     playField[i, j].isCursorPosition = false;
@@ -113,17 +120,15 @@ namespace ConsoleApplication1
             second.x = tempX;
             second.y = tempY;
 
-            //Box tempJewel = playField[first.x, first.y];
-            //playField[first.x, first.y] = playField[second.x, second.y];
-            //playField[second.x, second.y] = playField[first.x, second.y];
-
             selectionExist = false;
             first.isSelected = false;
             second.isSelected = false;
             first.DrawBox();
             second.DrawBox();
-            lastSelection[0] = -1;
-            lastSelection[1] = -1;
+
+            Box tempJewel = playField[lastSelection[0], lastSelection[1]];
+            playField[lastSelection[0], lastSelection[1]] = playField[cursorX, cursorY];
+            playField[cursorX, cursorY] = tempJewel;
         }
     }
 }
@@ -135,47 +140,48 @@ class Box
         this.x = x;
         this.y = y;
         this.color = color;
-        switch (color)
-        {
-            case ConsoleColor.Black:
-                break;
-            case ConsoleColor.Blue:
-                this.colorID = 1;
-                break;
-            case ConsoleColor.Cyan:
-                this.colorID = 4;
-                break;
-            case ConsoleColor.DarkBlue:
-                break;
-            case ConsoleColor.DarkCyan:
-                break;
-            case ConsoleColor.DarkGray:
-                break;
-            case ConsoleColor.DarkGreen:
-                this.colorID = 3;
-                break;
-            case ConsoleColor.DarkMagenta:
-                break;
-            case ConsoleColor.DarkRed:
-                break;
-            case ConsoleColor.DarkYellow:
-                break;
-            case ConsoleColor.Gray:
-                break;
-            case ConsoleColor.Green:
-                break;
-            case ConsoleColor.Magenta:
-                this.colorID = 5;
-                break;
-            case ConsoleColor.Red:
-                this.colorID = 2;
-                break;
-            case ConsoleColor.White:
-                break;
-            case ConsoleColor.Yellow:
-                this.colorID = 0;
-                break;
-        }
+
+        //switch (color)
+        //{
+        //    case ConsoleColor.Black:
+        //        break;
+        //    case ConsoleColor.Blue:
+        //        this.colorID = 1;
+        //        break;
+        //    case ConsoleColor.Cyan:
+        //        this.colorID = 4;
+        //        break;
+        //    case ConsoleColor.DarkBlue:
+        //        break;
+        //    case ConsoleColor.DarkCyan:
+        //        break;
+        //    case ConsoleColor.DarkGray:
+        //        break;
+        //    case ConsoleColor.DarkGreen:
+        //        this.colorID = 3;
+        //        break;
+        //    case ConsoleColor.DarkMagenta:
+        //        break;
+        //    case ConsoleColor.DarkRed:
+        //        break;
+        //    case ConsoleColor.DarkYellow:
+        //        break;
+        //    case ConsoleColor.Gray:
+        //        break;
+        //    case ConsoleColor.Green:
+        //        break;
+        //    case ConsoleColor.Magenta:
+        //        this.colorID = 5;
+        //        break;
+        //    case ConsoleColor.Red:
+        //        this.colorID = 2;
+        //        break;
+        //    case ConsoleColor.White:
+        //        break;
+        //    case ConsoleColor.Yellow:
+        //        this.colorID = 0;
+        //        break;
+        //}
         this.isSelected = false; // 0 - not selected; 1 - isSelected; 2 - isCursor
         this.isCursorPosition = false;
     }
@@ -217,13 +223,13 @@ class Box
         switch (this.isSelected)
         {
             case false: // Not Selected 
-                Console.SetCursorPosition(this.x - 1, this.y - 1);
+                Console.SetCursorPosition(this.x + 1, this.y - 1);
                 Console.Write(' ');
-                Console.SetCursorPosition(this.x + 3, this.y - 1);
+                Console.SetCursorPosition(this.x + 3, this.y + 1);
                 Console.Write(' ');
-                Console.SetCursorPosition(this.x + 3, this.y + 3);
+                Console.SetCursorPosition(this.x + 1, this.y + 3);
                 Console.Write(' ');
-                Console.SetCursorPosition(this.x - 1, this.y + 3);
+                Console.SetCursorPosition(this.x - 1, this.y + 1);
                 Console.Write(' ');
                 break;
             case true: // isSelected
