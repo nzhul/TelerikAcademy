@@ -8,13 +8,12 @@ namespace ConsoleApplication1
         public static int[] lastSelection = { -1, -1 };
         public static int cursorX = 0;
         public static int cursorY = 0;
+        public static int score = 25;
+        
 
         static void Main(string[] args)
         {
-            Console.BufferHeight = Console.WindowHeight = 50;
-            Console.BufferWidth = Console.WindowWidth = 60;
-
-
+            Settings();
 
             Box[,] playField = new Box[8, 8];
 
@@ -107,9 +106,28 @@ namespace ConsoleApplication1
                     }
                 }
 
-
+                ScoreField();
             }
         }
+
+        private static void ScoreField()
+        {
+            Console.SetCursorPosition(0, 33);
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.Write("---------------------------------");
+            Console.SetCursorPosition(1, 35);
+            Console.Write("Score: {0}", score);
+            Console.SetCursorPosition(20, 35);
+        }
+
+        private static void Settings()
+        {
+            Console.CursorVisible = false;
+            Console.BufferHeight = Console.WindowHeight = 50;
+            Console.BufferWidth = Console.WindowWidth = 33;
+        }
+
+
 
         static void Swap(Box first, Box second, Box[,] playField)
         {
@@ -227,22 +245,33 @@ class Box
                 Console.Write(' ');
                 Console.SetCursorPosition(this.x + 3, this.y + 1);
                 Console.Write(' ');
+                Console.SetCursorPosition(this.x + 3, this.y);
+                Console.Write(' ');
+                Console.SetCursorPosition(this.x + 3, this.y + 2);
+                Console.Write(' ');
                 Console.SetCursorPosition(this.x + 1, this.y + 3);
                 Console.Write(' ');
                 Console.SetCursorPosition(this.x - 1, this.y + 1);
+                Console.Write(' ');
+                Console.SetCursorPosition(this.x - 1, this.y);
+                Console.Write(' ');
+                Console.SetCursorPosition(this.x - 1, this.y + 2);
                 Console.Write(' ');
                 break;
             case true: // isSelected
-                Console.ForegroundColor = ConsoleColor.Red;
-                Console.SetCursorPosition(this.x + 1, this.y - 1);
-                Console.Write('+');
+                Console.ForegroundColor = ConsoleColor.White;
                 Console.SetCursorPosition(this.x + 3, this.y + 1);
-                Console.Write('+');
-                Console.SetCursorPosition(this.x + 1, this.y + 3);
-                Console.Write('+');
+                Console.Write('|');
+                Console.SetCursorPosition(this.x + 3, this.y);
+                Console.Write('|');
+                Console.SetCursorPosition(this.x + 3, this.y + 2);
+                Console.Write('|');
                 Console.SetCursorPosition(this.x - 1, this.y + 1);
-                Console.Write('+');
-                //Console.Write("WZ");
+                Console.Write('|');
+                Console.SetCursorPosition(this.x - 1, this.y);
+                Console.Write('|');
+                Console.SetCursorPosition(this.x - 1, this.y + 2);
+                Console.Write('|');
                 break;
         }
 
