@@ -1,4 +1,5 @@
 using System;
+using System.Threading;
 
 namespace ConsoleApplication1
 {
@@ -9,26 +10,17 @@ namespace ConsoleApplication1
         public static int cursorX = 0;
         public static int cursorY = 0;
         public static int score = 25;
-        
 
         static void Main(string[] args)
         {
             Settings();
+            //ScoreField();
 
-            Box[,] playField = new Box[8, 8];
+            Box[,] playField = InitPlayField();
 
-            ConsoleColor[] colors = { ConsoleColor.Yellow, ConsoleColor.Blue, ConsoleColor.Red, ConsoleColor.Green, ConsoleColor.Cyan, ConsoleColor.Magenta };
-            Random randColor = new Random();
-
-            for (int i = 0; i < playField.GetLength(0); i++)
-            {
-                for (int j = 0; j < playField.GetLength(1); j++)
-                {
-                    playField[i, j] = new Box(i * 4 + 1, j * 4 + 1, colors[randColor.Next(0, colors.Length)]);
-                    playField[i, j].InitBox('\u2588');
-                    playField[i, j].DrawBox();
-                }
-            }
+            bool[,] boxesToRemove = FindBoxesForRemove(playField);
+            DestroyJewels(playField, boxesToRemove);
+            TestMatrix(boxesToRemove);
 
             while (true)
             {
@@ -41,11 +33,10 @@ namespace ConsoleApplication1
                         {
                             cursorX--;
                         }
-                        // TODO
                         if (selectionExist)
                         {
                             Swap(playField[lastSelection[0], lastSelection[1]], playField[cursorX, cursorY], playField);
-                        }
+                    }
                     }
                     if (keyPressed.Key == ConsoleKey.RightArrow)
                     {
@@ -56,7 +47,7 @@ namespace ConsoleApplication1
                         if (selectionExist)
                         {
                             Swap(playField[lastSelection[0], lastSelection[1]], playField[cursorX, cursorY], playField);
-                        }
+                    }
                     }
                     if (keyPressed.Key == ConsoleKey.UpArrow)
                     {
@@ -67,7 +58,7 @@ namespace ConsoleApplication1
                         if (selectionExist)
                         {
                             Swap(playField[lastSelection[0], lastSelection[1]], playField[cursorX, cursorY], playField);
-                        }
+                    }
                     }
                     if (keyPressed.Key == ConsoleKey.DownArrow)
                     {
@@ -78,7 +69,7 @@ namespace ConsoleApplication1
                         if (selectionExist)
                         {
                             Swap(playField[lastSelection[0], lastSelection[1]], playField[cursorX, cursorY], playField);
-                        }
+                    }
                     }
                     if (keyPressed.Key == ConsoleKey.Spacebar)
                     {
@@ -104,10 +95,69 @@ namespace ConsoleApplication1
                         playField[cursorX, cursorY].isCursorPosition = true;
                         playField[cursorX, cursorY].DrawBox();
                     }
+                    // ScoreField(); - Here we can update the score field
                 }
-
-                ScoreField();
             }
+        }
+
+        private static void DestroyJewels(Box[,] playField, bool[,] boxesToRemove)
+        {
+            Thread.Sleep(500); //TODO: Adjust Speed
+            for (int y = 0; y < playField.GetLength(0); y++)
+            {
+                for (int x = 0; x < playField.GetLength(1); x++)
+                {
+                    if (boxesToRemove[x, y] == true)
+                    {
+                        playField[x, y].color = ConsoleColor.Black;
+                        Thread.Sleep(200); //TODO: Adjust Speed
+                        playField[x, y].DrawBox();
+                    }
+                }
+            }
+        }
+
+        private static void TestMatrix(bool[,] boxesToRemove)
+        {
+            Console.SetCursorPosition(0, 35);
+            Console.ForegroundColor = ConsoleColor.White;
+            for (int i = 0; i < boxesToRemove.GetLength(0); i++)
+            {
+                for (int j = 0; j < boxesToRemove.GetLength(1); j++)
+                {
+                    if (boxesToRemove[j, i] == true)
+                    {
+                        Console.ForegroundColor = ConsoleColor.Red;
+                        Console.Write("T ");
+                        Console.ForegroundColor = ConsoleColor.White;
+                    }
+                    else
+                    {
+                        Console.Write("F ");
+                    }
+                }
+                Console.WriteLine();
+                Console.WriteLine();
+            }
+        }
+
+        private static Box[,] InitPlayField()
+        {
+            Box[,] playField = new Box[8, 8];
+
+            ConsoleColor[] colors = { ConsoleColor.Yellow, ConsoleColor.Blue, ConsoleColor.Red, ConsoleColor.Green, ConsoleColor.Cyan, ConsoleColor.Magenta };
+            Random randColor = new Random();
+
+            for (int i = 0; i < playField.GetLength(0); i++)
+            {
+                for (int j = 0; j < playField.GetLength(1); j++)
+                {
+                    playField[i, j] = new Box(i * 4 + 1, j * 4 + 1, colors[randColor.Next(0, colors.Length)]);
+                    playField[i, j].InitBox('\u2588'); // Dark-Shade: \u2593; MediumShade: \u2592; LightShade: \u2591
+                    playField[i, j].DrawBox();
+                }
+            }
+            return playField;
         }
 
         private static void ScoreField()
@@ -123,8 +173,9 @@ namespace ConsoleApplication1
         private static void Settings()
         {
             Console.CursorVisible = false;
-            Console.BufferHeight = Console.WindowHeight = 50;
+            Console.BufferHeight = Console.WindowHeight = 60; // 38 default
             Console.BufferWidth = Console.WindowWidth = 33;
+            Console.Title = "Just Jewels";
         }
 
 
@@ -148,8 +199,106 @@ namespace ConsoleApplication1
             playField[lastSelection[0], lastSelection[1]] = playField[cursorX, cursorY];
             playField[cursorX, cursorY] = tempJewel;
         }
-    }
-}
+
+        public static bool[,] FindBoxesForRemove(Box[,] playField)
+        {
+            int currentSeq = 1;
+            int bestSeq = int.MinValue;
+            int bestSeqX = 0;
+            int bestSeqY = 0;
+            int bestSeqDirection = 1; // 1 = horizontal; 2 = right
+            bool finishFlag = false;
+            bool[,] selectedCells = new bool[playField.GetLength(0), playField.GetLength(1)];
+
+            do
+            {
+                // horizontal sequences - left to right
+                for (int x = 0; x < playField.GetLength(0); x++)
+                {
+                    for (int y = 0; y < playField.GetLength(1) - 1; y++)
+                    {
+                        // Ако цветовете им съвпадат и не са били селектирани вече - ги добавяме в редицата
+                        if (playField[x, y].color == playField[x, y + 1].color && selectedCells[x, y] == false)
+                        {
+                            currentSeq++;
+                        }
+                        else
+                        {
+                            currentSeq = 1;
+                        }
+
+                        if (currentSeq > bestSeq)
+                        {
+                            bestSeq = currentSeq;
+                            bestSeqX = x;
+                            bestSeqY = y + 1;
+                            bestSeqDirection = 1; // 1 = horizontal
+                        }
+                    }
+                    currentSeq = 1;
+                }
+
+                // vertical sequences - top to down
+                for (int y = 0; y < playField.GetLength(1); y++)
+                {
+                    for (int x = 0; x < playField.GetLength(0) - 1; x++)
+                    {
+                        if (playField[x, y].color == playField[x + 1, y].color && selectedCells[x, y] == false)
+                        {
+                            currentSeq++;
+                        }
+                        else
+                        {
+                            currentSeq = 1;
+                        }
+
+                        if (currentSeq > bestSeq)
+                        {
+                            bestSeq = currentSeq;
+                            bestSeqY = y;
+                            bestSeqX = x + 1;
+                            bestSeqDirection = 2; // 2 = down
+                        }
+                    }
+                    currentSeq = 1;
+                }
+
+                // Populate the bool matrix for selected cells only when the sequence length is longer than 2
+                if (bestSeq >= 3)
+                {
+                    switch (bestSeqDirection)
+                    {
+                        case 1: // 1 = horizontal
+                            for (int i = bestSeqY; i >= Math.Abs(bestSeq - bestSeqY - 1); i--)
+                            {
+                                selectedCells[bestSeqX, i] = true;
+                            }
+                            break;
+                        case 2: // 2 = down
+                            for (int i = bestSeqX; i >= Math.Abs(bestSeq - bestSeqX - 1); i--)
+                            {
+                                selectedCells[i, bestSeqY] = true;
+                            }
+                            break;
+                        default:
+                            break;
+                    }
+                }
+                else
+                {
+                    finishFlag = true;
+                }
+                currentSeq = 1;
+                bestSeq = int.MinValue;
+                bestSeqX = 0;
+                bestSeqY = 0;
+                bestSeqDirection = 1; // 1 = horizontal; 2 = right
+            } while (finishFlag == false);
+            return selectedCells;
+        }
+
+      }
+ }
 
 class Box
 {
@@ -158,49 +307,7 @@ class Box
         this.x = x;
         this.y = y;
         this.color = color;
-
-        //switch (color)
-        //{
-        //    case ConsoleColor.Black:
-        //        break;
-        //    case ConsoleColor.Blue:
-        //        this.colorID = 1;
-        //        break;
-        //    case ConsoleColor.Cyan:
-        //        this.colorID = 4;
-        //        break;
-        //    case ConsoleColor.DarkBlue:
-        //        break;
-        //    case ConsoleColor.DarkCyan:
-        //        break;
-        //    case ConsoleColor.DarkGray:
-        //        break;
-        //    case ConsoleColor.DarkGreen:
-        //        this.colorID = 3;
-        //        break;
-        //    case ConsoleColor.DarkMagenta:
-        //        break;
-        //    case ConsoleColor.DarkRed:
-        //        break;
-        //    case ConsoleColor.DarkYellow:
-        //        break;
-        //    case ConsoleColor.Gray:
-        //        break;
-        //    case ConsoleColor.Green:
-        //        break;
-        //    case ConsoleColor.Magenta:
-        //        this.colorID = 5;
-        //        break;
-        //    case ConsoleColor.Red:
-        //        this.colorID = 2;
-        //        break;
-        //    case ConsoleColor.White:
-        //        break;
-        //    case ConsoleColor.Yellow:
-        //        this.colorID = 0;
-        //        break;
-        //}
-        this.isSelected = false; // 0 - not selected; 1 - isSelected; 2 - isCursor
+        this.isSelected = false;
         this.isCursorPosition = false;
     }
 
@@ -210,7 +317,6 @@ class Box
     public bool isSelected;
     public bool isCursorPosition;
     char[,] symbols = new char[3, 3];
-    public int colorID = 0;
 
     public void InitBox(char symbol)
     {
@@ -237,7 +343,6 @@ class Box
             }
         }
 
-        // da go napravq s if i da izpolzvam CLEAR ' ' samo na edno mqsto
         switch (this.isSelected)
         {
             case false: // Not Selected 
@@ -288,7 +393,7 @@ class Box
                 Console.Write(' ');
                 break;
             case true: // isSelected
-                Console.ForegroundColor = ConsoleColor.White;
+                Console.ForegroundColor = ConsoleColor.Yellow;
                 Console.SetCursorPosition(this.x - 1, this.y - 1);
                 Console.Write('\u250c');
                 Console.SetCursorPosition(this.x + 3, this.y - 1);
@@ -299,57 +404,5 @@ class Box
                 Console.Write('\u2514');
                 break;
         }
-
-
-
-        //if (isCursor)
-        //{
-        //    Console.ForegroundColor = ConsoleColor.White;
-        //    Console.SetCursorPosition(this.x - 1, this.y - 1);
-        //    Console.Write('\u250c');
-        //    Console.SetCursorPosition(this.x + 3, this.y - 1);
-        //    Console.Write('\u2510');
-        //    Console.SetCursorPosition(this.x + 3, this.y + 3);
-        //    Console.Write('\u2518');
-        //    Console.SetCursorPosition(this.x - 1, this.y + 3);
-        //    Console.Write('\u2514');
-        //}
-        //else
-        //{
-        //    Console.SetCursorPosition(this.x - 1, this.y - 1);
-        //    Console.Write(' ');
-        //    Console.SetCursorPosition(this.x + 3, this.y - 1);
-        //    Console.Write(' ');
-        //    Console.SetCursorPosition(this.x + 3, this.y + 3);
-        //    Console.Write(' ');
-        //    Console.SetCursorPosition(this.x - 1, this.y + 3);
-        //    Console.Write(' ');
-        //}
-
-        //if (isSelected)
-        //{
-        //    Console.ForegroundColor = ConsoleColor.Red;
-        //    Console.SetCursorPosition(this.x - 1, this.y - 1);
-        //    Console.Write('\u250c');
-        //    Console.SetCursorPosition(this.x + 3, this.y - 1);
-        //    Console.Write('\u2510');
-        //    Console.SetCursorPosition(this.x + 3, this.y + 3);
-        //    Console.Write('\u2518');
-        //    Console.SetCursorPosition(this.x - 1, this.y + 3);
-        //    Console.Write('\u2514');
-        //}
-        //else
-        //{
-        //    Console.SetCursorPosition(this.x - 1, this.y - 1);
-        //    Console.Write(' ');
-        //    Console.SetCursorPosition(this.x + 3, this.y - 1);
-        //    Console.Write(' ');
-        //    Console.SetCursorPosition(this.x + 3, this.y + 3);
-        //    Console.Write(' ');
-        //    Console.SetCursorPosition(this.x - 1, this.y + 3);
-        //    Console.Write(' ');
-        //}
     }
-
-    // Selected
 }
