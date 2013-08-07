@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Threading;
 
 namespace ConsoleApplication1
@@ -10,6 +10,8 @@ namespace ConsoleApplication1
         public static int cursorX = 0;
         public static int cursorY = 0;
         public static int score = 25;
+        public static ConsoleColor[] colors = { ConsoleColor.Yellow, ConsoleColor.Blue, ConsoleColor.Red, ConsoleColor.Green, ConsoleColor.Cyan, ConsoleColor.Magenta };
+        public static Random randColor = new Random();
 
         static void Main(string[] args)
         {
@@ -19,8 +21,48 @@ namespace ConsoleApplication1
             Box[,] playField = InitPlayField();
 
             bool[,] boxesToRemove = FindBoxesForRemove(playField);
-            DestroyJewels(playField, boxesToRemove);
             TestMatrix(boxesToRemove);
+            DestroyJewels(playField, boxesToRemove);
+
+            while (!isFull(playField))
+            {
+                for (int y = playField.GetLength(0) - 2; y >= 0; y--) // very Important to be GetLength(0) - 2 becouse we dont want to check the last ROW!
+                {
+                    for (int x = playField.GetLength(1) - 1; x >= 0; x--)
+                    {
+                        // Ако текущия Jewel не е черен и Jewel-a под него е черен - правим SWAP
+                        if (playField[x, y].color != ConsoleColor.Black && playField[x, y + 1].color == ConsoleColor.Black)
+                        {
+                            Thread.Sleep(50);
+                            lastSelection[0] = x;
+                            lastSelection[1] = y;
+                            cursorX = x;
+                            cursorY = y + 1;
+                            Swap(playField[x, y], playField[x, y + 1], playField);
+                        }
+                        // Ако сме на нулевия ред и квадратчето е черно - го пречертаваме и му даваме Random цвят!
+                        if (y == 0 && playField[x, y].color == ConsoleColor.Black)
+                        {
+                            playField[x, y].color = colors[randColor.Next(0, colors.Length)];
+                            Thread.Sleep(30);
+                            playField[x, y].InitBox('\u2591'); // Light-Shade
+                            playField[x, y].DrawBox();
+                            Thread.Sleep(50);
+                            playField[x, y].InitBox('\u2592'); // Medium-Shade
+                            playField[x, y].DrawBox();
+                            Thread.Sleep(50);
+                            playField[x, y].InitBox('\u2593'); // Dark-Shade 
+                            playField[x, y].DrawBox();
+                            Thread.Sleep(50);
+                            playField[x, y].InitBox('\u2588'); // Restore FULL BLOCK when BLACK!
+                            playField[x, y].DrawBox();
+                        }
+                    }
+                }
+            }
+            //Console.WriteLine("Done Swapping");
+
+            //isEmpty(boxesToRemove); // - This method checks if the boxesToRemove bool matrix is empty or not
 
             while (true)
             {
@@ -36,7 +78,7 @@ namespace ConsoleApplication1
                         if (selectionExist)
                         {
                             Swap(playField[lastSelection[0], lastSelection[1]], playField[cursorX, cursorY], playField);
-                    }
+                        }
                     }
                     if (keyPressed.Key == ConsoleKey.RightArrow)
                     {
@@ -47,7 +89,7 @@ namespace ConsoleApplication1
                         if (selectionExist)
                         {
                             Swap(playField[lastSelection[0], lastSelection[1]], playField[cursorX, cursorY], playField);
-                    }
+                        }
                     }
                     if (keyPressed.Key == ConsoleKey.UpArrow)
                     {
@@ -58,7 +100,7 @@ namespace ConsoleApplication1
                         if (selectionExist)
                         {
                             Swap(playField[lastSelection[0], lastSelection[1]], playField[cursorX, cursorY], playField);
-                    }
+                        }
                     }
                     if (keyPressed.Key == ConsoleKey.DownArrow)
                     {
@@ -69,7 +111,7 @@ namespace ConsoleApplication1
                         if (selectionExist)
                         {
                             Swap(playField[lastSelection[0], lastSelection[1]], playField[cursorX, cursorY], playField);
-                    }
+                        }
                     }
                     if (keyPressed.Key == ConsoleKey.Spacebar)
                     {
@@ -100,17 +142,57 @@ namespace ConsoleApplication1
             }
         }
 
+        private static bool isFull(Box[,] playField)
+        {
+            for (int y = 0; y < playField.GetLength(0); y++)
+            {
+                for (int x = 0; x < playField.GetLength(1); x++)
+                {
+                    if (playField[x, y].color == ConsoleColor.Black)
+                    {
+                        return false;
+                    }
+                }
+            }
+            return true;
+        }
+
+        private static bool isEmpty(bool[,] boxesToRemove)
+        {
+            for (int y = 0; y < boxesToRemove.GetLength(0); y++)
+            {
+                for (int x = 0; x < boxesToRemove.GetLength(1); x++)
+                {
+                    if (boxesToRemove[x, y])
+                    {
+                        return false;
+                    }
+                }
+            }
+            return true;
+        }
+
         private static void DestroyJewels(Box[,] playField, bool[,] boxesToRemove)
         {
-            Thread.Sleep(500); //TODO: Adjust Speed
+            Thread.Sleep(400); //TODO: Adjust Speed
             for (int y = 0; y < playField.GetLength(0); y++)
             {
                 for (int x = 0; x < playField.GetLength(1); x++)
                 {
                     if (boxesToRemove[x, y] == true)
                     {
+                        playField[x, y].InitBox('\u2593'); // Dark-Shade
+                        playField[x, y].DrawBox();
+                        Thread.Sleep(50);
+                        playField[x, y].InitBox('\u2592'); // Medium-Shade
+                        playField[x, y].DrawBox();
+                        Thread.Sleep(50);
+                        playField[x, y].InitBox('\u2591'); // Light-Shade
+                        playField[x, y].DrawBox();
+                        Thread.Sleep(50);
                         playField[x, y].color = ConsoleColor.Black;
-                        Thread.Sleep(200); //TODO: Adjust Speed
+                        Thread.Sleep(50);
+                        playField[x, y].InitBox('\u2588'); // Restore FULL BLOCK when BLACK!
                         playField[x, y].DrawBox();
                     }
                 }
@@ -119,7 +201,7 @@ namespace ConsoleApplication1
 
         private static void TestMatrix(bool[,] boxesToRemove)
         {
-            Console.SetCursorPosition(0, 35);
+            Console.SetCursorPosition(0, 38);
             Console.ForegroundColor = ConsoleColor.White;
             for (int i = 0; i < boxesToRemove.GetLength(0); i++)
             {
@@ -144,9 +226,6 @@ namespace ConsoleApplication1
         private static Box[,] InitPlayField()
         {
             Box[,] playField = new Box[8, 8];
-
-            ConsoleColor[] colors = { ConsoleColor.Yellow, ConsoleColor.Blue, ConsoleColor.Red, ConsoleColor.Green, ConsoleColor.Cyan, ConsoleColor.Magenta };
-            Random randColor = new Random();
 
             for (int i = 0; i < playField.GetLength(0); i++)
             {
@@ -297,8 +376,8 @@ namespace ConsoleApplication1
             return selectedCells;
         }
 
-      }
- }
+    }
+}
 
 class Box
 {
@@ -393,7 +472,7 @@ class Box
                 Console.Write(' ');
                 break;
             case true: // isSelected
-                Console.ForegroundColor = ConsoleColor.Yellow;
+                Console.ForegroundColor = ConsoleColor.White;
                 Console.SetCursorPosition(this.x - 1, this.y - 1);
                 Console.Write('\u250c');
                 Console.SetCursorPosition(this.x + 3, this.y - 1);
