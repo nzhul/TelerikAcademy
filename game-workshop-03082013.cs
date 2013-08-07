@@ -393,7 +393,7 @@ class Box
                 Console.Write(' ');
                 break;
             case true: // isSelected
-                Console.ForegroundColor = ConsoleColor.Yellow;
+                Console.ForegroundColor = ConsoleColor.White;
                 Console.SetCursorPosition(this.x - 1, this.y - 1);
                 Console.Write('\u250c');
                 Console.SetCursorPosition(this.x + 3, this.y - 1);
