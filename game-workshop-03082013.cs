@@ -12,57 +12,18 @@ namespace ConsoleApplication1
         public static int score = 25;
         public static ConsoleColor[] colors = { ConsoleColor.Yellow, ConsoleColor.Blue, ConsoleColor.Red, ConsoleColor.Green, ConsoleColor.Cyan, ConsoleColor.Magenta };
         public static Random randColor = new Random();
+        public static bool[,] boxesToRemove = new bool[8, 8];
+        public static Box[,] playField = InitPlayField();
 
         static void Main(string[] args)
         {
             Settings();
             //ScoreField();
 
-            Box[,] playField = InitPlayField();
-
-            bool[,] boxesToRemove = FindBoxesForRemove(playField);
-            TestMatrix(boxesToRemove);
-            DestroyJewels(playField, boxesToRemove);
-
-            while (!isFull(playField))
-            {
-            for (int y = playField.GetLength(0) - 2; y >= 0; y--) // very Important to be GetLength(0) - 2 becouse we dont want to check the last ROW!
-            {
-                for (int x = playField.GetLength(1) - 1; x >= 0; x--)
-                {
-                    // Ако текущия Jewel не е черен и Jewel-a под него е черен - правим SWAP
-                    if (playField[x, y].color != ConsoleColor.Black && playField[x, y + 1].color == ConsoleColor.Black)
-                    {
-                        Thread.Sleep(50);
-                        lastSelection[0] = x;
-                        lastSelection[1] = y;
-                        cursorX = x;
-                        cursorY = y + 1;
-                        Swap(playField[x, y], playField[x, y + 1], playField);
-                    }
-                    // Ако сме на нулевия ред и квадратчето е черно - го пречертаваме и му даваме Random цвят!
-                    if (y == 0 && playField[x, y].color == ConsoleColor.Black) 
-                    {
-                        playField[x, y].color = colors[randColor.Next(0, colors.Length)];
-                        Thread.Sleep(30);
-                        playField[x, y].InitBox('\u2591'); // Light-Shade
-                        playField[x, y].DrawBox();
-                        Thread.Sleep(50); 
-                        playField[x, y].InitBox('\u2592'); // Medium-Shade
-                        playField[x, y].DrawBox();
-                        Thread.Sleep(50);
-                        playField[x, y].InitBox('\u2593'); // Dark-Shade 
-                        playField[x, y].DrawBox();
-                        Thread.Sleep(50);
-                        playField[x, y].InitBox('\u2588'); // Restore FULL BLOCK when BLACK!
-                        playField[x, y].DrawBox();
-                    }
-                }
-            }
-            }
+            FallDownAndGenerateNewJewels();
             //Console.WriteLine("Done Swapping");
-            
-            //isEmpty(boxesToRemove); // - This method checks if the boxesToRemove bool matrix is empty or not
+
+
 
             while (true)
             {
@@ -78,6 +39,19 @@ namespace ConsoleApplication1
                         if (selectionExist)
                         {
                             Swap(playField[lastSelection[0], lastSelection[1]], playField[cursorX, cursorY], playField);
+                            // Ако след разменянето - нямаме комбинация - връщаме оригиналните позиции.
+                            // TODO: Може да се вкара анимация, понеже в момента изглежда все едно, че нищо не се случва.
+                            if (isEmpty(FindBoxesForRemove(playField)))
+                            {
+                                Swap(playField[lastSelection[0], lastSelection[1]], playField[cursorX, cursorY], playField);
+                            }
+                            // Ако имаме комбинация - пускаме метода за чистене
+                            else
+                            {
+                                playField[cursorX, cursorY].isCursorPosition = false;
+                                playField[cursorX, cursorY].DrawBox();
+                                FallDownAndGenerateNewJewels();
+                            }
                         }
                     }
                     if (keyPressed.Key == ConsoleKey.RightArrow)
@@ -89,6 +63,19 @@ namespace ConsoleApplication1
                         if (selectionExist)
                         {
                             Swap(playField[lastSelection[0], lastSelection[1]], playField[cursorX, cursorY], playField);
+                            // Ако след разменянето - нямаме комбинация - връщаме оригиналните позиции.
+                            // TODO: Може да се вкара анимация, понеже в момента изглежда все едно, че нищо не се случва.
+                            if (isEmpty(FindBoxesForRemove(playField)))
+                            {
+                                Swap(playField[lastSelection[0], lastSelection[1]], playField[cursorX, cursorY], playField);
+                            }
+                            // Ако имаме комбинация - пускаме метода за чистене
+                            else
+                            {
+                                playField[cursorX, cursorY].isCursorPosition = false;
+                                playField[cursorX, cursorY].DrawBox();
+                                FallDownAndGenerateNewJewels();
+                            }
                         }
                     }
                     if (keyPressed.Key == ConsoleKey.UpArrow)
@@ -100,6 +87,19 @@ namespace ConsoleApplication1
                         if (selectionExist)
                         {
                             Swap(playField[lastSelection[0], lastSelection[1]], playField[cursorX, cursorY], playField);
+                            // Ако след разменянето - нямаме комбинация - връщаме оригиналните позиции.
+                            // TODO: Може да се вкара анимация, понеже в момента изглежда все едно, че нищо не се случва.
+                            if (isEmpty(FindBoxesForRemove(playField)))
+                            {
+                                Swap(playField[lastSelection[0], lastSelection[1]], playField[cursorX, cursorY], playField);
+                            }
+                            // Ако имаме комбинация - пускаме метода за чистене
+                            else
+                            {
+                                playField[cursorX, cursorY].isCursorPosition = false;
+                                playField[cursorX, cursorY].DrawBox();
+                                FallDownAndGenerateNewJewels();
+                            }
                         }
                     }
                     if (keyPressed.Key == ConsoleKey.DownArrow)
@@ -111,11 +111,24 @@ namespace ConsoleApplication1
                         if (selectionExist)
                         {
                             Swap(playField[lastSelection[0], lastSelection[1]], playField[cursorX, cursorY], playField);
+                            // Ако след разменянето - нямаме комбинация - връщаме оригиналните позиции.
+                            // TODO: Може да се вкара анимация, понеже в момента изглежда все едно, че нищо не се случва.
+                            if (isEmpty(FindBoxesForRemove(playField)))
+                            {
+                                Swap(playField[lastSelection[0], lastSelection[1]], playField[cursorX, cursorY], playField);
+                            }
+                            // Ако имаме комбинация - пускаме метода за чистене
+                            else
+                            {
+                                playField[cursorX, cursorY].isCursorPosition = false;
+                                playField[cursorX, cursorY].DrawBox();
+                                FallDownAndGenerateNewJewels();
+                            }
                         }
                     }
                     if (keyPressed.Key == ConsoleKey.Spacebar)
                     {
-                        playField[cursorX, cursorY].isSelected = true; // isSelected
+                        playField[cursorX, cursorY].isSelected = true;
                         playField[cursorX, cursorY].DrawBox();
                         selectionExist = true;
                         lastSelection[0] = cursorX;
@@ -142,6 +155,55 @@ namespace ConsoleApplication1
             }
         }
 
+        private static void FallDownAndGenerateNewJewels()
+        {
+            do
+            {
+                boxesToRemove = FindBoxesForRemove(playField);
+                TestMatrix(boxesToRemove);
+                DestroyJewels(playField, boxesToRemove);
+                while (!isFull(playField))
+                {
+                    for (int y = playField.GetLength(0) - 2; y >= 0; y--) // very Important to be GetLength(0) - 2 becouse we dont want to check the last ROW!
+                    {
+                        for (int x = playField.GetLength(1) - 1; x >= 0; x--)
+                        {
+                            // Ако текущия Jewel не е черен и Jewel-a под него е черен - правим SWAP
+                            if (playField[x, y].color != ConsoleColor.Black && playField[x, y + 1].color == ConsoleColor.Black)
+                            {
+                                Thread.Sleep(50);
+                                lastSelection[0] = x;
+                                lastSelection[1] = y;
+                                cursorX = x;
+                                cursorY = y + 1;
+                                Swap(playField[x, y], playField[x, y + 1], playField);
+                            }
+                            // Ако сме на нулевия ред и квадратчето е черно - го пречертаваме и му даваме Random цвят!
+                            if (y == 0 && playField[x, y].color == ConsoleColor.Black)
+                            {
+                                playField[x, y].color = colors[randColor.Next(0, colors.Length)];
+                                Thread.Sleep(30);
+                                playField[x, y].InitBox('\u2591'); // Light-Shade
+                                playField[x, y].DrawBox();
+                                Thread.Sleep(50);
+                                playField[x, y].InitBox('\u2592'); // Medium-Shade
+                                playField[x, y].DrawBox();
+                                Thread.Sleep(50);
+                                playField[x, y].InitBox('\u2593'); // Dark-Shade 
+                                playField[x, y].DrawBox();
+                                Thread.Sleep(50);
+                                playField[x, y].InitBox('\u2588'); // Restore FULL BLOCK when BLACK!
+                                playField[x, y].DrawBox();
+                            }
+                        }
+                    }
+                }
+                // Set the bool matrix to False
+                Array.Clear(boxesToRemove, 0, boxesToRemove.Length);
+            } while (!isEmpty(FindBoxesForRemove(playField)));
+            TestMatrix(boxesToRemove);
+        }
+
         private static bool isFull(Box[,] playField)
         {
             for (int y = 0; y < playField.GetLength(0); y++)
@@ -156,7 +218,7 @@ namespace ConsoleApplication1
             }
             return true;
         }
-
+        //isEmpty(boxesToRemove); // - This method checks if the boxesToRemove bool matrix is empty or not
         private static bool isEmpty(bool[,] boxesToRemove)
         {
             for (int y = 0; y < boxesToRemove.GetLength(0); y++)
@@ -183,7 +245,7 @@ namespace ConsoleApplication1
                     {
                         playField[x, y].InitBox('\u2593'); // Dark-Shade
                         playField[x, y].DrawBox();
-                        Thread.Sleep(50); 
+                        Thread.Sleep(50);
                         playField[x, y].InitBox('\u2592'); // Medium-Shade
                         playField[x, y].DrawBox();
                         Thread.Sleep(50);
