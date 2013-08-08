@@ -1,30 +1,35 @@
 using System;
 using System.Threading;
 
-namespace ConsoleApplication1
+namespace JustJewels
 {
-    class Program
+    class JustJewels
     {
         public static bool selectionExist = false;
         public static int[] lastSelection = { -1, -1 };
         public static int cursorX = 0;
         public static int cursorY = 0;
-        public static int score = 25;
+        public static int score = 0;
         public static ConsoleColor[] colors = { ConsoleColor.Yellow, ConsoleColor.Blue, ConsoleColor.Red, ConsoleColor.Green, ConsoleColor.Cyan, ConsoleColor.Magenta };
         public static Random randColor = new Random();
         public static bool[,] boxesToRemove = new bool[8, 8];
         public static Box[,] playField = InitPlayField();
 
-        static void Main(string[] args)
+        static void Main()
         {
+            //Console.Beep(223, 35);
+            // We can implement method that can turn music on and off
+            // IMPLEMENT MENU
+            // IMPLEMENT SCORE SCREEN WITH TEXT FILE!!
+
             Settings();
-            //ScoreField();
-
+            ScoreField();
             FallDownAndGenerateNewJewels();
-            //Console.WriteLine("Done Swapping");
+            Engine();
+        }
 
-
-
+        private static void Engine()
+        {
             while (true)
             {
                 if (Console.KeyAvailable)
@@ -160,7 +165,27 @@ namespace ConsoleApplication1
             do
             {
                 boxesToRemove = FindBoxesForRemove(playField);
-                TestMatrix(boxesToRemove);
+                //TestMatrix(boxesToRemove);
+                // Ако има нещо в bool матрицата - броим елементите, които се намират вътре и
+                // добавяме по 10 точки за всеки jewel
+                // Може да се имплементира бонус система която да удвоява точките ако имаме 6 9 13 и т.н jewelчета.
+                int jewelCount = 0;
+                int bonus = 1;
+                for (int y = 0; y < boxesToRemove.GetLength(0); y++)
+                {
+                    for (int x = 0; x < boxesToRemove.GetLength(1); x++)
+                    {
+                        if (boxesToRemove[x, y])
+                        {
+                            jewelCount += 10;
+                        }
+                    }
+                }
+                bonus = jewelCount / 30; // Тука може да гръмне ако bonus стане 0-ла
+                DisplayCombo(bonus);
+                score += jewelCount * bonus;
+                ScoreField();
+
                 DestroyJewels(playField, boxesToRemove);
                 while (!isFull(playField))
                 {
@@ -201,7 +226,44 @@ namespace ConsoleApplication1
                 // Set the bool matrix to False
                 Array.Clear(boxesToRemove, 0, boxesToRemove.Length);
             } while (!isEmpty(FindBoxesForRemove(playField)));
-            TestMatrix(boxesToRemove);
+            //TestMatrix(boxesToRemove);
+        }
+
+        private static void DisplayCombo(int bonus)
+        {
+            Console.SetCursorPosition(4, 36);
+                switch (bonus)
+                {
+                    case 2: // must be 2
+                        Console.Beep(223, 35);
+                        Console.ForegroundColor = ConsoleColor.Green;
+                        Console.Write("\u250c-\u2510 \u250c-\u2510 \u250c-\u2510 \u250c-\u2510 \u250c-\u2510 \u250c-\u2510\n    |D| |O| |U| |B| |L| |E|\n    \u2514-\u2518 \u2514-\u2518 \u2514-\u2518 \u2514-\u2518 \u2514-\u2518 \u2514-\u2518\n      \u250c-\u2510 \u250c-\u2510 \u250c-\u2510 \u250c-\u2510 \u250c-\u2510 \n      |C| |O| |M| |B| |O|\n      \u2514-\u2518 \u2514-\u2518 \u2514-\u2518 \u2514-\u2518 \u2514-\u2518");
+                        break;
+                    case 3:
+                        Console.Beep(223, 35);
+                        Console.ForegroundColor = ConsoleColor.Yellow;
+                        Console.Write("\u250c-\u2510 \u250c-\u2510 \u250c-\u2510 \u250c-\u2510 \u250c-\u2510 \u250c-\u2510\n    |T| |R| |I| |P| |L| |E|\n    \u2514-\u2518 \u2514-\u2518 \u2514-\u2518 \u2514-\u2518 \u2514-\u2518 \u2514-\u2518\n      \u250c-\u2510 \u250c-\u2510 \u250c-\u2510 \u250c-\u2510 \u250c-\u2510 \n      |C| |O| |M| |B| |O|\n      \u2514-\u2518 \u2514-\u2518 \u2514-\u2518 \u2514-\u2518 \u2514-\u2518");
+                        break;
+                    case 4:
+                        Console.Beep(223, 35);
+                        Console.ForegroundColor = ConsoleColor.Red;
+                        Console.Write("\u250c-\u2510 \u250c-\u2510 \u250c-\u2510 \u250c-\u2510 \u250c-\u2510 \u250c-\u2510\n    |Q| |U| |A| |D| |R| |O|\n    \u2514-\u2518 \u2514-\u2518 \u2514-\u2518 \u2514-\u2518 \u2514-\u2518 \u2514-\u2518\n      \u250c-\u2510 \u250c-\u2510 \u250c-\u2510 \u250c-\u2510 \u250c-\u2510 \n      |C| |O| |M| |B| |O|\n      \u2514-\u2518 \u2514-\u2518 \u2514-\u2518 \u2514-\u2518 \u2514-\u2518");
+                        break;
+                    case 5:
+                        Console.Beep(223, 35);
+                        Console.ForegroundColor = ConsoleColor.Red;
+                        Console.Write("    \u250c-\u2510 \u250c-\u2510 \u250c-\u2510 \u250c-\u2510 \n        |I| |M| |P| |O|\n        \u2514-\u2518 \u2514-\u2518 \u2514-\u2518 \u2514-\u2518\n      \u250c-\u2510 \u250c-\u2510 \u250c-\u2510 \u250c-\u2510 \u250c-\u2510 \n      |S| |I| |B| |L| |E|\n      \u2514-\u2518 \u2514-\u2518 \u2514-\u2518 \u2514-\u2518 \u2514-\u2518");
+                        break;
+                    case 6:
+                        Console.Beep(223, 35);
+                        Console.ForegroundColor = ConsoleColor.Red;
+                        Console.Write("    \u250c-\u2510 \u250c-\u2510 \u250c-\u2510 \u250c-\u2510 \n        |I| |M| |P| |O|\n        \u2514-\u2518 \u2514-\u2518 \u2514-\u2518 \u2514-\u2518\n      \u250c-\u2510 \u250c-\u2510 \u250c-\u2510 \u250c-\u2510 \u250c-\u2510 \n      |S| |I| |B| |L| |E|\n      \u2514-\u2518 \u2514-\u2518 \u2514-\u2518 \u2514-\u2518 \u2514-\u2518");
+                        break;
+                    default:
+                        Console.ForegroundColor = ConsoleColor.Black;
+                        Console.Write("\u250c-\u2510 \u250c-\u2510 \u250c-\u2510 \u250c-\u2510 \u250c-\u2510 \u250c-\u2510\n    |D| |O| |U| |B| |L| |E|\n    \u2514-\u2518 \u2514-\u2518 \u2514-\u2518 \u2514-\u2518 \u2514-\u2518 \u2514-\u2518\n      \u250c-\u2510 \u250c-\u2510 \u250c-\u2510 \u250c-\u2510 \u250c-\u2510 \n      |C| |O| |M| |B| |O|\n      \u2514-\u2518 \u2514-\u2518 \u2514-\u2518 \u2514-\u2518 \u2514-\u2518");
+                        break;
+                }
         }
 
         private static bool isFull(Box[,] playField)
@@ -306,7 +368,7 @@ namespace ConsoleApplication1
             Console.SetCursorPosition(0, 33);
             Console.ForegroundColor = ConsoleColor.White;
             Console.Write("---------------------------------");
-            Console.SetCursorPosition(1, 35);
+            Console.SetCursorPosition(1, 34);
             Console.Write("Score: {0}", score);
             Console.SetCursorPosition(20, 35);
         }
@@ -314,7 +376,7 @@ namespace ConsoleApplication1
         private static void Settings()
         {
             Console.CursorVisible = false;
-            Console.BufferHeight = Console.WindowHeight = 60; // 38 default
+            Console.BufferHeight = Console.WindowHeight = 45; // 38 default
             Console.BufferWidth = Console.WindowWidth = 33;
             Console.Title = "Just Jewels";
         }
