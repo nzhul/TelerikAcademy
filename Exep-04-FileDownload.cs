@@ -12,8 +12,9 @@ class FileDownload
         WebClient webClient = new WebClient();
         try
         {
-            webClient.DownloadFile(uri, fileName);
-            Console.WriteLine("The file was successfully downloaded!\nPlease check bin/Debug Directory!");
+            // "../../" changes the default location of the downloaded file to two directories above!
+            webClient.DownloadFile(uri, "../../" + fileName);
+            Console.WriteLine("The file was successfully downloaded!\n!");
         }
         catch (WebException)
         {
