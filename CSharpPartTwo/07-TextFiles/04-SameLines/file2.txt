@@ -1,0 +1,3 @@
+1. Player 1 - 2000
+3. Player 3 - 1000
+4. Player 4 - 500
