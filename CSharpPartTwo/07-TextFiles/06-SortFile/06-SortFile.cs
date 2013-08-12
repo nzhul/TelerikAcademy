@@ -7,7 +7,7 @@ using System.Linq;
         static void Main()
         {
             string[] fileLines = File.ReadLines("../../file.txt").ToArray();
-            Array.Sort(fileLines); // this is for default lexicograph sorting
+            Array.Sort(fileLines);
             File.WriteAllLines("../../sortedFile.txt", fileLines);
         }
     }
