@@ -19,10 +19,11 @@ class MaxSubMatrix
             }
         }
 
-        Console.WriteLine(FindMaxSubmatrix(matrix));
+        File.WriteAllText("../../MaxSubMatrixSum.txt", "The sum of the maximum Submatrix is: " + FindMaxSubmatrixSum(matrix).ToString());
+        Console.WriteLine("Task Complete!");
     }
 
-    static int FindMaxSubmatrix(int[,] matrix)
+    static int FindMaxSubmatrixSum(int[,] matrix)
     {
         int currentSum = 0;
         int bestSum = int.MinValue;
