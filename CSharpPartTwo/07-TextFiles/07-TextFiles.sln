@@ -15,6 +15,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "05-MaxSubMatrix", "05-MaxSu
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "06-SortFile", "06-SortFile\06-SortFile.csproj", "{7ACB742F-FFDD-4AAF-B2DD-3D8F1617AD52}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "07-StartFinish", "07-StartFinish\07-StartFinish.csproj", "{BAF21073-B4A4-4B22-99F1-BEA0E455DD03}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -49,6 +51,10 @@ Global
 		{7ACB742F-FFDD-4AAF-B2DD-3D8F1617AD52}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7ACB742F-FFDD-4AAF-B2DD-3D8F1617AD52}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7ACB742F-FFDD-4AAF-B2DD-3D8F1617AD52}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BAF21073-B4A4-4B22-99F1-BEA0E455DD03}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BAF21073-B4A4-4B22-99F1-BEA0E455DD03}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BAF21073-B4A4-4B22-99F1-BEA0E455DD03}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BAF21073-B4A4-4B22-99F1-BEA0E455DD03}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
