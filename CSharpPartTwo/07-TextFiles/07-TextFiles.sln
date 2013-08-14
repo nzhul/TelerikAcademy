@@ -21,6 +21,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "08-StartFinish", "08-StartF
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "09-DeleteOddLines", "09-DeleteOddLines\09-DeleteOddLines.csproj", "{AC52A976-F5E3-4C8C-8539-527705434FA5}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "10-ExtractXML", "10-ExtractXML\10-ExtractXML.csproj", "{12454B34-957F-404F-BA2C-606E6C33DE96}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -67,6 +69,10 @@ Global
 		{AC52A976-F5E3-4C8C-8539-527705434FA5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AC52A976-F5E3-4C8C-8539-527705434FA5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AC52A976-F5E3-4C8C-8539-527705434FA5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{12454B34-957F-404F-BA2C-606E6C33DE96}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{12454B34-957F-404F-BA2C-606E6C33DE96}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{12454B34-957F-404F-BA2C-606E6C33DE96}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{12454B34-957F-404F-BA2C-606E6C33DE96}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
