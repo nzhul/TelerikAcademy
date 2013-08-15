@@ -1,4 +1,6 @@
-﻿using System;
+﻿// This file is just a test - it is not part of the homework
+
+using System;
 using System.IO;
 
 class EditFile
