@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{F77C379D-5B4A-449B-92EC-FBA68617EF09}</ProjectGuid>
+    <ProjectGuid>{DA0848E7-6F47-4FA2-BC61-9B63705F50C5}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>_10_CharacterLiterals</RootNamespace>
-    <AssemblyName>10-CharacterLiterals</AssemblyName>
+    <RootNamespace>_14_Dictionary</RootNamespace>
+    <AssemblyName>14-Dictionary</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -41,7 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="10-CharacterLiterals.cs" />
+    <Compile Include="14-Dictionary.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

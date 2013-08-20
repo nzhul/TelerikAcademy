@@ -1,4 +1,8 @@
-﻿//Strings are collections of characters. Strings are actualy char arrays.
+﻿// 01. Describe the strings in C#. What is typical for the string data type? 
+//     Describe the most important methods of the String class.
+
+
+//Strings are collections of characters. Strings are actualy char arrays.
 //Strings are readOnly - That means that they cannot be modified.
 //If you want to modify string - you must create new string and copy all of the old characters to it - together with the new characters
 // 
