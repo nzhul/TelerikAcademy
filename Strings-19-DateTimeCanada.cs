@@ -28,9 +28,5 @@ Canadian Recording of a date: 08.15.2012";
             DateTime.TryParse(item.ToString(), out date);
             Console.WriteLine(date.ToString("dd/MM/yyyy", provider));
         }
-
-        
-
-        //Console.WriteLine(date.ToString("dd/MM/yyyy", provider));
     }
 }
