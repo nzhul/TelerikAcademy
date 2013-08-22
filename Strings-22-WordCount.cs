@@ -1,30 +1,35 @@
 using System;
-using System.Linq;
 using System.Collections.Generic;
+using System.Linq;
+using System.Text.RegularExpressions;
 
-class LetterCount
+class WordsCount
 {
     static void Main()
     {
-        string input = Console.ReadLine();
+        Console.WriteLine("Enter some text with repeated words: ");
+        string text = Console.ReadLine();
+        string regex = @"\b\w+\b";
 
-        Dictionary<char, int> dictionary = new Dictionary<char, int>();
+        Dictionary<string, int> dictionary = new Dictionary<string, int>();
+        MatchCollection words = Regex.Matches(text, regex);
 
-        for (int i = 0; i < input.Length; i++)
+        foreach (Match word in words)
         {
-            if (dictionary.ContainsKey(input[i]))
+            if (dictionary.ContainsKey(word.ToString()))
             {
-                dictionary[input[i]]++; 
+                dictionary[word.ToString()] += 1;
             }
             else
             {
-                dictionary.Add(input[i], 1);
+                dictionary.Add(word.ToString(), 1);
             }
         }
 
-        foreach (var letter in dictionary.OrderByDescending(m => m.Value))
+        foreach (var word in dictionary.OrderByDescending(m => m.Value))
         {
-            Console.WriteLine("{0} - {1}", letter.Key, letter.Value);
+            Console.WriteLine("{0} - {1}", word.Key, word.Value);
         }
+
     }
 }
