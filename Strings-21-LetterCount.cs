@@ -6,6 +6,7 @@ class Strings
 {
     static void Main()
     {
+        Console.WriteLine("Enter text: ");
         string input = Console.ReadLine();
 
         Dictionary<char, int> dictionary = new Dictionary<char, int>();
