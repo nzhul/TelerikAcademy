@@ -2,7 +2,7 @@ using System;
 using System.Linq;
 using System.Collections.Generic;
 
-class Program
+class Strings
 {
     static void Main()
     {
