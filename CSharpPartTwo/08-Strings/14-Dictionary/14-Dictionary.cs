@@ -13,6 +13,7 @@ class Program
 {
     static void Main()
     {
+        Console.WriteLine("Enter keyword [.NET | CLR | Barbarian | Metallica]");
         string text =
 @".NET - platform for applications from Microsoft 
 CLR - managed execution environment for .NET namespace – hierarchical organization of classes

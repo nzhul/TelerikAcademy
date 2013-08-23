@@ -14,6 +14,7 @@ class CharacterLiterals
 {
     static void Main()
     {
+        Console.WriteLine("Enter some text:");
         string input = Console.ReadLine();
         Console.WriteLine(ConvertToUnicode(input));
     }

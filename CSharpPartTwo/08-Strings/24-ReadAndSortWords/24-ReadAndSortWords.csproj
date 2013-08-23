@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{3B7D7C2E-038D-490D-BE92-5EEDFAE93312}</ProjectGuid>
+    <ProjectGuid>{BEA2F36E-744F-4F4D-8BDA-C98EAB3CC135}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>_15_BBCode</RootNamespace>
-    <AssemblyName>15-BBCode</AssemblyName>
+    <RootNamespace>_24_ReadAndSortWords</RootNamespace>
+    <AssemblyName>24-ReadAndSortWords</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -41,15 +41,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="15-BBCode.cs" />
+    <Compile Include="24-ReadAndSortWords.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="page.html" />
-    <Content Include="regex.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
