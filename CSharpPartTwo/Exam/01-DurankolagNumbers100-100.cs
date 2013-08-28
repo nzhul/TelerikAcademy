@@ -26,10 +26,10 @@ class Durankolag
             convertedDurankolag.Add(digits.IndexOf(durDigit));
         }
 
-        int decimalNumber = 0;
+        long decimalNumber = 0;
         for (int i = 0, j = convertedDurankolag.Count - 1; i < convertedDurankolag.Count; i++, j--)
         {
-            decimalNumber += convertedDurankolag[i] * (int)Math.Pow(168, j);
+            decimalNumber += convertedDurankolag[i] * (long)Math.Pow(168, j);
         }
         Console.WriteLine(decimalNumber);
     }
