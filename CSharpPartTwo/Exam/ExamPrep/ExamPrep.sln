@@ -3,6 +3,8 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "03-Slides", "03-Slides\03-Slides.csproj", "{CDBDE48B-5229-4B39-8C1D-BFA81516CDBA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01-9gagNumbers", "01-9gagNumbers\01-9gagNumbers.csproj", "{4306D3F0-ABF1-45D5-BEB4-741402F02010}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -13,6 +15,10 @@ Global
 		{CDBDE48B-5229-4B39-8C1D-BFA81516CDBA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CDBDE48B-5229-4B39-8C1D-BFA81516CDBA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CDBDE48B-5229-4B39-8C1D-BFA81516CDBA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4306D3F0-ABF1-45D5-BEB4-741402F02010}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4306D3F0-ABF1-45D5-BEB4-741402F02010}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4306D3F0-ABF1-45D5-BEB4-741402F02010}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4306D3F0-ABF1-45D5-BEB4-741402F02010}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
