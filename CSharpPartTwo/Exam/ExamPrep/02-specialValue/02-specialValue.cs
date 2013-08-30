@@ -58,6 +58,7 @@ class SpecialValue
                     maxSpecialValue = currSpecialValue;
                 }
             }
+            break;
         }
         Console.WriteLine(maxSpecialValue);
     }
