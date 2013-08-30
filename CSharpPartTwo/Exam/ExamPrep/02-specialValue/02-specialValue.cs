@@ -16,5 +16,49 @@ class SpecialValue
                 rows[i][j] = int.Parse(rowTokens[j]);
             }
         }
+
+        // Init the bool Jagged Array
+        bool[][] visited = new bool[rows.Length][];
+        for (int i = 0; i < visited.Length; i++)
+        {
+            visited[i] = new bool[rows[i].Length];
+        }
+
+        
+        int maxSpecialValue = int.MinValue;
+        for (int i = 0; i < rows.Length; i++)
+        {
+            for (int j = 0; j < rows[i].Length; j++)
+            {
+                int path = 1;
+                int currSpecialValue = 0;
+                int rowIndex = i;
+                int colIndex = j;
+                while (true)
+                {
+                    if (rows[rowIndex][colIndex] < 0 || visited[rowIndex][colIndex] == true)
+                    {
+                        currSpecialValue = path + Math.Abs(rows[rowIndex][colIndex]);
+                        break;
+                    }
+                    else
+                    {
+                        colIndex = rows[rowIndex][colIndex];
+                        visited[rowIndex][colIndex] = true;
+                        path++;
+                        rowIndex++;
+                        if (rowIndex >= rows.Length)
+                        {
+                            rowIndex = 0;
+                        }
+                    }
+                }
+                if (currSpecialValue > maxSpecialValue)
+                {
+                    maxSpecialValue = currSpecialValue;
+                }
+            }
+        }
+        Console.WriteLine(maxSpecialValue);
     }
 }
