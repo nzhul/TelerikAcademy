@@ -43,8 +43,8 @@ class SpecialValue
                     }
                     else
                     {
-                        colIndex = rows[rowIndex][colIndex];
                         visited[rowIndex][colIndex] = true;
+                        colIndex = rows[rowIndex][colIndex];
                         path++;
                         rowIndex++;
                         if (rowIndex >= rows.Length)
