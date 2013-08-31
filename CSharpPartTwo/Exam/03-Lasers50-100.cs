@@ -10,9 +10,9 @@ class Lazers
         int depth = int.Parse(rawSizes[2]);
 
         string[] rawStartPos = Console.ReadLine().Split();
-        int startW = int.Parse(rawStartPos[0]);
-        int startH = int.Parse(rawStartPos[1]);
-        int startD = int.Parse(rawStartPos[2]);
+        int startW = int.Parse(rawStartPos[0]) - 1;
+        int startH = int.Parse(rawStartPos[1]) - 1;
+        int startD = int.Parse(rawStartPos[2]) - 1;
 
         string[] rawDirs = Console.ReadLine().Split();
         int dirW = int.Parse(rawDirs[0]);
@@ -47,44 +47,52 @@ class Lazers
             cube[width - 1, height - 1, d] = true;
             cube[width - 1, 0, d] = true;
         }
-        Console.WriteLine();
 
 
         while (true)
         {
-            if (dirW == 1)
-            {
-                startW++;
-            }
-            else if (dirW == -1)
-            {
-                startW--;
-            }
+            int nextW = startW + dirW;
+            int nextH = startH + dirH;
+            int nextD = startD + dirD;
 
-            if (dirH == 1)
+            if (isInsideCube(nextW, nextH, nextD, cube))
             {
-                startH++;
+                if (cube[nextW, nextH, nextD] == false)
+                {
+                    cube[startW, startH, startD] = true;
+                    startW = nextW;
+                    startH = nextH;
+                    startD = nextD;
+                }
+                else
+                {
+                    Console.WriteLine("{0} {1} {2}", startW + 1, startH + 1, startD + 1);
+                    break;
+                }
             }
-            else if (dirH == -1)
+            // Reflection Occurs
+            else
             {
-                startH--;
-            }
-
-            if (dirD == 1)
-            {
-                startD++;
-            }
-            else if (dirD == -1)
-            {
-                startD--;
-            }
-            // Burn the box
-            cube[startW, startH, startD] = true;
-            // Check for reflection
-            if (startD <= 0)
-            {
-
+                if (!(nextW >= 0 && nextW < width))
+                {
+                    dirW = -dirW;
+                }
+                if (!(nextH >= 0 && nextW < height))
+                {
+                    dirH = -dirH;
+                }
+                if (!(nextD >= 0 && nextD < depth))
+                {
+                    dirD = -dirD;
+                }
             }
         }
+    }
+
+    static bool isInsideCube(int w, int h, int d , bool[,,] cube)
+    {
+        return w >= 0 && w < cube.GetLength(0) 
+            && h >= 0 && h < cube.GetLength(1) 
+            && d >= 0 && d < cube.GetLength(2);
     }
 }
