@@ -33,3 +33,6 @@ class phpVariables
         }
     }
 }
+
+// 100/100 solution - zdravko
+// https://github.com/hiksa/Telerik-Academy/blob/master/C%23%20Programming/C%23%20Foundamentals%20-%20Part%202/Exam%20Preparations/2011%20-%202012%20-%20Exam%20tasks/6%20Feb/1.PHPVariables/PHPVariables.cs
