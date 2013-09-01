@@ -36,3 +36,6 @@ class phpVariables
 
 // 100/100 solution - zdravko
 // https://github.com/hiksa/Telerik-Academy/blob/master/C%23%20Programming/C%23%20Foundamentals%20-%20Part%202/Exam%20Preparations/2011%20-%202012%20-%20Exam%20tasks/6%20Feb/1.PHPVariables/PHPVariables.cs
+
+// 100/100 solution - Console Justification - zdravko
+// https://github.com/hiksa/Telerik-Academy/blob/master/C%23%20Programming/C%23%20Foundamentals%20-%20Part%202/Exam%20Preparations/2012%20-%202013%20-%20Exam%20tasks/4%20Feb/4.ConsoleJustification/ConsoleJustification.cs
