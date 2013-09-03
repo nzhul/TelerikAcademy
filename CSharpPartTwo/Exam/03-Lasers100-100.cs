@@ -19,7 +19,7 @@ class Lazers
         int dirH = int.Parse(rawDirs[1]);
         int dirD = int.Parse(rawDirs[2]);
 
-        bool[,,] cube = new bool[width,height,depth];
+        bool[, ,] cube = new bool[width, height, depth];
         // Set the edges - true (burned) - HEIGHT
         for (int h = 0; h < height; h++)
         {
@@ -77,7 +77,7 @@ class Lazers
                 {
                     dirW = -dirW;
                 }
-                if (!(nextH >= 0 && nextW < height))
+                if (!(nextH >= 0 && nextH < height))
                 {
                     dirH = -dirH;
                 }
@@ -89,10 +89,10 @@ class Lazers
         }
     }
 
-    static bool isInsideCube(int w, int h, int d , bool[,,] cube)
+    static bool isInsideCube(int w, int h, int d, bool[, ,] cube)
     {
-        return w >= 0 && w < cube.GetLength(0) 
-            && h >= 0 && h < cube.GetLength(1) 
+        return w >= 0 && w < cube.GetLength(0)
+            && h >= 0 && h < cube.GetLength(1)
             && d >= 0 && d < cube.GetLength(2);
     }
 }
