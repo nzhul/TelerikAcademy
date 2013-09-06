@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02-specialValue", "02-speci
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "03-3DStars", "03-3DStars\03-3DStars.csproj", "{C3A496EA-88CD-4365-AB63-FCA6AA9383E3}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "04-PHPVariables-Automate", "04-PHPVariables-Automate\04-PHPVariables-Automate.csproj", "{294605C6-EF7D-4940-A40C-02D1250BAB93}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -31,6 +33,10 @@ Global
 		{C3A496EA-88CD-4365-AB63-FCA6AA9383E3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C3A496EA-88CD-4365-AB63-FCA6AA9383E3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C3A496EA-88CD-4365-AB63-FCA6AA9383E3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{294605C6-EF7D-4940-A40C-02D1250BAB93}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{294605C6-EF7D-4940-A40C-02D1250BAB93}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{294605C6-EF7D-4940-A40C-02D1250BAB93}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{294605C6-EF7D-4940-A40C-02D1250BAB93}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
