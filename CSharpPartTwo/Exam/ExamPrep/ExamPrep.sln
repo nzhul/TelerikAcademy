@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "04-PHPVariables-Automate", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02-Tubes", "02-Tubes\02-Tubes.csproj", "{328A5F2B-38DA-4665-83AD-387B5168C2E9}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "04-CSharp-Brackets", "04-CSharp-Brackets\04-CSharp-Brackets.csproj", "{AB44AD9A-B08C-4BD2-B6CC-E29D72B256FB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -43,6 +45,10 @@ Global
 		{328A5F2B-38DA-4665-83AD-387B5168C2E9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{328A5F2B-38DA-4665-83AD-387B5168C2E9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{328A5F2B-38DA-4665-83AD-387B5168C2E9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AB44AD9A-B08C-4BD2-B6CC-E29D72B256FB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AB44AD9A-B08C-4BD2-B6CC-E29D72B256FB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AB44AD9A-B08C-4BD2-B6CC-E29D72B256FB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AB44AD9A-B08C-4BD2-B6CC-E29D72B256FB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
