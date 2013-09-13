@@ -1,4 +1,6 @@
-﻿using System;
+﻿// 90/100 in bgcoder
+
+using System;
 
 
 class SpecialValue
@@ -9,7 +11,7 @@ class SpecialValue
         int[][] rows = new int[n][];
         for (int i = 0; i < n; i++)
         {
-            string[] rowTokens = Console.ReadLine().Split(new char[] { ' ', ',' },StringSplitOptions.RemoveEmptyEntries );
+            string[] rowTokens = Console.ReadLine().Split(new char[] { ' ', ',' }, StringSplitOptions.RemoveEmptyEntries);
             rows[i] = new int[rowTokens.Length];
             for (int j = 0; j < rowTokens.Length; j++)
             {
@@ -24,7 +26,7 @@ class SpecialValue
             visited[i] = new bool[rows[i].Length];
         }
 
-        
+
         int maxSpecialValue = int.MinValue;
         for (int i = 0; i < rows.Length; i++)
         {
@@ -53,6 +55,7 @@ class SpecialValue
                         }
                     }
                 }
+                Array.Clear(visited[i], 0, visited[i].Length);
                 if (currSpecialValue > maxSpecialValue)
                 {
                     maxSpecialValue = currSpecialValue;

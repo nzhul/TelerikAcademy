@@ -1,4 +1,6 @@
-﻿using System;
+﻿// 100/100 in bgcoder
+
+using System;
 using System.Collections.Generic;
 using System.Text;
 

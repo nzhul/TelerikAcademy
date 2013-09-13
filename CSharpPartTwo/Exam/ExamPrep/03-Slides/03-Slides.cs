@@ -1,4 +1,6 @@
-﻿using System;
+﻿// 80/100 in bgcoder
+
+using System;
 
 class Slides
 {
@@ -91,25 +93,25 @@ class Slides
                     Console.WriteLine("No");
                     Console.WriteLine("{0} {1} {2}", oldBallW, oldBallH, oldBallD);
                     return;
-                    //break;
+                //break;
                 default:
                     break;
             }
 
-            if (ballH == cube.GetLength(1))
+            if (ballH == height)
             {
                 Console.WriteLine("Yes");
                 Console.WriteLine("{0} {1} {2}", oldBallW, oldBallH, oldBallD);
                 break;
             }
 
-            if (ballW < 0 || ballW > cube.GetLength(0) || ballD < 0 || ballD > cube.GetLength(2))
+            if (ballW < 0 || ballW > width || ballD < 0 || ballD > depth)
             {
                 Console.WriteLine("No");
                 Console.WriteLine("{0} {1} {2}", oldBallW, oldBallH, oldBallD);
                 break;
             }
-            else if (ballH < 0 || ballH > cube.GetLength(1))
+            else if (ballH < 0 || ballH > height)
             {
                 Console.WriteLine("Yes");
                 Console.WriteLine("{0} {1} {2}", oldBallW, oldBallH, oldBallD);
