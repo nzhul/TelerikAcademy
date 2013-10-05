@@ -4,12 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace _02_Defining_Classes_Part_II
+namespace GenericList
 {
-    class Program
+    class GenericListTest
     {
         static void Main(string[] args)
         {
+
         }
     }
 }

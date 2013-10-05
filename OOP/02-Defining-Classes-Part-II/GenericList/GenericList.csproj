@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{1F1F81D2-4D26-4B70-9EE5-55CB5CEA71D4}</ProjectGuid>
+    <ProjectGuid>{1705F663-9A2E-4B8B-B395-A34461C51EFA}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>_02_Defining_Classes_Part_II</RootNamespace>
-    <AssemblyName>02-Defining-Classes-Part-II</AssemblyName>
+    <RootNamespace>GenericList</RootNamespace>
+    <AssemblyName>GenericList</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -41,7 +41,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Program.cs" />
+    <Compile Include="GenericList.cs" />
+    <Compile Include="GenericListTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -1,7 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02-Defining-Classes-Part-II", "02-Defining-Classes-Part-II\02-Defining-Classes-Part-II.csproj", "{1F1F81D2-4D26-4B70-9EE5-55CB5CEA71D4}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Point3D", "Point3D\Point3D.csproj", "{A02BD806-EE3B-4638-A4E9-44D39D27652B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GenericList", "GenericList\GenericList.csproj", "{1705F663-9A2E-4B8B-B395-A34461C51EFA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -9,10 +11,14 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{1F1F81D2-4D26-4B70-9EE5-55CB5CEA71D4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{1F1F81D2-4D26-4B70-9EE5-55CB5CEA71D4}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{1F1F81D2-4D26-4B70-9EE5-55CB5CEA71D4}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{1F1F81D2-4D26-4B70-9EE5-55CB5CEA71D4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A02BD806-EE3B-4638-A4E9-44D39D27652B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A02BD806-EE3B-4638-A4E9-44D39D27652B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A02BD806-EE3B-4638-A4E9-44D39D27652B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A02BD806-EE3B-4638-A4E9-44D39D27652B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1705F663-9A2E-4B8B-B395-A34461C51EFA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1705F663-9A2E-4B8B-B395-A34461C51EFA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1705F663-9A2E-4B8B-B395-A34461C51EFA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1705F663-9A2E-4B8B-B395-A34461C51EFA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
