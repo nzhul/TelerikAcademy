@@ -5,6 +5,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01-SubstringStringBuilder",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02-IEnumerableExtensions", "02-IEnumerableExtensions\02-IEnumerableExtensions.csproj", "{2AC1B835-1F76-4DB5-A191-DC8D4D729943}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "03-StudentNames", "03-StudentNames\03-StudentNames.csproj", "{C4779346-A3F4-4E63-AEF9-049D46E9128D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -19,6 +21,10 @@ Global
 		{2AC1B835-1F76-4DB5-A191-DC8D4D729943}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2AC1B835-1F76-4DB5-A191-DC8D4D729943}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2AC1B835-1F76-4DB5-A191-DC8D4D729943}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C4779346-A3F4-4E63-AEF9-049D46E9128D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C4779346-A3F4-4E63-AEF9-049D46E9128D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C4779346-A3F4-4E63-AEF9-049D46E9128D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C4779346-A3F4-4E63-AEF9-049D46E9128D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
