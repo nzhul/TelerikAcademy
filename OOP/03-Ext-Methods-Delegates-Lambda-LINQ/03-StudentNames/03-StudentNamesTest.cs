@@ -1,4 +1,8 @@
-﻿using System;
+﻿// 03. Write a method that from a given array of students finds all students whose first 
+//     name is before its last name alphabetically. Use LINQ query operators.
+
+
+using System;
 using System.Linq;
 using System.Collections.Generic;
 
@@ -7,7 +11,7 @@ class Test
     public static IEnumerable<Student> FindByName(Student[] students)
     {
         var result = from student in students
-                     where student.FirstName.CompareTo(student.SecondName) < 0
+                     where student.FirstName.CompareTo(student.LastName) < 0
                      select student;
         return result;
     }
