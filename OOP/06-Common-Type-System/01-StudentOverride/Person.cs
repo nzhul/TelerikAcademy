@@ -5,14 +5,14 @@
 
     public abstract class Person
     {
-        // Properties
+        // Fields
         private string _firstName;
         private string _middleName;
         private string _lastName;
         private string _socialSecurityNumber;
         private int? _age;
 
-        // Fields
+        // Properties
         public string FirstName
         {
             get { return _firstName; }
@@ -70,7 +70,6 @@
             builder.AppendFormat("Name: {0} {1} {2}", this.FirstName, this.MiddleName, this.LastName);
             builder.AppendLine();
             builder.AppendFormat("Social Security Number: {0}", this.SocialSecurityNumber);
-            builder.AppendLine();
             if (this.Age != null)
             {
                 builder.AppendFormat("Age: {0}", this.Age);    
