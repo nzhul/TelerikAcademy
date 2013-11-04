@@ -73,13 +73,14 @@ namespace AcademyPopcorn
         private void AddRacket(GameObject obj)
         {
             //TODO: we should remove the previous racket from this.allObjects
-            this.playerRacket = obj as Racket;
-            this.AddStaticObject(obj);
 
             // 03. Removing the old Racket using Lambda
             // We can also search the whole list of objects and remove the object that is Racket
             this.allObjects.RemoveAll(item => item is Racket);
             this.staticObjects.RemoveAll(item => item is Racket);
+
+            this.playerRacket = obj as Racket;
+            this.AddStaticObject(obj);
         }
 
         public virtual void MovePlayerRacketLeft()

@@ -61,6 +61,11 @@ namespace AcademyPopcorn
             Racket theRacket = new Racket(new MatrixCoords(WorldRows - 1, WorldCols / 2), RacketLength);
 
             engine.AddObject(theRacket);
+
+            // 05. Initialize Trailing object
+            // !!! The Object disapears instantly - Must find why!!!
+            TrailObject simpleTrailObject = new TrailObject(new MatrixCoords(10, 10), new char[,] {{'$'}}, 500);
+            engine.AddObject(simpleTrailObject);
         }
 
         static void Main(string[] args)
