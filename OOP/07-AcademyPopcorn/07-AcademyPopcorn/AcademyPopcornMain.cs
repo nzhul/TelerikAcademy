@@ -24,6 +24,18 @@ namespace AcademyPopcorn
 
                 engine.AddObject(currBlock);
             }
+            for (int i = startCol; i < endCol; i++)
+            {
+                Block currBlock = new Block(new MatrixCoords(startRow+1, i));
+
+                engine.AddObject(currBlock);
+            }
+            for (int i = startCol; i < endCol; i++)
+            {
+                Block currBlock = new Block(new MatrixCoords(startRow + 2, i));
+
+                engine.AddObject(currBlock);
+            }
 
             // 01. Adding the ceiling
             // Adding the top wall
@@ -53,7 +65,7 @@ namespace AcademyPopcorn
                 engine.AddObject(currWall);
             }
 
-            Ball theBall = new Ball(new MatrixCoords(WorldRows / 2, 0),
+            Ball theBall = new MeteoriteBall(new MatrixCoords(WorldRows / 2, 0),
                 new MatrixCoords(-1, 1));
 
             engine.AddObject(theBall);
@@ -63,9 +75,8 @@ namespace AcademyPopcorn
             engine.AddObject(theRacket);
 
             // 05. Initialize Trailing object
-            // !!! The Object disapears instantly - Must find why!!!
-            TrailObject simpleTrailObject = new TrailObject(new MatrixCoords(10, 10), new char[,] {{'$'}}, 10);
-            engine.AddObject(simpleTrailObject);
+            //TrailObject simpleTrailObject = new TrailObject(new MatrixCoords(10, 10), new char[,] {{'o'}}, 10);
+            //engine.AddObject(simpleTrailObject);
         }
 
         static void Main(string[] args)
