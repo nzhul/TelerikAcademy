@@ -11,7 +11,7 @@ namespace AcademyPopcorn
         {
             get { return _lifeTime; }
             set {
-                    if (value <= 0)
+                    if (value < 0)
                     {
                         throw new ArgumentException("The value cannot be zero or negative!");
                     }
@@ -24,7 +24,9 @@ namespace AcademyPopcorn
 
         public TrailObject(MatrixCoords topLeft, char[,] body, int lifeTime)
             : base(topLeft, body)
-        { }
+        {
+            this.LifeTime = lifeTime;
+        }
 
         public override void Update()
         {

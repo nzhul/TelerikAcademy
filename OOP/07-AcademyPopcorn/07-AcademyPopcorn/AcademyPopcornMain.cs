@@ -64,7 +64,7 @@ namespace AcademyPopcorn
 
             // 05. Initialize Trailing object
             // !!! The Object disapears instantly - Must find why!!!
-            TrailObject simpleTrailObject = new TrailObject(new MatrixCoords(10, 10), new char[,] {{'$'}}, 500);
+            TrailObject simpleTrailObject = new TrailObject(new MatrixCoords(10, 10), new char[,] {{'$'}}, 10);
             engine.AddObject(simpleTrailObject);
         }
 
@@ -73,7 +73,7 @@ namespace AcademyPopcorn
             IRenderer renderer = new ConsoleRenderer(WorldRows, WorldCols);
             IUserInterface keyboard = new KeyboardInterface();
 
-            Engine gameEngine = new Engine(renderer, keyboard, 50);
+            Engine gameEngine = new Engine(renderer, keyboard, 100);
 
             keyboard.OnLeftPressed += (sender, eventInfo) =>
             {
