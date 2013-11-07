@@ -64,6 +64,7 @@
     <Compile Include="Racket.cs" />
     <Compile Include="ShootPlayerRacket.cs" />
     <Compile Include="TrailObject.cs" />
+    <Compile Include="UnstoppableBall.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
