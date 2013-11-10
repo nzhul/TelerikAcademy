@@ -20,11 +20,17 @@ namespace AcademyPopcorn
 
             for (int i = startCol; i < endCol; i++)
             {
-                if (i == 13)
+                if (i == 13) // Testing the explosion object
                 {
                     engine.AddObject(new Block(new MatrixCoords(startRow, i)));
                     engine.AddObject(new Block(new MatrixCoords(startRow + 1, i)));
                     engine.AddObject(new ExplodingBlock(new MatrixCoords(startRow + 2, i)));
+                }
+                else if (i == 35) // Testing the gift Object
+                {
+                    engine.AddObject(new Block(new MatrixCoords(startRow, i)));
+                    engine.AddObject(new Block(new MatrixCoords(startRow + 1, i)));
+                    engine.AddObject(new GiftBlock(new MatrixCoords(startRow + 2, i)));
                 }
                 else
                 {
@@ -35,10 +41,10 @@ namespace AcademyPopcorn
             }
 
             // 09. Adding Unpassable wall
-            for (int i = endCol / 2; i < endCol; i++)
-            {
-                engine.AddObject(new UnpassableBlock(new MatrixCoords(startRow + 3, i)));
-            }
+            //for (int i = endCol / 2; i < endCol; i++)
+            //{
+            //    engine.AddObject(new UnpassableBlock(new MatrixCoords(startRow + 3, i)));
+            //}
 
             // 01. Adding the ceiling
             // Adding the top wall
@@ -83,6 +89,10 @@ namespace AcademyPopcorn
             // 05. Initialize Trailing object
             //TrailObject simpleTrailObject = new TrailObject(new MatrixCoords(10, 10), new char[,] {{'o'}}, 10);
             //engine.AddObject(simpleTrailObject);
+
+            // 11. Testing the gift Object
+            //Gift testGift = new Gift(new MatrixCoords(WorldRows / 2, 10), new char[,] {{'8'}}, new MatrixCoords(1, 0));
+            //engine.AddObject(testGift);
         }
 
         static void Main(string[] args)

@@ -52,6 +52,8 @@
     <Compile Include="ExplodingBlock.cs" />
     <Compile Include="Explosion.cs" />
     <Compile Include="GameObject.cs" />
+    <Compile Include="Gift.cs" />
+    <Compile Include="GiftBlock.cs" />
     <Compile Include="ICollidable.cs" />
     <Compile Include="IndestructibleBlock.cs" />
     <Compile Include="IObjectProducer.cs" />
