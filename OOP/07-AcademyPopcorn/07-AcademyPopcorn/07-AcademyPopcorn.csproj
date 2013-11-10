@@ -49,6 +49,8 @@
     <Compile Include="ConsoleInterface.cs" />
     <Compile Include="ConsoleRenderer.cs" />
     <Compile Include="Engine.cs" />
+    <Compile Include="ExplodingBlock.cs" />
+    <Compile Include="Explosion.cs" />
     <Compile Include="GameObject.cs" />
     <Compile Include="ICollidable.cs" />
     <Compile Include="IndestructibleBlock.cs" />
@@ -64,6 +66,7 @@
     <Compile Include="Racket.cs" />
     <Compile Include="ShootPlayerRacket.cs" />
     <Compile Include="TrailObject.cs" />
+    <Compile Include="UnpassableBlock.cs" />
     <Compile Include="UnstoppableBall.cs" />
   </ItemGroup>
   <ItemGroup>

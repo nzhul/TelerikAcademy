@@ -7,6 +7,7 @@ namespace AcademyPopcorn
 {
     public class IndestructibleBlock : Block
     {
+        public new const string CollisionGroupString = "indestructibleBlock";
         public const char Symbol = '|';
 
         public IndestructibleBlock(MatrixCoords upperLeft)
@@ -18,6 +19,11 @@ namespace AcademyPopcorn
         public override void RespondToCollision(CollisionData collisionData)
         {
             //base.RespondToCollision(collisionData);
+        }
+
+        public override string GetCollisionGroupString()
+        {
+            return IndestructibleBlock.CollisionGroupString;
         }
     }
 }

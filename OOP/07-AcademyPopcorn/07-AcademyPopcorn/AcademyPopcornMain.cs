@@ -20,21 +20,24 @@ namespace AcademyPopcorn
 
             for (int i = startCol; i < endCol; i++)
             {
-                Block currBlock = new Block(new MatrixCoords(startRow, i));
-
-                engine.AddObject(currBlock);
+                if (i == 13)
+                {
+                    engine.AddObject(new Block(new MatrixCoords(startRow, i)));
+                    engine.AddObject(new Block(new MatrixCoords(startRow + 1, i)));
+                    engine.AddObject(new ExplodingBlock(new MatrixCoords(startRow + 2, i)));
+                }
+                else
+                {
+                    engine.AddObject(new Block(new MatrixCoords(startRow, i)));
+                    engine.AddObject(new Block(new MatrixCoords(startRow + 1, i)));
+                    engine.AddObject(new Block(new MatrixCoords(startRow + 2, i)));
+                }
             }
-            for (int i = startCol; i < endCol; i++)
-            {
-                Block currBlock = new Block(new MatrixCoords(startRow+1, i));
 
-                engine.AddObject(currBlock);
-            }
-            for (int i = startCol; i < endCol; i++)
+            // 09. Adding Unpassable wall
+            for (int i = endCol / 2; i < endCol; i++)
             {
-                Block currBlock = new Block(new MatrixCoords(startRow + 2, i));
-
-                engine.AddObject(currBlock);
+                engine.AddObject(new UnpassableBlock(new MatrixCoords(startRow + 3, i)));
             }
 
             // 01. Adding the ceiling
@@ -65,8 +68,11 @@ namespace AcademyPopcorn
                 engine.AddObject(currWall);
             }
 
-            Ball theBall = new MeteoriteBall(new MatrixCoords(WorldRows / 2, 0),
-                new MatrixCoords(-1, 1));
+            // 07. Testing the metheorite ball
+            Ball theBall = new MeteoriteBall(new MatrixCoords(WorldRows / 2, 0), new MatrixCoords(-1, 1));
+
+            // 09. Testing the unstappable ball
+            //UnstoppableBall theBall = new UnstoppableBall(new MatrixCoords(WorldRows / 2, 0), new MatrixCoords(-1, 1));
 
             engine.AddObject(theBall);
 
