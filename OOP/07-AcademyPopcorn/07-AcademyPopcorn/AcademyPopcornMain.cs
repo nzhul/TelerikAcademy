@@ -10,7 +10,7 @@ namespace AcademyPopcorn
     {
         const int WorldRows = 23;
         const int WorldCols = 40;
-        const int RacketLength = 6;
+        const int RacketLength = 20;
 
         static void Initialize(Engine engine)
         {
@@ -20,7 +20,7 @@ namespace AcademyPopcorn
 
             for (int i = startCol; i < endCol; i++)
             {
-                if (i == 13) // Testing the explosion object
+                if (i == 11) // Testing the explosion object
                 {
                     engine.AddObject(new Block(new MatrixCoords(startRow, i)));
                     engine.AddObject(new Block(new MatrixCoords(startRow + 1, i)));
@@ -41,10 +41,10 @@ namespace AcademyPopcorn
             }
 
             // 09. Adding Unpassable wall
-            //for (int i = endCol / 2; i < endCol; i++)
-            //{
-            //    engine.AddObject(new UnpassableBlock(new MatrixCoords(startRow + 3, i)));
-            //}
+            for (int i = endCol / 2; i < endCol / 2 + 4; i++)
+            {
+                engine.AddObject(new UnpassableBlock(new MatrixCoords(startRow + 3, i)));
+            }
 
             // 01. Adding the ceiling
             // Adding the top wall
@@ -110,6 +110,11 @@ namespace AcademyPopcorn
             keyboard.OnRightPressed += (sender, eventInfo) =>
             {
                 gameEngine.MovePlayerRacketRight();
+            };
+
+            keyboard.OnActionPressed += (sender, eventInfo) =>
+            {
+                gameEngine.ShootPlayerRacket();
             };
 
             Initialize(gameEngine);

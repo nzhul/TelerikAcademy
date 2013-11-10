@@ -6,7 +6,7 @@
         public ExplodingBlock(MatrixCoords topLeft)
             : base(topLeft)
         {
-            this.body[0, 0] = '@';
+            this.body[0, 0] = 'E';
         }
 
         public new const string CollisionGroupString = "explodingBlock";

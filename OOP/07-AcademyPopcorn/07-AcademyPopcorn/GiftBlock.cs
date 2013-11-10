@@ -6,7 +6,7 @@ namespace AcademyPopcorn
         public GiftBlock(MatrixCoords topLeft)
             : base(topLeft)
         {
-            this.body[0, 0] = 'Q';
+            this.body[0, 0] = 'G';
         }
 
         public new const string CollisionGroupString = "giftBlock";

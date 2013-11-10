@@ -130,5 +130,13 @@ namespace AcademyPopcorn
                 }
             }
         }
+
+        public void ShootPlayerRacket()
+        {
+            if (this.playerRacket is ShootingRacket)
+            {
+                (this.playerRacket as ShootingRacket).Shoot();
+            }
+        }
     }
 }
