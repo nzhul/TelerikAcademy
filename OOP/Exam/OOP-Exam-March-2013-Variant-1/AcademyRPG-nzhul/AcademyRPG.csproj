@@ -51,6 +51,7 @@
     <Compile Include="IResource.cs" />
     <Compile Include="Knight.cs" />
     <Compile Include="MovingObject.cs" />
+    <Compile Include="Ninja.cs" />
     <Compile Include="nzhulEngine.cs" />
     <Compile Include="Point.cs" />
     <Compile Include="Engine.cs" />
