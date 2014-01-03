@@ -43,17 +43,17 @@ namespace SoftwareAcademy
     {
         public ITeacher CreateTeacher(string name)
         {
-            throw new NotImplementedException();
+            return new Teacher(name);
         }
 
         public ILocalCourse CreateLocalCourse(string name, ITeacher teacher, string lab)
         {
-            throw new NotImplementedException();
+            return new LocalCourse(name, teacher, lab);
         }
 
         public IOffsiteCourse CreateOffsiteCourse(string name, ITeacher teacher, string town)
         {
-            throw new NotImplementedException();
+            return new OffsiteCourse(name, teacher, town);
         }
     }
 
