@@ -1,0 +1,61 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>06-WithinCircle</title>
+    <link href="css/js-console.css" rel="stylesheet" />
+    <link href="css/style.css" rel="stylesheet" />
+</head>
+<body>
+    <header>
+        <a href="01-EvenOdd.html">01-EvenOdd</a> |
+        <a href="02-DivideByFiveAndSeven.html">02-DivideByFiveAndSeven</a> |
+        <a href="03-RectangleArea.html">03-RectangleArea</a> |
+        <a href="04-ThirdDigit.html">04-ThirdDigit</a> |
+        <a href="05-bit3.html">05-bit3</a> |
+        <a href="06-WithinACircle.html" class="current">06-WithinACircle</a> |
+        <a href="07-Prime.html">07-Prime</a> |
+        <a href="08-TrapezoidArea.html">08-TrapezoidArea</a> |
+        <a href="09-CircleAndRectangle.html">09-CircleAndRectangle</a>
+    </header>
+    <table>
+        <tr>
+            <td><label for="x">X:</label></td>
+            <td><input type="text" id="x" /></td>
+        </tr>
+        <tr>
+            <td><label for="y">Y:</label></td>
+            <td><input type="text" id="y" /></td>
+        </tr>
+        <tr>
+            <td><label for="y">Circle Radius:</label></td>
+            <td><input type="text" id="radius" /></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><button onclick="onExecuteClick()">Execute</button></td>
+        </tr>
+    </table>
+    <div id="console">
+    </div>
+    <script src="js/js-console.js">
+    </script>
+    <script>
+
+        function onExecuteClick() {
+            var x = jsConsole.readFloat("#x");
+            var y = jsConsole.readFloat("#y");
+            var radius = jsConsole.readFloat("#radius");
+            if ((x * x + y * y) <= (radius * radius)) {
+                var result = "IS";
+            }
+            else {
+                var result = "IS NOT";
+            }
+            jsConsole.writeLine("The point with coordinates(X:" + x + " Y:" + y + ")<br/> "+ result +" within a circle with radius of "+ radius +"!");
+        }
+    </script>
+    <p style="font-size:12px;">
+        // 06. Write an expression that checks if given point (x,  y) is within a circle K(O, 5).
+    </p>
+</body>
+</html>
