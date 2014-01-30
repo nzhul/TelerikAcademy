@@ -1,0 +1,50 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>01 - Exchange Value</title>
+    <link href="css/js-console.css" rel="stylesheet" />
+    <link href="css/style.css" rel="stylesheet" />
+</head>
+<body>
+    <header>
+        <a href="01-ExchangeValue.html">01-ExchangeValue</a> |
+    </header>
+    <table>
+        <tr>
+            <td><label for="a">A:</label></td>
+            <td><input type="text" id="a" /></td>
+        </tr>
+        <tr>
+            <td><label for="b">B:</label></td>
+            <td><input type="text" id="b" /></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><button onclick="onExecuteClick()">Execute</button></td>
+        </tr>
+    </table>
+    <div id="console">
+    </div>
+    <script src="js/js-console.js">	  
+    </script>
+    <script>
+
+        function onExecuteClick() {
+            var a = jsConsole.readFloat("#a");
+            var b = jsConsole.readFloat("#b");
+            var temp;
+            jsConsole.writeLine("Original Values: a = " + a + "; b = " + b);
+
+            if (a > b) {
+                temp = a;
+                a = b;
+                b = temp;
+            }
+            jsConsole.writeLine("Exchanged Values: a = " + a + "; b = " + b);
+        }
+    </script>
+    <p style="font-size:12px;">
+        // 01. Write an if statement that examines two integer variables and exchanges their values if the first one is greater than the second one.
+    </p>
+</body>
+</html>

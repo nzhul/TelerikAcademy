@@ -7,12 +7,12 @@
     <ProductVersion>
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{FBB53E82-962B-4CC0-96E2-5620224240F7}</ProjectGuid>
+    <ProjectGuid>{B09C8727-56F8-4CF5-BA48-D65D189AB627}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>_01_Operators_Explressions</RootNamespace>
-    <AssemblyName>01-Operators-Explressions</AssemblyName>
+    <RootNamespace>_02_ConditionalStatements</RootNamespace>
+    <AssemblyName>02-ConditionalStatements</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <UseIISExpress>true</UseIISExpress>
     <IISExpressSSLPort />
@@ -57,15 +57,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="01-EvenOdd.html" />
-    <Content Include="02-DivideByFiveAndSeven.html" />
-    <Content Include="03-RectangleArea.html" />
-    <Content Include="04-ThirdDigit.html" />
-    <Content Include="05-bit3.html" />
-    <Content Include="06-WithinACircle.html" />
-    <Content Include="07-Prime.html" />
-    <Content Include="08-TrapezoidArea.html" />
-    <Content Include="09-CircleAndRectangle.html" />
+    <Content Include="01-ExchangeValue.html" />
     <Content Include="css\js-console.css" />
     <Content Include="css\style.css" />
     <Content Include="js\js-console.js" />
@@ -98,7 +90,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>0</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:2602/</IISUrl>
+          <IISUrl>http://localhost:19660/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>
