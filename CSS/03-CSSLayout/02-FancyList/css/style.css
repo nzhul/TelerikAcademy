@@ -1,0 +1,7 @@
+body {background: #e2e2e2;}
+.itemBox {width: 500px; background: white;padding: 15px;border: 1px solid gray; margin: 10px 0 0 0px;}
+.itemBox img {border: 1px solid gray;}
+.itemBox * {float: left;}
+.itemBox p {width: 282px; margin: 0 0 0 15px;}
+.itemBox button {margin: 15px 0 0 15px; float: right; width: 100px;height: 30px;background-color: #CC0000;
+                color: #fff;border: 1px solid #8A0000;border-left: 20px solid #8A0000; cursor: pointer;}
