@@ -58,6 +58,13 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="01-ExchangeValue.html" />
+    <Content Include="02-ProductSign.html" />
+    <Content Include="03-BiggestInt.html" />
+    <Content Include="04-SortValues.html" />
+    <Content Include="05-DigitName.html" />
+    <Content Include="06-QuadricEquation.html" />
+    <Content Include="07-GreatestNumber.html" />
+    <Content Include="08-NumberToText.html" />
     <Content Include="css\js-console.css" />
     <Content Include="css\style.css" />
     <Content Include="js\js-console.js" />
