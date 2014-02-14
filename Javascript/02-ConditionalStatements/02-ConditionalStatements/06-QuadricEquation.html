@@ -1,7 +1,9 @@
 ﻿<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <title></title>
+    <title>06 - Quadric Equation</title>
+    <link href="css/js-console.css" rel="stylesheet" />
+    <link href="css/style.css" rel="stylesheet" />
 </head>
 <body>
     <header>
@@ -10,9 +12,65 @@
         <a href="03-BiggestInt.html">03-BiggestInt</a> |
         <a href="04-SortValues.html">04-SortValues</a> |
         <a href="05-DigitName.html">05-DigitName</a> |
-        <a href="06-QuadricEquation.html">06-QuadricEquation</a> |
+        <a href="06-QuadricEquation.html" class="current">06-QuadricEquation</a> |
         <a href="07-GreatestNumber.html">07-GreatestNumber</a> |
         <a href="08-NumberToText.html">08-NumberToText</a>
     </header>
+    <table>
+        <tr>
+            <td>A:</td>
+            <td>
+                <input type="text" id="a" /></td>
+        </tr>
+        <tr>
+            <td>B:</td>
+            <td>
+                <input type="text" id="b" /></td>
+        </tr>
+        <tr>
+            <td>C:</td>
+            <td>
+                <input type="text" id="c" /></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>
+                <button onclick="onExecuteClick()">Execute</button></td>
+        </tr>
+    </table>
+    <div id="console">
+    </div>
+    <script src="js/js-console.js">	  
+    </script>
+    <script>
+        function onExecuteClick() {
+            var a = jsConsole.readFloat("#a");
+            var b = jsConsole.readFloat("#b");
+            var c = jsConsole.readFloat("#c");
+            if (a == 0) {
+                jsConsole.writeLine("This is not an quadric equation!");
+            }
+            else {
+                var discriminant = (b * b) - (4 * a * c);
+                if (discriminant > 0) {
+                    var x1 = (-b + Math.sqrt(discriminant)) / (2 * a);
+                    var x2 = (-b - Math.sqrt(discriminant)) / (2 * a);
+                    jsConsole.writeLine("The equation roots are: \nX1:" + x1 +" \nX2: " + x2);
+                }
+                else if (discriminant == 0) {
+                    var x = -b / (2 * a);
+                    jsConsole.writeLine("The equation has only one root: " + x);
+                }
+                else if (discriminant < 0) {
+                    jsConsole.writeLine("The equation doesn't have solution!");
+                }
+            }
+        }
+    </script>
+    <p style="font-size: 12px;">
+        // 06. Write a script that enters the coefficients a, b and c of a quadratic equation <br /> a*x2 + b*x + c = 0 <br />
+		and calculates and prints its real roots. Note that quadratic equations may have 0, 1 or 2 real roots.
+
+    </p>
 </body>
 </html>

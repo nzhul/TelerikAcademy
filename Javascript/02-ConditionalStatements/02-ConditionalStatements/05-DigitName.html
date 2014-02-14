@@ -11,7 +11,7 @@
         <a href="02-ProductSign.html">02-ProductSign</a> |
         <a href="03-BiggestInt.html">03-BiggestInt</a> |
         <a href="04-SortValues.html">04-SortValues</a> |
-        <a href="05-DigitName.html">05-DigitName</a> |
+        <a href="05-DigitName.html" class="current">05-DigitName</a> |
         <a href="06-QuadricEquation.html">06-QuadricEquation</a> |
         <a href="07-GreatestNumber.html">07-GreatestNumber</a> |
         <a href="08-NumberToText.html">08-NumberToText</a>
@@ -35,11 +35,40 @@
     <script>
         function onExecuteClick() {
             var digit = jsConsole.readInteger("#number");
-            if (digit < 0 || digit > 9) {
-                jsConsole.writeLine("Invalid input!");
-            }
-            else {
-
+            switch (digit) {
+                case 1:
+                    jsConsole.writeLine("One");
+                    break;
+                case 2:
+                    jsConsole.writeLine("Two");
+                    break;
+                case 3:
+                    jsConsole.writeLine("Three");
+                    break;
+                case 4:
+                    jsConsole.writeLine("Four");
+                    break;
+                case 5:
+                    jsConsole.writeLine("Five");
+                    break;
+                case 6:
+                    jsConsole.writeLine("Six");
+                    break;
+                case 7:
+                    jsConsole.writeLine("Seven");
+                    break;
+                case 8:
+                    jsConsole.writeLine("Eight");
+                    break;
+                case 9:
+                    jsConsole.writeLine("Nine");
+                    break;
+                case 0:
+                    jsConsole.writeLine("Zero");
+                    break;
+                default:
+                    jsConsole.writeLine("Invalid Input!");
+                    break;
             }
         }
     </script>

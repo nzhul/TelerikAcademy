@@ -1,18 +1,50 @@
 ﻿<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <title></title>
+    <title>01 - Exchange Value</title>
+    <link href="css/js-console.css" rel="stylesheet" />
+    <link href="css/style.css" rel="stylesheet" />
 </head>
 <body>
     <header>
-        <a href="01-ExchangeValue.html">01-ExchangeValue</a> |
+        <a href="01-ExchangeValue.html" >01-ExchangeValue</a> |
         <a href="02-ProductSign.html">02-ProductSign</a> |
         <a href="03-BiggestInt.html">03-BiggestInt</a> |
         <a href="04-SortValues.html">04-SortValues</a> |
         <a href="05-DigitName.html">05-DigitName</a> |
         <a href="06-QuadricEquation.html">06-QuadricEquation</a> |
         <a href="07-GreatestNumber.html">07-GreatestNumber</a> |
-        <a href="08-NumberToText.html">08-NumberToText</a>
+        <a href="08-NumberToText.html" class="current">08-NumberToText</a>
     </header>
+    <table>
+        <tr>
+            <td><label for="b">Number:</label></td>
+            <td><input type="text" id="number" /></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><button onclick="onExecuteClick()">Execute</button></td>
+        </tr>
+    </table>
+    <div id="console">
+    </div>
+    <script src="js/js-console.js">	  
+    </script>
+    <script>
+        function onExecuteClick() {
+            var number = jsConsole.read("#number");
+
+            var ones = ["", "One", "Two", "Three"]
+        }
+    </script>
+    <p style="font-size:12px;">
+        // 08. Write a script that converts a number in the range [0...999] to a text corresponding to its English pronunciation. Examples:<br />
+	0  "Zero"<br />
+	273  "Two hundred seventy three"<br />
+	400  "Four hundred"<br />
+	501  "Five hundred and one"<br />
+	711  "Seven hundred and eleven"
+
+    </p>
 </body>
 </html>

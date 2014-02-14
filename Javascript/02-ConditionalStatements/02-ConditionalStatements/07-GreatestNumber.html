@@ -1,7 +1,9 @@
 ﻿<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <title></title>
+    <title>02 - Product Sign</title>
+    <link href="css/js-console.css" rel="stylesheet" />
+    <link href="css/style.css" rel="stylesheet" />
 </head>
 <body>
     <header>
@@ -11,8 +13,59 @@
         <a href="04-SortValues.html">04-SortValues</a> |
         <a href="05-DigitName.html">05-DigitName</a> |
         <a href="06-QuadricEquation.html">06-QuadricEquation</a> |
-        <a href="07-GreatestNumber.html">07-GreatestNumber</a> |
+        <a href="07-GreatestNumber.html" class="current">07-GreatestNumber</a> |
         <a href="08-NumberToText.html">08-NumberToText</a>
     </header>
+    <table>
+        
+        <tr>
+            <td></td>
+            <td><label for="numbers">Enter numbers (sepparated by comma [,]):</label></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><input type="text" id="numbers" /></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>
+                <button onclick="onExecuteClick()">Execute</button></td>
+        </tr>
+    </table>
+    <div id="console">
+    </div>
+    <script src="js/js-console.js">	  
+    </script>
+    <script>
+        function cleanArray(actual)
+        {
+            var newArray = new Array();
+            for (var i = 0; i < actual.length; i++) {
+                if (actual[i]) {
+                    newArray.push(actual[i]);
+                }
+            }
+            return newArray;
+        }
+
+        function onExecuteClick() {
+            var input = jsConsole.read("#numbers");
+            var numbers = input.split(',');
+            numbers = cleanArray(numbers);
+
+            //max = Math.max.apply(Math, numbers);
+
+            var max = -Infinity;
+            for (var i = 0; i < numbers.length; i++) {
+                if (parseInt(numbers[i]) > max) {
+                    max = numbers[i];
+                }
+            }
+            jsConsole.writeLine("The maximum number is: " + max);
+        }
+    </script>
+    <p style="font-size: 12px;">
+        // 07. Write a script that finds the greatest of given 5 variables.
+    </p>
 </body>
 </html>
