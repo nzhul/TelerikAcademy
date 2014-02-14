@@ -33,8 +33,43 @@
     <script>
         function onExecuteClick() {
             var number = jsConsole.read("#number");
+            var ones = ["", "One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine"];
+            var tens = ["", "", "Twenty", "Thirty", "Fourty", "Fifty", "Sixty", "Seventy", "Eighty", "Ninety"];
+            var specialDigits = ["Ten", "Eleven", "Twelve", "Thirteen", "Fourteen", "Fifteen", "Sixteen", "Seventeen", "Eighteen", "Nineteen"];
 
-            var ones = ["", "One", "Two", "Three"]
+            switch (number.length) {
+                case 1: // 1-9
+                    if (number[0] == 0) {
+                        jsConsole.writeLine("Zero");
+                    }
+                    else {
+                        jsConsole.writeLine(ones[number[0]]);
+                    }
+                    break;
+                case 2: // 10 - 99
+                    if (number[0] == 1) {
+                        jsConsole.writeLine(specialDigits[number[1]]);
+                    }
+                    else {
+                        jsConsole.writeLine(tens[number[0]] + " " + ones[number[1]]);
+                    }
+                    break;
+                case 3: // 100 - 999
+                    if (number[1] == 1) {
+                        jsConsole.writeLine(ones[number[0] + " hundred and " + specialDigits[number[2]]]);
+                    }
+                    else {
+                        if (number[1] != 0 || number[2] != 0) {
+                            jsConsole.writeLine(ones[number[0]] + " hundred and " + tens[number[1]] + " " + ones[number[2]]);
+                        }
+                        else {
+                            jsConsole.writeLine(ones[number[0]] + " hundred " + tens[number[1]] + " " + ones[number[2]]);
+                        }
+                    }
+                    break;
+                default:
+                    break;
+            }
         }
     </script>
     <p style="font-size:12px;">
