@@ -1,0 +1,53 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>04-Property</title>
+    <link href="css/js-console.css" rel="stylesheet" />
+    <link href="css/style.css" rel="stylesheet" />
+</head>
+<body>
+    <header>
+        <a href="01-SimpleLoop.html">01-ExchangeValue</a> |
+        <a href="02-NotDivisible.html" >02-NotDivisible</a> |
+        <a href="03-MinMax.html" >03-MinMax</a> |
+        <a href="04-Property.html" class="current">04-Property</a>
+    </header>
+    <table>
+        <tr>
+            <td></td>
+            <td>
+                <button onclick="onExecuteClick()">Execute</button></td>
+        </tr>
+    </table>
+    <div id="console">
+    </div>
+    <script src="js/js-console.js">	  
+    </script>
+    <script>
+        function findMinMax(myObject)
+        {
+            var min = "z";
+            var max = "a";
+            for (var prop in myObject) {
+                if (prop < min) {
+                    min = prop;
+                }
+                if (prop > max) {
+                    max = prop;
+                }
+            }
+            jsConsole.writeLine("The smallest property in " + myObject + " is " + min);
+            jsConsole.writeLine("The biggest property in " + myObject + " is " + max);
+        }
+
+        function onExecuteClick() {
+            findMinMax(window);
+            findMinMax(navigator);
+            findMinMax(document);
+        }
+    </script>
+    <p style="font-size: 12px;">
+        // 04. Write a script that finds the lexicographically smallest and largest property in document, window and navigator objects
+    </p>
+</body>
+</html>
