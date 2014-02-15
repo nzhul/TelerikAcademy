@@ -17,8 +17,8 @@
     </header>
     <table>
         <tr>
-            <td><label for="b">Loop Length:</label></td>
-            <td><input type="text" id="loopLength" /></td>
+            <td><label for="input">Sequence [,]</label></td>
+            <td><input type="text" id="input" /></td>
         </tr>
         <tr>
             <td></td>
@@ -31,7 +31,28 @@
     </script>
     <script>
         function onExecuteClick() {
+            var numbers = jsConsole.read("#input").split(',');
+            for (var i = 0; i < numbers.length; i++) {
+                numbers[i] = parseInt(numbers[i]);
+            }
 
+            var finalMax = 0;
+            var currentMax = 0;
+            var MaxElement = numbers[0];
+
+            for (var i = 0; i < numbers.length; i++) {
+                currentMax = 0;
+                for (var j = 0; j < numbers.length; j++) {
+                    if (numbers[i] == numbers[j]) {
+                        currentMax++;
+                    }
+                }
+                if (finalMax < currentMax) {
+                    finalMax = currentMax;
+                    MaxElement = numbers[i];
+                }
+            }
+            jsConsole.writeLine(MaxElement + "(" + finalMax + " times)");
         }
     </script>
     <p style="font-size:12px;">

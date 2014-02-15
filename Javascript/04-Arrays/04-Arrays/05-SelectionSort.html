@@ -17,8 +17,8 @@
     </header>
     <table>
         <tr>
-            <td><label for="b">Loop Length:</label></td>
-            <td><input type="text" id="loopLength" /></td>
+            <td><label for="input">Sequence [,]</label></td>
+            <td><input type="text" id="input" /></td>
         </tr>
         <tr>
             <td></td>
@@ -32,9 +32,37 @@
     <script>
         function onExecuteClick() {
 
+            var array = jsConsole.read("#input").split(',');
+            for (var i = 0; i < array.length; i++) {
+                array[i] = parseInt(array[i]);
+            }
+
+            var startingPosition = 0;
+            while (startingPosition <= array.length - 1) {
+                var currentMinIndex = 0;
+                var currentMin = Infinity;
+                for (var i = startingPosition; i < array.length; i++) {
+                    if (array[i] < currentMin) {
+                        currentMin = array[i];
+                        currentMinIndex = i;
+                    }
+                }
+
+                var temp = array[startingPosition];
+
+                array[startingPosition] = currentMin;
+                array[currentMinIndex] = temp;
+                startingPosition++;
+            }
+
+            for (var i = 0; i < array.length; i++) {
+                jsConsole.writeLine(i + ": " + array[i]);
+            }
         }
     </script>
     <p style="font-size:12px;">
+         Arrays for testing:<br /><br /> 66, 90, 42, 11, 32, 44, 33, 61, 24, 42, 5, 7, 51, 3, 23, 84, 20, 22, 16, 73, 43, 33, 66, 39, 99,<br />88, 6, 51, 53, 25, 57, 95, 31, 61, 17, 81, 22, 61, 68, 52, 64, 32, 67, 38, 48, 58, 45, 62, 40, 19<br /><br />
+        -1,-33,-2,0,-333,2,33,45<br /><br />
         // 05. Sorting an array means to arrange its elements in increasing order. <br />
         // Write a script to sort an array. Use the "selection sort" algorithm: Find the <br />
         // smallest element, move it at the first position, find the smallest from the rest, <br />
