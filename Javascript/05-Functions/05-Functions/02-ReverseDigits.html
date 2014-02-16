@@ -17,6 +17,10 @@
     </header>
     <table>
         <tr>
+            <td><label for="number">Number: </label></td>
+            <td><input type="text" id="number" /></td>
+        </tr>
+        <tr>
             <td></td>
             <td><button onclick="onExecuteClick()">Execute</button></td>
         </tr>
@@ -26,8 +30,26 @@
     <script src="js/js-console.js">	  
     </script>
     <script>
-        function onExecuteClick() {
+        function Reverse(number)
+        {
+            var digits = [];
+            while (number > 0) {
+                var lastDigit = number % 10;
+                number = parseInt(number / 10);
+                digits.push(lastDigit);
+            }
 
+            var finalNumber = 0;
+            for (var i = 0; i < digits.length; i++) {
+                finalNumber = finalNumber * 10 + digits[i];
+            }
+            return finalNumber;
+        }
+
+        function onExecuteClick() {
+            var number = jsConsole.readInteger("#number");
+            var reversed = Reverse(number);
+            jsConsole.writeLine(reversed);
         }
     </script>
     <p style="font-size:12px;">
