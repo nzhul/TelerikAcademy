@@ -17,6 +17,14 @@
     </header>
     <table>
         <tr>
+            <td><label for="input">Sequence [,]</label></td>
+            <td><input type="text" id="input" /></td>
+        </tr>
+        <tr>
+            <td><label for="input">Position</label></td>
+            <td><input type="text" id="position" /></td>
+        </tr>
+        <tr>
             <td></td>
             <td><button onclick="onExecuteClick()">Execute</button></td>
         </tr>
@@ -26,8 +34,30 @@
     <script src="js/js-console.js">	  
     </script>
     <script>
+        function isBigger(numbers, position)
+        {
+            if (position == 0 || position == numbers.length - 1) {
+                jsConsole.writeLine("The position cannot be first or last element in the sequence!");
+            }
+            else {
+                if (numbers[position] == numbers[position - 1] && numbers[position] == numbers[position + 1]) {
+                    return true;
+                }
+                else {
+                    return false;
+                }
+            }
+        }
         function onExecuteClick() {
+            var numbers = jsConsole.read('#input').split(',');
+            var position = jsConsole.readInteger('#position');
+            for (var i = 0; i < numbers.length; i++) {
+                numbers[i] == parseInt(numbers[i]);
+            }
 
+            if (isBigger(numbers, position)) {
+                jsConsole.writeLine(isBigger);
+            }
         }
     </script>
     <p style="font-size:12px;">

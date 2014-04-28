@@ -26,10 +26,16 @@
     <script src="js/js-console.js">	  
     </script>
     <script>
+        function countElements(string)
+        {
+            var divsCount = document.getElementsByTagName(string).length;
+            return divsCount;
+        }
         function onExecuteClick() {
-
+            jsConsole.write(countElements("div"));
         }
     </script>
+    <div style="background:gray;width:822px;">empty div for testing</div>
     <p style="font-size:12px;">
         // 04. Write a function to count the number of divs on the web page
     </p>

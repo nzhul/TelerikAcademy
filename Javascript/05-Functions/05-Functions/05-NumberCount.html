@@ -17,6 +17,14 @@
     </header>
     <table>
         <tr>
+            <td><label for="input">Sequence [,]</label></td>
+            <td><input type="text" id="input" /></td>
+        </tr>
+        <tr>
+            <td><label for="input">Search</label></td>
+            <td><input type="text" id="search" /></td>
+        </tr>
+        <tr>
             <td></td>
             <td><button onclick="onExecuteClick()">Execute</button></td>
         </tr>
@@ -26,8 +34,23 @@
     <script src="js/js-console.js">	  
     </script>
     <script>
+        function CountOccurence(numbers, search)
+        {
+            var count = 0;
+            for (var i = 0; i < numbers.length; i++) {
+                if (numbers[i] == search) {
+                    count++;
+                }
+            }
+            return count;
+        }
         function onExecuteClick() {
-
+            var numbers = jsConsole.read('#input').split(',');
+            for (var i = 0; i < numbers.length; i++) {
+                numbers[i] = parseInt(numbers[i]);
+            }
+            var search = jsConsole.readInteger('#search');
+            jsConsole.writeLine(CountOccurence(numbers, search));
         }
     </script>
     <p style="font-size:12px;">
