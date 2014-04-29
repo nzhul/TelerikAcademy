@@ -37,10 +37,10 @@
         function isBigger(numbers, position)
         {
             if (position == 0 || position == numbers.length - 1) {
-                jsConsole.writeLine("The position cannot be first or last element in the sequence!");
+                return "The position cannot be first or last element in the sequence!" ;
             }
             else {
-                if (numbers[position] == numbers[position - 1] && numbers[position] == numbers[position + 1]) {
+                if (numbers[position] > numbers[position - 1] && numbers[position] > numbers[position + 1]) {
                     return true;
                 }
                 else {
@@ -52,11 +52,14 @@
             var numbers = jsConsole.read('#input').split(',');
             var position = jsConsole.readInteger('#position');
             for (var i = 0; i < numbers.length; i++) {
-                numbers[i] == parseInt(numbers[i]);
+                numbers[i] = parseInt(numbers[i]);
             }
-
-            if (isBigger(numbers, position)) {
-                jsConsole.writeLine(isBigger);
+            var result = isBigger(numbers, position);
+            if (result) {
+                jsConsole.writeLine(result);
+            }
+            else {
+                jsConsole.writeLine(result);
             }
         }
     </script>
