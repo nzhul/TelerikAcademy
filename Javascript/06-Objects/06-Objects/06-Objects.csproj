@@ -58,6 +58,11 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="01-PlanarSystem.html" />
+    <Content Include="02-CustomRemove.html" />
+    <Content Include="03-DeepCopy.html" />
+    <Content Include="04-PropChecker.html" />
+    <Content Include="05-YoungestPerson.html" />
+    <Content Include="06-Grouping.html" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>

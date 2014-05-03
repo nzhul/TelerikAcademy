@@ -2,8 +2,88 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <title></title>
+    <link href="css/js-console.css" rel="stylesheet" />
+    <link href="css/style.css" rel="stylesheet" />
 </head>
 <body>
+    <header>
+        <a href="01-PlanarSystem.html" class="current" >01-PlanarSystem</a> |
+        <a href="02-CustomRemove.html" >02-CustomRemove</a> |
+        <a href="03-DeepCopy.html" >03-DeepCopy</a> |
+        <a href="04-PropChecker.html" >04-PropChecker</a> |
+        <a href="05-YoungestPerson.html" >05-YoungestPerson</a> |
+        <a href="06-Grouping.html" >06-Grouping</a>
+    </header>
+    <table>
+        <tr>
+            <td></td>
+            <td><button onclick="onExecuteClick()">Execute</button></td>
+        </tr>
+    </table>
+    <div id="console">
+    </div>
+    <script src="js/js-console.js">	  
+    </script>
+    <script>
+        function createPoint(x, y) {
+            return {
+                x: x,
+                y: y,
+            };
+        }
 
+        function createLine(pointA, pointB) {
+            return {
+                pointA: pointA,
+                pointB: pointB,
+                getLineDetails: function () {
+                    return "Line point A(" + pointA.x + "," + pointA.y + ")<br/>Line point B(" + pointB.x + "," + pointB.y + ")";
+                }
+            };
+        }
+
+        function calcDistance(point1, point2) {
+            return parseInt(Math.abs(point1.x - point2.x) * Math.abs(point1.x - point2.x)
+            + Math.abs(point1.y - point2.y) * Math.abs(point1.y - point2.y));
+        }
+
+        function canBeTriangle(lineA, lineB, lineC) {
+            var a = calcDistance(lineA.pointA, lineA.pointB);
+            var b = calcDistance(lineB.pointA, lineB.pointB);
+            var c = calcDistance(lineC.pointA, lineC.pointB);
+
+            if ((a + b > c) && (a + c > b) && (c + b > a)) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+
+        function onExecuteClick() {
+
+            var lineOne = createLine(createPoint(3, 3), createPoint(5, 5));
+            var lineTwo = createLine(createPoint(2, 2), createPoint(4, 4));
+            var lineThree = createLine(createPoint(2, 2), createPoint(4, 4));
+
+            if (canBeTriangle(lineOne, lineTwo, lineThree)) {
+                jsConsole.writeLine("The lines CAN create triangle!" + "<br/>");
+            } else {
+
+                jsConsole.writeLine("The lines CANNOT create triangle!" + "<br/>");
+            }
+
+            jsConsole.writeLine("Line 1: <br/>" + lineOne.getLineDetails() + "<br/>");
+            jsConsole.writeLine("Line 2: <br/>" + lineTwo.getLineDetails() + "<br/>");
+            jsConsole.writeLine("Line 3: <br/>" + lineThree.getLineDetails());
+        }
+    </script>
+    <p style="font-size:12px;">
+        // 01. Write functions for working with shapes in  standard Planar coordinate system <br />
+        Points are represented by coordinates P(X, Y)<br />
+        Lines are represented by two points, marking their beginning and ending<br />
+        L(P1(X1,Y1), P2(X2,Y2))<br />
+        Calculate the distance between two points<br />
+        Check if three segment lines can form a triangle
+    </p>
 </body>
 </html>
