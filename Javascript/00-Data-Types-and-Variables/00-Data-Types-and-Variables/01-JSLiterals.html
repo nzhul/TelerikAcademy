@@ -1,0 +1,70 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>01 - JS Literals</title>
+    <link href="css/js-console.css" rel="stylesheet" />
+    <link href="css/style.css" rel="stylesheet" />
+</head>
+<body>
+    <header>
+        <a href="01-SimpleLoop.html" class="current">01-ExchangeValue</a>
+    </header>
+    <table>
+        <tr>
+            <td></td>
+            <td><button onclick="onExecuteClick()">Execute</button></td>
+        </tr>
+    </table>
+    <div id="console">
+    </div>
+    <script src="js/js-console.js">	  
+    </script>
+    <script>
+        function onExecuteClick() {
+            //Array Literals
+            var coffees = ["French Roast", "Colombian", "Kona"];
+
+            // Boolean Literals
+            var isLogged = true;
+
+            // Integer Literals
+            var number = 5;
+
+            // Floating-point Literals
+            var floatingNumber = 3.14
+
+            // Object Literal
+            var car = {
+                model: "BMW",
+                maxSpeed: "290",
+                price: 190000,
+            };
+
+            // String Literals
+            var text = "Gosho";
+
+            var joeyQuote = "How you doin'?";
+
+            jsConsole.writeLine(typeof coffees);
+            jsConsole.writeLine(typeof isLogged);
+            jsConsole.writeLine(typeof number);
+            jsConsole.writeLine(typeof floatingNumber);
+            jsConsole.writeLine(typeof car);
+            jsConsole.writeLine(typeof text);
+
+            var nullVar = null;
+            var undefinedVar = undefined;
+
+            jsConsole.writeLine("---------");
+            jsConsole.writeLine(nullVar);
+            jsConsole.writeLine(undefinedVar);
+        }
+    </script>
+    <p style="font-size:12px;">
+        // 01. Assign all the possible JavaScript literals to different variables.<br />
+02. Create a string variable with quoted text in it. For example: 'How you doin'?', Joey said.<br />
+03. Try typeof on all variables you created.<br />
+04. Create null, undefined variables and try typeof on them.
+    </p>
+</body>
+</html>
