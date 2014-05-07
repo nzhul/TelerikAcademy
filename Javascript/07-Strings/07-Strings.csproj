@@ -57,6 +57,21 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="01-ReverseString.html" />
+    <Content Include="02-BracketChecker.html" />
+    <Content Include="03-SubstringCount.html" />
+    <Content Include="04-UpCaseLowerCase.html" />
+    <Content Include="05-nbsp.html" />
+    <Content Include="06-ExtractText.html" />
+    <Content Include="07-ParseURL.html" />
+    <Content Include="08-BBCode.html" />
+    <Content Include="09-ExtractEmail.html" />
+    <Content Include="10-Palindrome.html" />
+    <Content Include="11-StringFormat.html" />
+    <Content Include="12-Templates.html" />
+    <Content Include="css\js-console.css" />
+    <Content Include="css\style.css" />
+    <Content Include="js\js-console.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
