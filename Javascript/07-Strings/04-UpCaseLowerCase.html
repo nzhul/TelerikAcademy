@@ -23,7 +23,7 @@
     <table>
         <tr>
             <td>Text:</td>
-            <td><input type="text" style="width: 760px;" id="input" value="We are <mixcase>living</mixcase> in a <upcase>yellow submarine</upcase>. We <mixcase>don't</mixcase> have <lowcase>anything</lowcase> else." /></td>
+            <td><input type="text" style="width: 760px;" id="input" value="We are <mixcase>living</mixcase> in a <upcase>yellow submarine</upcase>. We <mixcase>don't</mixcase> have <lowcase>ANYTHING</lowcase> else." /></td>
         </tr>
         <tr>
             <td></td>
@@ -35,12 +35,29 @@
     <script src="js/js-console.js">	  
     </script>
     <script>
+        function createMixCase(match) {
+            var output = "";
+            for (var i = 0; i < match.length; i++) {
+                if (i % 2 === 0) {
+                    output += match[i].toUpperCase();
+                }
+                else {
+                    output += match[i].toLowerCase();
+                }
+            }
+            return output;
+        }
+
         function onExecuteClick() {
             var text = jsConsole.read("#input"),
                 regexUpCase = /<upcase>(.*?)<\/upcase>/gi,
                 regexLowCase = /<lowcase>(.*?)<\/lowcase>/gi,
                 regexMixCase = /<mixcase>(.*?)<\/mixcase>/,
-                result = text.replace(regexUpCase, function (match) { });
+                result = text.replace(regexUpCase, function (match) { return match.toUpperCase(); }),
+                result = result.replace(regexLowCase, function (match) { return match.toLowerCase(); }),
+                result = result.replace(regexMixCase, createMixCase);
+
+            jsConsole.writeLine(result);
         }
     </script>
     <p style="font-size:12px;">
