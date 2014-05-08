@@ -22,6 +22,10 @@
     </header>
     <table>
         <tr>
+            <td>Text:</td>
+            <td><input type="text" style="width: 760px;" id="input" value="We are <mixcase>living</mixcase> in a <upcase>yellow submarine</upcase>. We <mixcase>don't</mixcase> have <lowcase>anything</lowcase> else." /></td>
+        </tr>
+        <tr>
             <td></td>
             <td><button onclick="onExecuteClick()">Execute</button></td>
         </tr>
@@ -32,7 +36,11 @@
     </script>
     <script>
         function onExecuteClick() {
-
+            var text = jsConsole.read("#input"),
+                regexUpCase = /<upcase>(.*?)<\/upcase>/gi,
+                regexLowCase = /<lowcase>(.*?)<\/lowcase>/gi,
+                regexMixCase = /<mixcase>(.*?)<\/mixcase>/,
+                result = text.replace(regexUpCase, function (match) { });
         }
     </script>
     <p style="font-size:12px;">
