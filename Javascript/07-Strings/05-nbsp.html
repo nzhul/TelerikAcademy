@@ -22,6 +22,10 @@
     </header>
     <table>
         <tr>
+            <td>Text:</td>
+            <td><textarea id="text">There are some white spaces     .</textarea></td>
+        </tr>
+        <tr>
             <td></td>
             <td><button onclick="onExecuteClick()">Execute</button></td>
         </tr>
@@ -32,11 +36,13 @@
     </script>
     <script>
         function onExecuteClick() {
-
+            var text = jsConsole.read("#text"),
+                output = text.replace(/\s/g, "&nbsp;");
+            jsConsole.writeLine(output);
         }
     </script>
     <p style="font-size:12px;">
-        // 
+        // 05. Write a function that replaces non breaking white-spaces in a text with &amp;nbsp;
     </p>
 </body>
 </html>

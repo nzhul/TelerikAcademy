@@ -22,6 +22,10 @@
     </header>
     <table>
         <tr>
+            <td>HTML:</td>
+            <td><input type="text" value="http://www.d3bg.org/index.php?group=1&cat=0" id="input" /></td>
+        </tr>
+        <tr>
             <td></td>
             <td><button onclick="onExecuteClick()">Execute</button></td>
         </tr>
@@ -31,8 +35,17 @@
     <script src="js/js-console.js">	  
     </script>
     <script>
-        function onExecuteClick() {
+        function parseUrl(url) {
+            var match = /(.*):\/\/(.*)(\/.*)/.exec(url);
+            return {protocol: match[1], server: match[2], resource: match[3]};
+        }
 
+        function onExecuteClick() {
+            var url = jsConsole.read("#input");
+            var resultObject = parseUrl(url);
+            for (var i in resultObject) {
+                jsConsole.writeLine(i+': '+resultObject[i]);
+            }
         }
     </script>
     <p style="font-size:12px;">
