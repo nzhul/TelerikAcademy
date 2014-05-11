@@ -31,12 +31,46 @@
     <script src="js/js-console.js">	  
     </script>
     <script>
+        function isPalindrome(word)
+        {
+            for (var i = 0; i < word.length; i++) {
+                if (word[i] != word[word.length - i - 1]) {
+                    return false;
+                }
+            }
+            return true;
+        }
+
+        function collectPalindromes(text)
+        {
+            var regex = /\b\w+\b/gi;
+            var matches = text.match(regex);
+            var output = [];
+            for (var i = 0; i < matches.length; i++) {
+                if (isPalindrome(matches[i])) {
+                    output.push(matches[i]);
+                }
+            }
+            return output;
+        }
+
         function onExecuteClick() {
+            var text = 
+            "The most familiar palindromes, in English at least, \
+            are character-by-character: The written characters read the same \
+            backward as forward. Some examples of common palindromic words: civic,\
+            radar, level, rotor, kayak, reviver, racecar, redder, madam, malayalam, \
+            and refer.";
+
+            var palindromes = collectPalindromes(text);
+            for (var i = 0; i < palindromes.length; i++) {
+                jsConsole.writeLine(palindromes[i]);
+            }
 
         }
     </script>
     <p style="font-size:12px;">
-        // 
+        // 10. Write a program that extracts from a given text all palindromes, e.g. "ABBA", "lamal", "exe".
     </p>
 </body>
 </html>

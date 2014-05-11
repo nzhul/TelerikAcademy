@@ -31,12 +31,20 @@
     <script src="js/js-console.js">	  
     </script>
     <script>
-        function onExecuteClick() {
+        function stringFormat() {
+            var output = arguments[0];
+            for (var i = 1; i < arguments.length; i++) {
+                output = output.replace(new RegExp('\\{' + (i - 1) + '\\}', "gi"), arguments[i]);
+            }
+            return output;
+        }
 
+        function onExecuteClick() {
+            jsConsole.writeLine(stringFormat("The coordinates of the {0} are X:{1} and Y: {2}", "rectangle", 25, 36));
         }
     </script>
     <p style="font-size:12px;">
-        // 
+        // 11. Write a function that formats a string using placeholders:
     </p>
 </body>
 </html>
