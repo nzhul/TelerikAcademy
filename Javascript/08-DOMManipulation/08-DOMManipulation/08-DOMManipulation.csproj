@@ -58,10 +58,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="01-RandomDivs.html" />
-    <Content Include="02-CircleLoop.html" />
+    <Content Include="00-MathSinTests.html" />
     <Content Include="css\style.css" />
     <Content Include="js\01-random-divs.js" />
-    <Content Include="js\02-circle-loop.js" />
+    <Content Include="js\00-math-sin-tests.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
