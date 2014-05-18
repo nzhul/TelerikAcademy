@@ -1,0 +1,85 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+</head>
+<body>
+    <script>
+        function Solve(input) {
+            var rowsColsJumps = input[0].split(' ').map(Number);
+            var rows = rowsColsJumps[0];
+            var cols = rowsColsJumps[1];
+            var jumpsCount = rowsColsJumps[2];
+            var startingPosition = input[1].split(' ').map(Number);
+            var currentPosition = {
+                    row: startingPosition[0],
+                    col: startingPosition[1]
+            };
+
+            // Init field
+            var field = [];
+            var counter = 1;
+            for (var i = 0; i < rows; i++) {
+                field[i] = [];
+                for (var j = 0; j < cols; j++) {
+                    field[i][j] = counter++;
+                }
+            }
+
+            //read jumps
+            var jumps = [];
+            for (var i = 2; i < 2 + jumpsCount; i++) {
+                var jump = input[i].split(' ').map(Number);
+                var currentJump = {
+                    row: jump[0],
+                    col: jump[1]
+                };
+                jumps.push(currentJump);
+            }
+
+            // go thru the field
+            var escaped = false;
+            var sumOfNumbers = 0;
+            var totalJumps = 0;
+            var jumpsIndex = 0;
+            while (true) {
+                if (currentPosition.row < 0 || currentPosition.row >= rows
+                    || currentPosition.col < 0 || currentPosition.col >= cols) {
+                    escaped = true;
+                    break;
+                }
+
+                if (field[currentPosition.row][currentPosition.col] === 'x') {
+                    escaped = false;
+                    break;
+                }
+
+                sumOfNumbers += field[currentPosition.row][currentPosition.col];
+                totalJumps++;
+                var currentJump = jumps[jumpsIndex++];
+                if (jumpsIndex >= jumps.length) {
+                    jumpsIndex = 0;
+                }
+
+                field[currentPosition.row][currentPosition.col] = 'x';
+
+                currentPosition.row += currentJump.row;
+                currentPosition.col += currentJump.col;
+            }
+
+            return escaped ? 'escaped ' + sumOfNumbers : 'caught ' + totalJumps;
+
+        }
+
+        var input = [
+            '6 7 3',
+            '0 0',
+            '2 2',
+            '-2 2',
+            '3 -1'
+        ]
+
+        Solve(input);
+    </script>
+</body>
+</html>
