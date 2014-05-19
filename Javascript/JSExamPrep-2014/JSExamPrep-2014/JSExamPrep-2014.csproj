@@ -59,6 +59,8 @@
   <ItemGroup>
     <Content Include="01-Sequences.html" />
     <Content Include="02-JoroTheNaughty.html" />
+    <Content Include="03-MaxSum.html" />
+    <Content Include="04-LabyrinthEscape.html" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>

@@ -1,0 +1,93 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+</head>
+<body>
+    <script>
+        function Solve(input) {
+            var rowsAndCols = input[0].split(' ');
+            var rows = rowsAndCols[0] | 0;
+            var cols = rowsAndCols[1] | 0;
+            var startingRowAndCol = input[1].split(' ');
+            var startingRow = startingRowAndCol[0] | 0;
+            var startingCol = startingRowAndCol[1] | 0;
+            var position = {
+                row: startingRow,
+                col: startingCol
+            };
+
+            // Init field
+            var field = [];
+            var counter = 1;
+            for (var i = 2; i < 2 + rows; i++) {
+                field[i - 2] = [];
+                var directionString = input[i];
+                for (var j = 0; j < cols; j++) {
+                    var directionSymbol = directionString[j];
+                    var directionAndIndex = {
+                        index: counter++,
+                        direction: directionSymbol
+                    }
+                    field[i - 2][j] = directionAndIndex;
+                }
+            }
+
+            // go thru the field
+            var out = false;
+            var sumOfNumbers = 0;
+            var numberOfCell = 0;
+            while (true) {
+                if (position.row >= rows || position.row < 0
+                    || position.col >= cols || position.col < 0) {
+                    out = true;
+                    break;
+                }
+
+                if (field[position.row][position.col].direction == 'x') {
+                    out = false;
+                    break;
+                }
+
+                sumOfNumbers += field[position.row][position.col].index;
+                numberOfCell++;
+
+                var oldPosition = {
+                    row: position.row,
+                    col: position.col
+                }
+
+                switch (field[position.row][position.col].direction) {
+                    case 'l':
+                        position.col--;
+                        break;
+                    case 'r':
+                        position.col++;
+                        break;
+                    case 'u':
+                        position.row--;
+                        break;
+                    case 'd':
+                        position.row++;
+                        break;
+                }
+
+                field[oldPosition.row][oldPosition.col].direction = 'x';
+            }
+
+            return out ? 'out ' + sumOfNumbers : 'lost ' + numberOfCell;
+        }
+
+        var input = [
+ "5 8",
+ "0 0",
+ "rrrrrrrd",
+ "rludulrd",
+ "durlddud",
+ "urrrldud",
+ "ulllllll"]
+        ;
+        Solve(input);
+    </script>
+</body>
+</html>
