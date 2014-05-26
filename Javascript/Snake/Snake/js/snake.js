@@ -9,6 +9,7 @@
     canvas.style.width = w +'px';
     canvas.style.height = h + 'px';
     var direction = 'right';
+    var isDead = false;
 
     // Paint the canvas
     ctx.strokeStyle = 'white';
@@ -19,7 +20,7 @@
 
     
     function createSnake() {
-        var length = 15; // Length of the snake
+        var length = 5; // Length of the snake
         snakeArr = [];
         for (var i = length - 1; i >= 0; i--) {
             snakeArr.push({
@@ -43,16 +44,16 @@
         document.onkeydown = function () {
             switch (window.event.keyCode) {
                 case 37: // left
-                    direction = 'left';
+                    if (direction != 'right') direction = 'left';
                     break;
                 case 38: // left
-                    direction = 'up';
+                    if (direction != 'down') direction = 'up';
                     break;
                 case 39: // right
-                    direction = 'right';
+                    if (direction != 'left') direction = 'right';
                     break;
                 case 40: // down
-                    direction = 'down';
+                    if (direction != 'up') direction = 'down';
                     break;
             }
         }
@@ -76,6 +77,14 @@
                 break;
         }
 
+        // Check if out of border
+        if (newHeadX > w / cellSpacing - 1
+            || newHeadX == -1
+            || newHeadY == -1
+            || newHeadY > h / cellSpacing - 1) {
+            return;
+        }
+
         var tail = snakeArr.pop();
         tail.x = newHeadX;
         tail.y = newHeadY
@@ -90,7 +99,7 @@
     }
     Draw();
 
-    gameLoop = setInterval(Draw, 100);
+    gameLoop = setInterval(Draw, 80);
 
 
 
