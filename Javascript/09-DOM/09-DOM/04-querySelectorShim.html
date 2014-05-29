@@ -15,63 +15,64 @@
 
     <p></p>
     <p></p>
+
     <script>
-        (function () {
+        ; (function () {
             var querySelectorAllShim = (function () {
                 function _toArray(arrayLike) {
-                    var result = [],
-                        i,
-                        length
+                    var result = []
 
-                    for (var i = 0, length = arrayLike.length; i < length; i++) {
-                        result.push(arrayLike[i]);
-                    }
+                      , i
+                      , length
+
+                    for (i = 0, length = arrayLike.length; i < length; i++)
+                        result.push(arrayLike[i])
+
                     return result
                 }
 
                 function _isParentOf(self, element) {
                     while (element.parentNode) {
-                        if (element.parentNode === self) {
-                            return true;
-                        }
+                        if (element.parentNode === self)
+                            return true
 
-                        element = element.parentNode;
+                        element = element.parentNode
                     }
-                    return false;
+
+                    return false
                 }
 
                 function _getById(selector, context) {
-                    var element = document.getElementById(selector.substr(1));
-                    if (_isParentOf(context, element)) {
-                        return [element];
-                    }
-                    return [];
+                    var element = document.getElementById(selector.substr(1))
+
+                    if (_isParentOf(context, element))
+                        return [element]
+
+                    return []
                 }
 
                 function _get(selector, context) {
                     if (selector.match(/^#/)) {
-                        return _getById(selectorm, context);
+                        return _getById(selector, context)
                     }
 
-                    if (selector.match(/^\./)) {
-                        return _toArray(context.getElementsByClassName(selector.substr(1)));
-                    }
+                    if (selector.match(/^\./))
+                        return _toArray(context.getElementsByClassName(selector.substr(1)))
 
-                    return _toArray(context.getElementsByTagName(selector));
+                    return _toArray(context.getElementsByTagName(selector))
                 }
 
                 function _querySelectorAllShim(tokens, result) {
-                    if (tokens.length === 0) {
+                    if (tokens.length === 0)
                         return result
-                    }
 
-                    var token = tokens.shift(),
-                        next = [],
-                        i;
+                    var token = tokens.shift()
+                      , next = []
 
-                    for (var i = 0; i < result.length; i++) {
+                      , i
+
+                    for (i = 0; i < result.length; i++)
                         Array.prototype.push.apply(next, _get(token, result[i]))
-                    }
 
                     return _querySelectorAllShim(tokens, next)
                 }
@@ -94,8 +95,6 @@
             console.log(document.querySelectorAll('body div .className #id'))
             console.log(document.body.querySelectorAll('div .className #id'))
         }())
-
-
     </script>
 </body>
 </html>
