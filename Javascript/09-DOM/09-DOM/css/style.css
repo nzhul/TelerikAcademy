@@ -1,0 +1,9 @@
+﻿div {
+    border: 1px solid blue;
+    width: 300px;
+    padding: 10px;
+    margin: 10px;
+}
+    div div {
+        width: 260px;
+    }

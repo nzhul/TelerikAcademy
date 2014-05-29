@@ -1,0 +1,61 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>01-Select All Divs</title>
+    <link href="css/style.css" rel="stylesheet" />
+</head>
+<body>
+    <button>Select via .getElementsByTagName</button>
+    <button>Select via QuerySelector</button>
+    <div>Lonely Div</div>
+    <div>
+        <div>Div inside another div 1</div>
+        <div>Div inside another div 2</div>
+    </div>
+    <div>Another lonely Div</div>
+
+    <script>
+
+        // MAIN Task
+        function selectNestedDivsWithElementName() {
+            var allDivs = document.getElementsByTagName('div');
+            var nestedDivs = [];
+            for (var i = 0; i < allDivs.length; i++) {
+                if (allDivs[i].parentNode instanceof HTMLDivElement) {
+                    nestedDivs.push(allDivs[i]);
+                }
+            }
+            return nestedDivs;
+        }
+
+        function selectNestedDivsWithQuery() {
+            var nestedDivs = document.querySelectorAll('div div');
+            return nestedDivs;
+        }
+        // MAIN CODE END
+
+
+        // Sugar stuff
+        var nestedDivsWithGetElementsByTagName = selectNestedDivsWithElementName();
+        var getElementsByTagNameButton = document.getElementsByTagName('button')[0];
+        getElementsByTagNameButton.onclick = function () {
+            markNestedDivs(nestedDivsWithGetElementsByTagName, 'red')
+        };
+
+        var nestedDivsWithQuerySelector = selectNestedDivsWithQuery();
+        var querySelecorButton = document.getElementsByTagName('button')[1];
+        querySelecorButton.onclick = function () {
+            markNestedDivs(nestedDivsWithQuerySelector, 'green');
+        }
+
+        function markNestedDivs(nodeList, color) {
+            for (var i = 0; i < nodeList.length; i++) {
+                nodeList[i].style.borderColor = color;
+                nodeList[i].style.borderWidth = '3px';
+            }
+        }
+
+        
+    </script>
+</body>
+</html>
