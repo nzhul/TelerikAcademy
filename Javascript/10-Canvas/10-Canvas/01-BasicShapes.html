@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <title>01 - Basic Shapes</title>
@@ -14,8 +14,7 @@
         var canvas = document.getElementById('canvas');
         var ctx = canvas.getContext('2d');
 
-        function drawFullCircle(x,y,r,scaleX,scaleY,fillColor,strokeColor, rotate)
-        {
+        function drawFullCircle(x, y, r, scaleX, scaleY, fillColor, strokeColor, rotate) {
             ctx.save();
             ctx.beginPath();
             ctx.fillStyle = fillColor;
@@ -30,17 +29,30 @@
             ctx.restore();
         }
 
-        function drawLine(points, color, isClosed) {
+        function drawLine(points, strokeColor, fillColor, isClosed) {
             ctx.beginPath();
-            for (var i = 0; i < points.length; i+=2) {
+            for (var i = 0; i < points.length; i += 2) {
                 ctx.lineTo(points[i], points[i + 1]);
             }
-            ctx.strokeStyle = color;
+            ctx.strokeStyle = strokeColor;
             if (isClosed) {
                 ctx.closePath();
             }
+            if (fillColor) {
+                ctx.fillStyle = fillColor;
+            }
             ctx.stroke();
-            
+
+        }
+
+        function drawRect(x, y, w, h, fillColor, strokeColor) {
+            ctx.beginPath();
+            ctx.rect(x, y, w, h);
+            ctx.fillStyle = fillColor;
+            ctx.strokeStyle = strokeColor;
+            ctx.fill();
+            ctx.stroke();
+            ctx.closePath();
         }
 
         function drawHead() {
@@ -86,32 +98,65 @@
         }
 
         function drawBike() {
-            ctx.translate(100,400);
+            ctx.translate(100, 400);
             drawFullCircle(-70, 150, 70, 1, 1, '#90cad7', '#317c8e', 0);
             ctx.translate(150, 150);
             drawFullCircle(0, 0, 70, 1, 1, '#90cad7', '#317c8e', 0);
             var points =
                 [
                     0, 0, -20, -150, 20, -170, -20, -150, -60, -150, -20, -150, -13, -100,
-                 -120, 0, -220, 0, -150, -80, -13, -100, -120, 0, -165, -120, -140, - 120, -190, -120 
+                 -120, 0, -220, 0, -150, -80, -13, -100, -120, 0, -165, -120, -140, -120, -190, -120
                 ];
             drawLine(points, '#317c8e');
-            
+
             ctx.moveTo(-120, 0);
             ctx.beginPath();
             ctx.arc(-120, 0, 20, 0.25 * Math.PI, -0.75 * Math.PI);
             ctx.lineTo(-150, -30);
             ctx.moveTo(-90, 30);
             ctx.arc(-120, 0, 20, 0.25 * Math.PI, -0.75 * Math.PI, true);
-            
+
             ctx.stroke();
 
         }
 
         function drawHouse() {
-            ctx.moveTo(120, 0);
-            ctx.rect(200, -100, 200, 100);
+            drawRect(120, -300, 300, 200, '#975B5B', 'black');
+            ctx.lineTo(270, -450);
+            ctx.lineTo(420, -300);
+            ctx.fillStyle = '#975B5B';
+            ctx.fill();
             ctx.stroke();
+
+            ctx.translate(5,5);
+            drawRect(135, -285, 50, 30, 'black', 'black');
+            ctx.translate(57, 0);
+            drawRect(135, -285, 50, 30, 'black', 'black');
+            ctx.translate(0, 37);
+            drawRect(135, -285, 50, 30, 'black', 'black');
+            ctx.translate(-57, 0);
+            drawRect(135, -285, 50, 30, 'black', 'black');
+
+            ctx.translate(150, -37);
+            drawRect(135, -285, 50, 30, 'black', 'black');
+            ctx.translate(57, 0);
+            drawRect(135, -285, 50, 30, 'black', 'black');
+            ctx.translate(0, 37);
+            drawRect(135, -285, 50, 30, 'black', 'black');
+            ctx.translate(-57, 0);
+            drawRect(135, -285, 50, 30, 'black', 'black');
+
+            ctx.translate(-150,90);
+            ctx.translate(150, -37);
+            drawRect(135, -285, 50, 30, 'black', 'black');
+            ctx.translate(57, 0);
+            drawRect(135, -285, 50, 30, 'black', 'black');
+            ctx.translate(0, 37);
+            drawRect(135, -285, 50, 30, 'black', 'black');
+            ctx.translate(-57, 0);
+            drawRect(135, -285, 50, 30, 'black', 'black');
+
+
         }
 
         drawHead();
