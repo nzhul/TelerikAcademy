@@ -7,12 +7,12 @@
     <ProductVersion>
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{BC805EBB-FDC2-454D-B4DA-E3F9FCE93FE5}</ProjectGuid>
+    <ProjectGuid>{C609D771-2670-4027-93C3-A8375F5E28C0}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>_10_Canvas</RootNamespace>
-    <AssemblyName>10-Canvas</AssemblyName>
+    <RootNamespace>_11_KineticJS</RootNamespace>
+    <AssemblyName>11-KineticJS</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <UseIISExpress>true</UseIISExpress>
     <IISExpressSSLPort />
@@ -57,11 +57,11 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="01-BasicShapes.html" />
-    <Content Include="02-BouncingBall.html" />
-    <Content Include="03-Snake.html" />
-    <Content Include="css\style.css" />
-    <Content Include="js\snake.js" />
+    <Content Include="01-FamilyTree.html" />
+    <Content Include="js\familyTree.js" />
+    <Content Include="js\kinetic-v5.1.0.min.js" />
+    <Content Include="KineticTutorial-1.html" />
+    <Content Include="KineticTutorial-2.html" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -90,7 +90,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>0</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:17760/</IISUrl>
+          <IISUrl>http://localhost:34046/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

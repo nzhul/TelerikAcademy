@@ -1,0 +1,50 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Kinetic Tutorial 2</title>
+    <style>
+        .kineticjs-content {
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <div id="container"></div>
+        <script src="js/kinetic-v5.1.0.min.js"></script>
+    <script defer="defer">
+        var stage = new Kinetic.Stage({
+            container: 'container',
+            width: 578,
+            height: 200
+        });
+        var layer = new Kinetic.Layer();
+        
+        var poly = new Kinetic.Line({
+            points: [80, 180, 50, 100, 340, 23, 500, 109, 499, 139],
+            fill: 'yellowgreen',
+            stroke: 'black',
+            strokeWidth: 5,
+            closed: true,
+            tension: 0.2
+        });
+
+        var simpleTex = new Kinetic.Text({
+            x: stage.width() / 2,
+            y: stage.height() / 2,
+            text: 'Гошо',
+            fontSize: 30,
+            fontFamily: 'Impact',
+            fill: 'black',
+        });
+
+        
+        layer.add(poly);
+        layer.add(simpleTex);
+        stage.add(layer);
+
+
+
+
+    </script>
+</body>
+</html>

@@ -156,6 +156,38 @@
             ctx.translate(-57, 0);
             drawRect(135, -285, 50, 30, 'black', 'black');
 
+            ctx.moveTo(-10, -232);
+            ctx.lineTo(-10, -300);
+            ctx.save();
+            ctx.scale(1.6, 1);
+            ctx.stroke();
+            ctx.beginPath();
+            ctx.arc(24, -300, 30, 0 * Math.PI, -1.0 * Math.PI, true);
+            ctx.moveTo(54, -300);
+            ctx.lineTo(54, -232);
+            ctx.stroke();
+            ctx.moveTo(24, -231);
+            ctx.lineTo(24, -331);
+            ctx.stroke();
+            ctx.restore();
+
+            ctx.moveTo(0, -200);
+            drawFullCircle(20, -260, 7, 1, 1, 'transparent', 'black', 0);
+            ctx.translate(36, 0);
+            drawFullCircle(20, -260, 7, 1, 1, 'transparent', 'black', 0);
+
+            ctx.beginPath();
+            ctx.moveTo(130, -480);
+            ctx.lineTo(130, -580);
+            ctx.lineTo(170, -580);
+            ctx.lineTo(170, -480);
+            ctx.fillStyle = '#975B5B';
+            ctx.fill();
+            ctx.stroke();
+
+            ctx.moveTo(130, -580);
+            ctx.scale(1,0.4);
+            drawFullCircle(150, -1450, 20, 1, 1, '#975B5B', 'black', 0);
 
         }
 
