@@ -1,24 +1,68 @@
 ﻿(function () {
     //Init canvas stuff
     var canvas = document.getElementById('canvas');
-    var ctx = canvas.getContext('2d');
-    var w = 450;
-    var h = 450;
+    var cx = canvas.getContext('2d');
+    var canvasW = 450;
+    var canvasH = 450;
 
-    ctx.fillStyle = 'white';
-    ctx.fillRect(0, 0, w, h);
+    cx.fillStyle = 'white';
+    cx.fillRect(0, 0, canvasW, canvasH);
 
-    var Ball = {
-        x: 0,
-        y: 0,
-        type: 'regular'
+    function circle(x, y, r, color) {
+        cx.beginPath();
+        cx.arc(x, y, r, 0, Math.PI * 2, true);
+        cx.fillStyle = color;
+        cx.closePath();
+        cx.fill();
+    };
+    function rect(x, y, w, h, color) {
+        cx.beginPath();
+        cx.rect(x, y, w, h);
+        cx.fillStyle = color;
+        cx.closePath();
+        cx.fill();
+    };
+
+    function clear() {
+        cx.clearRect(0, 0, canvasW, canvasH);
     }
 
-    var Brick = {
-        x: 0,
-        y: 0,
-        type: 'regular'
+    function Ball(x, y, directionX, directionY, radius, color, type) {
+        var self = this;
+        this.x = x,
+        this.y = y,
+        this.radius = radius,
+        this.directionX = directionX,
+        this.directionY = directionY,
+        this.type = type,
+        this.animateBall = function () {
+            clear();
+            circle(self.x, self.y, radius, color);
+            self.x += self.directionX;
+            self.y += self.directionY;
+            if (self.x + self.radius + self.directionX > canvasW || self.x + self.directionX + self.radius < 0) {
+                self.directionX = -self.directionX;
+            }
+            if (self.y + self.radius + self.directionY > canvasH || self.y + self.directionY + self.radius < 0) {
+                self.directionY = -self.directionY;
+            }
+            self.x += self.directionX;
+            self.y += self.directionY;
+            window.requestAnimationFrame(self.animateBall);
+        };
+        return self;
     }
+
+    function Brick(x, y, type) {
+        this.x = x,
+        this.y = y,
+        this.type = type
+    }
+
+    var activeBall = new Ball(50, 50, 2, 4, 25, 'red', 'regular');
+    activeBall.animateBall();
+
+
 
 
 }())
