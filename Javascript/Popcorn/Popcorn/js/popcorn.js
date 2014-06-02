@@ -15,7 +15,11 @@
         PADDLE_COLOR = 'black',
         GAME_OVER = false,
         RIGHT_DOWN = false,
-        LEFT_DOWN = false;
+        LEFT_DOWN = false,
+        BRICK_WIDTH = 40,
+        BRICK_HEIGHT = 15,
+        BRICK_SPACING = 1,
+        BRICK_COLOR = 'black';
 
     cx.fillStyle = 'white';
     cx.fillRect(0, 0, canvasW, canvasH);
@@ -76,7 +80,9 @@
     function Brick(x, y, type) {
         this.x = x,
         this.y = y,
-        this.type = type
+        this.width = width,
+        this.height = height,
+        this.color = color
     }
 
     function Paddle(x, y, width, height, type, color) {
@@ -142,7 +148,6 @@
         window.requestAnimationFrame(engine);
     }
 
-    // TODO FIX ME
     function paddleCollision(ball, paddle) {
         if (ball.y + ball.radius >= paddle.y) {
             if (ball.x >= paddle.x && ball.x <= paddle.x + PADDLE_WIDTH) {
