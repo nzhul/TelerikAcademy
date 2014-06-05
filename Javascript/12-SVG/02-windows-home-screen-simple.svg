@@ -1,0 +1,117 @@
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="1057.868px" height="662.916px" viewBox="0 0 1057.868 662.916" enable-background="new 0 0 1057.868 662.916">
+<rect x="-0.141" y="0.216" fill="#06173F" width="1058.177" height="662.482"/>
+<image width="500" height="242" xlink:href="fish.jpg" transform="matrix(0.407 0 0 0.407 101.0005 470.4084)">
+</image>
+<rect x="101" y="153.74" fill="#2D89EE" width="98.5" height="98.502"/>
+<rect x="206.25" y="153.74" fill="#5BA51A" width="98.5" height="98.502"/>
+<rect x="311.916" y="153.74" fill="#AB1A3B" width="204.251" height="98.502"/>
+<rect x="523.041" y="153.74" fill="#008B18" width="204.25" height="98.502"/>
+<rect x="101" y="259.742" fill="#54429A" width="98.5" height="98.5"/>
+<rect x="206.25" y="259.742" fill="#2574EB" width="98.5" height="98.5"/>
+<rect x="311.916" y="259.742" fill="#54429A" width="204.251" height="98.5"/>
+<rect x="523.041" y="259.742" fill="#D14828" width="204.25" height="98.5"/>
+<rect x="774.374" y="153.74" fill="#54429A" width="204.252" height="98.502"/>
+<rect x="774.374" y="259.742" fill="#008B18" width="204.252" height="98.5"/>
+<rect x="101" y="365.073" fill="#D14828" width="203.75" height="98.5"/>
+<rect x="311.916" y="365.073" fill="#008B18" width="204.251" height="98.5"/>
+<rect x="628.5" y="365.073" fill="#2D89EE" width="98.791" height="98.5"/>
+<rect x="879.834" y="365.073" fill="#012A6B" width="98.791" height="98.5"/>
+<rect x="774.374" y="365.073" fill="#D14828" width="98.791" height="98.5"/>
+<rect x="985.54" y="153.74" fill="#FFFFFF" width="72.328" height="98.502"/>
+<rect x="985.54" y="259.742" fill="#0071B3" width="72.328" height="98.5"/>
+<rect x="985.54" y="365.073" fill="#2D89EE" width="72.328" height="98.5"/>
+<rect x="628.5" y="470.406" fill="#5BA51A" width="98.791" height="98.5"/>
+<rect x="523.041" y="470.406" fill="#AB1A3B" width="98.792" height="98.5"/>
+<rect x="311.916" y="470.406" fill="#2D89EE" width="204.251" height="98.5"/>
+<text transform="matrix(1 0 0 1 114.6694 244.011)" fill="#FFFFFF" font-family="'Arial'" font-size="9.5177">Store</text>
+<g>
+	<path fill="#FFFFFF" d="M99.968,79.593c2.008,1.369,4.655,2.282,7.622,2.282c4.975,0,7.987-2.647,7.987-6.438
+		c0-3.514-1.78-5.521-6.937-7.165c-6.162-1.962-8.626-4.473-8.626-8.486c0-4.521,3.879-7.896,9.539-7.896
+		c3.24,0,5.659,0.776,6.846,1.552l-0.867,1.872c-0.867-0.593-3.058-1.598-6.07-1.598c-5.522,0-7.257,3.332-7.257,5.75
+		c0,3.286,1.963,5.157,6.938,6.755c5.613,1.825,8.625,4.017,8.625,8.991c0,4.245-3.104,8.535-10.451,8.535
+		c-2.921,0-6.344-0.913-8.215-2.282L99.968,79.593z"/>
+	<path fill="#FFFFFF" d="M127.216,56.454v4.838h6.937v1.778h-6.937v14.013c0,2.69,0.821,4.747,3.514,4.747
+		c1.323,0,2.236-0.186,2.875-0.411l0.274,1.732c-0.776,0.318-1.917,0.595-3.377,0.595c-1.734,0-3.149-0.55-4.062-1.646
+		c-1.096-1.229-1.46-3.24-1.46-5.294V63.072h-4.017v-1.778h4.017V57.14L127.216,56.454z"/>
+	<path fill="#FFFFFF" d="M154.509,77.905c0,1.779,0.091,3.516,0.365,5.294h-2.054l-0.365-3.377h-0.091
+		c-1.141,1.688-3.925,3.927-7.941,3.927c-4.975,0-6.982-3.377-6.982-6.024c0-4.975,4.609-8.215,14.833-8.078v-0.502
+		c0-1.643-0.365-6.571-6.207-6.523c-2.19,0-4.473,0.547-6.298,1.822l-0.73-1.597c2.419-1.597,5.112-2.1,7.211-2.1
+		c7.439,0,8.261,5.75,8.261,9.219v7.939H154.509z M152.273,71.514c-5.796-0.183-12.459,0.73-12.459,5.796
+		c0,3.104,2.236,4.609,4.792,4.609c4.245,0,6.526-2.512,7.394-4.475c0.183-0.457,0.274-0.913,0.274-1.276L152.273,71.514
+		L152.273,71.514z"/>
+	<path fill="#FFFFFF" d="M162.178,68.365c0-2.374-0.045-4.699-0.183-7.072h2.054l0.091,4.747h0.137
+		c1.095-3.061,3.468-5.294,6.709-5.294c0.365,0,0.73,0.046,1.05,0.137v2.054c-0.411-0.091-0.776-0.091-1.278-0.091
+		c-3.058,0-5.385,2.556-6.115,6.344c-0.137,0.642-0.229,1.415-0.229,2.146v11.863h-2.236V68.365z"/>
+	<path fill="#FFFFFF" d="M181.073,56.454v4.838h6.937v1.778h-6.937v14.013c0,2.69,0.821,4.747,3.514,4.747
+		c1.323,0,2.236-0.186,2.875-0.411l0.274,1.732c-0.776,0.318-1.917,0.595-3.377,0.595c-1.734,0-3.149-0.55-4.062-1.646
+		c-1.096-1.229-1.46-3.24-1.46-5.294V63.072h-4.017v-1.778h4.017V57.14L181.073,56.454z"/>
+</g>
+<text transform="matrix(1 0 0 1 218.3369 244.011)" fill="#FFFFFF" font-family="'Arial'" font-size="9.5177">XBox Live Games</text>
+<text transform="matrix(1 0 0 1 114.6694 349.343)" fill="#FFFFFF" font-family="'Arial'" font-size="9.5177">Maps</text>
+<text transform="matrix(1 0 0 1 114.6694 454.843)" fill="#FFFFFF" font-family="'Arial'" font-size="9.5177">Video</text>
+<text transform="matrix(1 0 0 1 789.6704 244.011)" fill="#FFFFFF" font-family="'Arial'" font-size="9.5177">Music</text>
+<text transform="matrix(1 0 0 1 789.6704 349.343)" fill="#FFFFFF" font-family="'Arial'" font-size="9.5177">Finance</text>
+<text transform="matrix(1 0 0 1 997.6704 454.843)" fill="#FFFFFF" font-family="'Arial'" font-size="9.5177">SkyDrive</text>
+<text transform="matrix(1 0 0 1 114.6694 558.843)" fill="#FFFFFF" font-family="'Arial'" font-size="9.5177">Desktop</text>
+<text transform="matrix(1 0 0 1 324.8379 558.843)" fill="#FFFFFF" font-family="'Arial'" font-size="9.5177">Weather</text>
+<text transform="matrix(1 0 0 1 218.3369 349.343)" fill="#FFFFFF" font-family="'Arial'" font-size="9.5177">Internet Explorer</text>
+<text transform="matrix(1 0 0 1 324.8369 244.011)" fill="#FFFFFF" font-family="'Arial'" font-size="9.5177">Photos</text>
+<text transform="matrix(1 0 0 1 536.1704 244.011)" fill="#FFFFFF" font-family="'Arial'" font-size="9.5177">Calendar</text>
+<text transform="matrix(1 0 0 1 536.1704 558.843)" fill="#FFFFFF" font-family="'Arial'" font-size="9.5177">Camera</text>
+<text transform="matrix(1 0 0 1 639.8364 558.843)" fill="#FFFFFF" font-family="'Arial'" font-size="9.5177">Xbox Companion</text>
+<text transform="matrix(1 0 0 1 639.8364 454.843)" fill="#FFFFFF" font-family="'Arial'" font-size="9.5177">Solitaire</text>
+<text transform="matrix(1 0 0 1 324.8369 349.343)" fill="#FFFFFF" font-family="'Arial'" font-size="9.5177">Messaging</text>
+<text transform="matrix(1 0 0 1 905.7075 67.0754)" fill="#FFFFFF" font-family="'Arial'" font-size="21.4952">Richard</text>
+<text transform="matrix(1 0 0 1 951.7329 84.0979)" fill="#FFFFFF" font-family="'Arial'" font-size="11.5791">Perry</text>
+<text transform="matrix(1 0 0 1 501.5957 456.1575)" fill="#FFFFFF" font-family="'Arial'" font-size="13.6981">3</text>
+<text transform="matrix(1 0 0 1 655.7563 202.9915)" fill="#FFFFFF" font-family="'Arial'" font-size="55.7238">12</text>
+<text transform="matrix(1 0 0 1 660.8462 214.4124)" fill="#FFFFFF" font-family="'Arial'" font-size="8.8309">monday</text>
+<text transform="matrix(1 0 0 1 324.8369 390.1184)" fill="#FFFFFF" font-family="'Arial'" font-size="19.3451">Devon Hypnotize</text>
+<text transform="matrix(1 0 0 1 324.8369 402.7805)" fill="#FFFFFF" font-family="'Arial'" font-size="10.5519">something they can do about him</text>
+<text transform="matrix(1 0 0 1 324.8369 415.4426)" fill="#FFFFFF" font-family="'Arial'" font-size="10.5519">pile of books and scrollnext to</text>
+<text transform="matrix(1 0 0 1 586.2642 285.9631)" fill="#FFFFFF" font-family="'Arial'" font-size="11.6384">Mike Gibbs, Troll Scout </text>
+<text transform="matrix(1 0 0 1 586.2642 299.929)" fill="#FFFFFF" font-family="'Arial'" font-size="11.6384">and 5 others commented </text>
+<text transform="matrix(1 0 0 1 586.2642 313.8967)" fill="#FFFFFF" font-family="'Arial'" font-size="11.6384">on your photo.</text>
+<image width="256" height="256" xlink:href="pinball.jpg" transform="matrix(0.3848 0 0 0.3848 523.042 365.0764)">
+</image>
+<image width="600" height="300" xlink:href="wordpress.jpg" transform="matrix(0.3404 0 0 0.3283 774.3735 470.4084)">
+</image>
+<image width="226" height="300" xlink:href="sketchbook-logo.jpg" transform="matrix(0.32 0 0 0.3283 985.5396 153.7415)">
+</image>
+<image width="80" height="80" xlink:href="profile-photo.jpg" transform="matrix(0.4185 0 0 0.4185 987.4351 50.616)">
+</image>
+<image width="85" height="78" xlink:href="1.jpg" transform="matrix(0.6415 0 0 0.6415 123.4897 178.4973)">
+</image>
+<image width="86" height="85" xlink:href="3.jpg" transform="matrix(0.6684 0 0 0.6684 387.0054 174.5842)">
+</image>
+<image width="102" height="106" xlink:href="4.jpg" transform="matrix(0.6645 0 0 0.6645 844.7671 171.5247)">
+</image>
+<image width="94" height="82" xlink:href="5.jpg" transform="matrix(0.6856 0 0 0.6856 118.6572 279.8494)">
+</image>
+<image width="96" height="84" xlink:href="6.jpg" transform="matrix(0.6349 0 0 0.6349 223.6074 281.2922)">
+</image>
+<image width="107" height="89" xlink:href="7.jpg" transform="matrix(0.6332 0 0 0.6332 381.6831 282.199)">
+</image>
+<image width="84" height="82" xlink:href="8.jpg" transform="matrix(0.8069 0 0 0.8069 844.7671 277.2937)">
+</image>
+<image width="119" height="83" xlink:href="9.jpg" transform="matrix(0.6369 0 0 0.6369 164.9819 389.6536)">
+</image>
+<image width="104" height="89" xlink:href="10.jpg" transform="matrix(0.6819 0 0 0.6819 642.5151 383.6848)">
+</image>
+<image width="86" height="93" xlink:href="11.jpg" transform="matrix(0.7889 0 0 0.7889 792.2583 375.9202)">
+</image>
+<text transform="matrix(1 0 0 1 789.6704 454.843)" fill="#FFFFFF" font-family="'Arial'" font-size="9.5177">Reader</text>
+<image width="97" height="92" xlink:href="12.jpg" transform="matrix(0.7919 0 0 0.7919 893.1206 379.0149)">
+</image>
+<image width="74" height="66" xlink:href="13.jpg" transform="matrix(0.7288 0 0 0.7288 1003.9351 390.2708)">
+</image>
+<image width="97" height="96" xlink:href="14.jpg" transform="matrix(0.6717 0 0 0.6717 379.9487 487.4172)">
+</image>
+<image width="99" height="82" xlink:href="15.jpg" transform="matrix(0.6315 0 0 0.6315 541.1763 489.7786)">
+</image>
+<image width="113" height="93" xlink:href="2.jpg" transform="matrix(0.6823 0 0 0.6823 218.3369 167.9485)">
+</image>
+<image width="92" height="85" xlink:href="16.jpg" transform="matrix(0.6953 0 0 0.6953 645.9888 482.2913)">
+</image>
+</svg>
