@@ -1,0 +1,18 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <script src="js/raphael.js"></script>
+</head>
+<body>
+    <script>
+        var paper = Raphael(10, 50, 320, 700);
+        var path = paper.path('M 199.986 184.628 L219.736 166.128 L269.986 215.128 L245.986 240.378 L219.486 216.628 L269.986 166.128 L289.986 184.628');
+        path.attr({
+            stroke: 'yellowgreen',
+            'stroke-width': 10
+        });
+        var telerikText = paper.text(50, 50, "Telerik®");
+    </script>
+</body>
+</html>
