@@ -58,6 +58,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="01-Logos.html" />
+    <Content Include="02-Spiral.html" />
     <Content Include="js\raphael.js" />
     <Content Include="Web.config" />
   </ItemGroup>
