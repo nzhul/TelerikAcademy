@@ -20,6 +20,8 @@
         BRICK_HEIGHT = 15,
         BRICK_SPACING = 1,
         BRICK_COLOR = 'black',
+        GIFT_PRODUCER_COLOR = 'red',
+        GIFT_SPAWN_CHANCE = 0.1,
         BRICK_ROW_COUNT = 4;
 
     cx.fillStyle = 'white';
@@ -86,6 +88,16 @@
         this.height = height,
         this.color = color,
         this.type = type,
+        this.isCollidable = true,
+        this.isDestroyed = false,
+        this.isGiftProducer = (function () {
+            if (Math.random() < GIFT_SPAWN_CHANCE) {
+                self.color = GIFT_PRODUCER_COLOR;
+                return true;
+            } else {
+                return false;
+            }
+        }())
         this.drawBrick = function () {
             rect(self.x, self.y, self.width, self.height, self.color);
         }
@@ -100,8 +112,8 @@
         this.type = type,
         this.color = color,
         this.drawPaddle = function () {
-            document.onkeydown = function () {
-                switch (window.event.keyCode) {
+            document.onkeydown = function (ev) {
+                switch (ev.keyCode) {
                     case 37: // left
                         LEFT_DOWN = true;
                         break;
@@ -116,8 +128,8 @@
                         break;
                 }
             }
-            document.onkeyup = function () {
-                switch (window.event.keyCode) {
+            document.onkeyup = function (ev) {
+                switch (ev.keyCode) {
                     case 37: // left
                         LEFT_DOWN = false;
                         break;
@@ -149,6 +161,10 @@
                 GAME_OVER = true;
             }
         }
+    }
+
+    function brickCollision() {
+
     }
 
     function showEndGameUI() {
@@ -196,7 +212,7 @@
         window.requestAnimationFrame(engine);
     }
 
-
+    // TODO: Extract this in Init();
     var aBall = new Ball(BALL_START_X, BALL_START_Y, DIRECTION_X, DIRECTION_Y, BALL_RADIUS, BALL_COLOR, 'regular');
     var aPaddle = new Paddle(canvasW / 2 - PADDLE_WIDTH / 2, canvasH - PADDLE_HEIGHT, PADDLE_WIDTH, PADDLE_HEIGHT, 'regular', PADDLE_COLOR);
     var brickMatrix = [];
