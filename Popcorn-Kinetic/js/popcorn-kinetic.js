@@ -65,12 +65,20 @@ var aPaddle = new Kinetic.Rect({
 
 window.addEventListener('mousemove', function (ev) {
     var mouseX = ev.clientX;
-    if (mouseX + PADDLE_WIDTH < stage.getWidth()) {
+    if (mouseX < containerRect.left) {
         aPaddle.setPosition({
-            x: ev.clientX,
+            x: 0,
             y: aPaddle.getY()
         });
-    } else {
+        layer.draw();
+    } 
+    else if (mouseX + PADDLE_WIDTH < stage.getWidth() + containerRect.left) {
+        aPaddle.setPosition({
+            x: ev.clientX - containerRect.left,
+            y: aPaddle.getY()
+        });
+    } 
+    else {
         aPaddle.setPosition({
             x: stage.getWidth() - PADDLE_WIDTH,
             y: aPaddle.getY()
