@@ -25,7 +25,9 @@ var layer = new Kinetic.Layer(),
     BRICK_COLOR = 'black',
     BRICK_ROW_COUNT = 4;
 
-
+//containerRect gets the location of the gamefield in the window
+var container = document.getElementById('container');
+var containerRect = container.getBoundingClientRect();
 
 var aBall = new Kinetic.Circle({
     x: BALL_START_X,
