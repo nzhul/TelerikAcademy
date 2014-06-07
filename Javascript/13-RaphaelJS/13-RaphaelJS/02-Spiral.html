@@ -5,13 +5,14 @@
     <script src="js/raphael.js"></script>
 </head>
 <body>
-    <canvas id="canvas" width="600" height="500"></canvas>
+    <canvas id="canvas" width="600" height="500"></canvas><br/>
+	<strong>This is the algorithm. Sorry i didn't have the time to make it work for SVG</strong><br/>
     <script>
 
         var canvas = document.getElementById('canvas');
         var dc = canvas.getContext('2d');
         var frame = 1;
-        function refresh(dc, width, height, frame_number) // Sample code by Jim Bumgardner
+        function refresh(dc, width, height, frame_number)
         {
             dc.clearRect(0, 0, width, height);
 
@@ -33,7 +34,6 @@
                 var x = cx + Math.cos(angle) * spiral_rad;
                 var y = cy + Math.sin(angle) * spiral_rad;
 
-                // draw tiny circle at x,y
                 dc.beginPath();
                 dc.arc(x, y, sm_rad, 0, 2 * Math.PI, false);
                 dc.fill();
