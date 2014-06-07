@@ -4,104 +4,16 @@
     <title>Popcorn Game</title>
     <link rel="stylesheet" href="css/style.css" type="text/css"/>
     <script src="js/kinetic-v5.1.0.min.js"></script>
-    <style>
-        #container {
-            border: 1px solid black;
-            width: 411px;
-        }
-    </style>
 </head>
 <body>
     <div id="container"></div>
     <script src="js/popcorn-kinetic.js"></script>
     <script>
-        var stage = new Kinetic.Stage({
-            container: 'container',
-            width: 411,
-            height: 350,
-        });
-
-        var layer = new Kinetic.Layer(),
-        BALL_START_X = 50,
-        BALL_START_Y = 50,
-        BALL_RADIUS = 5,
-        BALL_COLOR = 'red',
-        DIRECTION_X = 2,
-        DIRECTION_Y = 6,
-        PADDLE_WIDTH = 100,
-        PADDLE_HEIGHT = 5,
-        PADDLE_COLOR = 'black',
-        PADDLE_START_X = stage.getWidth() / 2 - PADDLE_WIDTH / 2,
-        PADDLE_START_Y = stage.getHeight() - PADDLE_HEIGHT,
-        GAME_OVER = false,
-        RIGHT_DOWN = false,
-        LEFT_DOWN = false,
-        BRICK_WIDTH = 40,
-        BRICK_HEIGHT = 15,
-        BRICK_SPACING = 1,
-        BRICK_COLOR = 'black',
-        BRICK_ROW_COUNT = 4;
-
-
-        var aBall = new Kinetic.Circle({
-            x: BALL_START_X,
-            y: BALL_START_Y,
-            radius: BALL_RADIUS,
-            fill: BALL_COLOR
-        }).setAttrs({
-            directionX: DIRECTION_X,
-            directionY: DIRECTION_Y,
-            type: 'regular'
-        });
-
-        var aPaddle = new Kinetic.Rect({
-            x: PADDLE_START_X,
-            y: PADDLE_START_Y,
-            width: PADDLE_WIDTH,
-            height: PADDLE_HEIGHT,
-            fill: PADDLE_COLOR,
-            listening: true
-        });
-
-        window.addEventListener('mousemove', function (ev) {
-            var mouseX = ev.clientX;
-            if (mouseX + PADDLE_WIDTH < stage.getWidth()) {
-                aPaddle.setPosition({
-                    x: ev.clientX,
-                    y: aPaddle.getY()
-                });
-            } else {
-                aPaddle.setPosition({
-                    x: stage.getWidth() - PADDLE_WIDTH,
-                    y: aPaddle.getY()
-                });
-            }
-        });
-
-        layer.add(aBall);
-        layer.add(aPaddle);
-        stage.add(layer);
-
-
-        var i = 1;
-        function engine() {
-            aBall.setX(i++);
-            layer.draw();
-            window.requestAnimationFrame(engine);
-        }
-
-
-        engine();
-
-        //anim.start();
 
         
 
         
 
     </script>
-<!--    <canvas id="canvas" width="411" height="350"></canvas>
-    <div>Резултат: <span id="score">0</span></div>
-    <script src="js/popcorn.js"></script>-->
 </body>
 </html>
