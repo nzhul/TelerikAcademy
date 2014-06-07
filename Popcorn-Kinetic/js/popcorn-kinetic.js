@@ -72,7 +72,6 @@ window.addEventListener('mousemove', function (ev) {
             x: 0,
             y: aPaddle.getY()
         });
-        layer.draw();
     } 
     else if (mouseX + PADDLE_WIDTH < stage.getWidth() + containerRect.left) {
         aPaddle.setPosition({
