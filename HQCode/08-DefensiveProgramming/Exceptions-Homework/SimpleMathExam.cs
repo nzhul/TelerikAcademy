@@ -1,38 +1,38 @@
 ﻿using System;
+using System.Collections.Generic;
 
 public class SimpleMathExam : Exam
 {
-    public int ProblemsSolved { get; private set; }
+    private int problemsSolved = 0;
+    public int ProblemsSolved
+    {
+        get { return this.problemsSolved; }
+        private set
+        {
+            if (!(0 <= value && value <= 2))
+                throw new ArgumentOutOfRangeException("Problems solved");
+
+            this.problemsSolved = value;
+        }
+    }
 
     public SimpleMathExam(int problemsSolved)
     {
-        if (problemsSolved < 0)
-        {
-            problemsSolved = 0;
-        }
-        if (problemsSolved > 10)
-        {
-            problemsSolved = 10;
-        }
-
         this.ProblemsSolved = problemsSolved;
     }
 
+    private readonly SortedDictionary<int, KeyValuePair<int, string>> marks =
+        new SortedDictionary<int, KeyValuePair<int, string>>
+    {
+        { 0, new KeyValuePair<int, string>(2, "Bad result: nothing done.") },
+        { 1, new KeyValuePair<int, string>(4, "Average result: something done.") },
+        { 2, new KeyValuePair<int, string>(6, "Excelent result: everything done.") }
+    };
+
     public override ExamResult Check()
     {
-        if (ProblemsSolved == 0)
-        {
-            return new ExamResult(2, 2, 6, "Bad result: nothing done.");
-        }
-        else if (ProblemsSolved == 1)
-        {
-            return new ExamResult(4, 2, 6, "Average result: nothing done.");
-        }
-        else if (ProblemsSolved == 2)
-        {
-            return new ExamResult(6, 2, 6, "Average result: nothing done.");
-        }
+        var mark = this.marks[this.problemsSolved];
 
-        return new ExamResult(0, 0, 0, "Invalid number of problems solved!");
+        return new ExamResult(mark.Key, 2, 6, mark.Value);
     }
 }
