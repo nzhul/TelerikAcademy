@@ -46,21 +46,7 @@ var aBall = new Kinetic.Circle({
     directionX: DIRECTION_X,
     directionY: DIRECTION_Y
 }).setAttrs({
-    type: 'regular',
-    //changeDirection: function () {
-    //    if (this.getAttr('x') + this.getAttr('radius') >= stage.getWidth()) {
-    //        this.setAttr('directionX', this.getAttr('directionX') - DIRECTION_X)
-    //    }
-    //    if (this.getAttr('x') <= this.getAttr('radius')) {
-    //        this.setAttr('directionX', this.getAttr('directionX') + DIRECTION_X)
-    //    }
-    //    // no reflection from down
-    //    if (this.getAttr('y') <= this.getAttr('radius')) {
-    //        this.setAttr('directionY', this.getAttr('directionY') + DIRECTION_Y)
-    //    }
-    //    this.setAttr('x', this.getAttr('x') + this.getAttr('directionX'));
-    //    this.setAttr('y', this.getAttr('y') + this.getAttr('directionY'));
-    //}
+    type: 'regular'
 });
 
 var aPaddle = new Kinetic.Rect({
@@ -71,6 +57,35 @@ var aPaddle = new Kinetic.Rect({
     fill: PADDLE_COLOR,
     listening: true
 });
+
+function initBricks(){
+    var brickMatrix = [];
+    var brickCount = stage.getWidth() / (BRICK_WIDTH + 2);
+    var verticalShift = 0;
+    var horizShift = 0;
+    for (var i = 0; i < BRICK_ROW_COUNT; i++) {
+        brickMatrix[i] = [];
+        horizShift = 0;
+        for (var j = 0; j < brickCount; j++) {
+            var currentBrick = new Kinetic.Rect({
+                x: 1 + horizShift,
+                y: 1 + verticalShift,
+                width: BRICK_WIDTH,
+                height: BRICK_HEIGHT,
+                fill: BRICK_COLOR,
+                listening: true
+            });
+            brickMatrix[i][j] = (currentBrick);
+            layer.add(currentBrick);
+            horizShift += BRICK_WIDTH + 1;
+        }
+        verticalShift += BRICK_HEIGHT + 1;
+    }
+    return brickMatrix;
+}
+
+initBricks();
+
 
 //Can add this method to ball or circle object. Now it is just for testing.
 function ballHitWallDetection(ball) {
