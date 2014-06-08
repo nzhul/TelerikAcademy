@@ -5,6 +5,7 @@ var stage = new Kinetic.Stage({
 });
 
 var layer = new Kinetic.Layer(),
+    pulenTashsak = 0,
     BALL_START_X = 50,
     BALL_START_Y = 50,
     BALL_RADIUS = 5,
