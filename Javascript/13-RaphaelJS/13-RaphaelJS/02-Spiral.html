@@ -5,48 +5,27 @@
     <script src="js/raphael.js"></script>
 </head>
 <body>
-    <canvas id="canvas" width="600" height="500"></canvas><br/>
-	<strong>This is the algorithm. Sorry i didn't have the time to make it work for SVG</strong><br/>
+    <div id="container"></div>
     <script>
 
-        var canvas = document.getElementById('canvas');
-        var dc = canvas.getContext('2d');
-        var frame = 1;
-        function refresh(dc, width, height, frame_number)
-        {
-            dc.clearRect(0, 0, width, height);
+        var paperS = Raphael("container", 400, 300);
 
-            dc.fillStyle = '#000';
-            var nbr_circles = 100;
+        function drawSpiral(centerX, centerY, a, b) {
+            var centralPoint = "M" + centerX + ' ' + centerY,
+                spiralPoints = [centralPoint];
 
-            var angle_incr = (2 + (frame_number) / 12.0) * Math.PI / 180;
+            for (var i = 0; i < 500; i++) {
+                var angle = 0.1 * i,
+                    x = centerX + (a + b * angle) * Math.cos(angle),
+                    y = centerY + (a + b * angle) * Math.sin(angle);
 
-            var cx = width / 2;
-            var cy = height / 2;
-            var outer_rad = width * .45;
+                spiralPoints.push('L ' + x + ' ' + y);
 
-            var sm_rad = 2;
-
-            for (var i = 1; i <= nbr_circles; ++i) {
-                var ratio = i / nbr_circles;
-                var angle = i * angle_incr;
-                var spiral_rad = ratio * outer_rad;
-                var x = cx + Math.cos(angle) * spiral_rad;
-                var y = cy + Math.sin(angle) * spiral_rad;
-
-                dc.beginPath();
-                dc.arc(x, y, sm_rad, 0, 2 * Math.PI, false);
-                dc.fill();
             }
+            var spiralPointsStr = spiralPoints.join(' '),
+            spiral = paperS.path(spiralPointsStr);
         }
-
-        function animate() {
-            refresh(dc, 400, 400, frame);
-            window.requestAnimationFrame(animate);
-            frame+=0.5;
-        }
-
-        animate();
+        drawSpiral(250, 150, 0, 2);
     </script>
 </body>
 </html>
