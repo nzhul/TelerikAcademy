@@ -95,6 +95,17 @@ function initBricks() {
 initBricks();
 
 
+function ballHitBrickDetection(ball) {
+    var currentStage = ball.getStage(),
+        colisionObject = currentStage.getIntersection({ x: ball.getX(), y: ball.getY() });
+    
+    if (colisionObject) {
+        console.log(colisionObject);
+        colisionObject.remove();
+        ball.attrs.directionY *= -1;
+    }
+}
+
 //Can add this method to ball or circle object. Now it is just for testing.
 function ballHitWallDetection(ball) {
     var ballX = ball.attrs.x,
@@ -163,6 +174,7 @@ var anim = new Kinetic.Animation(function (frame) {
 
     aBall.move();
     ballHitWallDetection(aBall);
+    ballHitBrickDetection(aBall);
 }, layer);
 //
 //function gameLoop() {
