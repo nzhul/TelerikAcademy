@@ -1,10 +1,7 @@
-var stage = new Kinetic.Stage({
-    container: 'container',
-    width: 411,
-    height: 350
-});
-
-var layer = new Kinetic.Layer(),
+var stage,
+    layer,
+    STAGE_WIDTH = 500,
+    STAGE_HEIGHT = 350,
     BALL_START_X = 50,
     BALL_START_Y = 50,
     BALL_RADIUS = 5,
@@ -14,8 +11,8 @@ var layer = new Kinetic.Layer(),
     PADDLE_WIDTH = 100,
     PADDLE_HEIGHT = 5,
     PADDLE_COLOR = 'black',
-    PADDLE_START_X = stage.getWidth() / 2 - PADDLE_WIDTH / 2,
-    PADDLE_START_Y = stage.getHeight() - PADDLE_HEIGHT,
+    PADDLE_START_X = STAGE_WIDTH / 2 - PADDLE_WIDTH / 2,
+    PADDLE_START_Y = STAGE_HEIGHT - PADDLE_HEIGHT,
     GAME_OVER = false,
     RIGHT_DOWN = false,
     LEFT_DOWN = false,
@@ -23,20 +20,27 @@ var layer = new Kinetic.Layer(),
     BRICK_HEIGHT = 15,
     BRICK_SPACING = 1,
     BRICK_COLOR = 'black',
-    BRICK_ROW_COUNT = 4;
+    BRICK_ROW_COUNT = 5;
+
+stage = new Kinetic.Stage({
+    container: 'container',
+    width: STAGE_WIDTH,
+    height: STAGE_HEIGHT
+});
+layer = new Kinetic.Layer();
 
 //containerRect gets the location of the gamefield in the window
 var container = document.getElementById('container');
-var containerX = Math.round(container.getBoundingClientRect().left);
+var containerX = Math.round(container.getBoundingClientRect().left) + PADDLE_WIDTH / 2; // !
 
 Kinetic.Circle.prototype.directionX = null;
 Kinetic.Circle.prototype.directionY = null;
 Kinetic.Circle.prototype.move = function () {
     this.setY(this.attrs.y - this.attrs.directionY);
     this.setX(this.attrs.x - this.attrs.directionX);
-    
+
     return this;
-}
+};
 
 var aBall = new Kinetic.Circle({
     x: PADDLE_START_X + PADDLE_WIDTH / 2,
@@ -46,8 +50,8 @@ var aBall = new Kinetic.Circle({
     directionX: DIRECTION_X,
     directionY: DIRECTION_Y
 }).setAttrs({
-    type: 'regular'
-});
+        type: 'regular'
+    });
 
 var aPaddle = new Kinetic.Rect({
     x: PADDLE_START_X,
@@ -58,18 +62,22 @@ var aPaddle = new Kinetic.Rect({
     listening: true
 });
 
-function initBricks(){
-    var brickMatrix = [];
-    var brickCount = stage.getWidth() / (BRICK_WIDTH + 2);
-    var verticalShift = 0;
-    var horizShift = 0;
-    for (var i = 0; i < BRICK_ROW_COUNT; i++) {
+function initBricks() {
+    var brickMatrix = [],
+        i,
+        j,
+        brickCount = STAGE_WIDTH / (BRICK_WIDTH + 2),
+        currentBrick,
+        verticalShift = 0,
+        horizontalShift = 0;
+
+    for (i = 0; i < BRICK_ROW_COUNT; i++) {
         brickMatrix[i] = [];
-        horizShift = 0;
-        for (var j = 0; j < brickCount; j++) {
-            var currentBrick = new Kinetic.Rect({
-                x: 1 + horizShift,
-                y: 1 + verticalShift,
+        horizontalShift = 0;
+        for (j = 0; j < brickCount; j++) {
+            currentBrick = new Kinetic.Rect({
+                x: BRICK_SPACING + horizontalShift,
+                y: BRICK_SPACING + verticalShift,
                 width: BRICK_WIDTH,
                 height: BRICK_HEIGHT,
                 fill: BRICK_COLOR,
@@ -77,7 +85,7 @@ function initBricks(){
             });
             brickMatrix[i][j] = (currentBrick);
             layer.add(currentBrick);
-            horizShift += BRICK_WIDTH + 1;
+            horizontalShift += BRICK_WIDTH + 1;
         }
         verticalShift += BRICK_HEIGHT + 1;
     }
@@ -106,7 +114,7 @@ function ballHitWallDetection(ball) {
         ball.attrs.directionY *= -1;
     }
     else if (ballY + ballRadius >= PADDLE_START_Y) {
-        if (ballX >= aPaddle.attrs.x && ballX <= aPaddle.attrs.x + PADDLE_WIDTH ) {
+        if (ballX >= aPaddle.attrs.x && ballX <= aPaddle.attrs.x + PADDLE_WIDTH) {
             ball.attrs.directionY *= -1;
         }
         //else {
@@ -121,20 +129,20 @@ window.addEventListener('mousemove', function (ev) {
     //Try to reduce mousecalls to fix animation lag on move
     var date = new Date().getTime();
     if (date - prevDate > 10) {
-        
+
         var mouseX = ev.clientX;
         if (mouseX < containerX) {
             aPaddle.setPosition({
                 x: 0,
                 y: aPaddle.getY()
             });
-        } 
+        }
         else if (mouseX + PADDLE_WIDTH < stage.getWidth() + containerX) {
             aPaddle.setPosition({
                 x: ev.clientX - containerX,
                 y: aPaddle.getY()
             });
-        } 
+        }
         else {
             aPaddle.setPosition({
                 x: stage.getWidth() - PADDLE_WIDTH,
@@ -150,11 +158,11 @@ layer.add(aPaddle);
 stage.add(layer);
 
 var anim = new Kinetic.Animation(function (frame) {
-   //For performance test
-   //console.log(frame.frameRate); 
-   
-   aBall.move();
-   ballHitWallDetection(aBall);
+    //For performance test
+    //console.log(frame.frameRate);
+
+    aBall.move();
+    ballHitWallDetection(aBall);
 }, layer);
 //
 //function gameLoop() {
