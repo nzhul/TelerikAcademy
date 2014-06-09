@@ -60,6 +60,8 @@
     <Content Include="01-RandomDivs.html" />
     <Content Include="00-MathSinTests.html" />
     <Content Include="02-CircleMotion.html" />
+    <Content Include="03-colorInputs.html" />
+    <Content Include="04-tagCloud.html" />
     <Content Include="css\style.css" />
     <Content Include="js\01-random-divs.js" />
     <Content Include="js\00-math-sin-tests.js" />
