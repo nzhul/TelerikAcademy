@@ -8,6 +8,7 @@ var stage,
     BALL_COLOR = 'red',
     DIRECTION_X = 2,
     DIRECTION_Y = 6,
+    MAX_X_SPEED = 4,
     PADDLE_WIDTH = 100,
     PADDLE_HEIGHT = 5,
     PADDLE_COLOR = 'black',
@@ -218,6 +219,11 @@ function initBricks() {
 
 initBricks();
 
+function calcBallAngle(ball){
+    var ballPosition = ball.attrs.x - aPaddle.attrs.x;
+    var xChange = ((ballPosition / PADDLE_WIDTH) * 10) - MAX_X_SPEED;
+    return xChange * -1;
+}
 
 function ballHitBrickDetection(ball) {
     var currentStage = ball.getStage(),
@@ -254,6 +260,14 @@ function ballHitWallDetection(ball) {
     else if (ballY + ballRadius >= PADDLE_START_Y) {
         if (ballX >= aPaddle.attrs.x && ballX <= aPaddle.attrs.x + PADDLE_WIDTH) {
             ball.attrs.directionY *= -1;
+            ball.attrs.directionX += calcBallAngle(ball);
+
+            if(ball.attrs.directionX > MAX_X_SPEED){
+                ball.attrs.directionX = MAX_X_SPEED;
+            }
+            else if(ball.attrs.directionX < -MAX_X_SPEED){
+                ball.attrs.directionX = -MAX_X_SPEED;
+            }
         }
         //else {
         //    GAME_OVER = true;
