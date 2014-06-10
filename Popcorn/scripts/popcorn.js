@@ -1,237 +1,219 @@
-(function () {
-    //Init canvas stuff
-    var canvas = document.getElementById('canvas'),
-        cx = canvas.getContext('2d'),
-        canvasW = canvas.width,
-        canvasH = canvas.height,
-        BALL_START_X = 50,
-        BALL_START_Y = 50,
-        BALL_RADIUS = 5,
-        BALL_COLOR = 'red',
-        DIRECTION_X = 2,
-        DIRECTION_Y = 6,
-        PADDLE_WIDTH = 100,
-        PADDLE_HEIGHT = 5,
-        PADDLE_COLOR = 'black',
-        GAME_OVER = false,
-        RIGHT_DOWN = false,
-        LEFT_DOWN = false,
-        BRICK_WIDTH = 40,
-        BRICK_HEIGHT = 15,
-        BRICK_SPACING = 1,
-        BRICK_COLOR = 'black',
-        GIFT_PRODUCER_COLOR = 'red',
-        GIFT_SPAWN_CHANCE = 0.1,
-        BRICK_ROW_COUNT = 4;
+stage = new Kinetic.Stage({
+    container: 'container',
+    width: STAGE_WIDTH,
+    height: STAGE_HEIGHT
+});
 
-    cx.fillStyle = 'white';
-    cx.fillRect(0, 0, canvasW, canvasH);
+bricksLayer = new Kinetic.Layer();
+ballLayer = new Kinetic.Layer();
+paddleLayer = new Kinetic.Layer();
+explosionsLayer = new Kinetic.Layer();
 
-    function circle(x, y, r, color) {
-        cx.beginPath();
-        cx.arc(x, y, r, 0, Math.PI * 2, true);
-        cx.fillStyle = color;
-        cx.closePath();
-        cx.fill();
-    };
-    function rect(x, y, w, h, color) {
-        cx.beginPath();
-        cx.rect(x, y, w, h);
-        cx.fillStyle = color;
-        cx.closePath();
-        cx.fill();
-    };
+//get the underlaying context from the layer:
+ctx = explosionsLayer.canvas.context._context;
 
-    function clear() {
-        cx.clearRect(0, 0, canvasW, canvasH);
-    }
+//containerRect gets the location of the gamefield in the window
+var container = document.getElementById('container');
+var containerX = Math.round(container.getBoundingClientRect().left) + PADDLE_WIDTH / 2; // !
 
-    function remove(id) {
-        return (elem = document.getElementById(id)).parentNode.removeChild(elem);
-    }
+Kinetic.Circle.prototype.directionX = null;
+Kinetic.Circle.prototype.directionY = null;
+Kinetic.Circle.prototype.move = function () {
+    this.setY(this.attrs.y - this.attrs.directionY);
+    this.setX(this.attrs.x - this.attrs.directionX);
 
-    function Ball(x, y, directionX, directionY, radius, color, type) {
-        var self = this;
-        this.x = x,
-        this.y = y,
-        this.radius = radius,
-        this.directionX = directionX,
-        this.directionY = directionY,
-        this.type = type,
-        this.drawBall = function () {
-            circle(self.x, self.y, radius, color);
-        };
-        this.changeDirection = function () {
-            if (self.x + self.radius >= canvasW) {
-                self.directionX = -directionX;
-            }
-            if (self.x <= self.radius) {
-                self.directionX = directionX;
-            }
-            //if (self.y + self.radius > canvasH) {
-            //    self.directionY = -directionY;
-            //}
-            if (self.y <= self.radius) {
-                self.directionY = directionY;
-            }
-            self.x += self.directionX;
-            self.y += self.directionY;
-        }
-        return self;
-    }
+    return this;
+};
 
-    function Brick(x, y, width, height, color, type) {
-        var self = this;
-        this.x = x,
-        this.y = y,
-        this.width = width,
-        this.height = height,
-        this.color = color,
-        this.type = type,
-        this.isCollidable = true,
-        this.isDestroyed = false,
-        this.isGiftProducer = (function () {
-            if (Math.random() < GIFT_SPAWN_CHANCE) {
-                self.color = GIFT_PRODUCER_COLOR;
-                return true;
-            } else {
-                return false;
-            }
-        }())
-        this.drawBrick = function () {
-            rect(self.x, self.y, self.width, self.height, self.color);
-        }
-    }
+var aBall = new Kinetic.Circle({
+    x: PADDLE_START_X + PADDLE_WIDTH / 2,
+    y: PADDLE_START_Y - PADDLE_HEIGHT - BALL_RADIUS,
+    radius: BALL_RADIUS,
+    fill: BALL_COLOR,
+    directionX: DIRECTION_X,
+    directionY: DIRECTION_Y
+}).setAttrs({
+    type: 'regular'
+});
 
-    function Paddle(x, y, width, height, type, color) {
-        var self = this;
-        this.x = x,
-        this.y = y,
-        this.width = width,
-        this.height = height,
-        this.type = type,
-        this.color = color,
-        this.drawPaddle = function () {
-            document.onkeydown = function (ev) {
-                switch (ev.keyCode) {
-                    case 37: // left
-                        LEFT_DOWN = true;
-                        break;
-                    case 65: // A
-                        LEFT_DOWN = true;
-                        break;
-                    case 39: // right
-                        RIGHT_DOWN = true;
-                        break;
-                    case 68: // D
-                        RIGHT_DOWN = true;
-                        break;
-                }
-            }
-            document.onkeyup = function (ev) {
-                switch (ev.keyCode) {
-                    case 37: // left
-                        LEFT_DOWN = false;
-                        break;
-                    case 65: // A
-                        LEFT_DOWN = false;
-                        break;
-                    case 39: // right
-                        RIGHT_DOWN = false;
-                        break;
-                    case 68: // D
-                        RIGHT_DOWN = false;
-                        break;
-                }
-            }
-            if (RIGHT_DOWN) {
-                self.x += 5;
-            } else if (LEFT_DOWN) {
-                self.x -= 5;
-            }
-            rect(self.x, self.y, self.width, self.height, self.color);
-        }
-    }
+var aPaddle = new Kinetic.Rect({
+    x: PADDLE_START_X,
+    y: PADDLE_START_Y,
+    width: PADDLE_WIDTH,
+    height: PADDLE_HEIGHT,
+    fill: PADDLE_COLOR,
+    listening: true
+});
 
-    function paddleCollision(ball, paddle) {
-        if (ball.y + ball.radius >= paddle.y) {
-            if (ball.x >= paddle.x && ball.x <= paddle.x + PADDLE_WIDTH) {
-                ball.directionY = -DIRECTION_Y;
-            } else {
-                GAME_OVER = true;
-            }
-        }
-    }
+function playSingleSound() {
+    document.getElementById('audiotag1').play();
+}
 
-    function brickCollision() {
+function initBricks() {
+    var brickMatrix = [],
+        i,
+        j,
+        brickCount = STAGE_WIDTH / (BRICK_WIDTH + 2),
+        currentBrick,
+        verticalShift = 0,
+        horizontalShift = 0;
 
-    }
-
-    function showEndGameUI() {
-        cx.font = '20px Arial';
-        cx.fillStyle = 'red';
-        var text = 'GAME OVER';
-        var textLength = cx.measureText(text);
-        cx.fillText('GAME OVER', canvasW / 2 - textLength.width / 2, canvasH / 2 + 30);
-
-        var restartButton = document.createElement('a');
-        restartButton.innerHTML = 'Restart the game!';
-        restartButton.href = '#';
-        restartButton.id = 'restartBtn';
-        restartButton.onclick = function () {
-            restartGame();
-        };
-        document.body.appendChild(restartButton);
-    }
-
-    function restartGame() {
-        remove('restartBtn');
-        GAME_OVER = false;
-        aBall.x = BALL_START_X;
-        aBall.y = BALL_START_Y;
-        aBall.directionX = DIRECTION_X;
-        aBall.directionY = DIRECTION_Y;
-        engine();
-    }
-
-    function engine() {
-        if (GAME_OVER) {
-            showEndGameUI();
-            return;
-        }
-        clear();
-        aBall.drawBall();
-        aPaddle.drawPaddle();
-        for (var i = 0; i < brickMatrix.length; i++) {
-            for (var j = 0; j < brickMatrix[i].length; j++) {
-                brickMatrix[i][j].drawBrick();
-            }
-        }
-        aBall.changeDirection();
-        paddleCollision(aBall, aPaddle);
-        window.requestAnimationFrame(engine);
-    }
-
-    // TODO: Extract this in Init();
-    var aBall = new Ball(BALL_START_X, BALL_START_Y, DIRECTION_X, DIRECTION_Y, BALL_RADIUS, BALL_COLOR, 'regular');
-    var aPaddle = new Paddle(canvasW / 2 - PADDLE_WIDTH / 2, canvasH - PADDLE_HEIGHT, PADDLE_WIDTH, PADDLE_HEIGHT, 'regular', PADDLE_COLOR);
-    var brickMatrix = [];
-    var brickCount = canvasW / (BRICK_WIDTH + 2);
-    var verticalShift = 0;
-    var horizShift = 0;
-    for (var i = 0; i < BRICK_ROW_COUNT; i++) {
+    for (i = 0; i < BRICK_ROW_COUNT; i++) {
         brickMatrix[i] = [];
-        horizShift = 0;
-        for (var j = 0; j < brickCount; j++) {
-            brickMatrix[i][j] = (new Brick(1 + horizShift, 1 + verticalShift, BRICK_WIDTH, BRICK_HEIGHT, BRICK_COLOR, 'regular'));
-            horizShift += BRICK_WIDTH + 1;
+        horizontalShift = 0;
+        for (j = 0; j < brickCount; j++) {
+            currentBrick = new Kinetic.Rect({
+                x: BRICK_SPACING + horizontalShift,
+                y: BRICK_SPACING + verticalShift,
+                width: BRICK_WIDTH,
+                height: BRICK_HEIGHT,
+                fill: BRICK_COLOR,
+                listening: true
+            });
+            brickMatrix[i][j] = (currentBrick);
+            bricksLayer.add(currentBrick);
+            horizontalShift += BRICK_WIDTH + 1;
         }
         verticalShift += BRICK_HEIGHT + 1;
     }
+    return brickMatrix;
+}
 
-    engine();
+initBricks();
 
+function calcBallAngle(ball) {
+    var ballPosition = ball.attrs.x - aPaddle.attrs.x;
+    var xChange = ((ballPosition / PADDLE_WIDTH) * 10) - MAX_X_SPEED;
+    return xChange * -1;
+}
 
+function ballHitBrickDetection(ball) {
+    var currentStage = ball.getStage(),
+        colisionObject = currentStage.getIntersection({ x: ball.getX(), y: ball.getY() });
 
+    if (colisionObject) {
+        playSingleSound();
+        colisionObject.remove();
+        explode();
+        ball.attrs.directionY *= -1;
+    }
+}
 
-}())
+//Can add this method to ball or circle object. Now it is just for testing.
+function ballHitWallDetection(ball) {
+    var ballX = ball.attrs.x,
+        ballY = ball.attrs.y,
+        ballRadius = ball.attrs.radius;
+
+    if (ballX + ballRadius >= stage.attrs.width) {
+        ball.attrs.directionX *= -1;
+    }
+    else if (ballX <= ballRadius) {
+        ball.attrs.directionX *= -1;
+    }
+    //if (self.y + self.radius > canvasH) {
+    //    self.directionY = -directionY;
+    //}
+    if (ballY <= ballRadius) {
+        ball.attrs.directionY *= -1;
+    }
+    else if (ballY + ballRadius >= PADDLE_START_Y) {
+        if (ballX >= aPaddle.attrs.x && ballX <= aPaddle.attrs.x + PADDLE_WIDTH) {
+            ball.attrs.directionY *= -1;
+            ball.attrs.directionX += calcBallAngle(ball);
+
+            if (ball.attrs.directionX > MAX_X_SPEED) {
+                ball.attrs.directionX = MAX_X_SPEED;
+            }
+            else if (ball.attrs.directionX < -MAX_X_SPEED) {
+                ball.attrs.directionX = -MAX_X_SPEED;
+            }
+        }
+        //else {
+        //    GAME_OVER = true;
+        //}
+    }
+}
+
+var prevDate = new Date().getTime();
+
+window.addEventListener('mousemove', function (ev) {
+    //Try to reduce mousecalls to fix animation lag on move
+    var date = new Date().getTime();
+    if (date - prevDate > 10) {
+        var mouseX = ev.clientX;
+        if (mouseX < containerX) {
+            aPaddle.setPosition({
+                x: 0,
+                y: aPaddle.getY()
+            });
+        }
+        else if (mouseX + PADDLE_WIDTH < stage.getWidth() + containerX) {
+            aPaddle.setPosition({
+                x: ev.clientX - containerX,
+                y: aPaddle.getY()
+            });
+        }
+        else {
+            aPaddle.setPosition({
+                x: stage.getWidth() - PADDLE_WIDTH,
+                y: aPaddle.getY()
+            });
+        }
+        prevDate = date;
+    }
+});
+
+ballLayer.add(aBall);
+paddleLayer.add(aPaddle);
+
+stage.add(bricksLayer);
+stage.add(ballLayer);
+stage.add(paddleLayer);
+stage.add(explosionsLayer);
+
+var layers = [bricksLayer, ballLayer, paddleLayer];
+var anim = new Kinetic.Animation(function (frame) {
+    //For performance test
+    //console.log(frame.frameRate);
+    //ctx.fillRect(10, 10, 100, 100);
+
+    update(frameDelay);
+    aBall.move();
+    ballHitWallDetection(aBall);
+    ballHitBrickDetection(aBall);
+}, layers, explosionsLayer); // !
+//
+//function gameLoop() {
+//    setTimeout(gameLoop, 1000 / 60);
+//    //Process movement, AI, game logic
+//    aBall.move();
+//    ballHitWallDetection(aBall);
+//    layer.draw();
+//}
+
+//function engine() {
+//    aBall.move();
+//    ballHitWallDetection(aBall);
+//    layer.draw();
+//    window.requestAnimationFrame(engine);
+//}
+
+document.getElementById('start-btn').addEventListener('click', onStartBtnClick);
+document.getElementById('stop-btn').addEventListener('click', onStopBtnClick);
+
+function onStartBtnClick() {
+    window.setTimeout(delayStart, 500);
+}
+
+function delayStart() {
+    anim.start();
+}
+
+function onStopBtnClick() {
+    anim.stop();
+}
+
+//anim.start();
+//gameLoop();
+//engine();
