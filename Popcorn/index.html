@@ -7,9 +7,10 @@
 </head>
 <body>
     <div id="container"></div>
-    <button id="start-btn">Start Game</button>
-    <button id="pause-btn">Pause Game</button>
-    <div id="wrapper"></div>
+    <div id="wrapper">
+        <button id="start-btn">Start Game</button>
+        <button id="pause-btn">Pause Game</button>
+    </div>
     <audio id="explosionSound" src="sounds/bum.wav" preload="auto"></audio>
     <audio id="paddleReflectionSound" src="sounds/gamelike-pong.wav" preload="auto">></audio>
     <script src="libraries/kinetic-v5.1.0.min.js"></script>
@@ -18,6 +19,6 @@
     <script src="scripts/collisionDetections.js"></script>
     <script src="scripts/soundEffects.js"></script>
     <script src="scripts/explosions.js"></script>
-    <script src="scripts/popcorn.js"></script>
+    <script src="scripts/engine.js"></script>
 </body>
 </html>

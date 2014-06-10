@@ -1,10 +1,10 @@
 ﻿function ballHitBrickDetection(ball) {
     var currentStage = ball.getStage(),
-        colisionObject = currentStage.getIntersection({ x: ball.getX(), y: ball.getY() });
+        collisionObject = currentStage.getIntersection({ x: ball.getX(), y: ball.getY() });
 
-    if (colisionObject) {
+    if (collisionObject) {
         playSingleSound('explosionSound');
-        colisionObject.remove();
+        collisionObject.remove();
         explode();
         ball.attrs.directionY *= -1;
     }
