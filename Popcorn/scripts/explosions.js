@@ -23,9 +23,13 @@ function explode() {
     var x = aBall.attrs.x;
     var y = aBall.attrs.y;
 
-    createExplosion(x, y, "#525252");
+    createExplosion(x, y, "#f0e307");
 
-    createExplosion(x, y, "#FFA318");
+    createExplosion(x, y, "#f99700");
+
+    createExplosion(x, y, "#de3b00");
+
+    createExplosion(x, y, "#9a1201");
 
     function randomFloat(min, max) {
         return min + Math.random() * (max - min);
