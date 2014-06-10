@@ -345,10 +345,8 @@ window.onload = function () {
     document.getElementById('start-btn').addEventListener('click', onStartBtnClick);
     document.getElementById('stop-btn').addEventListener('click', onStopBtnClick);
 
-    var timeOut;
     function onStartBtnClick() {
-        timeOut = window.setTimeout(delayStart, 500);
-        //anim.start();
+        window.setTimeout(delayStart, 500);
     }
 
     function delayStart() {
