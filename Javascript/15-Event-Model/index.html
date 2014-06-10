@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        ul {
+            width: 250px;
+            border: 1px solid lightgray;
+            margin: 0 0 0 0;
+            padding: 0;
+        }
+        ul li {
+            list-style-type: none;
+            display: block;
+            border-bottom: 1px solid lightgray;
+            height: 40px;
+            cursor: pointer;
+            vertical-align: middle;
+            line-height: 40px;
+            padding: 0 0 0 10px;
+        }
+        ul li:last-child {border: none;}
+        .completed {
+            color: lightgray;
+            text-decoration: line-through;
+            background-color: lightyellow;
+        }
+
+        input[type="text"]{
+            width: 94%;
+        }
+
+        .delBtn {
+            float: right;
+            margin: 0 10px 0 0;
+        }
+    </style>
+</head>
+<body>
+<ul id="noteField">
+    <li>Task 1 <a class="delBtn">X</a></li>
+    <li>Task 2 <a class="delBtn">X</a></li>
+    <li>Task 3 <a class="delBtn">X</a></li>
+    <li>Task 4 <a class="delBtn">X</a></li>
+    <li class="completed">Task 5 <a class="delBtn">X</a></li>
+    <li>Task 6 <a class="delBtn">X</a></li>
+</ul>
+<ul style="border-top: 0;">
+    <li><input type="text" autofocus/></li>
+</ul>
+<script>
+    var input = document.getElementsByTagName('input')[0];
+    var container = document.getElementById('noteField')
+    input.addEventListener('keypress', function (ev) {
+        if (ev.keyCode == 13 && this.value.length >= 3) {
+            var newTask = document.createElement('li');
+            newTask.innerHTML = this.value;
+            newTask.innerHTML += '<a class="delBtn">X</a>';
+            container.appendChild(newTask);
+            this.value = '';
+        }
+    });
+
+    // TODO Remove не се атачва като евент за ново появилите се таскове.
+    // За да избегна това трябва да атачвам евента преди да създам delete button-a.
+    // Също трябва да изтривам не хиксчето, а самия parent елемент.
+    var delBtns = document.getElementsByClassName('delBtn');
+    for (var i = 0; i < delBtns.length; i++) {
+        delBtns[i].addEventListener('click', function (ev) {
+            this.parentNode.removeChild(this);
+            return false;
+        })
+    }
+</script>
+</body>
+</html>
