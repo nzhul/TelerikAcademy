@@ -62,6 +62,7 @@
     <Content Include="02-CircleMotion.html" />
     <Content Include="03-colorInputs.html" />
     <Content Include="04-tagCloud.html" />
+    <Content Include="05-TreeView.html" />
     <Content Include="css\style.css" />
     <Content Include="js\01-random-divs.js" />
     <Content Include="js\00-math-sin-tests.js" />

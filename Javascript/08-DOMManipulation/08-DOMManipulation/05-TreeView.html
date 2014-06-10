@@ -1,0 +1,41 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+</head>
+<body>
+    <ul id="tree-view">
+        <li>Item 1
+            <ul>
+                <li>Sub-1 Item 1</li>
+                <li>Sub-1 Item 2</li>
+            </ul>
+        </li>
+        <li>Item 2</li>
+        <li>Item 3
+            <ul>
+                <li>Sub-1 Item 1</li>
+                <li>Sub-1 Item 2
+                    <ul>
+                        <li>Sub-2 Item 1</li>
+                        <li>Sub-2 Item 2</li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+        <li>Item 4</li>
+        <li>Item 5</li>
+    </ul>
+    <script>
+        var tree = document.getElementById('tree-view');
+        function walkTheDOM(node, func) {
+            func(node);
+            node = node.firstChild;
+            while (node) {
+                walkTheDOM(node, func);
+                node = node.nextSibling;
+            }
+        }
+    </script>
+</body>
+</html>
