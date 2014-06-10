@@ -45,39 +45,7 @@ var aPaddle = new Kinetic.Rect({
     listening: true
 });
 
-function playSingleSound() {
-    document.getElementById('audiotag1').play();
-}
 
-function initBricks() {
-    var brickMatrix = [],
-        i,
-        j,
-        brickCount = STAGE_WIDTH / (BRICK_WIDTH + 2),
-        currentBrick,
-        verticalShift = 0,
-        horizontalShift = 0;
-
-    for (i = 0; i < BRICK_ROW_COUNT; i++) {
-        brickMatrix[i] = [];
-        horizontalShift = 0;
-        for (j = 0; j < brickCount; j++) {
-            currentBrick = new Kinetic.Rect({
-                x: BRICK_SPACING + horizontalShift,
-                y: BRICK_SPACING + verticalShift,
-                width: BRICK_WIDTH,
-                height: BRICK_HEIGHT,
-                fill: BRICK_COLOR,
-                listening: true
-            });
-            brickMatrix[i][j] = (currentBrick);
-            bricksLayer.add(currentBrick);
-            horizontalShift += BRICK_WIDTH + 1;
-        }
-        verticalShift += BRICK_HEIGHT + 1;
-    }
-    return brickMatrix;
-}
 
 initBricks();
 
@@ -200,17 +168,22 @@ var anim = new Kinetic.Animation(function (frame) {
 //}
 
 document.getElementById('start-btn').addEventListener('click', onStartBtnClick);
-document.getElementById('stop-btn').addEventListener('click', onStopBtnClick);
+document.getElementById('pause-btn').addEventListener('click', onPauseBtnClick);
 
 function onStartBtnClick() {
-    window.setTimeout(delayStart, 500);
+    document.getElementById('container').addEventListener('click', onClickStartGame);
+
+    var div = document.getElementById('wrapper');
+    var p = document.createElement('p');
+    p.innerText = 'Click on the stage to shoot the ball';
+    div.appendChild(p);
 }
 
-function delayStart() {
+function onClickStartGame() {
     anim.start();
 }
 
-function onStopBtnClick() {
+function onPauseBtnClick() {
     anim.stop();
 }
 

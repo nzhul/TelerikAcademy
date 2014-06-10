@@ -100,3 +100,7 @@ function explode() {
         }
     }
 }
+
+function playSingleSound() {
+    document.getElementById('audiotag1').play();
+}
