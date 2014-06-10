@@ -45,62 +45,12 @@ var aPaddle = new Kinetic.Rect({
     listening: true
 });
 
-
-
 initBricks();
 
 function calcBallAngle(ball) {
     var ballPosition = ball.attrs.x - aPaddle.attrs.x;
     var xChange = ((ballPosition / PADDLE_WIDTH) * 10) - MAX_X_SPEED;
     return xChange * -1;
-}
-
-function ballHitBrickDetection(ball) {
-    var currentStage = ball.getStage(),
-        colisionObject = currentStage.getIntersection({ x: ball.getX(), y: ball.getY() });
-
-    if (colisionObject) {
-        playSingleSound();
-        colisionObject.remove();
-        explode();
-        ball.attrs.directionY *= -1;
-    }
-}
-
-//Can add this method to ball or circle object. Now it is just for testing.
-function ballHitWallDetection(ball) {
-    var ballX = ball.attrs.x,
-        ballY = ball.attrs.y,
-        ballRadius = ball.attrs.radius;
-
-    if (ballX + ballRadius >= stage.attrs.width) {
-        ball.attrs.directionX *= -1;
-    }
-    else if (ballX <= ballRadius) {
-        ball.attrs.directionX *= -1;
-    }
-    //if (self.y + self.radius > canvasH) {
-    //    self.directionY = -directionY;
-    //}
-    if (ballY <= ballRadius) {
-        ball.attrs.directionY *= -1;
-    }
-    else if (ballY + ballRadius >= PADDLE_START_Y) {
-        if (ballX >= aPaddle.attrs.x && ballX <= aPaddle.attrs.x + PADDLE_WIDTH) {
-            ball.attrs.directionY *= -1;
-            ball.attrs.directionX += calcBallAngle(ball);
-
-            if (ball.attrs.directionX > MAX_X_SPEED) {
-                ball.attrs.directionX = MAX_X_SPEED;
-            }
-            else if (ball.attrs.directionX < -MAX_X_SPEED) {
-                ball.attrs.directionX = -MAX_X_SPEED;
-            }
-        }
-        //else {
-        //    GAME_OVER = true;
-        //}
-    }
 }
 
 var prevDate = new Date().getTime();
@@ -151,21 +101,6 @@ var anim = new Kinetic.Animation(function (frame) {
     ballHitWallDetection(aBall);
     ballHitBrickDetection(aBall);
 }, layers, explosionsLayer); // !
-//
-//function gameLoop() {
-//    setTimeout(gameLoop, 1000 / 60);
-//    //Process movement, AI, game logic
-//    aBall.move();
-//    ballHitWallDetection(aBall);
-//    layer.draw();
-//}
-
-//function engine() {
-//    aBall.move();
-//    ballHitWallDetection(aBall);
-//    layer.draw();
-//    window.requestAnimationFrame(engine);
-//}
 
 document.getElementById('start-btn').addEventListener('click', onStartBtnClick);
 document.getElementById('pause-btn').addEventListener('click', onPauseBtnClick);
@@ -186,7 +121,3 @@ function onClickStartGame() {
 function onPauseBtnClick() {
     anim.stop();
 }
-
-//anim.start();
-//gameLoop();
-//engine();
