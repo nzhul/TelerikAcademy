@@ -7,6 +7,9 @@
         collisionObject.remove();
         explode();
         ball.attrs.directionY *= -1;
+        if(collisionObject.getAttr('isObjectProducer')){
+            spawnGift(collisionObject.getAttr('x'),collisionObject.getAttr('y'),collisionObject.getAttr('fill'), collisionObject.getAttr('producedObjectType'))
+        }
     }
 }
 

@@ -20,12 +20,13 @@ function initBricks() {
                 listening: true
             }).setAttrs({
                     isObjectProducer: (function () {
-                        if(getRandomInt(1, 100) > 90){
+                        if(getRandomInt(1, 100) > 10){
                             return true;
                         } else {
                             return false;
                         }
-                    }())
+                    }()),
+                    type: 'brick'
                 });
             if(currentBrick.getAttr('isObjectProducer')){
                 currentBrick.setAttr('producedObjectType', PRODUCIBLE_OBJECTS[getRandomInt(0, PRODUCIBLE_OBJECTS.length - 1)]);

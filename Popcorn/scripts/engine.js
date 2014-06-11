@@ -7,6 +7,7 @@ stage = new Kinetic.Stage({
 bricksLayer = new Kinetic.Layer();
 ballLayer = new Kinetic.Layer();
 paddleLayer = new Kinetic.Layer();
+giftsLayer = new Kinetic.Layer();
 explosionsLayer = new Kinetic.Layer();
 
 //get the underlaying context from the layer:
@@ -88,9 +89,10 @@ paddleLayer.add(aPaddle);
 stage.add(bricksLayer);
 stage.add(ballLayer);
 stage.add(paddleLayer);
+stage.add(giftsLayer);
 stage.add(explosionsLayer);
 
-var layers = [bricksLayer, ballLayer, paddleLayer];
+var layers = [bricksLayer, ballLayer, paddleLayer, giftsLayer];
 var anim = new Kinetic.Animation(function (frame) {
     //For performance test
     //console.log(frame.frameRate);
