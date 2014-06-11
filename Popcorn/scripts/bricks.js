@@ -29,26 +29,8 @@ function initBricks() {
                 });
             if(currentBrick.getAttr('isObjectProducer')){
                 currentBrick.setAttr('producedObjectType', PRODUCIBLE_OBJECTS[getRandomInt(0, PRODUCIBLE_OBJECTS.length - 1)]);
-                switch(currentBrick.getAttr('producedObjectType')){
-                    case PRODUCIBLE_OBJECTS[0]:
-                        currentBrick.fill('red');
-                        break;
-                    case PRODUCIBLE_OBJECTS[1]:
-                        currentBrick.fill('yellowgreen');
-                        break;
-                    case PRODUCIBLE_OBJECTS[2]:
-                        currentBrick.fill('green');
-                        break;
-                    case PRODUCIBLE_OBJECTS[3]:
-                        currentBrick.fill('lightblue');
-                        break;
-                    case PRODUCIBLE_OBJECTS[4]:
-                        currentBrick.fill('lightgray');
-                        break;
-                    default:
-                        currentBrick.fill('black');
-                        break;
-                }
+                var currProducedObject = currentBrick.getAttr('producedObjectType');
+                currentBrick.fill(currProducedObject.color);
             }
             brickMatrix[i][j] = (currentBrick);
             bricksLayer.add(currentBrick);
