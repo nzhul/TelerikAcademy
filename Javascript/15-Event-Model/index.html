@@ -34,18 +34,17 @@
         .delBtn {
             float: right;
             margin: 0 10px 0 0;
+            background: url("del.png") no-repeat;
+            width: 16px;
+            height: 16px;
+            display: block;
+            float:right;
+            margin: 15px 10px 0 0px;
         }
     </style>
 </head>
 <body>
-<ul id="noteField">
-    <li>Task 1 <a class="delBtn">X</a></li>
-    <li>Task 2 <a class="delBtn">X</a></li>
-    <li>Task 3 <a class="delBtn">X</a></li>
-    <li>Task 4 <a class="delBtn">X</a></li>
-    <li class="completed">Task 5 <a class="delBtn">X</a></li>
-    <li>Task 6 <a class="delBtn">X</a></li>
-</ul>
+<ul id="noteField"></ul>
 <ul style="border-top: 0;">
     <li><input type="text" autofocus/></li>
 </ul>
@@ -55,23 +54,23 @@
     input.addEventListener('keypress', function (ev) {
         if (ev.keyCode == 13 && this.value.length >= 3) {
             var newTask = document.createElement('li');
+            var delBtn = document.createElement('a');
+            delBtn.className = 'delBtn';
+            delBtn.addEventListener('click', function (ev) {
+                var parent = this.parentNode;
+                parent.parentNode.removeChild(parent);
+                return false;
+            });
             newTask.innerHTML = this.value;
-            newTask.innerHTML += '<a class="delBtn">X</a>';
+            newTask.appendChild(delBtn);
+            newTask.addEventListener('click', function (ev) {
+                ev.stopPropagation();
+                this.className = 'completed';
+            });
             container.appendChild(newTask);
             this.value = '';
         }
     });
-
-    // TODO Remove не се атачва като евент за ново появилите се таскове.
-    // За да избегна това трябва да атачвам евента преди да създам delete button-a.
-    // Също трябва да изтривам не хиксчето, а самия parent елемент.
-    var delBtns = document.getElementsByClassName('delBtn');
-    for (var i = 0; i < delBtns.length; i++) {
-        delBtns[i].addEventListener('click', function (ev) {
-            this.parentNode.removeChild(this);
-            return false;
-        })
-    }
 </script>
 </body>
 </html>
