@@ -25,4 +25,5 @@ var stage,
     BRICK_HEIGHT = 15,
     BRICK_SPACING = 1,
     BRICK_COLOR = 'black',
-    BRICK_ROW_COUNT = 5;
+    BRICK_ROW_COUNT = 5,
+    PRODUCIBLE_OBJECTS = ['ShootingPaddle', 'LongerPaddle','MultipleBalls', 'FireBall', 'BOMB'];

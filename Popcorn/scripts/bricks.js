@@ -18,7 +18,38 @@ function initBricks() {
                 height: BRICK_HEIGHT,
                 fill: BRICK_COLOR,
                 listening: true
-            });
+            }).setAttrs({
+                    isObjectProducer: (function () {
+                        if(getRandomInt(1, 100) > 90){
+                            return true;
+                        } else {
+                            return false;
+                        }
+                    }())
+                });
+            if(currentBrick.getAttr('isObjectProducer')){
+                currentBrick.setAttr('producedObjectType', PRODUCIBLE_OBJECTS[getRandomInt(0, PRODUCIBLE_OBJECTS.length - 1)]);
+                switch(currentBrick.getAttr('producedObjectType')){
+                    case PRODUCIBLE_OBJECTS[0]:
+                        currentBrick.fill('red');
+                        break;
+                    case PRODUCIBLE_OBJECTS[1]:
+                        currentBrick.fill('yellowgreen');
+                        break;
+                    case PRODUCIBLE_OBJECTS[2]:
+                        currentBrick.fill('green');
+                        break;
+                    case PRODUCIBLE_OBJECTS[3]:
+                        currentBrick.fill('lightblue');
+                        break;
+                    case PRODUCIBLE_OBJECTS[4]:
+                        currentBrick.fill('lightgray');
+                        break;
+                    default:
+                        currentBrick.fill('black');
+                        break;
+                }
+            }
             brickMatrix[i][j] = (currentBrick);
             bricksLayer.add(currentBrick);
             horizontalShift += BRICK_WIDTH + 1;
@@ -26,4 +57,8 @@ function initBricks() {
         verticalShift += BRICK_HEIGHT + 1;
     }
     return brickMatrix;
+}
+
+function getRandomInt(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
 }
