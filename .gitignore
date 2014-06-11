@@ -1,6 +1,16 @@
 # Custom .gitignore file made by Martin Anastasov
 ## Feel free to use it!
 
+# WebStorm
+.idea/
+
+## Ignore all Visual Studio files
+*.sln
+*.csproj
+*.config
+*.cs
+[Pp]roperties/
+
 # Build Folders (you can keep bin if you'd like, to store dlls and pdbs)
 [Bb]in/
 [Oo]bj/
@@ -39,9 +49,6 @@ x64/
 *.vspscc
 *.vssscc
 .builds
-
-# WebStorm
-.idea/
 
 # Visual C++ cache files
 ipch/
