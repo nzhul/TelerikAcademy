@@ -34,15 +34,14 @@
           redraw();
       }
       function redraw() {
-          ctx.fillStyle = '#000000';
-          ctx.fillRect(0, 0, canvas.width, canvas.height);
+          ctx.clearRect(0, 0, canvas.width, canvas.height);
           if (imageReady) {
               ctx.drawImage(img, frame * 16, 0, 15, 32,
-                            canvas.width / 2 - 48, canvas.height / 2 - 48, 16, 32);
+                            170, 385, 16, 32);
           }
       }
 
-      var frame = 9;
+      var frame = 11;
       var lastUpdateTime = 0;
       var acDelta = 0;
       var msPerFrame = 100;
@@ -54,8 +53,8 @@
           if (acDelta > msPerFrame) {
               acDelta = 0;
               redraw();
-              frame++;
-              if (frame >= 12) frame = 9;
+              frame--;
+              if (frame <= 8) frame = 11;
           } else {
               acDelta += delta;
           }
@@ -66,8 +65,8 @@
   </script>
   </head>
 <body onresize='onresize()' onload='onload()' style='position: absolute; padding:0; margin:0; height: 100%; width:100%'>
-
-<canvas id="gameCanvas"></canvas>
+<img src="img/level.png" style="position: absolute; z-index: 1;" />
+<canvas id="gameCanvas" width="300" height="200" style="position:absolute;z-index:2;"></canvas>
 
 </body>
 </html>
