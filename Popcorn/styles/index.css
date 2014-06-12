@@ -3,3 +3,12 @@
     width: 500px;
     margin: 20px auto;
 }
+
+#svg-container {
+    border: 1px solid black;
+    width: 500px;
+    margin: 20px auto;
+}
+/*.kineticjs-content {*/
+    /*display: none !important;*/
+/*}*/
