@@ -8,11 +8,41 @@
 <div id="root"></div>
 <script src="js/handlebars-v1.3.0.js"></script>
 <script type="text/x-handlebars-template" id="select-template">
-    <select id="">
-        {{#rows}}
-        <option value=""></option>
-        {{/rows}}
+    <select>
+        {{#items}}
+        <option value="{{value}}">{{text}}</option>
+        {{/items}}
     </select>
+</script>
+<script>
+    var items = [
+    {
+        value: 1,
+        text: 'One'
+    },
+    {
+        value: 2,
+        text: 'Two'
+    },
+    {
+        value: 3,
+        text: 'Three'
+    },
+    {
+        value: 4,
+        text: 'Four'
+    },
+    {
+        value: 5,
+        text: 'Five'
+    }];
+
+    var post = {
+        items: items
+    }
+    var selectTemplate = document.getElementById('select-template').innerHTML;
+    var hbTemplate = Handlebars.compile(selectTemplate);
+    document.getElementById('root').innerHTML = hbTemplate(post);
 </script>
 </body>
 </html>
