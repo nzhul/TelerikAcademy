@@ -4,8 +4,12 @@
 }
 
 #container {
-    border: 1px solid black;
+
     margin: auto;
+}
+
+#container canvas{
+    z-index: 99;
 }
 
 #svg-container {
@@ -13,6 +17,11 @@
     position: absolute;
     margin: auto;
     top: 20px;
+    z-index: 2;
+}
+
+#wrapper button{
+    margin: 30px 10px 0 10px;
 }
 /*.kineticjs-content {*/
     /*display: none !important;*/

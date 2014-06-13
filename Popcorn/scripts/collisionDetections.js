@@ -46,8 +46,17 @@ function ballHitWallDetection(ball) {
             }
             
         }
-        //else {
-        //    GAME_OVER = true;
-        //}
+        else {
+            anim.stop();
+            if(isAnimationRunning){
+                gameOverText.animate(textAnimBigger);
+            }
+
+            var canvases = document.getElementsByTagName('canvas');
+            for(var i = 0; i < canvases.length; i += 1){
+                canvases[i].style.zIndex = '1';
+            }
+
+        }
     }
 }
