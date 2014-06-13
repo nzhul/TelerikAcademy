@@ -1,13 +1,18 @@
-#container {
-    border: 1px solid black;
+#game-container{
     width: 500px;
     margin: 20px auto;
 }
 
+#container {
+    border: 1px solid black;
+    margin: auto;
+}
+
 #svg-container {
     border: 1px solid black;
-    width: 500px;
-    margin: 20px auto;
+    position: absolute;
+    margin: auto;
+    top: 20px;
 }
 /*.kineticjs-content {*/
     /*display: none !important;*/

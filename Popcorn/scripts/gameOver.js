@@ -3,9 +3,9 @@ var paper = Raphael(document.getElementById('svg-container'), STAGE_WIDTH, STAGE
     textAnimBigger,
     isAnimationRunning = true;
 
-//    var canvasEl = document.getElementsByClassName('kineticjs-content');
+    var canvasEl = document.getElementsByClassName('kineticjs-content');
 //
-//    canvasEl.style.display = 'none !important';
+    canvasEl.style.display = 'none !important';
 
     textAnimBigger = Raphael.animation({
         '40%': {'font-size': 95, fill: 'darkred', easing: 'bounce'},

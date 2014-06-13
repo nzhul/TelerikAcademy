@@ -45,7 +45,27 @@ var aPaddle = new Kinetic.Rect({
     fill: PADDLE_COLOR,
     listening: true
 });
-
+//var aPaddle = new Kinetic.Shape({
+//    sceneFunc: function(context) {
+//        context.beginPath();
+//        context.moveTo(this.attrs.x, this.attrs.y);
+//        context.lineTo(this.attrs.x, this.attrs.y + this.attrs.height);
+//        context.lineTo(this.attrs.x + this.attrs.width, this.attrs.y + this.attrs.height);
+//        context.lineTo(this.attrs.x + this.attrs.width, this.attrs.y);
+//        context.lineTo(this.attrs.x + this.attrs.width / 2 + 10, this.attrs.y - this.attrs.height);
+//        context.lineTo(this.attrs.x + this.attrs.width / 2 - 10, this.attrs.y - this.attrs.height);
+//        context.closePath();
+//        // KineticJS specific context method
+//        context.fillStrokeShape(this);
+//    },
+//    x: PADDLE_START_X,
+//    y: 200, //PADDLE_START_Y,
+//    width: 100,
+//    height: 5,
+//    fill: '#00D2FF',
+//    stroke: 'black',
+//    strokeWidth: 3
+//});
 initBricks();
 
 function calcBallAngle(ball) {
