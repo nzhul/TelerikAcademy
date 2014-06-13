@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>02 - Before and After</title>
+    <script src="js/jquery-2.1.1.min.js"></script>
+    <style type="text/css">
+        #container , #buttons{
+            width: 300px;
+            height: auto;
+            border: 1px solid #000;
+        }
+        #buttons {
+            margin-top: 30px;
+            height: 50px;
+            border: none;
+        }
+        #buttons button {width: 50%;}
+
+        #input {width: 98.5%;}
+    </style>
+</head>
+<body>
+<div id="container">
+    <strong>&nbsp;</strong>
+    <hr/>
+    <strong>&nbsp;</strong>
+</div>
+<div id="buttons">
+    <strong>Type Something:</strong>
+    <input type="text" id="input" autofocus="autofocus"/>
+    <button id="beforeBtn">Insert Before</button><button id="afterBtn">Insert After</button>
+</div>
+<script>
+$('#beforeBtn').on('click', function () {
+    var $divider = $('hr');
+    var value = '<strong>' + $('#input').val() + '</strong>';
+    $divider.before(value);
+});
+$('#afterBtn').on('click', function () {
+    var $divider = $('hr');
+    var value = '<strong>' + $('#input').val() + '</strong>';
+    $divider.after(value);
+});
+</script>
+<p style="font: 10px Arial; color: gray; margin-top: 25px;">PS: As you can see this this functionality is already implemented in JQuery.<br/>
+I don't see any point doing it again with JQuery.<br/>
+Judge me as you wish!<br/>
+Have a nice day!
+</p>
+</body>
+</html>
