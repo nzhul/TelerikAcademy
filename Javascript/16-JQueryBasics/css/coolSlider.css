@@ -1,0 +1,47 @@
+.cool-slider {
+    width: 550px;
+    height: 470px;
+    border: 1px solid #000;
+    overflow: hidden;
+}
+.cool-slider .slide-element, .cool-slider .slide-element .slide-title {
+    position: absolute;
+}
+
+.cool-slider .slide-element .slide-title {
+    background: #ffcc00;
+    width: 100%;
+    height: 40px;
+    text-align: center;
+    line-height: 40px;
+    border-bottom: 1px solid black;
+}
+
+.cool-slider .slide-element img {
+    height: 430px;
+    width: 550px;
+    margin-top: 40px;
+}
+
+.cool-slider .coolBtn {
+    position: absolute;
+    top: 230px;
+    width: 32px;
+    height: 32px;
+    border: 0;
+    opacity: .7;
+    cursor: pointer;
+    left: 20px;
+}
+.cool-slider .coolBtn:hover {
+    opacity: 1;
+}
+
+.cool-slider #rightBtn {
+    background: url(../img/rightArrow.png) no-repeat;
+    left: 510px;
+}
+
+.cool-slider #leftBtn {
+    background: url(../img/leftArrow.png) no-repeat;
+}
