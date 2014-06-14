@@ -7,11 +7,18 @@
             playSingleSound('explosionSound');
             collisionObject.remove();
             explode();
+            playerScore += 10 * getRandomNumber(25, 75);
+            console.log(playerScore);
             ball.attrs.directionY *= -1;
             if(collisionObject.getAttr('isObjectProducer')){
                 spawnGift(collisionObject.getAttr('x'),collisionObject.getAttr('y'),collisionObject.getAttr('fill'), collisionObject.getAttr('producedObjectType'))
             }
         }
+    }
+    
+    function getRandomNumber(min, max) {
+        var randomNumber = Math.floor(Math.random() * (max - min + 1)) + min;
+        return randomNumber;
     }
 }
 
@@ -48,7 +55,8 @@ function ballHitWallDetection(ball) {
         }
         else {
             anim.stop();
-            if(isAnimationRunning){
+            if (isAnimationRunning) {
+                endGame();
                 gameOverText.animate(textAnimBigger);
             }
 

@@ -23,6 +23,11 @@
 #wrapper button{
     margin: 30px 10px 0 10px;
 }
+
+#score {
+    margin-top:50px;
+	width: 196px;
+}
 /*.kineticjs-content {*/
     /*display: none !important;*/
 /*}*/

@@ -129,11 +129,13 @@ document.getElementById('pause-btn').addEventListener('click', onPauseBtnClick);
 
 function onStartBtnClick() {
     document.getElementById('container').addEventListener('click', onClickStartGame);
-
     var div = document.getElementById('wrapper');
     var p = document.createElement('p');
     p.innerText = 'Click on the stage to shoot the ball';
     div.appendChild(p);
+
+    playerScore = 0;
+    //updateTopScores();
 }
 
 function onClickStartGame() {
