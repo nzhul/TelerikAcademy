@@ -1,0 +1,51 @@
+        .message {
+            width: 400px;
+            height: 60px;
+            border: 1px solid #000;
+            line-height: 60px;
+            text-align: center;
+            margin: 15px 0 0 0;
+        }
+        .message.error {
+            background-color: #ff7b75;
+            color: #370c00;
+            border: 1px solid #370c00;
+        }
+        .message.warn {
+            background-color: #ffe8a0;
+            color: #8f7013;
+            border: 1px solid #bc9212;
+        }
+        .message.success {
+            background-color: #c9ffbc;
+            color: #125d00;
+            border: 1px solid #125d00;
+        }
+        .message .close {
+            position: absolute;
+            margin: -70px 0 0 190px;
+            background: none;
+            border: none;
+            width: 20px;
+            height: 20px;
+            cursor: pointer;
+            outline: none;
+        }
+
+        .close.errorImg {
+            background: url("../delX.png")no-repeat;
+        }
+        .close.successImg {
+            background: url("../succX.png")no-repeat;
+        }
+        .close.warnImg {
+            background: url("../warnX.png")no-repeat;
+        }
+        .clearfix:after {
+            visibility: hidden;
+            display: block;
+            font-size: 0;
+            content: " ";
+            clear: both;
+            height: 0;
+        }
