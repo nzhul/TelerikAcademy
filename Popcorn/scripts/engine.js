@@ -134,8 +134,8 @@ function onStartBtnClick() {
     p.innerText = 'Click on the stage to shoot the ball';
     div.appendChild(p);
 
+    updateTopScores();
     playerScore = 0;
-    //updateTopScores();
 }
 
 function onClickStartGame() {
