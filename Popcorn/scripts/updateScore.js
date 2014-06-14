@@ -1,5 +1,5 @@
 ﻿var endGame = function () {
-    var currentName = prompt('Please enter your name:');
+    var currentName = prompt('Your socre is: '+ playerScore + '! Please enter your name:');
     if (currentName === '') {
         currentName = 'Anonymous';
     }
