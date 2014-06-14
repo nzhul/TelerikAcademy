@@ -3,19 +3,21 @@
         collisionObject = currentStage.getIntersection({ x: ball.getX(), y: ball.getY() });
 
     if (collisionObject) {
-        if(collisionObject.getAttr('gameObjectType') == 'brick'){
+        if (collisionObject.getAttr('gameObjectType') == 'brick') {
             playSingleSound('explosionSound');
             collisionObject.remove();
             explode();
             playerScore += 10 * getRandomNumber(25, 75);
             console.log(playerScore);
             ball.attrs.directionY *= -1;
-            if(collisionObject.getAttr('isObjectProducer')){
-                spawnGift(collisionObject.getAttr('x'),collisionObject.getAttr('y'),collisionObject.getAttr('fill'), collisionObject.getAttr('producedObjectType'))
+            if (collisionObject.getAttr('isObjectProducer')) {
+                var newGift = spawnGift(collisionObject.getAttr('x'), collisionObject.getAttr('y'), collisionObject.getAttr('fill'), collisionObject.getAttr('producedObjectType'));
+                var moveGiftDown = newGift.attrs.move;
+                moveGiftDown();
             }
         }
     }
-    
+
     function getRandomNumber(min, max) {
         var randomNumber = Math.floor(Math.random() * (max - min + 1)) + min;
         return randomNumber;
@@ -51,9 +53,9 @@ function ballHitWallDetection(ball) {
             else if (ball.attrs.directionX < -MAX_X_SPEED) {
                 ball.attrs.directionX = -MAX_X_SPEED;
             }
-            
+
         }
-        else if (ballY >= STAGE_HEIGHT){
+        else if (ballY >= STAGE_HEIGHT) {
             anim.stop();
             if (isAnimationRunning) {
                 endGame();
@@ -61,7 +63,7 @@ function ballHitWallDetection(ball) {
             }
 
             var canvases = document.getElementsByTagName('canvas');
-            for(var i = 0; i < canvases.length; i += 1){
+            for (var i = 0; i < canvases.length; i += 1) {
                 canvases[i].style.zIndex = '1';
             }
 
