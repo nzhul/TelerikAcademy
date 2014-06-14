@@ -53,7 +53,7 @@ function ballHitWallDetection(ball) {
             }
             
         }
-        else {
+        else if (ballY >= STAGE_HEIGHT){
             anim.stop();
             if (isAnimationRunning) {
                 endGame();
