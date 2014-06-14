@@ -126,22 +126,35 @@ var anim = new Kinetic.Animation(function (frame) {
 
 document.getElementById('start-btn').addEventListener('click', onStartBtnClick);
 document.getElementById('pause-btn').addEventListener('click', onPauseBtnClick);
+document.getElementById('best-scores-btn').addEventListener('click', onScoreBtnClick);
 
 function onStartBtnClick() {
     document.getElementById('container').addEventListener('click', onClickStartGame);
-    var div = document.getElementById('wrapper');
-    var p = document.createElement('p');
-    p.innerText = 'Click on the stage to shoot the ball';
-    div.appendChild(p);
+    var gameInstruction = document.getElementById('start-game-instruction');
+    gameInstruction.style.display = 'block';
 
-    updateTopScores();
     playerScore = 0;
 }
 
 function onClickStartGame() {
     anim.start();
+    var gameInstruction = document.getElementById('start-game-instruction');
+    gameInstruction.style.display = 'none';
 }
 
 function onPauseBtnClick() {
     anim.stop();
+}
+
+function onScoreBtnClick(){
+    var scoreDiv = document.getElementById('score');
+
+    if(scoreDiv.style.display == 'block'){
+        scoreDiv.style.display = 'none';
+    }
+    else{
+        updateTopScores();
+        scoreDiv.style.display = 'block';
+    }
+
 }

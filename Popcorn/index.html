@@ -6,15 +6,18 @@
     <link rel="stylesheet" href="styles/index.css" type="text/css" />
 </head>
 <body>
+<h1>BRAKING BRICK</h1>
 <div id="game-container">
     <div id="svg-container"></div>
     <div id="container"></div>
     <div id="wrapper">
         <button id="start-btn">Start Game</button>
         <button id="pause-btn">Pause Game</button>
+        <button id="best-scores-btn">Best Scores</button>
+        <p id="start-game-instruction" style="display: none">Click on the stage to shoot the ball</p>
     </div>
-    <div id='score'>
-        High scores:
+    <div id='score' style="display: none">
+        <h3>High scores:</h3>
         <div id="top10"></div>
     </div>
 </div>
