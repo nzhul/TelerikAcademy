@@ -16,6 +16,10 @@ function spawnGift(x, y, color, type) {
 
     var moveGiftDown = new Kinetic.Animation(function (frame) {
         gift.setY(gift.getY() + vectorY);
+
+        if (gift.getY() >= STAGE_HEIGHT) {
+            gift.remove();
+        }
     }, giftsLayer);
 
     return gift;
