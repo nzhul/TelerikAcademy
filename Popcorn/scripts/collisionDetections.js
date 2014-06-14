@@ -8,7 +8,7 @@
             collisionObject.remove();
             explode();
             playerScore += 10 * getRandomNumber(25, 75);
-            console.log(playerScore);
+            updateScore();
             ball.attrs.directionY *= -1;
             if (collisionObject.getAttr('isObjectProducer')) {
                 var newGift = spawnGift(collisionObject.getAttr('x'), collisionObject.getAttr('y'), collisionObject.getAttr('fill'), collisionObject.getAttr('producedObjectType'));

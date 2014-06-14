@@ -49,7 +49,17 @@ h1{
 
 #score {
     margin:40px auto;
-	width: 196px;
+	width: 200px;
+}
+
+#liveScoreContainer{
+    width:120px;
+    height:60px;
+    border: 1px solid black;
+    border-radius: 5px;
+    position:absolute;
+    top: 10px;
+    left: 20px;
 }
 /*.kineticjs-content {*/
     /*display: none !important;*/

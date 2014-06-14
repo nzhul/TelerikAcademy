@@ -6,6 +6,7 @@ var stage,
     ctx,
     playerScore = 0,
     topScoresDiv = document.getElementById('top10'),
+    liveScoreElement = document.getElementById('liveScore');
     TOP_SCORES_TO_DISPLAY = 10,
     STAGE_WIDTH = 500,
     STAGE_HEIGHT = 350,

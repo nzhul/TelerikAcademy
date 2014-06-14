@@ -30,3 +30,6 @@ var clearTopScores = function () {
     }
 }
 
+var updateScore = function () {
+    liveScoreElement.innerText = playerScore;
+}
