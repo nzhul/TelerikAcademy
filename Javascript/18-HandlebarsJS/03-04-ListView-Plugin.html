@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>03 - 04 - List View Plugin</title>
+	<style>
+		table,th, td {
+			border: 1px solid black;
+			border-collapse: collapse; 
+            padding: 5px;
+		}
+	    thead
+	    {
+            background: lightgray;
+	    }
+	</style>
+</head>
+<body>
+	<ul id="books-list" data-template="book-item-template">
+		<script id="book-item-template" type="x-handlebars-template">
+			<li class="book-item">
+				<a href="/books/{{id}}">{{title}}</a>
+			</li>
+		</script>
+	</ul>
+
+	<table>
+	  <thead>
+	    <tr>
+	    	<th>#</th>
+	    	<th>Name</th>
+	    	<th>Mark</th>
+    	</tr>
+	  </thead>
+	  <tbody id="students-table" data-template="students-row-template">	
+	  </tbody>
+	</table>
+
+	<script id="students-row-template" type="invalid">
+	  <tr class="student-row">
+	    <td>{{number}}</td>
+	    <td>{{name}}</td>
+	    <td>{{mark}}</td>
+	  </tr>		
+	</script>
+
+	<script src="js/handlebars-v1.3.0.js"></script>
+	<script src="js/jquery-2.1.1.min.js"></script>
+	<script src="js/listview.js"></script>
+	<script>$(document).ready(function() {
+
+	var books = [{
+		id: 'i-robot',
+		title: 'I, Robot'
+	}, {
+		id: 'the-caves-of-steel',
+		title: 'The Caves of Steel'
+	}, {
+		id: 'foundation',
+		title: 'Foundation'
+	}, {
+		id: 'the-naked-sun',
+		title: 'The Naked Sun'
+	}];
+
+	var students = [{
+		number: 1,
+		name: 'Ivan Ivanov',
+		mark: 2.5
+	}, {
+		number: 2,
+		name: 'John Smith',
+		mark: 3.3
+	}, {
+		number: 3,
+		name: 'Trendafil Kojoderov',
+		mark: 6
+	}, {
+		number: 4,
+		name: 'Stamat Borisov',
+		mark: 5.5
+	}];
+
+	$('#books-list').listView(books);
+
+	$('#students-table').listView(students);
+
+});</script>
+</body>
+</html>
