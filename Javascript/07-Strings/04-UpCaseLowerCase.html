@@ -1,0 +1,71 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <link href="css/js-console.css" rel="stylesheet" />
+    <link href="css/style.css" rel="stylesheet" />
+</head>
+<body>
+    <header>
+        <a href="01-ReverseString.html">01-ReverseString</a> |
+        <a href="02-BracketChecker.html">02-BracketChecker</a> |
+        <a href="03-SubstringCount.html">03-SubstringCount</a> |
+        <a href="04-UpCaseLowerCase.html" class="current">04-UpCaseLowerCase</a> |
+        <a href="05-nbsp.html">05-nbsp</a> |
+        <a href="06-ExtractText.html">06-ExtractText</a> |
+        <a href="07-ParseURL.html">07-ParseURL</a> |
+        <a href="08-BBCode.html">08-BBCode</a> |
+        <a href="09-ExtractEmail.html">09-ExtractEmail</a> |
+        <a href="10-Palindrome.html">10-Palindrome</a> |
+        <a href="11-StringFormat.html">11-StringFormat</a> |
+        <a href="12-Templates.html">12-Templates</a>
+    </header>
+    <table>
+        <tr>
+            <td>Text:</td>
+            <td><input type="text" style="width: 760px;" id="input" value="We are <mixcase>living</mixcase> in a <upcase>yellow submarine</upcase>. We <mixcase>don't</mixcase> have <lowcase>ANYTHING</lowcase> else." /></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><button onclick="onExecuteClick()">Execute</button></td>
+        </tr>
+    </table>
+    <div id="console">
+    </div>
+    <script src="js/js-console.js">	  
+    </script>
+    <script>
+        function createMixCase(match) {
+            var output = "";
+            for (var i = 0; i < match.length; i++) {
+                if (i % 2 === 0) {
+                    output += match[i].toUpperCase();
+                }
+                else {
+                    output += match[i].toLowerCase();
+                }
+            }
+            return output;
+        }
+
+        function onExecuteClick() {
+            var text = jsConsole.read("#input"),
+                regexUpCase = /<upcase>(.*?)<\/upcase>/gi,
+                regexLowCase = /<lowcase>(.*?)<\/lowcase>/gi,
+                regexMixCase = /<mixcase>(.*?)<\/mixcase>/,
+                result = text.replace(regexUpCase, function (match) { return match.toUpperCase(); }),
+                result = result.replace(regexLowCase, function (match) { return match.toLowerCase(); }),
+                result = result.replace(regexMixCase, createMixCase);
+
+            jsConsole.writeLine(result);
+        }
+    </script>
+    <p style="font-size:12px;">
+        // 04 You are given a text. Write a function that changes the text in all regions:<br />
+&lt;upcase>text&lt;/upcase&gt; to uppercase.<br />
+&lt;lowcase>text&lt;/lowcase&gt; to lowercase<br />
+&lt;mixcase>text&lt;/mixcase&gt; to mix casing(random)
+
+    </p>
+</body>
+</html>

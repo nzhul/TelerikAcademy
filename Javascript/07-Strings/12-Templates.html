@@ -1,0 +1,70 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <link href="css/js-console.css" rel="stylesheet" />
+    <link href="css/style.css" rel="stylesheet" />
+</head>
+<body>
+    <header>
+        <a href="01-ReverseString.html">01-ReverseString</a> |
+        <a href="02-BracketChecker.html">02-BracketChecker</a> |
+        <a href="03-SubstringCount.html">03-SubstringCount</a> |
+        <a href="04-UpCaseLowerCase.html">04-UpCaseLowerCase</a> |
+        <a href="05-nbsp.html">05-nbsp</a> |
+        <a href="06-ExtractText.html">06-ExtractText</a> |
+        <a href="07-ParseURL.html">07-ParseURL</a> |
+        <a href="08-BBCode.html">08-BBCode</a> |
+        <a href="09-ExtractEmail.html">09-ExtractEmail</a> |
+        <a href="10-Palindrome.html">10-Palindrome</a> |
+        <a href="11-StringFormat.html">11-StringFormat</a> |
+        <a href="12-Templates.html" class="current">12-Templates</a>
+    </header>
+    <div data-type="template" id="list-item">
+        <strong>-{name}-</strong><span>-{age}-</span>
+    </div>
+    <script>
+        function generateHtmlList(items, template) {
+            var properties = [],
+                htmlOutput = [];
+            htmlOutput.push("<ul>");
+
+            for (var property in items) {
+                properties.push(property);
+            }
+
+            for (var i = 0; i < items.length; i++) {
+                htmlOutput.push("<li>");
+                var liContent = template;
+
+                for (var property in items[0]) {
+                    var regex = new RegExp('\\{' + property + '\\}', "gi");
+                    liContent = liContent.replace(regex, items[i][property]);
+                }
+
+                htmlOutput.push(liContent);
+                htmlOutput.push("</li>");
+            }
+            htmlOutput.push("</ul>");
+
+            return htmlOutput.join("");
+        }
+
+        var people = [
+            { name: "Унуфри", age: 55 },
+            { name: "Мишо", age: 17 },
+            { name: "Серафим", age: 18 },
+            { name: "Лоренцо", age: 26 },
+            { name: "Трендафил", age: 32 },
+        ]
+
+        var divPeople = document.getElementById("list-item");
+        var template = divPeople.innerHTML;
+        var peopleList = generateHtmlList(people, template);
+        divPeople.innerHTML = peopleList;
+    </script>
+    <p style="font-size:12px;">
+        // 12. Write a function that creates a HTML UL using a template for every HTML LI. The source of the list should an array of elements. Replace all placeholders marked with –{…}–   with the value of the corresponding property of the object
+    </p>
+</body>
+</html>

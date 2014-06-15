@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>01-Drop Down Plugin</title>
+    <style type="text/css">
+        ul, li {
+            list-style: none;
+            padding: 0;
+            margin: 1px 0 0 0px;
+            width: 150px;
+            height: 30px;
+            background-color: yellowgreen;
+            color: white;
+            line-height: 30px;
+            text-align: center;
+            cursor: pointer;
+        }
+        .dropdown-list-selectionContainer {
+            background-color: green;
+        }
+    </style>
+    <script src="js/jquery-2.1.1.min.js"></script>
+</head>
+<body>
+<select name="" id="dropdown">
+    <option value="1">Barbarian</option>
+    <option value="2">Wizard</option>
+    <option value="3">Witch Doctor</option>
+    <option value="4">Monk</option>
+    <option value="5">Demon Hunter</option>
+    <option value="6">Crusader</option>
+</select>
+<script>
+    $('document').ready(function () {
+        
+        $.fn.dropdown = function () {
+
+            // Get the Raw Data from the original Select
+            var $selectTag = this;
+            $selectTag.hide();
+            var optionsArr = [];
+            var options = $selectTag.children();
+
+            for (var i = 0; i < options.length; i++) {
+                optionsArr.push({
+                    option: options[i].innerHTML,
+                    value: options[i].value
+                });
+            }
+
+            // Generate new List
+            var $container = $('<div>').addClass('dropdown-list-container');
+            var $ul = $('<ul>').addClass('dropdown-list-options');
+            var $selectionContainer = $('<li>')
+                    .addClass('dropdown-list-selectionContainer')
+                    .text('Choose your Hero')
+                    .attr('data-value','not-selected')
+                    .appendTo($ul);
+
+            for (var j = 0; j < optionsArr.length; j++) {
+                var currOption = $('<li>')
+                        .text(optionsArr[j].option)
+                        .attr('data-value',optionsArr[j].value)
+                        .on('click', function () {
+                            $target = $(this);
+                            $('.dropdown-list-options li[selected]').removeAttr('selected');
+                            $target.attr('selected', 'selected');
+                            $selectionContainer.text($target.text());
+                            $selectionContainer.attr('data-value', $target.attr('data-value'));
+                            $('.dropdown-list-options li:not(.dropdown-list-selectionContainer)').slideUp('fast');
+                        })
+                        .appendTo($ul);
+            }
+            $allOptions = $selectionContainer.siblings().hide();
+
+            $selectionContainer.on('click', function () {
+                $allOptions.slideToggle();
+            })
+            $ul.appendTo($container);
+            $container.appendTo($('body'));
+        };
+
+        $('#dropdown').dropdown();
+    });
+</script>
+</body>
+</html>

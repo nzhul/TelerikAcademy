@@ -1,0 +1,31 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+</head>
+<body>
+    <script>
+        function Solve(input) {
+            input = input.map(Number);
+            var n = input[0];
+            var count = 1;
+            for (var i = 2; i < input.length; i++) {
+                if (input[i - 1] > input[i]) {
+                    count++;
+                }
+            }
+            return count;
+        }
+
+        var input = [
+        '6',
+        '1',
+        '3',
+        '-5',
+        '8',
+        '7',
+        '-6 ']
+        Solve(input);
+    </script>
+</body>
+</html>

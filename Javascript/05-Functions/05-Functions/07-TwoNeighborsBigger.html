@@ -1,0 +1,65 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <link href="css/js-console.css" rel="stylesheet" />
+    <link href="css/style.css" rel="stylesheet" />
+</head>
+<body>
+    <header>
+        <a href="01-LastDigit.html" >01-LastDigit</a> |
+        <a href="02-ReverseDigits.html">02-ReverseDigits</a> |
+        <a href="03-WordCount.html">03-WordCount</a> |
+        <a href="04-DivCount.html">04-DivCount</a> |
+        <a href="05-NumberCount.html">05-NumberCount</a> |
+        <a href="06-TwoNeighbors.html">06-TwoNeighbors</a> |
+        <a href="07-TwoNeighborsBigger.html" class="current">07-TwoNeighborsBigger</a>
+    </header>
+<table>
+        <tr>
+            <td><label for="input">Sequence [,]</label></td>
+            <td><input type="text" id="input" /></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><button onclick="onExecuteClick()">Execute</button></td>
+        </tr>
+    </table>
+    <div id="console">
+    </div>
+    <script src="js/js-console.js">	  
+    </script>
+    <script>
+        function isBigger(numbers, position) {
+            if (position === 0 || position === numbers.length - 1) {
+                return "The position cannot be first or last element in the sequence!";
+            }
+            else {
+                if (numbers[position] > numbers[position - 1] && numbers[position] > numbers[position + 1]) {
+                    return true;
+                }
+                else {
+                    return false;
+                }
+            }
+        }
+        function onExecuteClick() {
+            var numbers = jsConsole.read('#input').split(',');
+            for (var i = 0; i < numbers.length; i++) {
+                numbers[i] = parseInt(numbers[i]);
+            }
+            for (var i = 1; i < numbers.length - 1; i++) { // this skipps the first and the last element
+                if (isBigger(numbers, i)) {
+                    jsConsole.writeLine("Element index: " + i);
+                    return;
+                }
+            }
+            jsConsole.writeLine('-1');
+        }
+    </script>
+    <p style="font-size:12px;">
+        // 07. Write a function that returns the index of the first element in array that is bigger than its neighbors, or -1, if there’s no such element.
+        // Use the function from the previous exercise.
+    </p>
+</body>
+</html>

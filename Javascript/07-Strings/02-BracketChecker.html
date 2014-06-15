@@ -1,0 +1,69 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <link href="css/js-console.css" rel="stylesheet" />
+    <link href="css/style.css" rel="stylesheet" />
+</head>
+<body>
+    <header>
+        <a href="01-ReverseString.html">01-ReverseString</a> |
+        <a href="02-BracketChecker.html" class="current">02-BracketChecker</a> |
+        <a href="03-SubstringCount.html">03-SubstringCount</a> |
+        <a href="04-UpCaseLowerCase.html">04-UpCaseLowerCase</a> |
+        <a href="05-nbsp.html">05-nbsp</a> |
+        <a href="06-ExtractText.html">06-ExtractText</a> |
+        <a href="07-ParseURL.html">07-ParseURL</a> |
+        <a href="08-BBCode.html">08-BBCode</a> |
+        <a href="09-ExtractEmail.html">09-ExtractEmail</a> |
+        <a href="10-Palindrome.html">10-Palindrome</a> |
+        <a href="11-StringFormat.html">11-StringFormat</a> |
+        <a href="12-Templates.html">12-Templates</a>
+    </header>
+    <table>
+        <tr>
+            <td>Expression:</td>
+            <td><input type="text" id="input" /></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><button onclick="onExecuteClick()">Execute</button></td>
+        </tr>
+    </table>
+    <div id="console">
+    </div>
+    <script src="js/js-console.js">	  
+    </script>
+    <script>
+        function onExecuteClick() {
+            var expression = jsConsole.read("#input");
+            if (expression.length < 2) {
+                jsConsole.writeLine("Expression is too short!");
+                return false;
+            }
+            var brackets = 0;
+            for (var i = 0; i < expression.length; i++) {
+                if(expression[i] === '('){
+                    brackets++;
+                } else if(expression[i] === ')'){
+                    brackets--;
+                }
+                if (brackets < 0) {
+                    break;
+                }
+            }
+
+            if (brackets === 0) {
+                jsConsole.writeLine("Valid Expression!");
+            } else {
+                jsConsole.writeLine("Invalid Expression!");
+            }
+        }
+    </script>
+    <p style="font-size:12px;">
+        // 02. Write a JavaScript function to check if in a given expression the brackets are put correctly.<br />
+Example of correct expression: ((a+b)/5-d).<br />
+Example of incorrect expression: )(a+b)).
+    </p>
+</body>
+</html>

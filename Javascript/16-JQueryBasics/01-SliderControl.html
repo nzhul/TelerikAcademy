@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>01 - Slider</title>
+    <!--<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>-->
+    <script src="js/jquery-2.1.1.min.js"></script>
+    <script src="js/handlebars-v1.3.0.js"></script>
+    <link rel="stylesheet" href="css/coolSlider.css"/>
+</head>
+<body>
+<div id="root"></div>
+<script type="text/x-handlebars-template" id="slider-template">
+    <div id="slider">
+        {{#slides}}
+        <div class="slide-element">
+            <strong class="slide-title">{{title}}</strong>
+            <img src="img/{{img}}"/>
+        </div>
+        {{/slides}}
+    </div>
+</script>
+<script>
+    var slides = [
+        {
+            title: 'WarCraft - Alyna Sunshower',
+            img: '1.jpg'
+        },
+        {
+            title: 'WarCraft - Azure Skyrazor',
+            img: '2.jpg'
+        },
+        {
+            title: 'WarCraft - Blessing of Virtue',
+            img: '3.jpg'
+        },
+        {
+            title: 'WarCraft - Chaotic Rush',
+            img: '4.jpg'
+        },
+        {
+            title: 'WarCraft - Hagara the Stormbinder',
+            img: '5.jpg'
+        },
+        {
+            title: 'WarCraft - Harpy Matriarch',
+            img: '6.jpg'
+        },
+        {
+            title: 'WarCraft - Mark of the Untamed',
+            img: '7.jpg'
+        },
+        {
+            title: 'WarCraft - Nordrassil Scout',
+            img: '8.jpg'
+        },
+        {
+            title: 'WarCraft - Shanis Bladefall',
+            img: '9.jpg'
+        },
+        {
+            title: 'WarCraft - Vindictive Strike',
+            img: '10.jpg'
+        }];
+
+    var post = {
+        slides: slides
+    }
+    var sliderTemplate = document.getElementById('slider-template').innerHTML;
+    var hbTemplate = Handlebars.compile(sliderTemplate);
+    document.getElementById('root').innerHTML = hbTemplate(post);
+</script>
+
+<script>
+    $.fn.coolSlider = function () {
+        $container = this;
+        $container.addClass('cool-slider');
+        $slideElements = $container.find('.slide-element');
+        $slideElements.hide();
+        currentSlideIndex = 0;
+        $($slideElements[currentSlideIndex]).show();
+
+        var leftBtn = document.createElement('button');
+        var rightBtn = document.createElement('button');
+        leftBtn.className = 'coolBtn';
+        leftBtn.id = 'leftBtn';
+        rightBtn.className = 'coolBtn';
+        rightBtn.id = 'rightBtn';
+
+        leftBtn.addEventListener('click', function () {
+            if(currentSlideIndex > 0){
+                $($slideElements[currentSlideIndex]).fadeOut();
+                currentSlideIndex--;
+                $($slideElements[currentSlideIndex]).fadeIn();
+            }
+        });
+        
+        rightBtn.addEventListener('click', function () {
+            if(currentSlideIndex < $slideElements.length - 1){
+                $($slideElements[currentSlideIndex]).fadeOut();
+                currentSlideIndex++;
+                $($slideElements[currentSlideIndex]).fadeIn();
+            }
+        });
+
+        $container[0].appendChild(rightBtn);
+        $container[0].appendChild(leftBtn);
+
+        return this;
+    }
+
+    $('#slider').coolSlider();
+</script>
+</body>
+</html>

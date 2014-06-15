@@ -1,0 +1,73 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>01-LastDigit</title>
+    <link href="css/js-console.css" rel="stylesheet" />
+    <link href="css/style.css" rel="stylesheet" />
+</head>
+<body>
+    <header>
+        <a href="01-LastDigit.html" class="current">01-LastDigit</a> |
+        <a href="02-ReverseDigits.html">02-ReverseDigits</a> |
+        <a href="03-WordCount.html">03-WordCount</a> |
+        <a href="04-DivCount.html">04-DivCount</a> |
+        <a href="05-NumberCount.html">05-NumberCount</a> |
+        <a href="06-TwoNeighbors.html">06-TwoNeighbors</a> |
+        <a href="07-TwoNeighborsBigger.html">07-TwoNeighborsBigger</a>
+    </header>
+    <table>
+        <tr>
+            <td><label for="number">Number: </label></td>
+            <td><input type="text" id="number" /></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><button onclick="onExecuteClick()">Execute</button></td>
+        </tr>
+    </table>
+    <div id="console">
+    </div>
+    <script src="js/js-console.js">	  
+    </script>
+    <script>
+
+        function GetLastDigitName(number)
+        {
+            var lastDigit = number % 10;
+            switch (lastDigit) {
+                case 1:
+                    return "One";
+                case 2:
+                    return "Two";
+                case 3:
+                    return "Three";
+                case 4:
+                    return "Four";
+                case 5:
+                    return "Five";
+                case 6:
+                    return "Six";
+                case 7:
+                    return "Seven";
+                case 8:
+                    return "Eight";
+                case 9:
+                    return "Nine";
+                case 0:
+                    return "Zero";
+                default:
+                    break;
+            }
+        }
+
+        function onExecuteClick() {
+            var number = jsConsole.readInteger("#number");
+            var digitName = GetLastDigitName(number);
+            jsConsole.writeLine(digitName);
+        }
+    </script>
+    <p style="font-size:12px;">
+        // 01. Write a function that returns the last digit of given integer as an English word. Examples: 512  "two", 1024  "four", 12309  "nine"
+    </p>
+</body>
+</html>

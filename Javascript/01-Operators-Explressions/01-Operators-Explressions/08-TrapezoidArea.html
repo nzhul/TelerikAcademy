@@ -1,0 +1,56 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>08-TrapezoidArea</title>
+    <link href="css/js-console.css" rel="stylesheet" />
+    <link href="css/style.css" rel="stylesheet" />
+</head>
+<body>
+    <header>
+        <a href="01-EvenOdd.html">01-EvenOdd</a> |
+        <a href="02-DivideByFiveAndSeven.html">02-DivideByFiveAndSeven</a> |
+        <a href="03-RectangleArea.html">03-RectangleArea</a> |
+        <a href="04-ThirdDigit.html">04-ThirdDigit</a> |
+        <a href="05-bit3.html">05-bit3</a> |
+        <a href="06-WithinACircle.html">06-WithinACircle</a> |
+        <a href="07-Prime.html">07-Prime</a> |
+        <a href="08-TrapezoidArea.html" class="current">08-TrapezoidArea</a> |
+        <a href="09-CircleAndRectangle.html">09-CircleAndRectangle</a>
+    </header>
+    <table>
+        <tr>
+            <td><label for="a">Side A:</label></td>
+            <td><input type="text" id="a" /></td>
+        </tr>
+        <tr>
+            <td><label for="b">Side B:</label></td>
+            <td><input type="text" id="b" /></td>
+        </tr>
+        <tr>
+            <td><label for="height">Height:</label></td>
+            <td><input type="text" id="height" /></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><button onclick="onExecuteClick()">Execute</button></td>
+        </tr>
+    </table>
+    <div id="console">
+    </div>
+    <script src="js/js-console.js">	  
+    </script>
+    <script>
+
+        function onExecuteClick() {
+            var a = jsConsole.readFloat("#a");
+            var b = jsConsole.readFloat("#b");
+            var height = jsConsole.readFloat("#height");
+            var area = ((a + b) / 2) * height;
+            jsConsole.writeLine("The Trapezoid area is " + area);
+        }
+    </script>
+    <p style="font-size:12px;">
+        // 08. Write an expression that calculates trapezoid's area by given sides a and b and height h.
+    </p>
+</body>
+</html>

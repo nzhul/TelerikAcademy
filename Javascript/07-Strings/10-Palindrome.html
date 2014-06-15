@@ -1,0 +1,76 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <link href="css/js-console.css" rel="stylesheet" />
+    <link href="css/style.css" rel="stylesheet" />
+</head>
+<body>
+    <header>
+        <a href="01-ReverseString.html">01-ReverseString</a> |
+        <a href="02-BracketChecker.html">02-BracketChecker</a> |
+        <a href="03-SubstringCount.html">03-SubstringCount</a> |
+        <a href="04-UpCaseLowerCase.html">04-UpCaseLowerCase</a> |
+        <a href="05-nbsp.html">05-nbsp</a> |
+        <a href="06-ExtractText.html">06-ExtractText</a> |
+        <a href="07-ParseURL.html">07-ParseURL</a> |
+        <a href="08-BBCode.html">08-BBCode</a> |
+        <a href="09-ExtractEmail.html">09-ExtractEmail</a> |
+        <a href="10-Palindrome.html" class="current">10-Palindrome</a> |
+        <a href="11-StringFormat.html">11-StringFormat</a> |
+        <a href="12-Templates.html">12-Templates</a>
+    </header>
+    <table>
+        <tr>
+            <td></td>
+            <td><button onclick="onExecuteClick()">Execute</button></td>
+        </tr>
+    </table>
+    <div id="console">
+    </div>
+    <script src="js/js-console.js">	  
+    </script>
+    <script>
+        function isPalindrome(word)
+        {
+            for (var i = 0; i < word.length; i++) {
+                if (word[i] != word[word.length - i - 1]) {
+                    return false;
+                }
+            }
+            return true;
+        }
+
+        function collectPalindromes(text)
+        {
+            var regex = /\b\w+\b/gi;
+            var matches = text.match(regex);
+            var output = [];
+            for (var i = 0; i < matches.length; i++) {
+                if (isPalindrome(matches[i])) {
+                    output.push(matches[i]);
+                }
+            }
+            return output;
+        }
+
+        function onExecuteClick() {
+            var text = 
+            "The most familiar palindromes, in English at least, \
+            are character-by-character: The written characters read the same \
+            backward as forward. Some examples of common palindromic words: civic,\
+            radar, level, rotor, kayak, reviver, racecar, redder, madam, malayalam, \
+            and refer.";
+
+            var palindromes = collectPalindromes(text);
+            for (var i = 0; i < palindromes.length; i++) {
+                jsConsole.writeLine(palindromes[i]);
+            }
+
+        }
+    </script>
+    <p style="font-size:12px;">
+        // 10. Write a program that extracts from a given text all palindromes, e.g. "ABBA", "lamal", "exe".
+    </p>
+</body>
+</html>

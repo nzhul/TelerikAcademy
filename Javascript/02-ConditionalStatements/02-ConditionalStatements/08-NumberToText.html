@@ -1,0 +1,85 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>08 - NumberToText</title>
+    <link href="css/js-console.css" rel="stylesheet" />
+    <link href="css/style.css" rel="stylesheet" />
+</head>
+<body>
+    <header>
+        <a href="01-ExchangeValue.html" >01-ExchangeValue</a> |
+        <a href="02-ProductSign.html">02-ProductSign</a> |
+        <a href="03-BiggestInt.html">03-BiggestInt</a> |
+        <a href="04-SortValues.html">04-SortValues</a> |
+        <a href="05-DigitName.html">05-DigitName</a> |
+        <a href="06-QuadricEquation.html">06-QuadricEquation</a> |
+        <a href="07-GreatestNumber.html">07-GreatestNumber</a> |
+        <a href="08-NumberToText.html" class="current">08-NumberToText</a>
+    </header>
+    <table>
+        <tr>
+            <td><label for="b">Number:</label></td>
+            <td><input type="text" id="number" /></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><button onclick="onExecuteClick()">Execute</button></td>
+        </tr>
+    </table>
+    <div id="console">
+    </div>
+    <script src="js/js-console.js">	  
+    </script>
+    <script>
+        function onExecuteClick() {
+            var number = jsConsole.read("#number");
+            var ones = ["", "One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine"];
+            var tens = ["", "", "Twenty", "Thirty", "Fourty", "Fifty", "Sixty", "Seventy", "Eighty", "Ninety"];
+            var specialDigits = ["Ten", "Eleven", "Twelve", "Thirteen", "Fourteen", "Fifteen", "Sixteen", "Seventeen", "Eighteen", "Nineteen"];
+
+            switch (number.length) {
+                case 1: // 1-9
+                    if (number[0] == 0) {
+                        jsConsole.writeLine("Zero");
+                    }
+                    else {
+                        jsConsole.writeLine(ones[number[0]]);
+                    }
+                    break;
+                case 2: // 10 - 99
+                    if (number[0] == 1) {
+                        jsConsole.writeLine(specialDigits[number[1]]);
+                    }
+                    else {
+                        jsConsole.writeLine(tens[number[0]] + " " + ones[number[1]]);
+                    }
+                    break;
+                case 3: // 100 - 999
+                    if (number[1] == 1) {
+                        jsConsole.writeLine(ones[number[0] + " hundred and " + specialDigits[number[2]]]);
+                    }
+                    else {
+                        if (number[1] != 0 || number[2] != 0) {
+                            jsConsole.writeLine(ones[number[0]] + " hundred and " + tens[number[1]] + " " + ones[number[2]]);
+                        }
+                        else {
+                            jsConsole.writeLine(ones[number[0]] + " hundred " + tens[number[1]] + " " + ones[number[2]]);
+                        }
+                    }
+                    break;
+                default:
+                    break;
+            }
+        }
+    </script>
+    <p style="font-size:12px;">
+        // 08. Write a script that converts a number in the range [0...999] to a text corresponding to its English pronunciation. Examples:<br />
+	0  "Zero"<br />
+	273  "Two hundred seventy three"<br />
+	400  "Four hundred"<br />
+	501  "Five hundred and one"<br />
+	711  "Seven hundred and eleven"
+
+    </p>
+</body>
+</html>

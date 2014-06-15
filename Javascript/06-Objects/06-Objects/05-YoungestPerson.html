@@ -1,0 +1,70 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <link href="css/js-console.css" rel="stylesheet" />
+    <link href="css/style.css" rel="stylesheet" />
+</head>
+<body>
+    <header>
+        <a href="01-PlanarSystem.html" >01-PlanarSystem</a> |
+        <a href="02-CustomRemove.html" >02-CustomRemove</a> |
+        <a href="03-DeepCopy.html" >03-DeepCopy</a> |
+        <a href="04-PropChecker.html" >04-PropChecker</a> |
+        <a href="05-YoungestPerson.html" class="current" >05-YoungestPerson</a> |
+        <a href="06-Grouping.html" >06-Grouping</a>
+    </header>
+    <table>
+        <tr>
+            <td></td>
+            <td><button onclick="onExecuteClick()">Execute</button></td>
+        </tr>
+    </table>
+    <div id="console">
+    </div>
+    <script src="js/js-console.js">	  
+    </script>
+    <script>
+        function createPerson(firstname, lastname, age) {
+            return {
+                firstname: firstname,
+                lastname: lastname,
+                age: age,
+                printPerson: function () {
+                    return "The youngest Person is:<br/> " + this.firstname + " " + this.lastname + " - " + this.age;
+                }
+            };
+        }
+        function getYoungestPerson(people) {
+            var youngestPerson,
+                searchAge = 999;
+
+            for (var i in people) {
+                if (people[i].age < searchAge) {
+                    youngestPerson = people[i];
+                    searchAge = people[i].age;
+                }
+            }
+            return youngestPerson;
+        }
+        function onExecuteClick() {
+            var people = [
+                createPerson("Georgi", "Dimitrov", 35),
+                createPerson("Ivan", "Stajinski", 15),
+                createPerson("Stamat", "Ivanov", 18)
+            ];
+
+            var youngestPerson = getYoungestPerson(people);
+            jsConsole.writeLine(youngestPerson.printPerson());
+        }
+    </script>
+    <p style="font-size:12px;">
+        // 05. Write a function that finds the youngest person in a given array of persons and prints his/hers full name<br />
+Each person have properties firstname, lastname and age, as shown:<br />
+        var persons = [<br />
+  {firstname : "Gosho", lastname: "Petrov", age: 32}, <br />
+  {firstname : "Bay", lastname: "Ivan", age: 81},…];
+
+    </p>
+</body>
+</html>

@@ -1,0 +1,66 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>03 - Biggest Integer</title>
+    <link href="css/js-console.css" rel="stylesheet" />
+    <link href="css/style.css" rel="stylesheet" />
+</head>
+<body>
+    <header>
+        <a href="01-ExchangeValue.html">01-ExchangeValue</a> |
+        <a href="02-ProductSign.html">02-ProductSign</a> |
+        <a href="03-BiggestInt.html" class="current">03-BiggestInt</a> |
+        <a href="04-SortValues.html">04-SortValues</a> |
+        <a href="05-DigitName.html">05-DigitName</a> |
+        <a href="06-QuadricEquation.html">06-QuadricEquation</a> |
+        <a href="07-GreatestNumber.html">07-GreatestNumber</a> |
+        <a href="08-NumberToText.html">08-NumberToText</a>
+    </header>
+    <table>
+        <tr>
+            <td>A:</td>
+            <td>
+                <input type="text" id="a" /></td>
+        </tr>
+        <tr>
+            <td>B:</td>
+            <td>
+                <input type="text" id="b" /></td>
+        </tr>
+        <tr>
+            <td>C:</td>
+            <td>
+                <input type="text" id="c" /></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>
+                <button onclick="onExecuteClick()">Execute</button></td>
+        </tr>
+    </table>
+    <div id="console">
+    </div>
+    <script src="js/js-console.js">	  
+    </script>
+    <script>
+        function onExecuteClick() {
+            var a = jsConsole.readInteger("#a");
+            var b = jsConsole.readInteger("#b");
+            var c = jsConsole.readInteger("#c");
+
+            if ((a >= b && a >= c)) {
+                jsConsole.writeLine(a + " is the biggest integer.");
+            }
+            else if (b >= a && b >= c) {
+                jsConsole.writeLine(b + " is the biggest integer.");
+            }
+            else {
+                jsConsole.writeLine(c + " is the biggest integer.");
+            }
+        }
+    </script>
+    <p style="font-size: 12px;">
+        // 03. Write a script that finds the biggest of three integers using nested if statements.
+    </p>
+</body>
+</html>

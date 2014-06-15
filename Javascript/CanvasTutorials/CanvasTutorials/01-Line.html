@@ -1,0 +1,28 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Canvas Line</title>
+    <style type="text/css">
+        #canvas {
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <canvas width="400" height="400" id="canvas"></canvas>
+    <script>
+        var canvas = document.getElementById('canvas');
+        var ctx = canvas.getContext('2d');
+        var w = canvas.width;
+        var h = canvas.height;
+        ctx.beginPath();
+        ctx.moveTo(0, 150);
+        ctx.lineWidth = 15;
+        ctx.lineTo(w, 50);
+        ctx.strokeStyle = '#ff0000';
+        ctx.stroke();
+
+
+    </script>
+</body>
+</html>

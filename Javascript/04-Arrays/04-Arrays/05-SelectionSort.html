@@ -1,0 +1,73 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>05-SelectionSort</title>
+    <link href="css/js-console.css" rel="stylesheet" />
+    <link href="css/style.css" rel="stylesheet" />
+</head>
+<body>
+    <header>
+        <a href="01-ArrayX5.html">01-ArrayX5</a> |
+        <a href="02-CompareCharArray.html">02-CompareCharArray</a> |
+        <a href="03-MaximalSequence.html">03-MaximalSequence</a> |
+        <a href="04-MaxIncreasingSequence.html">04-MaxIncreasingSequence</a> |
+        <a href="05-SelectionSort.html" class="current">05-SelectionSort</a> |
+        <a href="06-MostFrequent.html">06-MostFrequent</a> |
+        <a href="07-BinarySearch.html">07-BinarySearch</a>
+    </header>
+    <table>
+        <tr>
+            <td><label for="input">Sequence [,]</label></td>
+            <td><input type="text" id="input" /></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><button onclick="onExecuteClick()">Execute</button></td>
+        </tr>
+    </table>
+    <div id="console">
+    </div>
+    <script src="js/js-console.js">	  
+    </script>
+    <script>
+        function onExecuteClick() {
+
+            var array = jsConsole.read("#input").split(',');
+            for (var i = 0; i < array.length; i++) {
+                array[i] = parseInt(array[i]);
+            }
+
+            var startingPosition = 0;
+            while (startingPosition <= array.length - 1) {
+                var currentMinIndex = 0;
+                var currentMin = Infinity;
+                for (var i = startingPosition; i < array.length; i++) {
+                    if (array[i] < currentMin) {
+                        currentMin = array[i];
+                        currentMinIndex = i;
+                    }
+                }
+
+                var temp = array[startingPosition];
+
+                array[startingPosition] = currentMin;
+                array[currentMinIndex] = temp;
+                startingPosition++;
+            }
+
+            for (var i = 0; i < array.length; i++) {
+                jsConsole.writeLine(i + ": " + array[i]);
+            }
+        }
+    </script>
+    <p style="font-size:12px;">
+         Arrays for testing:<br /><br /> 66, 90, 42, 11, 32, 44, 33, 61, 24, 42, 5, 7, 51, 3, 23, 84, 20, 22, 16, 73, 43, 33, 66, 39, 99,<br />88, 6, 51, 53, 25, 57, 95, 31, 61, 17, 81, 22, 61, 68, 52, 64, 32, 67, 38, 48, 58, 45, 62, 40, 19<br /><br />
+        -1,-33,-2,0,-333,2,33,45<br /><br />
+        // 05. Sorting an array means to arrange its elements in increasing order. <br />
+        // Write a script to sort an array. Use the "selection sort" algorithm: Find the <br />
+        // smallest element, move it at the first position, find the smallest from the rest, <br />
+        // move it at the second position, etc.Hint: Use a second array
+
+    </p>
+</body>
+</html>

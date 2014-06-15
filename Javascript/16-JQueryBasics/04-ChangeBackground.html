@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>04 - Change Background</title>
+    <script src="js/jquery-2.1.1.min.js"></script>
+    <style type="text/css">
+
+    </style>
+</head>
+<body>
+<input type="color" id="colorControler" />
+<script>
+    var $input = $('#colorControler');
+    $input.on('change', function () {
+       $('body').css('background', $input.val());
+    });
+</script>
+</body>
+</html>

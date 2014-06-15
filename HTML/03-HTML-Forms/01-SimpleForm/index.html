@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <style>
+            table {border-collapse: collapse; border: 1px solid gray;}
+            td {border: 1px solid gray;}
+            .short {width: 30px;}
+            .long {width: 80px;}
+        </style>
+    </head>
+    <body>
+        <form method="post">
+            <table>
+                <tr>
+                    <td>Last Name</td>
+                    <td><input type="text" value="Nakov"/></td>
+                </tr>
+                <tr>
+                    <td>Last Name</td>
+                    <td><input type="text" value="Svetlin"/></td>
+                </tr>
+                <tr>
+                    <td>Address</td>
+                    <td><textarea>Put the address here ...</textarea></td>
+                </tr>
+                <tr>
+                    <td>City</td>
+                    <td><input style="width: 110px;" type="text" value="Kaspichan"/><input class="short" type="text" /></td>
+                </tr>
+                <tr>
+                    <td>Zip/Postal Code</td>
+                    <td><input class="short" type="text" value="9325"/></td>
+                </tr>
+                <tr>
+                    <td>Country</td>
+                    <td>
+                        <select>
+                            <option value="bg">Bulgaria</option>
+                            <option value="en">England</option>
+                            <option value="gm">Germany</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Phone (country code,<br/> area code, number)</td>
+                    <td>(+<input type="text" class="short" value="359"/>)<input type="text" class="short" value="88"/>-<input type="text" class="long" value="8334343"/></td>
+                </tr>
+                <tr>
+                    <td>E-mail:</td>
+                    <td><input type="text" value="asdsd@abv.bg"/></td>
+                </tr>
+                <tr>
+                    <td>Birth date</td>
+                    <td>Month<input type="text" class="short" value="06"/>Day<input type="text" class="short" value="14"/>Year(4 digit)<input type="text" class="short" value="1980"/></td>
+                </tr>
+                <tr>
+                    <td>Gender</td>
+                    <td>
+                        <select>
+                            <option value="m">Male</option>
+                            <option value="f">Female</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Starting date</td>
+                    <td><input type="radio" name="date" value="spring">Spring 2006<input type="radio" name="date" value="summer">Summer 2006</td>
+                </tr>
+                <tr>
+                    <td>Comments/Questions</td>
+                    <td><textarea>Please send me more information about the lodging.</textarea></td>
+                </tr>
+                <tr style="text-align: center;">
+                    <td colspan="2"><input type="submit"/><input type="reset"/></td>
+                </tr>
+            </table>
+        </form>
+    </body>
+</html>

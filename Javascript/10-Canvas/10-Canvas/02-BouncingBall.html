@@ -1,0 +1,64 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>02 - Bouncing Ball</title>
+    <style>
+        #canvas {
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <canvas width="200" height="150" id="canvas"></canvas>
+    <script>
+        var canvas = document.getElementById('canvas');
+        var cx = canvas.getContext('2d');
+        var w = canvas.width;
+        var h = canvas.height;
+        var x = 0;
+        var y = 0;
+        var r = 10;
+        var xShift = 2;
+        var yShift = 2;
+
+
+        function drawFullCircle(x, y, r, scaleX, scaleY, fillColor, strokeColor, rotate) {
+            cx.save();
+            cx.beginPath();
+            cx.fillStyle = fillColor;
+            cx.strokeStyle = strokeColor;
+            cx.rotate(rotate * Math.PI / 180);
+            cx.scale(scaleX, scaleY);
+            cx.arc(x, y, r, 0, 2 * Math.PI);
+            cx.lineWidth = 1;
+            cx.fill();
+            cx.stroke();
+            cx.closePath();
+            cx.restore();
+        }
+
+        function moveBall() {
+            cx.clearRect(0, 0, w, h);
+            if (x + r >= w) {
+                xShift = -2;
+            }
+            if (x <= r) {
+                xShift = 2;
+            }
+            if (y + r > h) {
+                yShift = -2;
+            }
+            if (y <= r) {
+                yShift = 2;
+            }
+            x += xShift;
+            y += yShift;
+            drawFullCircle(x, y, r, 1, 1, 'yellowgreen', 'gray');
+            requestAnimationFrame(moveBall);
+        }
+
+        moveBall();
+
+    </script>
+</body>
+</html>

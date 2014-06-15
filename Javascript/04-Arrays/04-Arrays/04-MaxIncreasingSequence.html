@@ -1,0 +1,77 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>04-MaxIncreasingSequence</title>
+    <link href="css/js-console.css" rel="stylesheet" />
+    <link href="css/style.css" rel="stylesheet" />
+</head>
+<body>
+    <header>
+        <a href="01-ArrayX5.html">01-ArrayX5</a> |
+        <a href="02-CompareCharArray.html">02-CompareCharArray</a> |
+        <a href="03-MaximalSequence.html">03-MaximalSequence</a> |
+        <a href="04-MaxIncreasingSequence.html" class="current">04-MaxIncreasingSequence</a> |
+        <a href="05-SelectionSort.html">05-SelectionSort</a> |
+        <a href="06-MostFrequent.html">06-MostFrequent</a> |
+        <a href="07-BinarySearch.html">07-BinarySearch</a>
+    </header>
+   <table>
+        <tr>
+            <td><label for="sequence">Sequence [,]</label></td>
+            <td><input type="text" id="sequence" /></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><button onclick="onExecuteClick()">Execute</button></td>
+        </tr>
+    </table>
+    <div id="console">
+    </div>
+    <script src="js/js-console.js">	  
+    </script>
+    <script>
+        function onExecuteClick() {
+            var input = jsConsole.read("#sequence");
+            var numbers = input.split(',');
+
+            var maxSequence = 0;
+            var currentSequence = 1;
+            var sequenceEnd = 0;
+
+            for (var i = 0; i < numbers.length - 1; i++) { // CHECK IF DONT WORK length - 1
+                if (parseInt(numbers[i]) + 1 == numbers[i + 1]) {
+                    currentSequence++;
+                }
+                else {
+                    if (currentSequence > maxSequence) {
+                        sequenceEnd = numbers[i];
+                        maxSequence = currentSequence;
+                    }
+                    currentSequence = 1;
+                }
+            }
+
+            // Special case
+            if (currentSequence > maxSequence) {
+                maxSequence = currentSequence;
+                sequenceEnd = numbers[numbers.length - 1];
+            }
+
+            // Display the maximum sequence
+            jsConsole.writeLine("The input sequence is: ");
+            for (var i = 0; i < numbers.length; i++) {
+                jsConsole.write(numbers[i] + " ");
+            }
+            jsConsole.writeLine("<br/>");
+            jsConsole.writeLine("The maximum Increasing sequence is: ");
+            for (var i = maxSequence - 1; i >= 0; i--) {
+                jsConsole.write((sequenceEnd - i) + " ");
+            }
+
+        }
+    </script>
+    <p style="font-size:12px;">
+        // 04. Write a script that finds the maximal increasing sequence in an array. <br />Example: {3, 2, 3, 4, 2, 2, 4}  {2, 3, 4}.
+    </p>
+</body>
+</html>

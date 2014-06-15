@@ -1,0 +1,101 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>09-CircleAndRectangle</title>
+    <link href="css/js-console.css" rel="stylesheet" />
+    <link href="css/style.css" rel="stylesheet" />
+</head>
+<body>
+    <header>
+        <a href="01-EvenOdd.html">01-EvenOdd</a> |
+        <a href="02-DivideByFiveAndSeven.html">02-DivideByFiveAndSeven</a> |
+        <a href="03-RectangleArea.html">03-RectangleArea</a> |
+        <a href="04-ThirdDigit.html">04-ThirdDigit</a> |
+        <a href="05-bit3.html">05-bit3</a> |
+        <a href="06-WithinACircle.html">06-WithinACircle</a> |
+        <a href="07-Prime.html">07-Prime</a> |
+        <a href="08-TrapezoidArea.html">08-TrapezoidArea</a> |
+        <a href="09-CircleAndRectangle.html" class="current">09-CircleAndRectangle</a>
+    </header>
+    <table>
+        <tr>
+            <td><label for="x">Point X:</label></td>
+            <td><input type="text" id="x" /></td>
+        </tr>
+        <tr>
+            <td><label for="y">Point Y:</label></td>
+            <td><input type="text" id="y" /></td>
+        </tr>
+        <tr>
+            <td><label for="radius">Circle<br />Radius:</label></td>
+            <td><input type="text" id="radius" /></td>
+        </tr>
+        <tr>
+            <td><label for="width">Rectangle <br />Width:</label></td>
+            <td><input type="text" id="width" /></td>
+        </tr>
+        <tr>
+            <td><label for="height">Rectangle<br />Height:</label></td>
+            <td><input type="text" id="height" /></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><button onclick="onExecuteClick()">Execute</button></td>
+        </tr>
+    </table>
+    <div id="console">
+    </div>
+    <script src="js/js-console.js">	  
+    </script>
+    <script>
+
+        function onExecuteClick() {
+            var CIRCLEX = 1;
+            var CIRCLEY = 1;
+            var RECTX = 1;
+            var RECTY = -1;
+            var x = jsConsole.readFloat("#x");
+            var y = jsConsole.readFloat("#y");
+            var radius = jsConsole.readFloat("#radius");
+            sX = x - CIRCLEX;
+            sY = y - CIRCLEY;
+
+            if ((sX*sX + sY*sY) <= (radius*radius)) {
+                var result = "IS";
+            }
+            else {
+                var result = "IS NOT";
+            }
+            jsConsole.writeLine("The point with coordinates(X:" + x + " Y:" + y + ")<br/> " + result + " within a circle with radius of " + radius + "!");
+
+            jsConsole.writeLine("<br/>");
+
+            var rectHeight = jsConsole.readFloat("#height");
+            var rectWidth = jsConsole.readFloat("#width");
+            var topY = 0 + (rectHeight / 2);
+            var rightX = 0 + (rectWidth / 2);
+            var bottomY = 0 - (rectHeight / 2);
+            var leftX = 0 - (rectWidth / 2);
+
+            jsConsole.writeLine("Rectangle Sides Coordinates:<br/>Top Y: " + topY + "<br/>Right X: " + rightX + "<br/>Bottom Y: " + bottomY + "<br/>Left X: " + leftX);
+
+            var rectangleX = x - RECTY;
+            var rectangleY = y - RECTX;
+
+            if ((rectangleY < topY) && (rectangleY > bottomY) && (rectangleX < rightX) && (rectangleX > leftX)) {
+                var result = "IS";
+            }
+            else {
+                var result = "IS NOT";
+            }
+
+            jsConsole.writeLine("The given point "+ result +" withing rectangle R(top="+ RECTY +", left="+ RECTY +", width="+ rectWidth +", height="+ rectHeight +")");
+
+        }
+    </script>
+    <p style="font-size:12px;">
+        // 09. Write an expression that checks for given point (x, y) <br />if it is within the circle K( (1,1), 3) and out of the rectangle R(top=1, left=-1, width=6, height=2).
+
+    </p>
+</body>
+</html>

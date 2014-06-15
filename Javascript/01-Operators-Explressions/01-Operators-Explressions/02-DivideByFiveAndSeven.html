@@ -1,0 +1,51 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>02 -Divided by 5 and 7</title>
+    <link href="css/js-console.css" rel="stylesheet" />
+    <link href="css/style.css" rel="stylesheet" />
+</head>
+<body>
+    <header>
+        <a href="01-EvenOdd.html">01-EvenOdd</a> |
+        <a href="02-DivideByFiveAndSeven.html" class="current">02-DivideByFiveAndSeven</a> |
+        <a href="03-RectangleArea.html">03-RectangleArea</a> |
+        <a href="04-ThirdDigit.html">04-ThirdDigit</a> |
+        <a href="05-bit3.html">05-bit3</a> |
+        <a href="06-WithinACircle.html">06-WithinACircle</a> |
+        <a href="07-Prime.html">07-Prime</a> |
+        <a href="08-TrapezoidArea.html">08-TrapezoidArea</a> |
+        <a href="09-CircleAndRectangle.html">09-CircleAndRectangle</a>
+    </header>
+    <table>
+        <tr>
+            <td><label for="number">Number:</label></td>
+            <td><input type="text" id="number" /></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><button onclick="onExecuteClick()">Execute</button></td>
+        </tr>
+    </table>
+    <div id="console">
+    </div>
+    <script src="js/js-console.js">	  
+    </script>
+    <script>
+
+        function onExecuteClick() {
+            var number = jsConsole.readFloat("#number");
+            if ((number % 5 == 0) && (number % 7 == 0)) {
+                var result = " CAN be divided by 5 and 7 at the same time!";
+            }
+            else {
+                var result = " CANNOT be divided by 5 and 7 at the same time!";
+            }
+            jsConsole.writeLine("The number " + number + result);
+        }
+    </script>
+    <p style="font-size:12px;">
+        // 02. Write a boolean expression that checks for given integer if it can be<br /> divided (without remainder) by 7 and 5 in the same time.
+    </p>
+</body>
+</html>

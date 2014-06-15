@@ -1,0 +1,72 @@
+<!doctype html>
+<html>
+    <head>
+  <script type='text/javascript'>
+      var canvas = null;
+      var img = null;
+      var ctx = null;
+      var imageReady = false;
+      window.requestAnimFrame = (function () {
+          return window.requestAnimationFrame ||
+                  window.webkitRequestAnimationFrame ||
+                  window.mozRequestAnimationFrame ||
+                  window.oRequestAnimationFrame ||
+                  window.msRequestAnimationFrame ||
+                  function (callback) {
+                      window.setTimeout(callback, 1000 / 60);
+                  };
+      })();
+      function onload() {
+          canvas = document.getElementById('gameCanvas');
+          ctx = canvas.getContext("2d");
+          img = new Image();
+          img.src = 'img/mario.png';
+          img.onload = loaded();
+          resize();
+      }
+      function loaded() {
+          imageReady = true;
+          setTimeout(update, 1000 / 60);
+      }
+      function resize() {
+          canvas.width = canvas.parentNode.clientWidth;
+          canvas.height = canvas.parentNode.clientHeight;
+          redraw();
+      }
+      function redraw() {
+          ctx.clearRect(0, 0, canvas.width, canvas.height);
+          if (imageReady) {
+              ctx.drawImage(img, frame * 16, 0, 15, 32,
+                            170, 385, 16, 32);
+          }
+      }
+
+      var frame = 11;
+      var lastUpdateTime = 0;
+      var acDelta = 0;
+      var msPerFrame = 100;
+
+      function update() {
+          requestAnimFrame(update);
+
+          var delta = Date.now() - lastUpdateTime;
+          if (acDelta > msPerFrame) {
+              acDelta = 0;
+              redraw();
+              frame--;
+              if (frame <= 8) frame = 11;
+          } else {
+              acDelta += delta;
+          }
+
+          lastUpdateTime = Date.now();
+      }
+
+  </script>
+  </head>
+<body onresize='onresize()' onload='onload()' style='position: absolute; padding:0; margin:0; height: 100%; width:100%'>
+<img src="img/level.png" style="position: absolute; z-index: 1;" />
+<canvas id="gameCanvas" width="300" height="200" style="position:absolute;z-index:2;"></canvas>
+
+</body>
+</html>

@@ -1,0 +1,86 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>02-CompareCharArray</title>
+    <link href="css/js-console.css" rel="stylesheet" />
+    <link href="css/style.css" rel="stylesheet" />
+</head>
+<body>
+    <header>
+        <a href="01-ArrayX5.html">01-ArrayX5</a> |
+        <a href="02-CompareCharArray.html" class="current">02-CompareCharArray</a> |
+        <a href="03-MaximalSequence.html">03-MaximalSequence</a> |
+        <a href="04-MaxIncreasingSequence.html">04-MaxIncreasingSequence</a> |
+        <a href="05-SelectionSort.html">05-SelectionSort</a> |
+        <a href="06-MostFrequent.html">06-MostFrequent</a> |
+        <a href="07-BinarySearch.html">07-BinarySearch</a>
+    </header>
+    <table>
+        <tr>
+            <td><label for="string1">String 1:</label></td>
+            <td><input type="text" id="string1" /></td>
+        </tr>
+        <tr>
+            <td><label for="string2">String 2:</label></td>
+            <td><input type="text" id="string2" /></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><button onclick="onExecuteClick()">Execute</button></td>
+        </tr>
+    </table>
+    <div id="console">
+    </div>
+    <script src="js/js-console.js">	  
+    </script>
+    <script>
+        function onExecuteClick() {
+            var firstArray = jsConsole.read("#string1");
+            var secondArray = jsConsole.read("#string2");
+
+            var loopLength;
+            var smallerArray = 0;
+
+            if (firstArray.length >= secondArray.length) {
+                loopLength = secondArray.length;
+            }
+            else {
+                loopLength = firstArray.length;
+            }
+
+            for (var i = 0; i < loopLength; i++) {
+                if (firstArray[i] < secondArray[i]) {
+                    smallerArray = 1;
+                    break;
+                }
+                else if (firstArray[i] > secondArray[i]) {
+                    smallerArray = 2;
+                    break;
+                }
+            }
+
+            if (smallerArray == 1) {
+                jsConsole.writeLine("The first array is earlier.");
+            }
+            else if (smallerArray == 2) {
+                jsConsole.writeLine("The second array is earlier.");
+            }
+            else {
+                if (firstArray.length > secondArray.length) {
+                    jsConsole.writeLine("The second array is earlier.");
+                }
+                else if (firstArray.length < secondArray.length) {
+                    jsConsole.writeLine("The first array is earlier.");
+                }
+                else {
+                    jsConsole.writeLine("The two arrays are the same.");
+                }
+            }
+
+        }
+    </script>
+    <p style="font-size:12px;">
+        // 02. Write a script that compares two char arrays lexicographically (letter by letter).
+    </p>
+</body>
+</html>

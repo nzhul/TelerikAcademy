@@ -1,0 +1,81 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>04 - Sort Values</title>
+    <link href="css/js-console.css" rel="stylesheet" />
+    <link href="css/style.css" rel="stylesheet" />
+</head>
+<body>
+    <header>
+        <a href="01-ExchangeValue.html">01-ExchangeValue</a> |
+        <a href="02-ProductSign.html">02-ProductSign</a> |
+        <a href="03-BiggestInt.html">03-BiggestInt</a> |
+        <a href="04-SortValues.html" class="current">04-SortValues</a> |
+        <a href="05-DigitName.html">05-DigitName</a> |
+        <a href="06-QuadricEquation.html">06-QuadricEquation</a> |
+        <a href="07-GreatestNumber.html">07-GreatestNumber</a> |
+        <a href="08-NumberToText.html">08-NumberToText</a>
+    </header>
+    <table>
+        <tr>
+            <td>A:</td>
+            <td>
+                <input type="text" id="a" /></td>
+        </tr>
+        <tr>
+            <td>B:</td>
+            <td>
+                <input type="text" id="b" /></td>
+        </tr>
+        <tr>
+            <td>C:</td>
+            <td>
+                <input type="text" id="c" /></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>
+                <button onclick="onExecuteClick()">Execute</button></td>
+        </tr>
+    </table>
+    <div id="console">
+    </div>
+    <script src="js/js-console.js">	  
+    </script>
+    <script>
+        function onExecuteClick() {
+            var a = jsConsole.readInteger("#a");
+            var b = jsConsole.readInteger("#b");
+            var c = jsConsole.readInteger("#c");
+
+            if (a > b) {
+                if (a > c) {
+                    if (b > c) {
+                        jsConsole.writeLine(a + "<br/>" + b + "<br/>" + c);
+                    }
+                    else {
+                        jsConsole.writeLine(a + "<br/>" + c + "<br/>" + b);
+                    }
+                }
+                else {
+                    jsConsole.writeLine(c + "<br/>" + a + "<br/>" + b);
+                }
+            }
+            else if (b > c) {
+                if (a > c) {
+                    jsConsole.writeLine(b + "<br/>" + a + "<br/>" + c);
+                }
+                else {
+                    jsConsole.writeLine(b + "<br/>" + c + "<br/>" + a);
+                }
+            }
+            else {
+                jsConsole.writeLine(c + "<br/>" + a + "<br/>" + b);
+            }
+        }
+    </script>
+    <p style="font-size: 12px;">
+        // 04. Sort 3 real values in descending order using nested if statements.
+    </p>
+</body>
+</html>

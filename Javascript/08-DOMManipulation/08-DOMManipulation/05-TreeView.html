@@ -1,0 +1,72 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+</head>
+<body>
+    <ul id="tree-view">
+        <li>Item 1
+            <ul>
+                <li>Sub-1 Item 1</li>
+                <li>Sub-1 Item 2</li>
+            </ul>
+        </li>
+        <li>Item 2</li>
+        <li>Item 3
+            <ul>
+                <li>Sub-1 Item 1</li>
+                <li>Sub-1 Item 2
+                    <ul>
+                        <li>Sub-2 Item 1</li>
+                        <li>Sub-2 Item 2</li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+        <li>Item 4</li>
+        <li>Item 5</li>
+    </ul>
+    <script>
+        var list = document.getElementById('tree-view');
+
+        var allLiElements = document.getElementsByTagName('li');
+
+        for (var i = 0; i < allLiElements.length; i++) {
+
+            // Set all the display property of all child elements of LI - to NONE;
+            var child = allLiElements[i].firstElementChild;
+            while (child) {
+                child.style.display = 'none';
+                child = child.nextElementSibling;
+            }
+
+            //Attach the onClick Event on all LI Elements
+            allLiElements[i].addEventListener('click', function (ev) {
+                ev.stopPropagation(); // !! Prevent Bubling
+                var currentChild = this.firstElementChild;
+                while (currentChild) {
+                    if (currentChild.style.display == 'none') {
+                        currentChild.style.display = 'block';
+                    } else {
+                        currentChild.style.display = 'none';
+                    }
+
+                    currentChild = currentChild.nextElementSibling;
+                }
+            }, false)
+        }
+
+
+        //function walkTheDOM(node, func) {
+        //    func(node);
+        //    node = node.firstChild;
+        //    while (node) {
+        //        walkTheDOM(node, func);
+        //        node = node.nextSibling;
+        //    }
+        //}
+
+
+    </script>
+</body>
+</html>

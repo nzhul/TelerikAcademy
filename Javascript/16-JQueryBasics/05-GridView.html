@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>05 - Grid View</title>
+    <script src="js/jquery-2.1.1.min.js"></script>
+    <style type="text/css">
+        td, th {
+            border: 1px solid #000;
+            padding: 5px;;
+        }
+        thead {
+            background-color: gray;
+            color: white;
+        }
+        table {
+            margin-top: 10px;
+            border-collapse: collapse;
+        }
+    </style>
+</head>
+<body>
+<button id="createGrid">Create Grid</button>
+<button id="insertHeaderRow">Insert Header Row</button>
+<button id="insertRow">Insert Row</button>
+<div id="root">
+    <table>
+        <thead>
+        <tr>
+            <th>Data</th>
+            <th>Data</th>
+            <th>Data</th>
+            <th>Data</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>1</td>
+            <td>1</td>
+            <td>1</td>
+            <td>1</td>
+        </tr>
+        </tbody>
+    </table>
+    <div class="gridControls"></div>
+    <p>Sorry i did't have time to complete this task :(</p>
+</div>
+<script>
+
+
+
+    $('#createTable').on('click', function () {
+        var $table = $('<table>')
+                .appendTo('body');
+        var $thead = $('<thead>').appendTo($table);
+        var $tr = $('<tr>').appendTo($thead);
+        $tr.append($('<th>').text('First name'));
+        $tr.append($('<th>').text('Last name'));
+        $tr.append($('<th>').text('Grade'));
+        var $tbody = $('<tbody>').appendTo($table);
+
+        for (var i = 0; i < students.length; i++) {
+            var $currRow = $('<tr>');
+            $currRow.append($('<td>').text(students[i].firstName));
+            $currRow.append($('<td>').text(students[i].lastName));
+            $currRow.append($('<td>').text(students[i].grade));
+            $currRow.appendTo($tbody);
+        }
+    })
+
+</script>
+</body>
+</html>

@@ -1,0 +1,78 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>02 - Product Sign</title>
+    <link href="css/js-console.css" rel="stylesheet" />
+    <link href="css/style.css" rel="stylesheet" />
+</head>
+<body>
+    <header>
+        <a href="01-ExchangeValue.html">01-ExchangeValue</a> |
+        <a href="02-ProductSign.html" class="current">02-ProductSign</a> |
+        <a href="03-BiggestInt.html">03-BiggestInt</a> |
+        <a href="04-SortValues.html">04-SortValues</a> |
+        <a href="05-DigitName.html">05-DigitName</a> |
+        <a href="06-QuadricEquation.html">06-QuadricEquation</a> |
+        <a href="07-GreatestNumber.html">07-GreatestNumber</a> |
+        <a href="08-NumberToText.html">08-NumberToText</a>
+    </header>
+    <table>
+        
+        <tr>
+            <td></td>
+            <td><label for="numbers">Enter numbers (sepparated by comma [,]):</label></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><input type="text" id="numbers" /></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>
+                <button onclick="onExecuteClick()">Execute</button></td>
+        </tr>
+    </table>
+    <div id="console">
+    </div>
+    <script src="js/js-console.js">	  
+    </script>
+    <script>
+        function onExecuteClick() {
+            var input = jsConsole.read("#numbers");
+            input.replace('/\s*\g,""');
+            var arr = input.split(',');
+
+            var negativeCount = 0;
+            var product = 1;
+            var zeroInArray = false;
+            for (var i = 0; i < arr.length; i++) {
+                if (arr[i] < 0) {
+                    negativeCount++;
+                }
+                product *= arr[i];
+                if (arr[i] == 0) {
+                    zeroInArray = true;
+                }
+            }
+            if (zeroInArray) {
+                jsConsole.writeLine("The product is ZERO!");
+            }
+            else {
+                if (negativeCount % 2 == 0) {
+                    jsConsole.writeLine("The product IS POSITIVE!");
+                }
+                else {
+                    jsConsole.writeLine("The product IS NEGATIVE!");
+                }
+            }
+
+            jsConsole.writeLine("PRODUCT: " + product);
+            jsConsole.writeLine("Negative count: " + negativeCount);
+        }
+    </script>
+    <p style="font-size: 12px;">
+        // 02. Write a script that shows the sign (+ or -) of the product of three real numbers without calculating it. Use a sequence of if statements.
+
+    </p>
+</body>
+</html>

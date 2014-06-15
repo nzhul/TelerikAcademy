@@ -1,0 +1,55 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>03-MinMax</title>
+    <link href="css/js-console.css" rel="stylesheet" />
+    <link href="css/style.css" rel="stylesheet" />
+</head>
+<body>
+    <header>
+        <a href="01-SimpleLoop.html">01-ExchangeValue</a> |
+        <a href="02-NotDivisible.html">02-NotDivisible</a> |
+        <a href="03-MinMax.html" class="current">03-MinMax</a> |
+        <a href="04-Property.html">04-Property</a>
+    </header>
+    <table>
+        <tr>
+            <td>
+                <label for="sequence">Enter Sequence (Sepparated with comma[,]):</label></td>
+            <td>
+                <input type="text" id="sequence" /></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>
+                <button onclick="onExecuteClick()">Execute</button></td>
+        </tr>
+    </table>
+    <div id="console">
+    </div>
+    <script src="js/js-console.js">	  
+    </script>
+    <script>
+        function onExecuteClick() {
+            var numbers = jsConsole.read("#sequence");
+            numbers = numbers.split(',');
+
+            var max = -Infinity;
+            var min = Infinity;
+            for (var i = 0; i < numbers.length; i++) {
+                var parsedValue = parseInt(numbers[i]);
+                if (parsedValue > max) {
+                    max = numbers[i];
+                }
+                if (parsedValue < min) {
+                    min = numbers[i];
+                }
+            }
+            jsConsole.writeLine("Max: " + max + "<br/>Min: " + min);
+        }
+    </script>
+    <p style="font-size: 12px;">
+        // 03. Write a script that finds the max and min number from a sequence of numbers
+    </p>
+</body>
+</html>

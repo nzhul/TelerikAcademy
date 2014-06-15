@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>01 - Table Template</title>
+    <style type="text/css">
+        th, td {
+            border: 1px solid #000;
+            padding: 5px;
+        }
+        th {
+            background: gray;
+            color: white;
+        }
+        tr:nth-child(even) {
+            background: lightgray;
+        }
+    </style>
+</head>
+<body>
+<div id="root"></div>
+<script src="js/handlebars-v1.3.0.js"></script>
+<script src="js/date-format.js"></script>
+<script src="js/data.js"></script>
+<script type="text/x-handlebars-template" id="table-template">
+    <table>
+        <tr>
+            <th>№</th>
+            <th>Title</th>
+            <th>Date #1</th>
+            <th>Date #2</th>
+            {{#rows}}
+                <tr>
+                    <td>{{number}}</td>
+                    <td>{{title}}</td>
+                    <td>{{date1}}</td>
+                    <td>{{date2}}</td>
+                </tr>
+            {{/rows}}
+        </tr>
+    </table>
+</script>
+<script>
+    var post = generateData(13);
+    var tableTemplate = document.getElementById('table-template').innerHTML;
+    var hbTemplate = Handlebars.compile(tableTemplate);
+    document.getElementById('root').innerHTML = hbTemplate(post);
+</script>
+</body>
+</html>

@@ -1,0 +1,3 @@
+﻿barbarians
+fury
+strength

@@ -1,0 +1,56 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>01 - Exchange Value</title>
+    <link href="css/js-console.css" rel="stylesheet" />
+    <link href="css/style.css" rel="stylesheet" />
+</head>
+<body>
+    <header>
+        <a href="01-ExchangeValue.html" class="current">01-ExchangeValue</a> |
+        <a href="02-ProductSign.html">02-ProductSign</a> |
+        <a href="03-BiggestInt.html">03-BiggestInt</a> |
+        <a href="04-SortValues.html">04-SortValues</a> |
+        <a href="05-DigitName.html">05-DigitName</a> |
+        <a href="06-QuadricEquation.html">06-QuadricEquation</a> |
+        <a href="07-GreatestNumber.html">07-GreatestNumber</a> |
+        <a href="08-NumberToText.html">08-NumberToText</a>
+    </header>
+    <table>
+        <tr>
+            <td><label for="a">A:</label></td>
+            <td><input type="text" id="a" /></td>
+        </tr>
+        <tr>
+            <td><label for="b">B:</label></td>
+            <td><input type="text" id="b" /></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><button onclick="onExecuteClick()">Execute</button></td>
+        </tr>
+    </table>
+    <div id="console">
+    </div>
+    <script src="js/js-console.js">	  
+    </script>
+    <script>
+        function onExecuteClick() {
+            var a = jsConsole.readFloat("#a");
+            var b = jsConsole.readFloat("#b");
+            var temp;
+            jsConsole.writeLine("Original Values: a = " + a + "; b = " + b);
+
+            if (a > b) {
+                temp = a;
+                a = b;
+                b = temp;
+            }
+            jsConsole.writeLine("Exchanged Values: a = " + a + "; b = " + b);
+        }
+    </script>
+    <p style="font-size:12px;">
+        // 01. Write an if statement that examines two integer variables and exchanges their values if the first one is greater than the second one.
+    </p>
+</body>
+</html>

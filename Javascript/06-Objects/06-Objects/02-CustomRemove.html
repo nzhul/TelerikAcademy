@@ -1,0 +1,57 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <link href="css/js-console.css" rel="stylesheet" />
+    <link href="css/style.css" rel="stylesheet" />
+</head>
+<body>
+    <header>
+        <a href="01-PlanarSystem.html" >01-PlanarSystem</a> |
+        <a href="02-CustomRemove.html" class="current" >02-CustomRemove</a> |
+        <a href="03-DeepCopy.html" >03-DeepCopy</a> |
+        <a href="04-PropChecker.html" >04-PropChecker</a> |
+        <a href="05-YoungestPerson.html" >05-YoungestPerson</a> |
+        <a href="06-Grouping.html" >06-Grouping</a>
+    </header>
+    <table>
+        <tr>
+            <td></td>
+            <td><button onclick="onExecuteClick()">Execute</button></td>
+        </tr>
+    </table>
+    <div id="console">
+    </div>
+    <script src="js/js-console.js">	  
+    </script>
+    <script>
+        function onExecuteClick() {
+            if (!Array.prototype.remove) {
+                Array.prototype.remove = function (element) {
+                    var arr = [];
+                    for (var i = 0; i < this.length; i++) {
+                        if (this[i] != element) {
+                            arr.push(this[i]);
+                        }
+                    }
+                    return arr;
+                }
+            }
+
+            var arr = [1, 2, 1, 4, 1, 3, 4, 1, 111, 3, 2, 1, "1"];
+            var clearedArray = arr.remove(1);
+            for (var i = 0; i < clearedArray.length; i++) {
+                jsConsole.write(clearedArray[i] + " ");
+            }
+        }
+    </script>
+    <p style="font-size:12px;">
+        // 02. Write a function that removes all elements with a given value<br />
+        var arr = [1,2,1,4,1,3,4,1,111,3,2,1,"1"];<br />
+        arr.remove(1); //arr = [2,4,3,4,111,3,2,"1"];<br />
+        Attach it to the array type<br />
+        Read about prototype and how to attach methods
+
+    </p>
+</body>
+</html>

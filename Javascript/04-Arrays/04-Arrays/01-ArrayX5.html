@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>01 - ArrayX5</title>
+    <link href="css/js-console.css" rel="stylesheet" />
+    <link href="css/style.css" rel="stylesheet" />
+</head>
+<body>
+    <header>
+        <a href="01-ArrayX5.html" class="current">01-ArrayX5</a> |
+        <a href="02-CompareCharArray.html">02-CompareCharArray</a> |
+        <a href="03-MaximalSequence.html">03-MaximalSequence</a> |
+        <a href="04-MaxIncreasingSequence.html">04-MaxIncreasingSequence</a> |
+        <a href="05-SelectionSort.html">05-SelectionSort</a> |
+        <a href="06-MostFrequent.html">06-MostFrequent</a> |
+        <a href="07-BinarySearch.html">07-BinarySearch</a>
+    </header>
+    <table>
+        <tr>
+            <td></td>
+            <td><button onclick="onExecuteClick()">Execute</button></td>
+        </tr>
+    </table>
+    <div id="console">
+    </div>
+    <script src="js/js-console.js">	  
+    </script>
+    <script>
+        function onExecuteClick() {
+            var array = [];
+            var length = 20;
+            for (var i = 0; i < length; i++) {
+                array.push(i * 5);
+                jsConsole.writeLine(array[i]);
+            }
+        }
+    </script>
+    <p style="font-size:12px;">
+        // 01. Write a script that allocates array of 20 integers and initializes each element by its index multiplied by 5. Print the obtained array on the console.
+    </p>
+</body>
+</html>

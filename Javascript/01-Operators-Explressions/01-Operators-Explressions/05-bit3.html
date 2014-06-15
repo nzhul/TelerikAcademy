@@ -1,0 +1,58 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>05-Bit3</title>
+    <link href="css/js-console.css" rel="stylesheet" />
+    <link href="css/style.css" rel="stylesheet" />
+</head>
+<body>
+    <header>
+        <a href="01-EvenOdd.html">01-EvenOdd</a> |
+        <a href="02-DivideByFiveAndSeven.html">02-DivideByFiveAndSeven</a> |
+        <a href="03-RectangleArea.html">03-RectangleArea</a> |
+        <a href="04-ThirdDigit.html">04-ThirdDigit</a> |
+        <a href="05-bit3.html" class="current">05-bit3</a> |
+        <a href="06-WithinACircle.html">06-WithinACircle</a> |
+        <a href="07-Prime.html">07-Prime</a> |
+        <a href="08-TrapezoidArea.html">08-TrapezoidArea</a> |
+        <a href="09-CircleAndRectangle.html">09-CircleAndRectangle</a>
+    </header>
+        <table>
+        <tr>
+            <td><label for="number">Number:</label></td>
+            <td><input type="text" id="number" /></td>
+        </tr>
+        <tr>
+            <td><label for="number">Bit Position:</label></td>
+            <td><input type="text" id="position" /></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><button onclick="onExecuteClick()">Execute</button></td>
+        </tr>
+    </table>
+    <div id="console">
+    </div>
+    <script src="js/js-console.js">	  
+    </script>
+    <script>
+
+        function onExecuteClick() {
+            var number = jsConsole.readFloat("#number");
+            var position = jsConsole.readFloat("#position");
+            var mask = 1;
+            mask = mask << position;
+            number = number & mask;
+            if (number != 0) {
+                jsConsole.writeLine("The bit in position " + position + " is 1");
+            }
+            else {
+                jsConsole.writeLine("The bit in position " + position + " is 0");
+            }
+        }
+    </script>
+    <p style="font-size:12px;">
+        // 05. Write a boolean expression for finding if the bit 3 (counting from 0) of a given integer is 1 or 0.
+    </p>
+</body>
+</html>

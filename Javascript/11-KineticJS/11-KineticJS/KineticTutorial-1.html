@@ -1,0 +1,71 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Kinetic Tutorial</title>
+    <style>
+        .kineticjs-content {
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <div id="container"></div>
+        <script src="js/kinetic-v5.1.0.min.js"></script>
+    <script>
+        var stage = new Kinetic.Stage({
+            container: 'container',
+            width: 578,
+            height: 200
+        });
+        var layer = new Kinetic.Layer();
+
+        var rect = new Kinetic.Rect({
+            x: 0,
+            y: 75,
+            width: 100,
+            height: 50,
+            fill: 'green',
+            stroke: 'black',
+            strokeWidth: 4
+        });
+        layer.add(rect);
+        
+
+        var circle = new Kinetic.Circle({
+            x: stage.getWidth() / 2,
+            y: stage.getHeight() / 2,
+            radius: 50,
+            fill: 'red',
+            stroke: 'black',
+        });
+        layer.add(circle);
+
+        var wedge = new Kinetic.Wedge({
+            x: stage.getWidth() / 2 + 150,
+            y: stage.getHeight() / 2,
+            radius: 50,
+            angle: 75,
+            fill: 'red',
+            stroke: 'black',
+            rotation: 0
+        });
+        layer.add(wedge);
+
+        var line = new Kinetic.Line({
+            points: [0, 0, 340, 23, 450, 60, 500, 20],
+            stroke: 'blue',
+            strokeWidth: 10,
+            lineCap: 'round',
+            lineJoin: 'round',
+            dash: [20, 20]
+        });
+        line.move({x:0, y: 0});
+        layer.add(line);
+        stage.add(layer);
+        
+
+
+
+    </script>
+</body>
+</html>

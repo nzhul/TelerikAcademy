@@ -1,0 +1,60 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <link href="css/js-console.css" rel="stylesheet" />
+    <link href="css/style.css" rel="stylesheet" />
+</head>
+<body>
+    <header>
+        <a href="01-PlanarSystem.html" >01-PlanarSystem</a> |
+        <a href="02-CustomRemove.html" >02-CustomRemove</a> |
+        <a href="03-DeepCopy.html" >03-DeepCopy</a> |
+        <a href="04-PropChecker.html" class="current" >04-PropChecker</a> |
+        <a href="05-YoungestPerson.html" >05-YoungestPerson</a> |
+        <a href="06-Grouping.html" >06-Grouping</a>
+    </header>
+    <table>
+        <tr>
+            <td><label for="input">Property:</label></td>
+            <td><input type="text" id="input" /></td>
+            <td>// name, age, height, weight</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><button onclick="onExecuteClick()">Execute</button></td>
+        </tr>
+    </table>
+    <div id="console">
+    </div>
+    <script src="js/js-console.js">	  
+    </script>
+    <script>
+        function checkProperty(obj, property) {
+            for (var i in obj) {
+                if (i === property) {
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        function onExecuteClick() {
+            var Human = {
+                name: "Gosho",
+                age: 26,
+                height: 170,
+                weight: 85
+            }
+            var property = jsConsole.read("#input");
+            jsConsole.writeLine(checkProperty(Human, property));
+        }
+    </script>
+    <p style="font-size:12px;">
+        // 04. Write a function that checks if a given object contains a given property<br />
+        var obj  = …;<br />
+var hasProp = hasProperty(obj,"length");
+
+    </p>
+</body>
+</html>

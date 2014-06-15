@@ -1,0 +1,15 @@
+﻿<script>
+    ; (function () {
+        'use strict';
+
+        var message = { true: 'yes', false: 'no' }
+
+        function alertIsMozilla() {
+            var isMozilla = navigator.appCodeName === 'Mozilla'
+
+            alert(message[isMozilla])
+        }
+
+        alertIsMozilla()
+    }())
+</script>

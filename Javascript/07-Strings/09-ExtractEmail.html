@@ -1,0 +1,61 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <link href="css/js-console.css" rel="stylesheet" />
+    <link href="css/style.css" rel="stylesheet" />
+</head>
+<body>
+    <header>
+        <a href="01-ReverseString.html">01-ReverseString</a> |
+        <a href="02-BracketChecker.html">02-BracketChecker</a> |
+        <a href="03-SubstringCount.html">03-SubstringCount</a> |
+        <a href="04-UpCaseLowerCase.html">04-UpCaseLowerCase</a> |
+        <a href="05-nbsp.html">05-nbsp</a> |
+        <a href="06-ExtractText.html">06-ExtractText</a> |
+        <a href="07-ParseURL.html">07-ParseURL</a> |
+        <a href="08-BBCode.html">08-BBCode</a> |
+        <a href="09-ExtractEmail.html" class="current">09-ExtractEmail</a> |
+        <a href="10-Palindrome.html">10-Palindrome</a> |
+        <a href="11-StringFormat.html">11-StringFormat</a> |
+        <a href="12-Templates.html">12-Templates</a>
+    </header>
+    <table>
+        <tr>
+            <td></td>
+            <td><button onclick="onExecuteClick()">Execute</button></td>
+        </tr>
+    </table>
+    <div id="console">
+    </div>
+    <script src="js/js-console.js">	  
+    </script>
+    <script>
+        function onExecuteClick() {
+            var text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. \
+            Fusce viverra, erat nec volutpat convallis, lectus arcu interdum \
+            justo, in suscipit lacus dolor at ante. Quisque quis lacus arcu.\
+            Pellentesque Impad1945@superrito.com consectetur elementum sem Broure256@armyspy.com, sed vehicula sapien. Aliquam\
+            fermentum pellentesque urna at egestas. Morbi eu dui auctor, fermentum ZThaters32@rhyta.com\
+            nulla nec, posuere lacus. Curabitur nisl sem, semper eu vehicula ut,\
+            pharetra a nisl. Vestibulum RArly1960@gustr.com bibendum nisl in massa hendrerit, nec pharetra\
+            dui vehicula. Aread101@cuvox.de Nunc volutpat turpis vitae eros pharetra semper. Morbi\
+            vitae ante sed nisi consequat posuere. Dered1934@superrito.com Suspendisse consectetur posuere\
+            convallis. Ut vitae hendrerit sapien, eu hendrerit leo. In felis purus, QMances6060@einrot.com\
+            dictum et turpis ac, lacinia SDaunt1960@gustr.com suscipit purus. Duis id ipsum interdum,\
+            consequat quam non, ultrices mauris. Etiam tincidunt blandit tortor.";
+
+            var regex = /[a-zA-Z0-9]+@[a-zA-Z0-9]+\.[a-zA-Z]{2,4}/gi;
+            var matches = text.match(regex);
+            
+            for (var i = 0; i < matches.length; i++) {
+                jsConsole.writeLine(matches[i]);
+            }
+
+        }
+    </script>
+    <p style="font-size:12px;">
+        // 09. Write a function for extracting all email addresses from given text. All substrings that match the format &lt;identifier&gt;@&lt;host&gt;…&lt;domain&gt;<br /> should be recognized as emails. Return the emails as array of strings.
+    </p>
+</body>
+</html>
