@@ -11,6 +11,7 @@ function createCalendar(selector, events) {
     dayBox.style.display = 'inline-block';
     dayBox.style.cursor = 'pointer';
 
+
     var boxTitle = document.createElement('strong');
     boxTitle.style.display = 'block';
     boxTitle.style.width = '100%';
@@ -25,27 +26,52 @@ function createCalendar(selector, events) {
     for (var i = 1; i <= 30; i++) {
         boxTitle.innerHTML = daysOfWeek[i % 7] + ' ' + i + ' June 2014';
         var currentBox = dayBox.cloneNode(true);
-        currentBox.addEventListener('click', function () {
-            var clickedBox = this;
-            if(selectedBox){
-                selectedBox.style.background = '';
-            }
-            clickedBox.style.background = 'green';
-            selectedBox = clickedBox;
-        });
-        currentBox.addEventListener('mouseover', function () {
-            var hoveredBox = this;
-            if(hoveredBox != selectedBox){
-                hoveredBox.style.background = 'yellowgreen';
-            }
-        });
-        currentBox.addEventListener('mouseout', function () {
-            var hoveredBox = this;
-            if(hoveredBox != selectedBox){
-                hoveredBox.style.background = '';
-            }
-        })
+        currentBox.addEventListener('click', onBoxClick);
+        currentBox.addEventListener('mouseover',onBoxMouseover);
+        currentBox.addEventListener('mouseout', onBoxMouseout);
+        var currentEvent = hasEvent(i, events);
+        if(currentEvent){
+            var eventContent = document.createElement('span');
+            eventContent.innerHTML = currentEvent.hour + ' ' + currentEvent.title;
+            currentBox.appendChild(eventContent);
+
+            // Fix for the bugged shifting
+            currentBox.style.position = 'relative';
+            currentBox.style.top = '23px';
+            currentBox.style.marginTop = '-23px';
+        }
         fragment.appendChild(currentBox);
     }
     calendarParent.appendChild(fragment);
+
+    function onBoxClick() {
+        var clickedBox = this;
+        if(selectedBox){
+            selectedBox.style.background = '';
+        }
+        clickedBox.style.background = 'green';
+        selectedBox = clickedBox;
+    }
+
+    function onBoxMouseover() {
+        var hoveredBox = this;
+        if(hoveredBox != selectedBox){
+            hoveredBox.style.background = 'yellowgreen';
+        }
+    }
+
+    function onBoxMouseout() {
+        var hoveredBox = this;
+        if(hoveredBox != selectedBox){
+            hoveredBox.style.background = '';
+        }
+    }
+
+    function hasEvent(day, eventsList) {
+        for (var i = 0; i < eventsList.length; i++) {
+            if(day === parseInt(eventsList[i].date)){
+                return eventsList[i];
+            }
+        }
+    }
 }
