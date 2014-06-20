@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Popcorn Game</title>
+    <link rel="stylesheet" href="styles/index.css" type="text/css" />
+</head>
+<body>
+<h1>BREAKING BRICK</h1>
+<div id="restart-game" style="display: none">To start new game click on "Game over"</div>
+<div id="game-container">
+    <div id="svg-container"></div>
+    <div id="container"></div>
+    <div id="liveScoreContainer">
+        <span>Current score: </span>
+        <span id="liveScore"> 0 </span>
+        <span> pts</span>
+    </div>
+    <div id="wrapper">
+        <button id="start-btn">Start Game</button>
+        <button id="pause-btn">Pause Game</button>
+        <button id="best-scores-btn">Best Scores</button>
+        <p id="start-game-instruction" style="display: none">Click on the stage to shoot the ball</p>
+    </div>
+    <div id='score' style="display: none">
+        <h3>High scores:</h3>
+        <div id="top10"></div>
+    </div>
+</div>
+    <audio id="explosionSound" src="sounds/bum.wav" preload="auto"></audio>
+    <audio id="paddleReflectionSound" src="sounds/gamelike-pong.wav" preload="auto">></audio>
+    <script src="libraries/kinetic-v5.1.0.min.js"></script>
+    <script src="libraries/raphael-min.js"></script>
+    <script src="scripts/globals.js"></script>
+    <script src="scripts/updateScore.js"></script>
+    <script src="scripts/bricks.js"></script>
+    <script src="scripts/gifts.js"></script>
+    <script src="scripts/collisionDetections.js"></script>
+    <script src="scripts/soundEffects.js"></script>
+    <script src="scripts/explosions.js"></script>
+    <script src="scripts/bonus-effects.js"></script>
+    <script src="scripts/engine.js"></script>
+    <script src="scripts/gameOver.js"></script>
+</body>
+</html>

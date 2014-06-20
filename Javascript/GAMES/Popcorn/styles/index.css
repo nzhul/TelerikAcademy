@@ -1,0 +1,72 @@
+body{
+    font-family: 'Comic Sans MS';
+    background-color: #AAAAAA;
+    background-image:url('../images/notebook.png');
+}
+
+h1{
+    width: 300px;
+    margin: auto;
+}
+
+#game-container{
+    width: 500px;
+    margin: 20px auto;
+    position: relative;
+
+}
+
+#container {
+    margin: auto;
+
+}
+
+#container canvas{
+    z-index: 99;
+}
+
+#svg-container {
+    border: 3px solid black;
+    position: absolute;
+    margin: auto;
+    top: -2px;
+    left: -2px;
+    z-index: 2;
+    background-color: white;
+    /*background-image:url('../images/paper005.gif');*/
+}
+
+#wrapper button{
+    margin: 10px 10px 0 10px;
+    padding: 10px 20px;
+    background: transparent;
+    border: none;
+}
+
+#wrapper button:hover{
+    background-color: #53BF6B;
+}
+
+#score {
+    margin:40px auto;
+	width: 200px;
+}
+
+#liveScoreContainer{
+    width:350px;
+    padding: 5px 15px;
+    border: 1px solid black;
+    border-radius: 5px;
+    margin: 0 auto;
+    margin-top: 20px;
+    top: 50px;
+    left: 20px;
+}
+
+#restart-game {
+    text-align:center;
+}
+
+/*.kineticjs-content {*/
+    /*display: none !important;*/
+/*}*/
