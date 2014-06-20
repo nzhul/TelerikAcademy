@@ -1,3 +1,7 @@
 canvas#map {
     border: 1px solid #000;
 }
+
+/*canvas {*/
+    /*cursor: url('../img/arrow.png'), auto;*/
+/*}*/
