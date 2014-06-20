@@ -57,6 +57,8 @@ window.onload = function(){
 
     // ------------------------------------------------- FUNCTIONS ----------------
 
+    // !!!!!!!!! MUST USE GRID - TILE BASED GAME - GOOGLE! !!!!!!!!!
+
 
     var mapLayer = new Layer('#root',
     {
