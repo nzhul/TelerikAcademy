@@ -12,7 +12,8 @@ var movingShapes = (function () {
         this.color = 'red';
         this.border = 'black';
         this.angle = 0;
-        this.speed = 0.05;
+        this.speed = 0.01;
+        this.shift = 0;
         this.direction = 'right';
         this.movementType = movementType;
     }
@@ -29,8 +30,12 @@ var movingShapes = (function () {
         var r = 100,
             centerX = (canvas.width / 2),
             centerY = (canvas.height / 2);
-            this.x = Math.floor(centerX + (r * Math.cos(this.angle))),
-            this.y = Math.floor(centerY + (r * Math.sin(this.angle)));
+            this.x = Math.floor(centerX + (r * Math.cos(this.angle * 1 + this.shift))),
+            this.y = Math.floor(centerY + (r * Math.sin(this.angle * 2)));
+            this.shift+= 0.1;
+        // Uncomment this code for Perfect Circle motion
+        // this.x = Math.floor(centerX + (r * Math.cos(this.angle))),
+        // this.y = Math.floor(centerY + (r * Math.sin(this.angle)));
     }
     MovingObject.prototype.rectUpdate = function () {
         switch(this.direction){
