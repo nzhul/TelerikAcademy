@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>02 - MovingModule</title>
+    <style type="text/css">
+        canvas {
+            border: 1px solid #000;
+        }
+    </style>
+</head>
+<body>
+<button id="addRectBtn">Add Rect</button><button id="addCircleBtn">Add Circle</button><br/>
+<canvas id="canvas" width="450" height="350"></canvas>
+<script src="scripts/moving-module.js"></script>
+<script>
+    movingShapes.startEngine();
+
+    var addCircleBtn = document.getElementById('addCircleBtn');
+    addCircleBtn.addEventListener('click', function () {
+        movingShapes.add('circle');
+    });
+
+    var addRectBtn = document.getElementById('addRectBtn');
+    addRectBtn.addEventListener('click', function () {
+        movingShapes.add('rect');
+    });
+</script>
+</body>
+</html>

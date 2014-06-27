@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>01 - Dom Module</title>
+    <script src="scripts/dom-module.js"></script>
+    <style type="text/css">
+        p {
+            border: 1px solid #000;
+            width: 150px;
+            height: 50px;
+        }
+        ul {
+            width: 300px;
+            border: 1px solid #000;
+        }
+        li {
+            border: 1px solid blue;
+        }
+        .clickBox, .bufferBox {width: 50px; height: 50px;display: inline-block; border: 1px solid #000;}
+    </style>
+</head>
+<body>
+<button id="appendElementBtn">Append P Element In every Li element</button>
+<button id="removeElementBtn">Remove all LI elements</button>
+<div id="root"></div>
+<ul>
+    This is the content of the UL
+    <li>Item 1</li>
+    <li>Item 2</li>
+    <li>Item 3</li>
+    <li>Item 4</li>
+    <li>Item 5</li>
+</ul>
+<hr/>
+<button id="attachEventBtn"> Make Boxes below - Clickable</button><br/><br/>
+<div class="clickBox"></div>
+<div class="clickBox"></div>
+<div class="clickBox"></div>
+<div class="clickBox"></div>
+<div class="clickBox"></div>
+<hr/>
+<button id="bufferBtn">Add 1 div to the buffer</button><br/>
+<span>The elements will be appended after 10 clicks</span><br/>
+<script>
+    // Test appendChild
+    var appendBtn = document.getElementById('appendElementBtn');
+    appendBtn.addEventListener('click', function () {
+        var testElement = document.createElement('p');
+        testElement.innerHTML = 'This is some text in the paragraph';
+        domModule.appendElement(testElement, 'li');
+    });
+
+    //Test  removeElement
+    var removeElementBtn = document.getElementById('removeElementBtn');
+    removeElementBtn.addEventListener('click', function () {
+        domModule.removeElement('li');
+    });
+
+    // Test Attach event
+    var attachEventBtn = document.getElementById('attachEventBtn');
+    attachEventBtn.addEventListener('click', function () {
+        domModule.addEvent('.clickBox', 'click', function () {
+            this.style.background = 'red';
+            this.style.border = '2px solid black';
+        })
+    })
+
+    //Test buffer
+    var bufferBtn = document.getElementById('bufferBtn');
+    bufferBtn.addEventListener('click', function () {
+        var bufferBox = document.createElement('div');
+        bufferBox.className = 'bufferBox';
+        domModule.appendToBuffer(bufferBox.cloneNode(true), 'body');
+    })
+</script>
+</body>
+</html>
