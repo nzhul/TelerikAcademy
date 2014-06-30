@@ -8,26 +8,26 @@
 <canvas id="snake-canvas" width="500" height="500"></canvas>
 <script src="scripts/snake.js"></script>
 <script src="scripts/renderer.js"></script>
+<script src="scripts/detector.js"></script>
 <!--<script src="scripts/main.js"></script>-->
 <script>
+    var theSnake = snakes.get(250,250,5);
+    theSnake.snakeController();
+    var food = snakes.getFood(100,100,15);
 
+    var renderer = renderers.getCanvas('#snake-canvas');
 
     function engine() {
         theSnake.move();
+        if(detector.isFoodCollision(theSnake, food)){
+            console.log('collision with food');
+        }
         renderer.clear();
         renderer.draw(theSnake);
         renderer.draw(food);
         setTimeout(engine, 100);
     }
-
     setTimeout(engine, 100);
-    // Testing
-    var theSnake = snakes.get(250,250,5);
-    theSnake.snakeController();
-    var food = snakes.getFood(100,100,15);
-    var renderer = renderers.getCanvas('#snake-canvas');
-    renderer.draw(theSnake);
-    renderer.draw(food);
 </script>
 </body>
 </html>
