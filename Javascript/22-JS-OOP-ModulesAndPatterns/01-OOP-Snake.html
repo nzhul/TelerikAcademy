@@ -17,9 +17,10 @@
         renderer.clear();
         renderer.draw(theSnake);
         renderer.draw(food);
-        requestAnimationFrame(engine);
+        setTimeout(engine, 100);
     }
-    requestAnimationFrame(engine);
+
+    setTimeout(engine, 100);
     // Testing
     var theSnake = snakes.get(250,250,5);
     theSnake.snakeController();

@@ -3,10 +3,10 @@ var snakes = (function () {
     var snakePartSize = 15;
 
     var directions = [
-        {dx: 0, dy: -0.1},
-        {dx: 0.1, dy: 0},
-        {dx: 0, dy: 0.1},
-        {dx: -0.1, dy: 0}
+        {dx: 0, dy: -1},
+        {dx: 1, dy: 0},
+        {dx: 0, dy: 1},
+        {dx: -1, dy: 0}
     ];
 
     function GameObject(x, y, size) {
@@ -62,7 +62,7 @@ var snakes = (function () {
         var dx, dy, size;
         for (var i = this.parts.length - 1; i >= 1; i--) {
             var position = this.parts[i - 1].getPosition();
-            this.parts[i].changePosition(position.x - (20*directions[this.direction].dx*10), position.y - (20*directions[this.direction].dy*10));
+            this.parts[i].changePosition(position.x, position.y);
         }
         var head = this.head();
         var dx = directions[this.direction].dx;
