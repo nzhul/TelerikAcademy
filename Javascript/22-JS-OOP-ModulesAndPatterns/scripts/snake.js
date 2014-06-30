@@ -24,6 +24,10 @@ var snakes = (function () {
         },
         getSize: function () {
             return this.size;
+        },
+        changePosition: function (x, y) {
+            this.x = x;
+            this.y = y;
         }
     };
 
@@ -32,10 +36,6 @@ var snakes = (function () {
     }
     SnakePart.prototype = new GameObject();
     SnakePart.prototype.constructor = SnakePart;
-    SnakePart.prototype.changePosition = function (x, y) {
-        this.x = x;
-        this.y = y;
-    };
 
     function Snake(x, y, size) {
         var part = null,
@@ -93,6 +93,10 @@ var snakes = (function () {
                     break;
             }
         })
+        return this;
+    }
+    Snake.prototype.extendSnake = function () {
+        this.parts.push(new SnakePart(this.x, this.y, snakePartSize));
     }
 
     function Wall(x, y, size) {
