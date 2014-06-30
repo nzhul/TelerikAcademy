@@ -31,7 +31,7 @@ var movingShapes = (function () {
             centerX = (canvas.width / 2),
             centerY = (canvas.height / 2);
             this.x = Math.floor(centerX + (r * Math.cos(this.angle * 1 + this.shift))),
-            this.y = Math.floor(centerY + (r * Math.sin(this.angle * 2)));
+            this.y = Math.floor(centerY + (r * Math.sin(this.angle * 0.5)));
             this.shift+= 0.1;
         // Uncomment this code for Perfect Circle motion
         // this.x = Math.floor(centerX + (r * Math.cos(this.angle))),

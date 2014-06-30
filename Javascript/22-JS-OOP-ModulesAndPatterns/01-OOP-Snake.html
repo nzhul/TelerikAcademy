@@ -8,28 +8,25 @@
 <canvas id="snake-canvas" width="500" height="500"></canvas>
 <script src="scripts/snake.js"></script>
 <script src="scripts/renderer.js"></script>
-<script src="scripts/game.js"></script>
 <!--<script src="scripts/main.js"></script>-->
 <script>
+
+
+    function engine() {
+        theSnake.move();
+        renderer.clear();
+        renderer.draw(theSnake);
+        renderer.draw(food);
+        requestAnimationFrame(engine);
+    }
+    requestAnimationFrame(engine);
+    // Testing
+    var theSnake = snakes.get(250,250,5);
+    theSnake.snakeController();
+    var food = snakes.getFood(100,100,15);
     var renderer = renderers.getCanvas('#snake-canvas');
-    var game = games.get(renderer);
-    game.start();
-
-
-//    function engine() {
-//        theSnake.move();
-//        renderer.clear();
-//        renderer.draw(theSnake);
-//        renderer.draw(food);
-//        requestAnimationFrame(engine);
-//    }
-//    requestAnimationFrame(engine);
-//    // Testing
-//    var theSnake = snakes.get(250,250,5);
-//    var food = snakes.getFood(100,100,15);
-//    var renderer = renderers.getCanvas('#snake-canvas');
-//    renderer.draw(theSnake);
-//    renderer.draw(food);
+    renderer.draw(theSnake);
+    renderer.draw(food);
 </script>
 </body>
 </html>

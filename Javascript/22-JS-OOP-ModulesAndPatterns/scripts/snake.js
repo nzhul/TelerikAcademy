@@ -3,10 +3,10 @@ var snakes = (function () {
     var snakePartSize = 15;
 
     var directions = [
-        {dx: 0, dy: -1},
-        {dx: +1, dy: 0},
-        {dx: 0, dy: +1},
-        {dx: -1, dy: 0}
+        {dx: 0, dy: -0.1},
+        {dx: 0.1, dy: 0},
+        {dx: 0, dy: 0.1},
+        {dx: -0.1, dy: 0}
     ];
 
     function GameObject(x, y, size) {
@@ -62,7 +62,7 @@ var snakes = (function () {
         var dx, dy, size;
         for (var i = this.parts.length - 1; i >= 1; i--) {
             var position = this.parts[i - 1].getPosition();
-            this.parts[i].changePosition(position.x, position.y);
+            this.parts[i].changePosition(position.x - (20*directions[this.direction].dx*10), position.y - (20*directions[this.direction].dy*10));
         }
         var head = this.head();
         var dx = directions[this.direction].dx;
@@ -73,6 +73,26 @@ var snakes = (function () {
             y: headPosition.y + head.size * dy
         }
         head.changePosition(newHeadPosition.x, newHeadPosition.y);
+    }
+
+    Snake.prototype.snakeController = function () {
+        var snake = this;
+        document.addEventListener('keydown', function (ev) {
+            switch (ev.keyCode){
+                case 87: //W
+                    snake.direction = 0;
+                    break;
+                case 68: //D
+                    snake.direction = 1;
+                    break;
+                case 83: //S
+                    snake.direction = 2;
+                    break;
+                case 65: //A
+                    snake.direction = 3;
+                    break;
+            }
+        })
     }
 
     function Wall(x, y, size) {
