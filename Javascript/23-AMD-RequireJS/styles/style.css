@@ -1,0 +1,28 @@
+        body {
+            background: #000;
+        }
+        .character-box, button {
+            color: #b39e79;
+            width: 400px;
+            border: 1px solid #b39e79;
+            cursor: pointer;
+            margin: 0 0 10px 0px;
+            background: #17100d;
+        }
+        .character-box:hover {
+            border: 1px solid #e6d0a9;
+        }
+        .character-box img {
+            width: 400px;
+            border-top: 1px solid #b39e79;
+            margin: 0 0 -5px 0px;
+        }
+        .character-box .character-name {
+            font: 26px Georgia;
+            margin: 10px 0 0px 5px;
+            font-weight: bold;
+            color: #b26400;
+        }
+        .character-box .character-description {
+            margin: 5px 5px 5px 5px;
+        }
