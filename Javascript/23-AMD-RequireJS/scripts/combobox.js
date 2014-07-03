@@ -34,9 +34,6 @@ define(['jquery','handlebars'], function ($) {
                 })
 
             });
-
-
-            var gosho = 1;
         }
     };
 
