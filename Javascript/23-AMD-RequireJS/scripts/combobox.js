@@ -1,16 +1,43 @@
-define(['handlebars'], function (hb) {
-    var ComboBox = function (data) {
-        if(Array.isArray(data)){
-            this.data = data;
+define(['jquery','handlebars'], function ($) {
+    var ComboBox = function (characters) {
+        if(Array.isArray(characters.characters)){
+            this.characters = characters;
         } else {
-            this.data = ["Empty Data Array"];
+            this.characters = ["Empty Data Array"];
         }
     };
 
-    ComboBox.prototype.renderTemplate = function (templateSelector) {
-        var comboBoxTemplate = document.querySelector(templateSelector);
-        var hbTemplate = hb.compile(comboBoxTemplate);
-        document.getElementById('combobox-root').innerHTML = hbTemplate(this.data);
+    ComboBox.prototype = {
+        renderTemplate: function (templateSelector) {
+            var comboBoxTemplate = document.querySelector(templateSelector).innerHTML;
+            var hbTemplate = Handlebars.compile(comboBoxTemplate);
+            document.getElementById('combobox-root').innerHTML = hbTemplate(this.characters);
+        },
+        createCombo: function (selector) {
+            var parent = $(selector);
+            var allElements = parent.children().hide();
+            var selectedElement;
+
+            var selectBtn = $('#selectBtn');
+            selectBtn.on('click', function () {
+                allElements.show();
+            });
+
+            allElements.on('click', function () {
+                selectedElement = $(this);
+                allElements.hide();
+                selectedElement.show();
+                selectBtn.hide();
+                selectedElement.on('click', function () {
+                    allElements.show();
+                    selectedElement = null;
+                })
+
+            });
+
+
+            var gosho = 1;
+        }
     };
 
     function getNewComboBox(data) {
@@ -20,6 +47,6 @@ define(['handlebars'], function (hb) {
 
 
     return {
-        get: getNewComboBox
+        getComboBoxController: getNewComboBox
     }
 });
