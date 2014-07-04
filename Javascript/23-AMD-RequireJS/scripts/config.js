@@ -8,7 +8,7 @@
        }
    });
 
-    require(['main', 'handlebars'], function (main, hb) {
+    require(['main'], function (main) {
         main.run();
     })
 }());

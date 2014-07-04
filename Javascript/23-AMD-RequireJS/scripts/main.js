@@ -1,7 +1,8 @@
-define(['data', 'combobox'], function (data, combobox) {
+define(['data', 'combobox'], function (characters, combobox) {
     var run = function () {
-        var myCombobox = combobox.get(data.getCharacters());
+        var myCombobox = combobox.getComboBoxController(characters);
         myCombobox.renderTemplate('#combobox-template');
+        myCombobox.createCombo('#combobox-root');
     }
 
     return {

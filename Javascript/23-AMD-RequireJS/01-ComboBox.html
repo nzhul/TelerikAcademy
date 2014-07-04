@@ -7,40 +7,16 @@
     <script src="scripts/libs/require.js" data-main="scripts/config"></script>
 </head>
 <body>
-<div id="combobox-root">
-    <button>SELECT YOUR CHARACTER</button>
-    <div class="character-box" id="character-1">
-        <strong class="character-name">Barbarian</strong>
-        <p class="character-description">Монасите са свещени войни, който канализират божествената сила, за да постигнат чиста и силна воля. Лечебните вълни, защитните мантри, както и божествено силните атаки, са им специалитет.</p>
-        <img src="img/1.jpg" />
-    </div>
-    <div class="character-box" id="character-2">
-        <strong class="character-name">Wizard</strong>
-        <p class="character-description">Монасите са свещени войни, който канализират божествената сила, за да постигнат чиста и силна воля. Лечебните вълни, защитните мантри, както и божествено силните атаки, са им специалитет.</p>
-        <img src="img/2.jpg" />
-    </div>
-    <div class="character-box" id="character-3">
-        <strong class="character-name">Witch Doctor</strong>
-        <p class="character-description">Монасите са свещени войни, който канализират божествената сила, за да постигнат чиста и силна воля. Лечебните вълни, защитните мантри, както и божествено силните атаки, са им специалитет.</p>
-        <img src="img/3.jpg" />
-    </div>
-    <div class="character-box" id="character-4">
-        <strong class="character-name">Monk</strong>
-        <p class="character-description">Монасите са свещени войни, който канализират божествената сила, за да постигнат чиста и силна воля. Лечебните вълни, защитните мантри, както и божествено силните атаки, са им специалитет.</p>
-        <img src="img/4.jpg"/>
-    </div>
-    <div class="character-box" id="character-5">
-        <strong class="character-name">Demon Hunter</strong>
-        <p class="character-description">Монасите са свещени войни, който канализират божествената сила, за да постигнат чиста и силна воля. Лечебните вълни, защитните мантри, както и божествено силните атаки, са им специалитет.</p>
-        <img src="img/5.jpg"/>
-    </div>
-</div>
+<button id="selectBtn">SELECT YOUR CHARACTER</button>
+<div id="combobox-root"></div>
 <script type="text/x-handlebars-template" id="combobox-template">
-    <div class="character" id="character-{{id}}">
-        <strong class="characterName">{{name}}</strong>
-        <p class="characterDescription">{{character-description}}</p>
-        <img src="{{ImageUrl}}" width="100px" />
+    {{#characters}}
+    <div class="character-box" id="character-{{id}}">
+        <strong class="characterName">{{characterName}}</strong>
+        <p class="characterDescription">{{characterDescription}}</p>
+        <img src="{{imageUrl}}" width="100px" />
     </div>
+    {{/characters}}
 </script>
 </body>
 </html>
