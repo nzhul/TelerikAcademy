@@ -14,36 +14,43 @@
 <script src="scripts/snake.js"></script>
 <script src="scripts/renderer.js"></script>
 <script src="scripts/detector.js"></script>
-<!--<script src="scripts/main.js"></script>-->
+<script src="scripts/helpers.js"></script>
+<script src="scripts/ui.js"></script>
 <script>
-    var theSnake = snakes.get(0,0,2).snakeController();
+    var theSnake = snakes.get(0,0,5).snakeController();
     var food = snakes.getFood(75,75,15);
+    var theUi = ui.getUI();
+    theUi.initStatusBar();
+    var wallArray = [];
+    var wallsCount = 10;
+    var randomPosition;
+    for (var i = 0; i < wallsCount; i++) {
+        randomPosition = helpers.getRandomPosition();
+        wallArray.push(snakes.getWall(randomPosition.x, randomPosition.y, 15));
+    }
 
     var renderer = renderers.getCanvas('#snake-canvas');
-
     function engine() {
         theSnake.move();
-        detector.WallCollision('#snake-canvas', theSnake);
+        detector.playFieldCollision('#snake-canvas', theSnake, theUi);
+        detector.tailCollision(theSnake, theUi);
+        detector.wallCollision(wallArray, theSnake, theUi);
         if(detector.isFoodCollision(theSnake, food)){
             theSnake.extendSnake();
-            var x = (getRandomInt(15, 475/15)) * 15;
-            var y = (getRandomInt(15, 475/15)) * 15;
-            food.changePosition(x, y);
+            var newFoodPosition = helpers.getRandomPosition();
+            food.changePosition(newFoodPosition.x, newFoodPosition.y);
+            theUi.updateCollision('Food');
+            theUi.updateScore(10);
         }
         renderer.clear();
         renderer.draw(theSnake);
         renderer.draw(food);
+        for (var i = 0; i < wallArray.length; i++) {
+            renderer.draw(wallArray[i]);
+        }
         setTimeout(engine, 100);
     }
     setTimeout(engine, 100);
-
-
-
-    // Helpers
-    function getRandomInt(min, max){
-        var randomInt = Math.floor(Math.random() * (max - min + 1)) + min;
-        return randomInt;
-    }
 </script>
 </body>
 </html>

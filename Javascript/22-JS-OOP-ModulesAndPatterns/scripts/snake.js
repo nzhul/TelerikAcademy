@@ -53,51 +53,51 @@ var snakes = (function () {
     Snake.prototype = new GameObject();
     Snake.prototype.constructor = Snake;
 
-    Snake.prototype.head = function () {
-        return this.parts[0];
-    };
-
-    Snake.prototype.move = function () {
-        var x, y;
-        var dx, dy, size;
-        for (var i = this.parts.length - 1; i >= 1; i--) {
-            var position = this.parts[i - 1].getPosition();
-            this.parts[i].changePosition(position.x, position.y);
-        }
-        var head = this.head();
-        var dx = directions[this.direction].dx;
-        var dy = directions[this.direction].dy;
-        var headPosition = head.getPosition();
-        var newHeadPosition = {
-            x: headPosition.x + head.size * dx,
-            y: headPosition.y + head.size * dy
-        }
-        head.changePosition(newHeadPosition.x, newHeadPosition.y);
-    }
-
-    Snake.prototype.snakeController = function () {
-        var snake = this;
-        document.addEventListener('keydown', function (ev) {
-            switch (ev.keyCode){
-                case 87: //W
-                    snake.direction = 0;
-                    break;
-                case 68: //D
-                    snake.direction = 1;
-                    break;
-                case 83: //S
-                    snake.direction = 2;
-                    break;
-                case 65: //A
-                    snake.direction = 3;
-                    break;
+    Snake.prototype = {
+        head : function () {
+            return this.parts[0];
+        },
+        move: function () {
+            var x, y;
+            var dx, dy, size;
+            for (var i = this.parts.length - 1; i >= 1; i--) {
+                var position = this.parts[i - 1].getPosition();
+                this.parts[i].changePosition(position.x, position.y);
             }
-        })
-        return this;
-    }
-    Snake.prototype.extendSnake = function () {
-        this.parts.push(new SnakePart(this.x, this.y, snakePartSize));
-    }
+            var head = this.head();
+            var dx = directions[this.direction].dx;
+            var dy = directions[this.direction].dy;
+            var headPosition = head.getPosition();
+            var newHeadPosition = {
+                x: headPosition.x + head.size * dx,
+                y: headPosition.y + head.size * dy
+            };
+            head.changePosition(newHeadPosition.x, newHeadPosition.y);
+        },
+        snakeController : function () {
+            var snake = this;
+            document.addEventListener('keydown', function (ev) {
+                switch (ev.keyCode){
+                    case 87: //W
+                        snake.direction = 0;
+                        break;
+                    case 68: //D
+                        snake.direction = 1;
+                        break;
+                    case 83: //S
+                        snake.direction = 2;
+                        break;
+                    case 65: //A
+                        snake.direction = 3;
+                        break;
+                }
+            });
+            return this;
+        },
+        extendSnake : function () {
+            this.parts.push(new SnakePart(this.x, this.y, snakePartSize));
+        }
+    };
 
     function Wall(x, y, size) {
         GameObject.call(this, x, y, size);
@@ -117,6 +117,9 @@ var snakes = (function () {
         },
         getFood: function (x, y, size) {
           return new Food(x, y, size);
+        },
+        getWall: function (x, y, size) {
+            return new Wall(x, y, size);
         },
         SnakeType: Snake,
         SnakePartType: SnakePart,
