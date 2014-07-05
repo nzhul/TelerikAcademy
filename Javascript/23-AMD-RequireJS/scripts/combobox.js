@@ -21,18 +21,17 @@ define(['jquery','handlebars'], function ($) {
             var selectBtn = $('#selectBtn');
             selectBtn.on('click', function () {
                 allElements.show();
+                selectBtn.remove();
             });
 
             allElements.on('click', function () {
                 selectedElement = $(this);
+                var shownElement = selectedElement.clone().prependTo(parent);
+                shownElement.on('click', function () {
+                   allElements.show();
+                    shownElement.remove();
+                });
                 allElements.hide();
-                selectedElement.show();
-                selectBtn.hide();
-                selectedElement.on('click', function () {
-                    allElements.show();
-                    selectedElement = null;
-                })
-
             });
         }
     };
