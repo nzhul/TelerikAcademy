@@ -1,9 +1,9 @@
 define(['constants'], function () {
     var GameObject = (function () {
         function GameObject(options) {
-            this.x = options;
-            this.y = options;
-            this.color = options;
+            this.x = options.x;
+            this.y = options.y;
+            this.color = options.color;
         }
 
         GameObject.prototype = {
@@ -18,7 +18,8 @@ define(['constants'], function () {
             GameObject.call(this, options);
         }
 
-        Hero.prototype = new GameObject();
+        //Hero.prototype = new GameObject({}); // This works too
+        Hero.prototype = Object.create(GameObject.prototype);
         Hero.prototype.constructor = Hero;
         Hero.prototype = {
 
