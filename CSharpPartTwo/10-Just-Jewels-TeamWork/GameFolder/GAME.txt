@@ -1,0 +1,10 @@
+nzhul
+180
+1 1 █ Magenta 1 5 █ Blue 1 9 █ Magenta 1 13 █ Cyan 1 17 █ Magenta 1 21 █ Yellow 1 25 █ Yellow 1 29 █ Blue 
+5 1 █ Red 5 5 █ Red 5 9 █ Green 5 13 █ Green 5 17 █ Magenta 5 21 █ Green 5 25 █ Green 5 29 █ Magenta 
+9 1 █ Yellow 9 5 █ Green 9 9 █ Green 9 13 █ Blue 9 17 █ Red 9 21 █ Yellow 9 25 █ Magenta 9 29 █ Cyan 
+13 1 █ Yellow 13 5 █ Red 13 9 █ Yellow 13 13 █ Blue 13 17 █ Magenta 13 21 █ Cyan 13 25 █ Red 13 29 █ Magenta 
+17 1 █ Green 17 5 █ Magenta 17 9 █ Cyan 17 13 █ Cyan 17 17 █ Yellow 17 21 █ Magenta 17 25 █ Cyan 17 29 █ Cyan 
+21 1 █ Green 21 5 █ Yellow 21 9 █ Magenta 21 13 █ Yellow 21 17 █ Red 21 21 █ Cyan 21 25 █ Yellow 21 29 █ Green 
+25 1 █ Yellow 25 5 █ Blue 25 9 █ Cyan 25 13 █ Cyan 25 17 █ Magenta 25 21 █ Yellow 25 25 █ Cyan 25 29 █ Blue 
+29 1 █ Green 29 5 █ Magenta 29 9 █ Green 29 13 █ Blue 29 17 █ Cyan 29 21 █ Green 29 25 █ Red 29 29 █ Cyan 
