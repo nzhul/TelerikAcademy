@@ -7,6 +7,11 @@ In Telerik Academy we have learned several topics and programming languages like
 
 1. [C# Part One](/CSharpPartOne/)
 ------------
+> Информация за курса
+която е на два реда
+или на три.
+
+Друг текст
 
 2. [C# Part Two](/CSharpPartTwo/)
 ------------
