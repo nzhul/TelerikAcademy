@@ -20,7 +20,7 @@ In Telerik Academy we have learned several topics and programming languages like
 
 2. [C# Part Two](/CSharpPartTwo/)
 ------------
-> This was the first course in the academy and from todays perspective may look very elementary and easy, but back then it was hard for me because it was full with new information. The course include topics like:
+> This was very hard course. It may say this is the hardest one in the academy. It is big impact for newly born developer to try to implement Merge Sort Algorithm :) The exam was very hard and interesting. You must definately check my __[Teamwork game - Just Jewels](/CSharpPartTwo/10-TEAMWORK-Just-Jewels/)__ (it is quite nice console implementation of the [classic game Bejeweled](http://en.wikipedia.org/wiki/Bejeweled)) The course include the following topics:
 > 
 > 1. Arrays
 > 2. Multi-dimentional Arrays
