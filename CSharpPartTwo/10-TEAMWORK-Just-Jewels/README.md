@@ -12,4 +12,4 @@ You can check the PDF presentation that we've used in our public defence for the
 
 
 > Screenshot:
->>>>>>![Just jewels console game](http://www.d3bg.org/telerikacademy/githubimages/jewels-banner2.jpg)
+>             .![Just jewels console game](http://www.d3bg.org/telerikacademy/githubimages/jewels-banner2.jpg)
