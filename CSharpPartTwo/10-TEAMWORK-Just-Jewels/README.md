@@ -9,3 +9,7 @@ You can check the PDF presentation that we've used in our public defence for the
 [DEMO](https://www.youtube.com/watch?v=192J_wJT8wQ)
 --------
 If you want to see demo or explanation of the code of the game - you can check [this video](https://www.youtube.com/watch?v=192J_wJT8wQ)
+
+
+Screenshot:
+![Just jewels console game](http://www.d3bg.org/telerikacademy/githubimages/jewels-banner2.jpg)
