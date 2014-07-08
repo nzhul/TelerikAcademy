@@ -7,11 +7,8 @@ In Telerik Academy we have learned several topics and programming languages like
 
 1. [C# Part One](/CSharpPartOne/)
 ------------
-> Информация за курса
-която е на два реда
-или на три.
-
-Друг текст
-
+> This was the first course in the academy and from todays perspective may look very elementary and easy, but back then it was hard for me because it was full with new information. The course include topics like:
+1. Introduction to Programming
+2. Promitive data types and variables
 2. [C# Part Two](/CSharpPartTwo/)
 ------------
