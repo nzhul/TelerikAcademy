@@ -31,4 +31,4 @@ In Telerik Academy we have learned several topics and programming languages like
 > 7. Text files
 > 8. Strings
 > 9. Exam Preparation
-> 10. [TEAMWORK - Just Jewels [must see]](/CSharpPartTwo/10-TEAMWORK-Just-Jewels/)
+> 10. __[TEAMWORK - Just Jewels [must see]](/CSharpPartTwo/10-TEAMWORK-Just-Jewels/)__
