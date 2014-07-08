@@ -46,3 +46,6 @@ See my [CSS](/CSS/) page for details.
     beep
 end tell
 </code></pre>
+
+
+![Alt text](/path/to/img.jpg)
