@@ -32,3 +32,16 @@ In Telerik Academy we have learned several topics and programming languages like
 > 8. Strings
 > 9. Exam Preparation
 > 10. __[TEAMWORK - Just Jewels [Must see!]](/CSharpPartTwo/10-TEAMWORK-Just-Jewels/)__
+
+3. [C# Object Oriented Programming](/OOP/)
+------------
+> The course for object oriented programming is fundametal for all developers. It is quite good that we have learned the basics of OOP in solid language such as C#. The team project for this course was to implement some kind of application that uses WPF as rendering enviroment and to use explicitly object oriented programming.
+> 
+> 1. Defining classes part I
+> 2. Defining classes part II
+> 3. Ext Methods, Delegates, Lambda, LINQ
+> 4. Object oriented programming - principle I
+> 5. Object oriented programming - principle II
+> 6. Common type system
+> 7. Academy popcorn [console game]
+> 8. __[TEAMWORK - School Management System [Must see!]](/08-TEAMWORK-SchoolManagementSystem/)__
