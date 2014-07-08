@@ -44,4 +44,4 @@ In Telerik Academy we have learned several topics and programming languages like
 > 5. Object oriented programming - principle II
 > 6. Common type system
 > 7. Academy popcorn [console game]
-> 8. __[TEAMWORK - School Management System [Must see!]](/08-TEAMWORK-SchoolManagementSystem/)__
+> 8. __[TEAMWORK - School Management System [Must see!]](/OOP/08-TEAMWORK-SchoolManagementSystem/)__
