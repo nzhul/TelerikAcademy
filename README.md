@@ -16,7 +16,7 @@ In Telerik Academy we have learned several topics and programming languages like
 > 5. Conditional Statements
 > 6. Loops
 > 7. Exam Preparation
-> 8. TEAMWORK-PongGame
+> 8. __[TEAMWORK-PongGame [Must see!]](/CSharpPartOne/08-TEAMWORK-PongGame/)__
 
 2. [C# Part Two](/CSharpPartTwo/)
 ------------
@@ -31,4 +31,4 @@ In Telerik Academy we have learned several topics and programming languages like
 > 7. Text files
 > 8. Strings
 > 9. Exam Preparation
-> 10. __[TEAMWORK - Just Jewels [must see]](/CSharpPartTwo/10-TEAMWORK-Just-Jewels/)__
+> 10. __[TEAMWORK - Just Jewels [Must see!]](/CSharpPartTwo/10-TEAMWORK-Just-Jewels/)__
