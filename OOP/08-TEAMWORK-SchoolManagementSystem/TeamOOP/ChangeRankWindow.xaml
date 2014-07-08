@@ -1,0 +1,23 @@
+﻿<Window x:Class="TeamOOP.ChangeRankWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Change Rank" Height="250" Width="300">
+    <Grid>
+        <StackPanel Margin="10, 10, 10, 10">
+            <TextBlock Margin="0, 0, 0 , 10">Rank:</TextBlock>
+            <ComboBox Name="rankComboBox" Margin="0, 0, 0 , 25" />
+            
+            <Canvas Width="260" Height="45" Margin="0, 25, 0, 0">
+                <Border Height="45" Background="#d7d7d7" BorderBrush="#d7d7d7" 
+                        MouseEnter="changeRank_MouseEnter" 
+                        MouseLeave="changeRank_MouseLeave"
+                        MouseLeftButtonDown="changeBtn_MouseLeftButtonDown"
+                        Name="changeBtn" Cursor="Hand">
+                    <DockPanel Width="260" Canvas.Top="10">
+                        <TextBlock FontSize="14"  Foreground="#555555" VerticalAlignment="Center" HorizontalAlignment="Center">Change Rank</TextBlock>
+                    </DockPanel>
+                </Border>
+            </Canvas>
+        </StackPanel>
+    </Grid>
+</Window>

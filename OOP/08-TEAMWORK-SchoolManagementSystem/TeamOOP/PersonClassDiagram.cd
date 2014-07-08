@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="PersonModule.Administrator">
+    <Position X="0.5" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>PersonModule\Administrator.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PersonModule.Employee">
+    <Position X="4" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACACAAAAAgAAAgAAAAIAAQAAAAEAAAAAAAAAAAAgA=</HashCode>
+      <FileName>PersonModule\02.Employee.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PersonModule.Hygienist">
+    <Position X="7.25" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>PersonModule\Hygienist.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PersonModule.Person">
+    <Position X="7" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAEAAAAAAAAAAAAAAAAAgAAAAAAAAAIAAAAAAAAg=</HashCode>
+      <FileName>PersonModule\00.Person.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PersonModule.Principal">
+    <Position X="5" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>PersonModule\Principal.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PersonModule.Student">
+    <Position X="9.5" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAhAAEAAAAAgAAAoAAABCAAAAAAAAAAAAAAAgAAAAI=</HashCode>
+      <FileName>PersonModule\01.Student.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PersonModule.Teacher">
+    <Position X="2.75" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAIAAAABAAAAAAAAAAAAAAAAgAAAAA=</HashCode>
+      <FileName>PersonModule\Teacher.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

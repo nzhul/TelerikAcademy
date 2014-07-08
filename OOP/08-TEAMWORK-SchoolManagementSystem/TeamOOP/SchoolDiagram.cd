@@ -1,0 +1,102 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="PersonModule.Person" Collapsed="true">
+    <Position X="6.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAEAAAAAAAAAAAAAAAAAgAAAAAAAAAIAAAAAAAAg=</HashCode>
+      <FileName>PersonModule\00.Person.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PersonModule.Student" Collapsed="true">
+    <Position X="1.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAhAAEAAAAAgAAAoAAABCAAAAAAAAAAAAAAAgAAAAI=</HashCode>
+      <FileName>PersonModule\01.Student.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PersonModule.Employee" Collapsed="true">
+    <Position X="7.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACACAAAAAgAAAgAAAAIAAQAAAAEAAAAAAAAAAAAgA=</HashCode>
+      <FileName>PersonModule\02.Employee.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PersonModule.Administrator" Collapsed="true">
+    <Position X="10.75" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>PersonModule\Administrator.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PersonModule.Hygienist" Collapsed="true">
+    <Position X="4" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>PersonModule\Hygienist.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PersonModule.Principal" Collapsed="true">
+    <Position X="6.25" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>PersonModule\Principal.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PersonModule.Teacher" Collapsed="true">
+    <Position X="8.5" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAIAAAABAAAAAAAAAAAAAAAAgAAAAA=</HashCode>
+      <FileName>PersonModule\Teacher.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TeamOOP.Utils.EmployeesContainer" Collapsed="true">
+    <Position X="13.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAAAAAAAQAAAACAAAAAAABAAQAgQAAAAABAAAA=</HashCode>
+      <FileName>Utilities\EmployeesContainer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TeamOOP.Utils.Util" Collapsed="true">
+    <Position X="13.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Utilities\Util.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TeamOOP.Utilities.StudentsContainer" Collapsed="true">
+    <Position X="15" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAACAAAAAgAAAAgAAAAAABABAAAAAQAIAQAAAAAA=</HashCode>
+      <FileName>Utilities\StudentsContainer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Enum Name="PersonModule.PersonDefinitions.ContractType" Collapsed="true">
+    <Position X="13.25" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAACAAAAAAAAAgAAAAAAAAAAAgAAAAAAAAEAAABA=</HashCode>
+      <FileName>PersonDefinitions\ContractType.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="PersonModule.PersonDefinitions.Course" Collapsed="true">
+    <Position X="15" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAEAAAAACAAAAAOAAAAICAAAAAAABAAAAIAEABA=</HashCode>
+      <FileName>PersonDefinitions\Course.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="PersonModule.PersonDefinitions.Position" Collapsed="true">
+    <Position X="13.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEQAAAAAAAAAAAAAgAAAAAAAAEAAAgAAAAAAAAAABA=</HashCode>
+      <FileName>PersonDefinitions\Position.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="PersonModule.PersonDefinitions.StudentRank" Collapsed="true">
+    <Position X="15" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgBAAAAAAAAAAACAAAAAAAAAAAAAAAQAAAAAAAAAABA=</HashCode>
+      <FileName>PersonDefinitions\StudentRank.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

@@ -1,0 +1,18 @@
+﻿<Window x:Class="TeamOOP.AddCourseWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="AddCourseWindow" Height="250" Width="300">
+    <Grid>
+        <StackPanel Margin="10, 10, 10, 10">
+            <TextBlock Margin="0, 0, 0 , 10">Course:</TextBlock>
+            <ComboBox Name="courseComboBox" Margin="0, 0, 0 , 10" />
+            <Canvas Width="260" Height="45" Margin="0, 15, 0, 0">
+                <Border Height="45" Background="#d7d7d7" BorderBrush="#d7d7d7" MouseUp="addGrade_MouseUp" MouseEnter="addGrade_MouseEnter" MouseLeave="addGrade_MouseLeave" Name="addBtn" Cursor="Hand">
+                    <DockPanel Width="260" Canvas.Top="10">
+                        <TextBlock FontSize="14"  Foreground="#555555" VerticalAlignment="Center" HorizontalAlignment="Center">Subscribe!</TextBlock>
+                    </DockPanel>
+                </Border>
+            </Canvas>
+        </StackPanel>
+    </Grid>
+</Window>
