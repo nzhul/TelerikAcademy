@@ -94,7 +94,7 @@ In Telerik Academy we have learned several topics and programming languages like
 > 9. JQuery Basics | [DEMO]()
 > 10. JQuery Plugins | [DEMO]()
 > 11. Template engines - HandlebarsJS | [DEMO]()
-> 12. __[TEAMWORK - POPCORN Classic game in Canvas [Must see!]](/https://github.com/nzhul/Popcorn-Kintaro/)__ __[PLAYABLE DEMO](http://www.d3bg.org/telerikacademy/GAMES/Popcorn/)__
+> 12. __[TEAMWORK - POPCORN Classic game in Canvas [Must see!]](/Popcorn-Kintaro/)__ __[PLAYABLE DEMO](http://www.d3bg.org/telerikacademy/GAMES/Popcorn/)__
 
 
 
