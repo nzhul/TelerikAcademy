@@ -37,7 +37,7 @@ In Telerik Academy we have learned several topics and programming languages like
 >
 > >__[TEAMWORK - Just Jewels [Must see!]](/CSharpPartTwo/10-TEAMWORK-Just-Jewels/)__
 > >
-> > [![Just Jewels](http://www.d3bg.org/telerikacademy/githubimages/jewels_game.jpg)](/CSharpPartTwo/10-TEAMWORK-Just-Jewels/) 
+> > [![Just Jewels](http://www.d3bg.org/telerikacademy/githubimages/jewels_game.jpg)](/CSharpPartTwo/10-TEAMWORK-Just-Jewels/) [![Just Jewels DEMO DOWNLOAD](http://www.d3bg.org/telerikacademy/githubimages/download_demo.jpg)](http://www.d3bg.org/telerikacademy/demos/10-TEAMWORK-Just-Jewels.rar) 
 
 3. [C# Object Oriented Programming](/OOP/)
 ------------
@@ -53,7 +53,7 @@ In Telerik Academy we have learned several topics and programming languages like
 >
 > >__[TEAMWORK - School Management System [Must see!]](/OOP/08-TEAMWORK-SchoolManagementSystem/)__
 > > 
-> > [![School Management System](http://www.d3bg.org/telerikacademy/githubimages/school-icon.jpg)](/OOP/08-TEAMWORK-SchoolManagementSystem/) 
+> > [![School Management System](http://www.d3bg.org/telerikacademy/githubimages/school-icon.jpg)](/OOP/08-TEAMWORK-SchoolManagementSystem/) [![School Management System DOWNLOAD DEMO](http://www.d3bg.org/telerikacademy/githubimages/download_demo.jpg)](http://www.d3bg.org/telerikacademy/demos/08-TEAMWORK-SchoolManagementSystem.rar) 
 
 
 4. [HTML basics](/HTML/)
