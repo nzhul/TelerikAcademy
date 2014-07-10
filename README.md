@@ -47,7 +47,7 @@ In Telerik Academy we have learned several topics and programming languages like
 > 8. __[TEAMWORK - School Management System [Must see!]](/OOP/08-TEAMWORK-SchoolManagementSystem/)__ (Add Image)
 
 
-4. [HTML основи](/HTML/)
+4. [HTML basics](/HTML/)
 ------------
 > That was one of the easy courses in the academy. We have learned not just syntax, but a lot of good patterns for better web.
 > 
@@ -96,6 +96,13 @@ In Telerik Academy we have learned several topics and programming languages like
 > 11. Template engines - HandlebarsJS | [DEMO](http://www.d3bg.org/telerikacademy/18-HandlebarsJS/)
 > 12. __[TEAMWORK - POPCORN Classic game in Canvas [Must see!]](https://github.com/nzhul/Popcorn-Kintaro)__ -> __[PLAYABLE DEMO(Please test in IE10)](http://www.d3bg.org/telerikacademy/GAMES/Popcorn/)__ (Add Image)
 
-
+8. [JavaScript OOP](/Javascript/)
+------------
+> The education in this course was focused on creation of module applications using Javascript. Some of the topics covered in this course are: Module pattern in javascript, reavealing module pattern, immediately invoked function expressions IIFE and other usefull stuff:
+>
+> 1. Functions and function expressions | [DEMO: ](http://www.d3bg.org/telerikacademy/20-JS-OOP-Functions-and-function-Expressions/) [DOM Module](http://www.d3bg.org/telerikacademy/20-JS-OOP-Functions-and-function-Expressions/01-DomModule.html), [MOVING MODULE - MUST SEE](http://www.d3bg.org/telerikacademy/20-JS-OOP-Functions-and-function-Expressions/02-MovingModule.html), [Console Module - Press F12](http://www.d3bg.org/telerikacademy/20-JS-OOP-Functions-and-function-Expressions/03-ConsoleModule.html) 
+> 2. Classic OOP | [DEMO: Shape Module](http://www.d3bg.org/telerikacademy/21-JS-OOP-ClassicOOP/01-shapeModule.html)
+> 3. Modules and patterns | [DEMO: OOP SNAKE GAME](http://www.d3bg.org/telerikacademy/22-JS-OOP-ModulesAndPatterns/01-OOP-Snake.html)
+> 4. AMD and RequireJS | [DEMO: Fancy ComboBox](http://www.d3bg.org/telerikacademy/23-AMD-RequireJS/01-ComboBox.html)
 
 TODO: Finish me
