@@ -112,5 +112,3 @@ Other Courses
 > 3. [Hackaton - Applications for better world](http://telerikacademy.com/Courses/Courses/Details/180)
 >> You can check our team project for the hackaton here: [Educational RPG game](https://github.com/TeamDDA/DDA-Academy/tree/master/DDA/DDA)
 > 4. [Telerik Kendo UI](http://telerikacademy.com/Courses/Courses/Details/181) 
-
-TODO: Finish me
