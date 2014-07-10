@@ -34,7 +34,10 @@ In Telerik Academy we have learned several topics and programming languages like
 > 7. Text files
 > 8. Strings
 > 9. Exam Preparation
-> 10. __[TEAMWORK - Just Jewels [Must see!]](/CSharpPartTwo/10-TEAMWORK-Just-Jewels/)__ (Add Image)
+>
+> >__[TEAMWORK - Just Jewels [Must see!]](/CSharpPartTwo/10-TEAMWORK-Just-Jewels/)__ (Add Image)
+> >
+> > [![Just Jewels](http://www.d3bg.org/telerikacademy/githubimages/jewels_game.jpg)](/CSharpPartTwo/10-TEAMWORK-Just-Jewels/) 
 
 3. [C# Object Oriented Programming](/OOP/)
 ------------
