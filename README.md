@@ -105,4 +105,12 @@ In Telerik Academy we have learned several topics and programming languages like
 > 3. Modules and patterns | __[DEMO: OOP SNAKE GAME](http://www.d3bg.org/telerikacademy/22-JS-OOP-ModulesAndPatterns/01-OOP-Snake.html)__
 > 4. AMD and RequireJS | __[DEMO: Fancy ComboBox](http://www.d3bg.org/telerikacademy/23-AMD-RequireJS/01-ComboBox.html)__
 
+Other Courses
+---------------------
+> 1. [Teamwork and knowledge sharing](http://telerikacademy.com/Courses/Courses/Details/100)
+> 2. [Teamwork and knowledge sharing - Wikipedia Style](http://telerikacademy.com/Courses/Courses/Details/101)
+> 3. [Hackaton - Applications for better world](http://telerikacademy.com/Courses/Courses/Details/180)
+>> You can check our team project for the hackaton here: [Educational RPG game](https://github.com/TeamDDA/DDA-Academy/tree/master/DDA/DDA)
+> 4. [Telerik Kendo UI](http://telerikacademy.com/Courses/Courses/Details/181) 
+
 TODO: Finish me
