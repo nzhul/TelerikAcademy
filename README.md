@@ -35,7 +35,7 @@ In Telerik Academy we have learned several topics and programming languages like
 > 8. Strings
 > 9. Exam Preparation
 >
-> >__[TEAMWORK - Just Jewels [Must see!]](/CSharpPartTwo/10-TEAMWORK-Just-Jewels/)__ (Add Image)
+> >__[TEAMWORK - Just Jewels [Must see!]](/CSharpPartTwo/10-TEAMWORK-Just-Jewels/)__
 > >
 > > [![Just Jewels](http://www.d3bg.org/telerikacademy/githubimages/jewels_game.jpg)](/CSharpPartTwo/10-TEAMWORK-Just-Jewels/) 
 
@@ -50,7 +50,10 @@ In Telerik Academy we have learned several topics and programming languages like
 > 5. Object oriented programming - principle II
 > 6. Common type system
 > 7. Academy popcorn [console game]
-> 8. __[TEAMWORK - School Management System [Must see!]](/OOP/08-TEAMWORK-SchoolManagementSystem/)__ (Add Image)
+>
+> >__[TEAMWORK - School Management System [Must see!]](/OOP/08-TEAMWORK-SchoolManagementSystem/)__
+> > 
+> > [![School Management System](http://www.d3bg.org/telerikacademy/githubimages/school-icon.jpg)](/OOP/08-TEAMWORK-SchoolManagementSystem/) 
 
 
 4. [HTML basics](/HTML/)
@@ -100,7 +103,10 @@ In Telerik Academy we have learned several topics and programming languages like
 > 9. JQuery Basics | [DEMO](http://www.d3bg.org/telerikacademy/16-JQueryBasics/), __[Slider](http://www.d3bg.org/telerikacademy/16-JQueryBasics/01-SliderControl.html)__, [Other](http://www.d3bg.org/telerikacademy/16-JQueryBasics/)
 > 10. JQuery Plugins | [DEMO:](http://www.d3bg.org/telerikacademy/17-JQueryPlugins/) [DropDown Plugin](http://www.d3bg.org/telerikacademy/17-JQueryPlugins/01-DropDownPlugin.html), [Message Plugin](http://www.d3bg.org/telerikacademy/17-JQueryPlugins/02-fadeIn-fadeOut.html)
 > 11. Template engines - HandlebarsJS | [DEMO](http://www.d3bg.org/telerikacademy/18-HandlebarsJS/)
-> 12. __[TEAMWORK - POPCORN Classic game in Canvas [Must see!]](https://github.com/nzhul/Popcorn-Kintaro)__ -> __[PLAYABLE DEMO(Please test in IE10)](http://www.d3bg.org/telerikacademy/GAMES/Popcorn/)__ (Add Image)
+>
+> >__[TEAMWORK - POPCORN Classic game in Canvas [Must see!]](https://github.com/nzhul/Popcorn-Kintaro)__ -> __[PLAYABLE DEMO(Please test in IE10)](http://www.d3bg.org/telerikacademy/GAMES/Popcorn/)__
+> > 
+> > [![POPCORN Classic game in Canvas](http://www.d3bg.org/telerikacademy/githubimages/popcorn-icon.jpg)](https://github.com/nzhul/Popcorn-Kintaro) 
 
 8. [JavaScript OOP](/Javascript/)
 ------------
