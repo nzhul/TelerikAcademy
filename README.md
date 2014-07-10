@@ -70,14 +70,32 @@ In Telerik Academy we have learned several topics and programming languages like
 ------------
 > In JavaScript Basics we've learned the basics of the most popular language now days. The most of the lectures were almost the same as those in C# part 1 and 2, but with new syntax. It was quite an impact to get used to the language after comming from strong typed language like C#.
 > 
-> 1. Data types and variables
-> 2. Operators and expressions
-> 3. Conditional Statements
-> 4. Loops
-> 5. Arrays
-> 6. Functions
-> 7. Objects
-> 8. Strings
+> 1. Data types and variables | [DEMO](http://www.d3bg.org/telerikacademy/00-Data-Types-and-Variables/00-Data-Types-and-Variables/01-JSLiterals.html)
+> 2. Operators and expressions | [DEMO](http://www.d3bg.org/telerikacademy/01-Operators-Explressions/01-Operators-Explressions/01-EvenOdd.html)
+> 3. Conditional Statements | [DEMO](http://www.d3bg.org/telerikacademy/02-ConditionalStatements/02-ConditionalStatements/01-ExchangeValue.html)
+> 4. Loops | [DEMO](http://www.d3bg.org/telerikacademy/03-Loops/03-Loops/01-SimpleLoop.html)
+> 5. Arrays | [DEMO](http://www.d3bg.org/telerikacademy/04-Arrays/04-Arrays/01-ArrayX5.html)
+> 6. Functions | [DEMO](http://www.d3bg.org/telerikacademy/05-Functions/05-Functions/01-LastDigit.html)
+> 7. Objects | [DEMO](http://www.d3bg.org/telerikacademy/06-Objects/06-Objects/01-PlanarSystem.html)
+> 8. Strings | [DEMO](http://www.d3bg.org/telerikacademy/07-Strings/01-ReverseString.html)
+
+7. [JavaScript UI и DOM](/Javascript/)
+------------
+> This is where the courses started to get cooler and more awesome. Here we have learned cool stuff like Canvas, KineticJS, SVG, DOM Manipulation and other UI tools fot web.
+> 
+> 1. Document object model
+> 2. Document object model Manipulation
+> 3. Canvas
+> 4. KineticJS
+> 5. SVG
+> 6. RaphaelJS
+> 7. Animations
+> 8. Event Model
+> 9. JQuery Basics
+> 10. JQuery Plugins
+> 11. Template engines - HandlebarsJS
+> 12. __[TEAMWORK - POPCORN Classic game in Canvas [Must see!]](/https://github.com/nzhul/Popcorn-Kintaro/)__ __[PLAYABLE DEMO](http://www.d3bg.org/telerikacademy/GAMES/Popcorn/)
+
 
 
 TODO: Finish me
