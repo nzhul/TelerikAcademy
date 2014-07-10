@@ -4,7 +4,8 @@
             'gameObject': 'gameobject',
             'main': 'main',
             'constants': 'constants',
-            'layer': 'layer'
+            'layer': 'layer',
+            'renderer': 'renderer'
         }
     });
 

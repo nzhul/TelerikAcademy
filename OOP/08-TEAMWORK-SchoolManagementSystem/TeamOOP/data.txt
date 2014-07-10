@@ -1,4 +1,4 @@
-﻿<Data>
+<Data>
   <!--Students-->
   <ListOfStudents>
     <Student>
@@ -16,32 +16,32 @@
       <GradesList>
         <Grade>
           <Course>Chemistry</Course>
-          <Date>2013-12-09T21:08:43.4608446+02:00</Date>
+          <Date>2014-07-10T13:12:39.1511325+03:00</Date>
           <Weight>4</Weight>
         </Grade>
         <Grade>
           <Course>Chemistry</Course>
-          <Date>2013-12-09T21:08:43.4608446+02:00</Date>
+          <Date>2014-07-10T13:12:39.1511325+03:00</Date>
           <Weight>3</Weight>
         </Grade>
         <Grade>
           <Course>Physics</Course>
-          <Date>2013-12-09T21:08:43.4608446+02:00</Date>
+          <Date>2014-07-10T13:12:39.1511325+03:00</Date>
           <Weight>2.5</Weight>
         </Grade>
         <Grade>
           <Course>Physics</Course>
-          <Date>2013-12-09T21:08:43.4608446+02:00</Date>
+          <Date>2014-07-10T13:12:39.1511325+03:00</Date>
           <Weight>6.5</Weight>
         </Grade>
         <Grade>
           <Course>Multimedia</Course>
-          <Date>2013-12-09T21:08:43.4608446+02:00</Date>
+          <Date>2014-07-10T13:12:39.1511325+03:00</Date>
           <Weight>2.5</Weight>
         </Grade>
         <Grade>
           <Course>Multimedia</Course>
-          <Date>2013-12-09T21:08:43.4608446+02:00</Date>
+          <Date>2014-07-10T13:12:39.1511325+03:00</Date>
           <Weight>5.5</Weight>
         </Grade>
       </GradesList>
@@ -61,7 +61,7 @@
       <GradesList>
         <Grade>
           <Course>InternetTechnologies</Course>
-          <Date>2013-12-09T21:08:43.4618446+02:00</Date>
+          <Date>2014-07-10T13:12:39.1531326+03:00</Date>
           <Weight>2.5</Weight>
         </Grade>
       </GradesList>
@@ -81,17 +81,17 @@
       <GradesList>
         <Grade>
           <Course>Physics</Course>
-          <Date>2013-12-09T21:08:43.4618446+02:00</Date>
+          <Date>2014-07-10T13:12:39.1531326+03:00</Date>
           <Weight>3.5</Weight>
         </Grade>
         <Grade>
           <Course>Physics</Course>
-          <Date>2013-12-09T21:08:43.4618446+02:00</Date>
+          <Date>2014-07-10T13:12:39.1531326+03:00</Date>
           <Weight>3.5</Weight>
         </Grade>
         <Grade>
           <Course>Physics</Course>
-          <Date>2013-12-09T21:08:43.4628447+02:00</Date>
+          <Date>2014-07-10T13:12:39.1531326+03:00</Date>
           <Weight>5.5</Weight>
         </Grade>
       </GradesList>
@@ -111,7 +111,7 @@
       <GradesList>
         <Grade>
           <Course>Cryptography</Course>
-          <Date>2013-12-09T21:08:43.4628447+02:00</Date>
+          <Date>2014-07-10T13:12:39.1531326+03:00</Date>
           <Weight>6.5</Weight>
         </Grade>
       </GradesList>
@@ -167,7 +167,7 @@
       <GradesList>
         <Grade>
           <Course>Mathematics</Course>
-          <Date>2013-12-09T21:08:43.4628447+02:00</Date>
+          <Date>2014-07-10T13:12:39.1531326+03:00</Date>
           <Weight>3.5</Weight>
         </Grade>
       </GradesList>
@@ -184,6 +184,32 @@
       <CoursesList />
       <GradesList />
       <FacultyNumber>12321213</FacultyNumber>
+      <Rank>Junior</Rank>
+    </Student>
+    <Student>
+      <PresonalDetails>
+        <FirstName>Pesho</FirstName>
+        <LastName>Ivanov</LastName>
+        <EGN>8848488484</EGN>
+        <HomeTown>Unknown</HomeTown>
+      </PresonalDetails>
+      <CoursesList>
+        <Course>Mathematics</Course>
+        <Course>Physics</Course>
+      </CoursesList>
+      <GradesList>
+        <Grade>
+          <Course>Mathematics</Course>
+          <Date>2014-07-10T13:13:43.2177969+03:00</Date>
+          <Weight>5.5</Weight>
+        </Grade>
+        <Grade>
+          <Course>Physics</Course>
+          <Date>2014-07-10T13:14:10.6903682+03:00</Date>
+          <Weight>2</Weight>
+        </Grade>
+      </GradesList>
+      <FacultyNumber>4234234</FacultyNumber>
       <Rank>Junior</Rank>
     </Student>
   </ListOfStudents>
@@ -218,11 +244,7 @@
         <Salary>985</Salary>
         <Rating>46</Rating>
       </Employee>
-      <CoursesList>
-        <Course>Chemistry</Course>
-        <Course>Physics</Course>
-        <Course>Multimedia</Course>
-      </CoursesList>
+      <CoursesList />
       <Rank>LecturerInstructor</Rank>
     </Teacher>
     <Teacher>
