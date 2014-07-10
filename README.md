@@ -117,7 +117,8 @@ In Telerik Academy we have learned several topics and programming languages like
 > 
 > > 3. Modules and patterns | __[DEMO: OOP SNAKE GAME](http://www.d3bg.org/telerikacademy/22-JS-OOP-ModulesAndPatterns/01-OOP-Snake.html)__
 > >
-> > [![OOP SNAKE](http://www.d3bg.org/telerikacademy/githubimages/snake-icon2.jpg)](/Javascript/22-JS-OOP-ModulesAndPatterns) [![School Management System DOWNLOAD DEMO](http://www.d3bg.org/telerikacademy/githubimages/download_demo.jpg)](http://www.d3bg.org/telerikacademy/22-JS-OOP-ModulesAndPatterns/01-OOP-Snake.html) 
+> > [![OOP SNAKE](http://www.d3bg.org/telerikacademy/githubimages/snake2-icon.jpg)](/Javascript/22-JS-OOP-ModulesAndPatterns) [![School Management System DOWNLOAD DEMO](http://www.d3bg.org/telerikacademy/githubimages/download_demo.jpg)](http://www.d3bg.org/telerikacademy/22-JS-OOP-ModulesAndPatterns/01-OOP-Snake.html)
+>
 > 4. AMD and RequireJS | __[DEMO: Fancy ComboBox](http://www.d3bg.org/telerikacademy/23-AMD-RequireJS/01-ComboBox.html)__
 
 Other Courses
