@@ -106,7 +106,7 @@ In Telerik Academy we have learned several topics and programming languages like
 >
 > >__[TEAMWORK - POPCORN Classic game in Canvas [Must see!]](https://github.com/nzhul/Popcorn-Kintaro)__ -> __[PLAYABLE DEMO(Please test in IE10)](http://www.d3bg.org/telerikacademy/GAMES/Popcorn/)__
 > > 
-> > [![POPCORN Classic game in Canvas](http://www.d3bg.org/telerikacademy/githubimages/popcorn-icon.jpg)](https://github.com/nzhul/Popcorn-Kintaro) 
+> > [![POPCORN Classic game in Canvas](http://www.d3bg.org/telerikacademy/githubimages/popcorn-icon.jpg)](https://github.com/nzhul/Popcorn-Kintaro) [![POPCORN Classic game in Canvas ONLINE DEMO](http://www.d3bg.org/telerikacademy/githubimages/download_demo.jpg)](http://www.d3bg.org/telerikacademy/GAMES/Popcorn/) 
 
 8. [JavaScript OOP](/Javascript/)
 ------------
