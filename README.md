@@ -114,7 +114,9 @@ In Telerik Academy we have learned several topics and programming languages like
 >
 > 1. Functions and function expressions | [DEMO: ](http://www.d3bg.org/telerikacademy/20-JS-OOP-Functions-and-function-Expressions/) [DOM Module](http://www.d3bg.org/telerikacademy/20-JS-OOP-Functions-and-function-Expressions/01-DomModule.html), __[MOVING MODULE - MUST SEE](http://www.d3bg.org/telerikacademy/20-JS-OOP-Functions-and-function-Expressions/02-MovingModule.html)__, [Console Module - Press F12](http://www.d3bg.org/telerikacademy/20-JS-OOP-Functions-and-function-Expressions/03-ConsoleModule.html) 
 > 2. Classic OOP | [DEMO: Shape Module](http://www.d3bg.org/telerikacademy/21-JS-OOP-ClassicOOP/01-shapeModule.html)
-> 3. Modules and patterns | __[DEMO: OOP SNAKE GAME](http://www.d3bg.org/telerikacademy/22-JS-OOP-ModulesAndPatterns/01-OOP-Snake.html)__
+> > 3. Modules and patterns | __[DEMO: OOP SNAKE GAME](http://www.d3bg.org/telerikacademy/22-JS-OOP-ModulesAndPatterns/01-OOP-Snake.html)__
+> >
+> > [![OOP SNAKE](http://www.d3bg.org/telerikacademy/githubimages/snake_icon2.jpg)](/Javascript/22-JS-OOP-ModulesAndPatterns) [![School Management System DOWNLOAD DEMO](http://www.d3bg.org/telerikacademy/githubimages/download_demo.jpg)](http://www.d3bg.org/telerikacademy/22-JS-OOP-ModulesAndPatterns/01-OOP-Snake.html) 
 > 4. AMD and RequireJS | __[DEMO: Fancy ComboBox](http://www.d3bg.org/telerikacademy/23-AMD-RequireJS/01-ComboBox.html)__
 
 Other Courses
