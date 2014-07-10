@@ -16,7 +16,8 @@ In Telerik Academy we have learned several topics and programming languages like
 > 5. Conditional Statements
 > 6. Loops
 > 7. Exam Preparation
-> 8. __[TEAMWORK-PongGame [Must see!]](/CSharpPartOne/08-TEAMWORK-PongGame/)__ ![Pong game classic](http://www.d3bg.org/telerikacademy/githubimages/pong-icon.jpg)
+> 8. __[TEAMWORK-PongGame [Must see!]](/CSharpPartOne/08-TEAMWORK-PongGame/)__ 
+> ![Pong game classic](http://www.d3bg.org/telerikacademy/githubimages/pong-icon.jpg)
 
 2. [C# Part Two](/CSharpPartTwo/)
 ------------
