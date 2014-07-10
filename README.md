@@ -16,7 +16,7 @@ In Telerik Academy we have learned several topics and programming languages like
 > 5. Conditional Statements
 > 6. Loops
 > 7. Exam Preparation
-> 8. __[TEAMWORK-PongGame [Must see!]](/CSharpPartOne/08-TEAMWORK-PongGame/)__
+> 8. __[TEAMWORK-PongGame [Must see!]](/CSharpPartOne/08-TEAMWORK-PongGame/)__ (Add Image)
 
 2. [C# Part Two](/CSharpPartTwo/)
 ------------
@@ -31,7 +31,7 @@ In Telerik Academy we have learned several topics and programming languages like
 > 7. Text files
 > 8. Strings
 > 9. Exam Preparation
-> 10. __[TEAMWORK - Just Jewels [Must see!]](/CSharpPartTwo/10-TEAMWORK-Just-Jewels/)__
+> 10. __[TEAMWORK - Just Jewels [Must see!]](/CSharpPartTwo/10-TEAMWORK-Just-Jewels/)__ (Add Image)
 
 3. [C# Object Oriented Programming](/OOP/)
 ------------
@@ -44,7 +44,7 @@ In Telerik Academy we have learned several topics and programming languages like
 > 5. Object oriented programming - principle II
 > 6. Common type system
 > 7. Academy popcorn [console game]
-> 8. __[TEAMWORK - School Management System [Must see!]](/OOP/08-TEAMWORK-SchoolManagementSystem/)__
+> 8. __[TEAMWORK - School Management System [Must see!]](/OOP/08-TEAMWORK-SchoolManagementSystem/)__ (Add Image)
 
 
 4. [HTML основи](/HTML/)
@@ -85,16 +85,16 @@ In Telerik Academy we have learned several topics and programming languages like
 > 
 > 1. Document object model | [DEMO](http://www.d3bg.org/telerikacademy/09-DOM/09-DOM/)
 > 2. Document object model Manipulation | [DEMO](http://www.d3bg.org/telerikacademy/08-DOMManipulation/08-DOMManipulation/), [Circle Motion](http://www.d3bg.org/telerikacademy/08-DOMManipulation/08-DOMManipulation/02-CircleMotion.html), [tag Cloud](http://www.d3bg.org/telerikacademy/08-DOMManipulation/08-DOMManipulation/04-tagCloud.html), [tree view](http://www.d3bg.org/telerikacademy/08-DOMManipulation/08-DOMManipulation/05-TreeView.html)
-> 3. Canvas | [DEMO]()
-> 4. KineticJS | [DEMO]()
-> 5. SVG | [DEMO]()
-> 6. RaphaelJS | [DEMO]()
-> 7. Animations | [DEMO]()
-> 8. Event Model | [DEMO]()
-> 9. JQuery Basics | [DEMO]()
-> 10. JQuery Plugins | [DEMO]()
-> 11. Template engines - HandlebarsJS | [DEMO]()
-> 12. __[TEAMWORK - POPCORN Classic game in Canvas [Must see!]](https://github.com/nzhul/Popcorn-Kintaro)__ __[PLAYABLE DEMO](http://www.d3bg.org/telerikacademy/GAMES/Popcorn/)__
+> 3. Canvas | [DEMO](http://www.d3bg.org/telerikacademy/10-Canvas/10-Canvas/): [Basic Shapes](http://www.d3bg.org/telerikacademy/10-Canvas/10-Canvas/01-BasicShapes.html), [Bouncing ball](http://www.d3bg.org/telerikacademy/10-Canvas/10-Canvas/02-BouncingBall.html), [SNAKE GAME](http://www.d3bg.org/telerikacademy/10-Canvas/10-Canvas/03-Snake.html),
+> 4. KineticJS | [DEMO: Family Tree](http://www.d3bg.org/telerikacademy/11-KineticJS/11-KineticJS/01-FamilyTree.html)
+> 5. SVG | [DEMO](http://www.d3bg.org/telerikacademy/12-SVG/): [Logos SVG](http://www.d3bg.org/telerikacademy/12-SVG/01-mean-vector.svg), [Windows Start Screen](http://www.d3bg.org/telerikacademy/12-SVG/02-windows-home-screen-simple.svg)
+> 6. RaphaelJS | [Vector Logos](http://www.d3bg.org/telerikacademy/13-RaphaelJS/13-RaphaelJS/01-Logos.html), [Vector Spiral](http://www.d3bg.org/telerikacademy/13-RaphaelJS/13-RaphaelJS/02-Spiral.html)
+> 7. Animations | [DEMO: Super mario Sprite](http://www.d3bg.org/telerikacademy/14-Animations/14-Animations/01-SuperMario.html)
+> 8. Event Model | [DEMO: Simple TODO APP](http://www.d3bg.org/telerikacademy/15-Event-Model/)
+> 9. JQuery Basics | [DEMO](http://www.d3bg.org/telerikacademy/16-JQueryBasics/), [Slider](http://www.d3bg.org/telerikacademy/16-JQueryBasics/01-SliderControl.html), [Other](http://www.d3bg.org/telerikacademy/16-JQueryBasics/)
+> 10. JQuery Plugins | [DEMO:](http://www.d3bg.org/telerikacademy/17-JQueryPlugins/) [DropDown Plugin](http://www.d3bg.org/telerikacademy/17-JQueryPlugins/01-DropDownPlugin.html), [Message Plugin](http://www.d3bg.org/telerikacademy/17-JQueryPlugins/02-fadeIn-fadeOut.html)
+> 11. Template engines - HandlebarsJS | [DEMO](http://www.d3bg.org/telerikacademy/18-HandlebarsJS/)
+> 12. __[TEAMWORK - POPCORN Classic game in Canvas [Must see!]](https://github.com/nzhul/Popcorn-Kintaro)__ -> __[PLAYABLE DEMO](http://www.d3bg.org/telerikacademy/GAMES/Popcorn/)__ (Add Image)
 
 
 
