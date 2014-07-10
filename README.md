@@ -83,18 +83,18 @@ In Telerik Academy we have learned several topics and programming languages like
 ------------
 > This is where the courses started to get cooler and more awesome. Here we have learned cool stuff like Canvas, KineticJS, SVG, DOM Manipulation and other UI tools fot web.
 > 
-> 1. Document object model
-> 2. Document object model Manipulation
-> 3. Canvas
-> 4. KineticJS
-> 5. SVG
-> 6. RaphaelJS
-> 7. Animations
-> 8. Event Model
-> 9. JQuery Basics
-> 10. JQuery Plugins
-> 11. Template engines - HandlebarsJS
-> 12. __[TEAMWORK - POPCORN Classic game in Canvas [Must see!]](/https://github.com/nzhul/Popcorn-Kintaro/)__ __[PLAYABLE DEMO](http://www.d3bg.org/telerikacademy/GAMES/Popcorn/)
+> 1. Document object model | [DEMO](http://www.d3bg.org/telerikacademy/09-DOM/09-DOM/)
+> 2. Document object model Manipulation | [DEMO](http://www.d3bg.org/telerikacademy/08-DOMManipulation/08-DOMManipulation/), [Circle Motion](http://www.d3bg.org/telerikacademy/08-DOMManipulation/08-DOMManipulation/02-CircleMotion.html), [tag Cloud](http://www.d3bg.org/telerikacademy/08-DOMManipulation/08-DOMManipulation/04-tagCloud.html), [tree view](http://www.d3bg.org/telerikacademy/08-DOMManipulation/08-DOMManipulation/05-TreeView.html)
+> 3. Canvas | [DEMO]()
+> 4. KineticJS | [DEMO]()
+> 5. SVG | [DEMO]()
+> 6. RaphaelJS | [DEMO]()
+> 7. Animations | [DEMO]()
+> 8. Event Model | [DEMO]()
+> 9. JQuery Basics | [DEMO]()
+> 10. JQuery Plugins | [DEMO]()
+> 11. Template engines - HandlebarsJS | [DEMO]()
+> 12. __[TEAMWORK - POPCORN Classic game in Canvas [Must see!]](/https://github.com/nzhul/Popcorn-Kintaro/)__ __[PLAYABLE DEMO](http://www.d3bg.org/telerikacademy/GAMES/Popcorn/)__
 
 
 
