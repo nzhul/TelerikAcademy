@@ -19,7 +19,7 @@ In Telerik Academy we have learned several topics and programming languages like
 > 
 > >__[TEAMWORK-PongGame [Must see!]](/CSharpPartOne/08-TEAMWORK-PongGame/)__ 
 > >
-> > [![Pong game classic](http://www.d3bg.org/telerikacademy/githubimages/pong-icon.jpg)](/CSharpPartOne/08-TEAMWORK-PongGame/) 
+> > [![Pong game classic](http://www.d3bg.org/telerikacademy/githubimages/pong-icon.jpg)](/CSharpPartOne/08-TEAMWORK-PongGame/) [![Pong game classic download demo](http://www.d3bg.org/telerikacademy/githubimages/download_demo.jpg)](http://www.d3bg.org/telerikacademy/demos/08-TEAMWORK-PongGame.rar) 
 
 2. [C# Part Two](/CSharpPartTwo/)
 ------------
