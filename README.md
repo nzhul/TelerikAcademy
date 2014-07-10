@@ -47,4 +47,37 @@ In Telerik Academy we have learned several topics and programming languages like
 > 8. __[TEAMWORK - School Management System [Must see!]](/OOP/08-TEAMWORK-SchoolManagementSystem/)__
 
 
+4. [HTML основи](/HTML/)
+------------
+> That was one of the easy courses in the academy. We have learned not just syntax, but a lot of good patterns for better web.
+> 
+> 1. Introduction to HTML
+> 2. HTML Tables
+> 3. HTML Forms
+> 4. Semantic Web
+
+5. [CSS](/CSS/)
+------------
+> As graphic and web designer - i know that the good design is very important for one product to succeed. I'v had some previous experience with CSS and that course was easy for me. Nevertheless i've learned some new stuff like SASS and LESS.
+> 
+> 1. CSS Overview
+> 2. CSS Presentation
+> 3. CSS Layout
+> 4. SASS
+> 5. LESS
+
+6. [JavaScript Basics](/Javascript/)
+------------
+> In JavaScript Basics we've learned the basics of the most popular language now days. The most of the lectures were almost the same as those in C# part 1 and 2, but with new syntax. It was quite an impact to get used to the language after comming from strong typed language like C#.
+> 
+> 1. Data types and variables
+> 2. Operators and expressions
+> 3. Conditional Statements
+> 4. Loops
+> 5. Arrays
+> 6. Functions
+> 7. Objects
+> 8. Strings
+
+
 TODO: Finish me
