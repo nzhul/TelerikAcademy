@@ -16,7 +16,7 @@ In Telerik Academy we have learned several topics and programming languages like
 > 5. Conditional Statements
 > 6. Loops
 > 7. Exam Preparation
-> 8. __[TEAMWORK-PongGame [Must see!]](/CSharpPartOne/08-TEAMWORK-PongGame/)__ (Add Image)
+> 8. __[TEAMWORK-PongGame [Must see!]](/CSharpPartOne/08-TEAMWORK-PongGame/)__ !(Pong game classic)[http://www.d3bg.org/telerikacademy/githubimages/pong-icon.jpg]
 
 2. [C# Part Two](/CSharpPartTwo/)
 ------------
@@ -91,7 +91,7 @@ In Telerik Academy we have learned several topics and programming languages like
 > 6. RaphaelJS | [Vector Logos](http://www.d3bg.org/telerikacademy/13-RaphaelJS/13-RaphaelJS/01-Logos.html), [Vector Spiral](http://www.d3bg.org/telerikacademy/13-RaphaelJS/13-RaphaelJS/02-Spiral.html)
 > 7. Animations | [DEMO: Super mario Sprite](http://www.d3bg.org/telerikacademy/14-Animations/14-Animations/01-SuperMario.html)
 > 8. Event Model | [DEMO: Simple TODO APP](http://www.d3bg.org/telerikacademy/15-Event-Model/)
-> 9. JQuery Basics | [DEMO](http://www.d3bg.org/telerikacademy/16-JQueryBasics/), [Slider](http://www.d3bg.org/telerikacademy/16-JQueryBasics/01-SliderControl.html), [Other](http://www.d3bg.org/telerikacademy/16-JQueryBasics/)
+> 9. JQuery Basics | [DEMO](http://www.d3bg.org/telerikacademy/16-JQueryBasics/), __[Slider](http://www.d3bg.org/telerikacademy/16-JQueryBasics/01-SliderControl.html)__, [Other](http://www.d3bg.org/telerikacademy/16-JQueryBasics/)
 > 10. JQuery Plugins | [DEMO:](http://www.d3bg.org/telerikacademy/17-JQueryPlugins/) [DropDown Plugin](http://www.d3bg.org/telerikacademy/17-JQueryPlugins/01-DropDownPlugin.html), [Message Plugin](http://www.d3bg.org/telerikacademy/17-JQueryPlugins/02-fadeIn-fadeOut.html)
 > 11. Template engines - HandlebarsJS | [DEMO](http://www.d3bg.org/telerikacademy/18-HandlebarsJS/)
 > 12. __[TEAMWORK - POPCORN Classic game in Canvas [Must see!]](https://github.com/nzhul/Popcorn-Kintaro)__ -> __[PLAYABLE DEMO(Please test in IE10)](http://www.d3bg.org/telerikacademy/GAMES/Popcorn/)__ (Add Image)
