@@ -11,6 +11,7 @@ define(['constants'], function (CONST) {
         ctx.beginPath();
         ctx.rect(x, y, w, h);
         ctx.fillStyle = color;
+        ctx.stroke();
         ctx.closePath();
         ctx.fill();
 
@@ -20,19 +21,29 @@ define(['constants'], function (CONST) {
 
     var Renderer = (function () {
         function Renderer(context) {
-            this.ctx = context;
+            this.contexts = [];
         }
 
         Renderer.prototype = {
-            renderMap: function () {
-            this.ctx.clearRect(0, 0, this.ctx.canvas.width, this.ctx.canvas.height);
-                for (var i = 0; i < CONST.LEVEL_ROWS; i++) {
-                    for (var j = 0; j < CONST.LEVEL_COLS; j++) {
-                        if (CONST.LEVEL[i][j] === 1) {
-                            drawRect(this.ctx, j * CONST.TILE_SIZE, i * CONST.TILE_SIZE, CONST.TILE_SIZE, CONST.TILE_SIZE, 'black');
+            addContext: function (name, context) {
+              this.contexts[name] = context;
+            },
+            renderMap: function (contextName, mapMatrix) {
+                var rows = mapMatrix.length;
+                var cols = mapMatrix[0].length;
+                this.contexts[contextName].clearRect(0, 0, this.contexts[contextName].canvas.width, this.contexts[contextName].canvas.height);
+                for (var i = 0; i < rows; i++) {
+                    for (var j = 0; j < cols; j++) {
+                        if (mapMatrix[i][j] === 1) {
+                            drawRect(this.contexts[contextName], j * CONST.TILE_SIZE, i * CONST.TILE_SIZE, CONST.TILE_SIZE, CONST.TILE_SIZE, 'black');
+                        } else {
+                            drawRect(this.contexts[contextName], j * CONST.TILE_SIZE, i * CONST.TILE_SIZE, CONST.TILE_SIZE, CONST.TILE_SIZE, 'white');
                         }
                     }
                 }
+            },
+            renderEntity: function (entity) {
+                drawCircle(this.contexts[entity.layer], entity.x, entity.y, 5, entity.color);
             }
         };
 

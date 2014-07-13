@@ -5,7 +5,8 @@
             'main': 'main',
             'constants': 'constants',
             'layer': 'layer',
-            'renderer': 'renderer'
+            'renderer': 'renderer',
+            'engine': 'engine'
         }
     });
 

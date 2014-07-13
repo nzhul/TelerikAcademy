@@ -2,6 +2,33 @@ canvas#map {
     border: 1px solid #000;
 }
 
+.gameLayer {
+    border: 1px solid red;
+    position: absolute;
+    color: white;
+    display: none;
+}
+
+#mainMenu {
+    background: rgba(255,255,255,.9);
+    color: black;
+}
+#mainMenu h3 {
+    float: left;
+}
+#mainMenu #main-menu-navigation {
+    float: right;
+    border: 1px solid #000;
+    width: 40%;
+    height: 100%;
+}
+#mainMenu #main-menu-navigation ul {
+    list-style: none;
+}
+#mainMenu #main-menu-navigation li {
+    margin: 20px 0 0 -15px;
+}
+
 /*canvas {*/
     /*cursor: url('../img/arrow.png'), auto;*/
 /*}*/

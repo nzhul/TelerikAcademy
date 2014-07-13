@@ -5,9 +5,7 @@ define([], function () {
           w: this.TILE_SIZE,
           h: this.TILE_SIZE
         },
-        TILE_SIZE: 30,
-        LEVEL_ROWS: 18,
-        LEVEL_COLS: 22,
+        TILE_SIZE: 20,
         PLAYER_STARTING_ROW: 15,
         PLAYER_STARTING_COL: 19,
         LEVEL: [
@@ -35,16 +33,3 @@ define([], function () {
 
     // It is possible to use return Object.freeze({});
 });
-
-
-//
-//
-//    // Map
-//var mapLayer_WIDTH = 800,
-//    mapLayer_HEIGHT = 500,
-//    /* Player */
-//    player_SIZE = {
-//        w: 20,
-//        h: 20
-//    },
-//    player_COLOR = 'yellowgreen';

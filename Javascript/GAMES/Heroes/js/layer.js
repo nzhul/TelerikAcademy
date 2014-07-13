@@ -3,7 +3,8 @@ define([], function () {
        function Layer(parentSelector, options) {
            this.width = options.width;
            this.height = options.height;
-           this.id = options.id || 'unknown'
+           this.id = options.id || 'unknown';
+           this.class = options.class || 'unknownClass';
            this.parent = document.querySelector(parentSelector);
        }
 
@@ -12,6 +13,7 @@ define([], function () {
                var canvas = document.createElement('canvas');
                canvas.width = this.width;
                canvas.height = this.height;
+               canvas.className = this.class;
                canvas.id = this.id;
                this.parent.appendChild(canvas);
                this.canvas = canvas;
