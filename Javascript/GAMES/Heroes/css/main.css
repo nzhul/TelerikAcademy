@@ -29,6 +29,6 @@ canvas#map {
     margin: 20px 0 0 -15px;
 }
 
-/*canvas {*/
-    /*cursor: url('../img/arrow.png'), auto;*/
-/*}*/
+canvas {
+    cursor: url('../img/arrow.png'), auto;
+}

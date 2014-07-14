@@ -11,7 +11,7 @@ define(['constants', 'gameObject'], function (CONST, gameObject) {
         ctx.beginPath();
         ctx.rect(x, y, w, h);
         ctx.fillStyle = color;
-        ctx.stroke();
+        //ctx.stroke();
         ctx.closePath();
         ctx.fill();
 
@@ -66,8 +66,8 @@ define(['constants', 'gameObject'], function (CONST, gameObject) {
             clearLayer: function (layer) {
                 layer.clearRect(0, 0, layer.canvas.width, layer.canvas.height);
             },
-            renderMapCell: function (cell) {
-                drawRect(this.contexts[cell.layer], cell.x, cell.y, CONST.TILE_SIZE, CONST.TILE_SIZE, 'red');
+            renderMapCell: function (cell, color) {
+                drawRect(this.contexts[cell.layer], cell.x, cell.y, CONST.TILE_SIZE, CONST.TILE_SIZE, color);
                 //drawCircle(this.contexts[entity.layer], entity.x, entity.y, 5, entity.color);
             }
         };

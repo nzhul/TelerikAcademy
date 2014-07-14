@@ -5,7 +5,7 @@ define([], function () {
           w: this.TILE_SIZE,
           h: this.TILE_SIZE
         },
-        TILE_SIZE: 20,
+        TILE_SIZE: 30,
         PLAYER_STARTING_ROW: 15,
         PLAYER_STARTING_COL: 19,
         LEVEL: [
