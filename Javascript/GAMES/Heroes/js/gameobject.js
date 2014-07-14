@@ -13,8 +13,8 @@ define(['constants'], function (CONST) {
             getTilePosition: function () {
                 return {
                     // TODO: probably not working
-                    row: this.y / CONST.TILE_SIZE,
-                    col: this.x / CONST.TILE_SIZE
+                    row: Math.floor(this.y / CONST.TILE_SIZE),
+                    col: Math.floor(this.x / CONST.TILE_SIZE)
                 }
             }
         };
@@ -38,11 +38,50 @@ define(['constants'], function (CONST) {
         return Hero;
     }());
 
+    var Rock = (function () {
+        function Rock(options) {
+            GameObject.call(this, options);
+            this.imageUrl = options.imageUrl || 'img/error.jpg';
+        }
+
+        //Hero.prototype = new GameObject({}); // This works too
+        Rock.prototype = Object.create(GameObject.prototype);
+        Rock.prototype.constructor = Rock;
+        Rock.prototype = {
+
+        };
+
+        return Rock;
+    }());
+
+    var WalkableCell = (function () {
+        function WalkableCell(options) {
+            GameObject.call(this, options);
+            this.imageUrl = options.imageUrl || 'img/error.jpg';
+        }
+
+        //Hero.prototype = new GameObject({}); // This works too
+        WalkableCell.prototype = Object.create(GameObject.prototype);
+        WalkableCell.prototype.constructor = WalkableCell;
+        WalkableCell.prototype = {
+
+        };
+
+        return WalkableCell;
+    }());
+
 
 
     return {
         getHero: function (options) {
             return new Hero(options);
-        }
+        },
+        getRock: function (options) {
+            return new Rock(options);
+        },
+        getWalkableCell: function (options) {
+            return new WalkableCell(options);
+        },
+        WalkableCell: WalkableCell
     }
 });

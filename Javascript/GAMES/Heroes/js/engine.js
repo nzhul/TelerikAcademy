@@ -1,29 +1,23 @@
 define([], function () {
-    window.requestAnimationFrame = (function (callback) {
-        return window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame ||
-            window.oRequestAnimationFrame || window.msRequestAnimationFrame ||
-            function (callback) {
-                window.setTimeout(callback, 1000 / 60);
-            };
-    }());
-
     var Engine = (function () {
-        function Engine(layer, objects) {
-            this.layer = layer;
+        function Engine(context, renderer, objects) {
+            this.layer = context;
             this.objects = objects || [];
-        }
+            var self = this;
+            this.start = function engine() {
 
-        Engine.prototype = {
-            start: function () {
-                // THIS IS NOT WORKING - FIX IT
-                this.objects.hero.x++;
-                var engine = this;
+                // Update Stuff
+                //console.log(self.objects.hero.y--);
+
+                // Redraw Stuff
+                renderer.clearLayer(context);
+                renderer.renderEntity(self.objects.hero);
+
                 requestAnimationFrame(function () {
-                    engine(this.layer, this.objects);
-                    console.log('loop');
+                    engine(self.layer, self.objects);
                 });
             }
-        };
+        }
 
         return Engine;
     }());

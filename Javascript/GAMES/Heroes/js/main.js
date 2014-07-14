@@ -1,4 +1,4 @@
-define(['gameObject', 'layer', 'constants', 'renderer', 'engine'], function (gameObject, Layer, CONST, renderer, engine) {
+define(['gameObject', 'layer', 'constants', 'renderer', 'engine', 'mouse'], function (gameObject, Layer, CONST, renderer, engine, Mouse) {
     var run = function () {
         var gameWidth = CONST.TILE_SIZE * CONST.LEVEL[0].length; // TileSize * Cols
         var gameHeight = CONST.TILE_SIZE * CONST.LEVEL.length; // TileSIze * ROws
@@ -48,14 +48,15 @@ define(['gameObject', 'layer', 'constants', 'renderer', 'engine'], function (gam
         Renderer.addContext('heroContext', heroContext);
 
 
-        Renderer.renderMap('mapContext', CONST.LEVEL);
+        var renderedMap = Renderer.renderMap('mapContext', CONST.LEVEL);
         Renderer.renderEntity(activeHero);
 
-        var Engine = new engine(heroLayer, {hero: activeHero});
+        var mouse = new Mouse();
+        mouse.initMapEvents(renderedMap, Renderer);
+
+        var Engine = new engine(heroContext, Renderer, {hero: activeHero});
         Engine.start();
 
-
-        console.log(Renderer)
 
 
         mapLayer.canvas.style.display = 'block';

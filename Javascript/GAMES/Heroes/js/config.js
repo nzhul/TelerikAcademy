@@ -6,7 +6,8 @@
             'constants': 'constants',
             'layer': 'layer',
             'renderer': 'renderer',
-            'engine': 'engine'
+            'engine': 'engine',
+            'mouse': 'mouse'
         }
     });
 
