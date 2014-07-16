@@ -7,7 +7,26 @@
         }
     });
 
-    require(['game', 'jquery'], function (game, $) {
-        var TheGame = new game().init();
+    require(['game', 'levels'], function (game, levels) {
+
+        var TheGame = game.getInstance().init();
+
+        // Initialize objects
+        var Levels = new levels();
+        Levels.addLevel({
+            foreground: 'desert-foreground',
+            background: 'clouds-background',
+            entities: []
+        }).addLevel({
+            foreground: 'desert-foreground',
+            background: 'clouds-background',
+            entities: []
+        }).addLevel({
+            foreground: 'desert-foreground',
+            background: 'clouds-background',
+            entities: []
+        }).init();
+
+
     })
 }());

@@ -1,5 +1,6 @@
-define(['jquery', 'levels'], function ($, levels) {
+define(['jquery'], function ($) {
     var Game = (function () {
+        var instance;
         function Game() {
             this.canvas;
             this.context;
@@ -13,22 +14,6 @@ define(['jquery', 'levels'], function ($, levels) {
         Game.prototype = {
             init: function () {
                 var selfGame = this;
-                // Initialize objects
-                var Levels = new levels(selfGame);
-                Levels.addLevel({
-                    foreground: 'desert-foreground',
-                    background: 'clouds-background',
-                    entities: []
-                }).addLevel({
-                    foreground: 'desert-foreground',
-                    background: 'clouds-background',
-                    entities: []
-                }).addLevel({
-                    foreground: 'desert-foreground',
-                    background: 'clouds-background',
-                    entities: []
-                }).init();
-
 
                 // Hide all game layers and display the main Menu
                 this.allGameLayers = $('.gameLayer').hide();
@@ -49,7 +34,14 @@ define(['jquery', 'levels'], function ($, levels) {
                 this.levelSelectionLayer.fadeIn();
             }
         };
-        return Game;
+        return {
+            getInstance: function () {
+                if ( !instance ) {
+                    instance = new Game();
+                }
+                return instance;
+            }
+        };
     }());
     return Game;
 });

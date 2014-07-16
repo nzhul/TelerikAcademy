@@ -1,7 +1,6 @@
-define([], function () {
+define(['game'], function (game) {
    var Levels = (function () {
-       function Levels(game) {
-           this.game = game;
+       function Levels() {
            this.data = [];
        }
 
@@ -25,7 +24,7 @@ define([], function () {
                return this;
            },
            load: function (number) {
-               // TODO: WORK HERE
+
                console.log('Level ' + number + ' loaded !')
            },
            addLevel: function (levelData) {
