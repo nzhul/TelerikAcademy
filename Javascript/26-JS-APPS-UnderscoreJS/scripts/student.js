@@ -1,8 +1,10 @@
 define([], function () {
     var Student = (function () {
         function Student(options) {
-            this.name = options.name;
+            this.firstName = options.firstName;
+            this.lastName = options.lastName;
             this.age = options.age;
+            this.marks = options.marks;
         }
         return Student
     }());
