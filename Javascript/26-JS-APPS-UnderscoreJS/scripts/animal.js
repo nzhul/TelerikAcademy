@@ -1,12 +1,10 @@
 define([], function () {
     var Animal = (function () {
         function Animal(options) {
-            this.firstName = options.firstName;
+            this.name = options.name;
+            this.species = options.species; // The word Species is used for both single and plural form. You can google it :)
+            this.legsCount = options.legsCount;
         }
-
-        Animal.prototype = {
-
-        };
 
         return Animal
     }());
