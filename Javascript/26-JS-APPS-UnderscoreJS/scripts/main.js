@@ -42,8 +42,50 @@
             return sorted;
         }
 
+        function filterSpecificAgeRange(students) {
+            var filtered = _.map(_.filter(students, function (student) {
+                    if(student.age >= 18 && student.age <= 24){
+                        return true;
+                    } else {
+                        return false;
+                    }
+                }),
+                function(student) {
+                    return { firstName: student.firstName, lastName: student.lastName, age: student.age };
+                }
+            );
+            return filtered;
+        }
+
+        function findBestStudent(students) {
+            var bestStudent = _.max(students, function(student){ return student.getAverageScore(); });
+            return bestStudent;
+        }
+
+        console.log(' ');
+        console.log('--------- Initial array of students -----------');
+        console.log(' ');
         console.log(allStudents);
-        console.log('--------------------')
-        console.log(filterAndSortFirstNameBeforeLastName(allStudents))
+        console.log(' ');
+        console.log('--------- Task 1: Return all students whose first name is before its last name alphabetically. Descending order -----------');
+        console.log(' ');
+        console.log(filterAndSortFirstNameBeforeLastName(allStudents));
+        console.log(' ');
+        console.log('--------- Task 2: Finds the first name and last name of all students with age between 18 and 24 -----------');
+        console.log(' ');
+        console.log(filterSpecificAgeRange(allStudents));
+        console.log(' ');
+        console.log('--------- Task 3: Finds the student with highest marks -----------');
+        console.log(' ');
+        var bestStudent = findBestStudent(allStudents);
+        console.log('The best student is: ' + bestStudent.firstName
+                    + ' ' + bestStudent.lastName +' with average grade: '
+                    + bestStudent.getAverageScore());
+        console.log(bestStudent);
+        console.log(' ');
+        console.log('--------- Task 4: by a given array of animals, groups them by species and sorts them by number of legs -----------');
+        console.log(' ');
+
+
     })
 }());
