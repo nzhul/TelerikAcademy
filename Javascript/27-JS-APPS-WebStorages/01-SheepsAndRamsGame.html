@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>01 - Sheeps and Rams Game</title>
+    <script src="scripts/libs/require.js" data-main="scripts/main"></script>
+    <link rel="stylesheet" href="style/style.css"/>
+    <link rel="stylesheet" href="style/table.css"/>
+</head>
+<body>
+<div id="wrapper">
+    <img src="img/sheepimg.jpg" alt="sheep"/>
+    <div id="innerWrapper">
+        <h1>Sheeps VS Rams</h1>
+        <div id="gameRoot">
+            <label for="userInput">Enter number<br/><span>(4 digits) - E.g.: 1234</span></label><br/>
+            <input id="userInput" type="text" autofocus><br/>
+            <button id="guessBtn">Guess</button>
+            <p id="warningBox" class="messageBox">Invalid Input<br/> <span>Please enter 4 digit number!</span></p>
+            <p id="progressBox" class="messageBox">RAMS: <span id="ramCountUI">2</span>  SHEEPS: <span id="sheepCountUI">1</span></p>
+        </div>
+        <div id="winBox" class="messageBox">YOU WIN<br/> <span>in <span id="turnsCountUI">4</span> turns!</span><br/>
+            <p id="usernameWarning" class="messageBox">Invalid username<br/> <span>Invalid username: must be between 2 and 15 characters long!</span></p>
+            <input id="username" type="text" placeholder="Enter Your Name"><br/><button id="submitBtn">Submit</button>
+            <table id="scoreBoard">
+                <thead>
+                    <tr>
+                        <th>Username</th>
+                        <th>Turns</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+    </div>
+    <img src="img/ramimg.jpg" alt="sheep"/>
+</div>
+</body>
+</html>

@@ -1,0 +1,90 @@
+/*Standard CSS template*/
+#wrapper {
+    margin: 30px auto;
+    width: 805px;
+    text-align: center;
+    color: rgb(66, 184, 221);
+}
+
+#innerWrapper, img {float:left;}
+img {margin-top: 50px}
+img:first-child {margin-top: 65px;}
+#innerWrapper {
+    width: 400px;
+    min-height: 320px;
+    border: 1px solid rgb(66, 184, 221);
+    text-align: center;
+    color: rgb(66, 184, 221);
+    margin: 0 20px 0 20px;
+}
+
+h1 {
+    font: 30px Arial;
+    text-transform: uppercase;
+    width: 100%;
+    border-bottom: 1px solid rgb(66, 184, 221);
+    padding-bottom: 20px;
+}
+
+input {
+    width: 150px;
+    height: 30px;
+    margin: 10px 0 0 0px;
+    border: 1px solid rgb(66, 184, 221);
+    border-radius: 4px;
+    padding: 0 0 0 10px;
+    outline: none;
+}
+
+label {
+    text-transform: uppercase;
+}
+label span, p span {
+    font-size: 12px;
+    color: #c7c7c7;
+}
+
+button {
+    color: white;
+    border-radius: 4px;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+    background: rgb(66, 184, 221); /* this is a light blue */
+    border: none;
+    padding: 10px 20px;
+    margin: 20px 0 0 0px;
+    cursor: pointer;
+    outline: none;
+}
+button:hover {
+    background: #62cbec;
+}
+button:active {
+    background: #289bbf;
+}
+
+.messageBox {
+    display: none;
+}
+
+#warningBox, #usernameWarning {
+    font-weight: bold;
+    color: orangered;
+}
+
+#winBox {
+    font-weight: bold;
+    color: forestgreen;
+}
+
+#turnsCountUI {
+    font-weight: bold;
+    font-size: 18px;
+    color: orangered;
+}
+
+#progressBox span {font-size: 18px; color: darkslategray;}
+#progressBox {font-weight: bold;}
+
+table {
+    margin: 0 auto;
+}
