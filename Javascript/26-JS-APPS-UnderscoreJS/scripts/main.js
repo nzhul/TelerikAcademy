@@ -13,7 +13,6 @@
 
         // STUDENTS  ------------------
 
-        // Helpers
         var Chance = new Chance();
         function generateRandomMarks() {
             var allMarks = [];
@@ -72,17 +71,17 @@
         console.log(allStudents);
 
         console.log(' ');
-        console.log('--------- Task 1: Return all students whose first name is before its last name alphabetically. Descending order -----------');
+        console.log('--------- TASK 1: Return all students whose first name is before its last name alphabetically. Descending order -----------');
         console.log(' ');
         console.log(filterAndSortFirstNameBeforeLastName(allStudents));
 
         console.log(' ');
-        console.log('--------- Task 2: Finds the first name and last name of all students with age between 18 and 24 -----------');
+        console.log('--------- TASK 2: Finds the first name and last name of all students with age between 18 and 24 -----------');
         console.log(' ');
         console.log(filterSpecificAgeRange(allStudents));
 
         console.log(' ');
-        console.log('--------- Task 3: Finds the student with highest marks -----------');
+        console.log('--------- TASK 3: Finds the student with highest marks -----------');
         console.log(' ');
         var bestStudent = findBestStudent(allStudents);
         console.log('The best student is: ' + bestStudent.firstName + ' ' + bestStudent.lastName +' with average grade: ' + bestStudent.getAverageScore());
@@ -123,12 +122,12 @@
         console.log(allAnimals);
 
         console.log(' ');
-        console.log('--------- Task 4: by a given array of animals, groups them by species and sorts them by number of legs -----------');
+        console.log('--------- TASK 4: by a given array of animals, groups them by species and sorts them by number of legs -----------');
         console.log(' ');
         console.log(groupByAndSort(allAnimals));
 
         console.log(' ');
-        console.log('--------- Task 5: By a given array of animals, find the total number of legs -----------');
+        console.log('--------- TASK 5: By a given array of animals, find the total number of legs -----------');
         console.log(' ');
         console.log('The total legs count of all animals is: ' + totalLegsCount(allAnimals));
 
@@ -147,10 +146,57 @@
         }
 
         function findMostPopularAuthor(books) {
-            // TODO: CODE HERE NOT RDY
+            var mostPopularAuthor = _.max(_.groupBy(books, 'author'), function (book) {
+                return book.length;
+            });
+            return mostPopularAuthor;
         }
 
+        console.log(' ');
+        console.log('--------- Initial array of BOOKS -----------');
+        console.log(' ');
         console.log(allBooks);
+
+        console.log(' ');
+        console.log('--------- TASK 6: By a given collection of books, find the most popular author (the author with the highest number of books) -----------');
+        console.log(' ');
+        var mostPopularAuthorBooks = findMostPopularAuthor(allBooks);
+        var mostPopularAuthor = mostPopularAuthorBooks[0].author;
+        console.log('The most popular author is: ' + mostPopularAuthor);
+        console.log(mostPopularAuthorBooks)
+
+
+        // PEOPLE
+        // We will create new students array because we need repeating firstName and lastName
+        var someStudents = [];
+        someStudents.push(new Student({firstName: 'Petar', lastName: 'Petrov', age: Chance.age({type: 'adult'}),marks: generateRandomMarks()}));
+        someStudents.push(new Student({firstName: 'Ivan', lastName: 'Petrov', age: Chance.age({type: 'adult'}),marks: generateRandomMarks()}));
+        someStudents.push(new Student({firstName: 'Petar', lastName: 'Trendafilov', age: Chance.age({type: 'adult'}),marks: generateRandomMarks()}));
+        someStudents.push(new Student({firstName: 'Petar', lastName: 'Gospodinov', age: Chance.age({type: 'adult'}),marks: generateRandomMarks()}));
+
+        function findFirstNameMode(people) {
+            var mostCommonFirstName = _.max(_.groupBy(people, 'firstName'), function (person) {
+                return person.length;
+            });
+            return mostCommonFirstName[0].firstName;
+        }
+        function findLastNameMode(people) {
+            var mostCommonLastName = _.max(_.groupBy(people, 'lastName'), function (person) {
+                return person.length;
+            });
+            return mostCommonLastName[0].lastName;
+        }
+
+        console.log(' ');
+        console.log('--------- Initial array of PEOPLE -----------');
+        console.log(' ');
+        console.log(someStudents);
+
+        console.log(' ');
+        console.log('--------- TASK 7: By an array of people find the most common first and last name -----------');
+        console.log(' ');
+        console.log('Most common firstName: ' + findFirstNameMode(someStudents));
+        console.log('Most common lastName: ' + findLastNameMode(someStudents));
 
 
 
