@@ -9,8 +9,6 @@
 
     require(['game', 'levels'], function (game, levels) {
 
-        var TheGame = game.getInstance().init();
-
         // Initialize objects
         var Levels = new levels();
         Levels.addLevel({
@@ -27,6 +25,7 @@
             entities: []
         }).init();
 
+        var TheGame = game.getInstance().init();
 
     })
 }());
