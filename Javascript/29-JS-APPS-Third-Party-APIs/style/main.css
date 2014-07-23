@@ -1,0 +1,12 @@
+#mapRoot {
+    width: 500px;
+    height: 400px;
+    border: 1px solid #000;
+    float: left;
+}
+#navigation {
+    float: left;
+    border: 1px solid #000;
+    width: 300px;
+    height: 400px;
+}
