@@ -4,21 +4,23 @@ define(['async!https://maps.googleapis.com/maps/api/js?key=AIzaSyABndy6yDZMbQOxz
         var cityListRoot = document.getElementById('cityList');
         var newLiElement = document.createElement('li');
 
-        newLiElement.innerHTML = city.results[0].formatted_address
+        newLiElement.innerHTML = city.results[0].formatted_address + ' <br/>' +
+            '<span class="details">Latitude: ' + city.results[0].geometry.location.lat + ' | Longitude: ' + city.results[0].geometry.location.lng + '<span>';
         newLiElement.addEventListener('click', function () {
             // TODO: Do more stuff here
             console.log('city clicked');
+            var pos = new google.maps.LatLng(x, y);
+            this.map
         });
 
         cityListRoot.appendChild(newLiElement);
     }
 
     function initCityInput() {
-        var cityInputValue = document.getElementById('cityInput').value;
         var addCityBtn = document.getElementById('addCityBtn');
         var selfEngine = this;
         addCityBtn.addEventListener('click', function () {
-
+            var cityInputValue = document.getElementById('cityInput').value;
             selfEngine.addCity(cityInputValue);
             console.log('Btn clicked');
         });

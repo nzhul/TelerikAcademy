@@ -8,5 +8,30 @@
     float: left;
     border: 1px solid #000;
     width: 300px;
-    height: 400px;
+    height: 380px;
+    text-align: center;
+    padding: 20px 0 0 0;
+    overflow: auto;
 }
+#navigation ul li {
+    list-style-type: none;
+    margin: 0 0 0 -40px;
+    padding: 10px 20px;
+}
+
+#navigation ul li:hover {
+    background: lightsteelblue;
+    cursor: pointer;
+}
+
+#navigation ul li .details {
+    font-size: 12px;
+    color: darkslategray;
+}
+
+.navBtn {
+    width: 45%;
+    height: 50px;
+    cursor: pointer;
+}
+
