@@ -3,14 +3,18 @@ define(['async!https://maps.googleapis.com/maps/api/js?key=AIzaSyABndy6yDZMbQOxz
     function updateUI(city) {
         var cityListRoot = document.getElementById('cityList');
         var newLiElement = document.createElement('li');
+        var selfEngine = this;
+
+        var lat = city.results[0].geometry.location.lat;
+        var lng = city.results[0].geometry.location.lng;
 
         newLiElement.innerHTML = city.results[0].formatted_address + ' <br/>' +
-            '<span class="details">Latitude: ' + city.results[0].geometry.location.lat + ' | Longitude: ' + city.results[0].geometry.location.lng + '<span>';
+            '<span class="details">Latitude: ' + lat + ' | Longitude: ' + lng + '<span>';
         newLiElement.addEventListener('click', function () {
             // TODO: Do more stuff here
             console.log('city clicked');
-            var pos = new google.maps.LatLng(x, y);
-            this.map
+            var pos = new google.maps.LatLng(lat, lng);
+            selfEngine.map.panTo(pos);
         });
 
         cityListRoot.appendChild(newLiElement);
@@ -48,7 +52,7 @@ define(['async!https://maps.googleapis.com/maps/api/js?key=AIzaSyABndy6yDZMbQOxz
                 $.getJSON( "https://maps.googleapis.com/maps/api/geocode/json?address="+city, function( data ) {
                     if(data.status === "OK"){
                         selfEngine.cities.push(data);
-                        updateUI(data);
+                        updateUI.call(selfEngine,data);
                         console.log(data);
                     }
                 });
