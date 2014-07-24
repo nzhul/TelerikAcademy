@@ -16,44 +16,41 @@ define(['async!https://maps.googleapis.com/maps/api/js?key=AIzaSyABndy6yDZMbQOxz
             var pos = new google.maps.LatLng(lat, lng);
             selfEngine.map.panTo(pos);
             var content = 'Error: The Geolocation service failed.';
-            var options = {
-                map: selfEngine.map,
-                position: pos,
-                content: content
-            };
+            $.ajax({
+                type: "GET",
+                url: "http://en.wikipedia.org/w/api.php?action=parse&format=json&prop=text&section=0&page=Plovdiv&callback=?",
+                contentType: "application/json; charset=utf-8",
+                async: false,
+                dataType: "json",
+                success: function (data, textStatus, jqXHR) {
 
-            var infowindow = new google.maps.InfoWindow(options);
-            selfEngine.map.setCenter(options.position);
+                    var markup = data.parse.text["*"];
+                    var blurb = $('<div></div>').html(markup);
 
+                    // remove links as they will not work
+                    blurb.find('a').each(function() { $(this).replaceWith($(this).html()); });
+
+                    // remove any references
+                    blurb.find('sup').remove();
+
+                    // remove cite error
+                    blurb.find('.mw-ext-cite-error').remove();
+                    content = $(blurb).find('p');
+
+                    var options = {
+                        map: selfEngine.map,
+                        position: pos,
+                        content: content[1]
+                    };
+
+                    var infowindow = new google.maps.InfoWindow(options);
+                    selfEngine.map.setCenter(options.position);
+
+                },
+                error: function (errorMessage) {
+                }
+            });
             // https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=42.6977082,23.3218675&radius=500&key=AIzaSyABndy6yDZMbQOxz1QibrPstN6MV3mTXuk
-//            $(document).ready(function(){
-//
-//                $.ajax({
-//                    type: "GET",
-//                    url: "http://en.wikipedia.org/w/api.php?action=parse&format=json&prop=text&section=0&page=Jimi_Hendrix&callback=?",
-//                    contentType: "application/json; charset=utf-8",
-//                    async: false,
-//                    dataType: "json",
-//                    success: function (data, textStatus, jqXHR) {
-//
-//                        var markup = data.parse.text["*"];
-//                        var blurb = $('<div></div>').html(markup);
-//
-//                        // remove links as they will not work
-//                        blurb.find('a').each(function() { $(this).replaceWith($(this).html()); });
-//
-//                        // remove any references
-//                        blurb.find('sup').remove();
-//
-//                        // remove cite error
-//                        blurb.find('.mw-ext-cite-error').remove();
-//                        $('#article').html($(blurb).find('p'));
-//
-//                    },
-//                    error: function (errorMessage) {
-//                    }
-//                });
-//            });
         });
 
         cityListRoot.appendChild(newLiElement);
