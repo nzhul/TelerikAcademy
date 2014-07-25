@@ -18,10 +18,13 @@ define(['async!https://maps.googleapis.com/maps/api/js?key=AIzaSyABndy6yDZMbQOxz
             var content = 'Error: The Geolocation service failed.';
             $.ajax({
                 type: "GET",
-                url: "http://en.wikipedia.org/w/api.php?action=parse&format=json&prop=text&section=0&page=Plovdiv&callback=?",
+                url: "http://en.wikipedia.org/w/api.php?action=parse&format=json&prop=text&section=0&page="+city.results[0].address_components[0].short_name+"&callback=?",
                 contentType: "application/json; charset=utf-8",
-                async: false,
+                async: true,
                 dataType: "json",
+                beforeSend: function () {
+                    $(newLiElement).append('<br/><img id="loader" src="img/ajax-loader.gif"/>');
+                },
                 success: function (data, textStatus, jqXHR) {
 
                     var markup = data.parse.text["*"];
@@ -40,11 +43,12 @@ define(['async!https://maps.googleapis.com/maps/api/js?key=AIzaSyABndy6yDZMbQOxz
                     var options = {
                         map: selfEngine.map,
                         position: pos,
-                        content: content[1]
+                        content: content[0]
                     };
 
                     var infowindow = new google.maps.InfoWindow(options);
                     selfEngine.map.setCenter(options.position);
+                    $('#loader').remove();
 
                 },
                 error: function (errorMessage) {
