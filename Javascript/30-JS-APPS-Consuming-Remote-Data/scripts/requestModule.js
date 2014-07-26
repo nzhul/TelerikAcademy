@@ -1,4 +1,4 @@
-define(['jquery','q'], function () {
+define(['q'], function (Q) {
     var module = (function () {
 
         getHttpRequest = (function () {
@@ -39,29 +39,54 @@ define(['jquery','q'], function () {
         })();
 
         makeRequest = function (options) {
-                var deferrer = Q.defer();
+            var deferrer = Q.defer();
 
-                var httpRequest = getHttpRequest();
-                options = options || {};
-                var requestUrl = options.url;
-                var type = options.type || 'GET';
-                var contentType = options.contentType || '';
-                var accept = options.accept || '';
-                var data = options.data || null;
-                
-                httpRequest.onreadystatechange = function () {
-                    if (httpRequest.readyState === 4) {
-                        switch(Math.floor(httpRequest.status / 100)){
-                            case 2:
-                                deferrer.resolve(httpRequest.responseText);
-                                break;
-                            default:
-                                deferrer.reject(httpRequest.responseText);
-                                break;
-                        }
+            var httpRequest = getHttpRequest();
+            options = options || {};
+            var requestUrl = options.url;
+            var type = options.type || 'GET';
+            var contentType = options.contentType || '';
+            var accept = options.accept || '';
+            var data = options.data || null;
+
+            httpRequest.onreadystatechange = function () {
+                if (httpRequest.readyState === 4) {
+                    switch (Math.floor(httpRequest.status / 100)) {
+                        case 2:
+                            deferrer.resolve(httpRequest.responseText);
+                            break;
+                        default:
+                            deferrer.reject(httpRequest.responseText);
+                            break;
                     }
                 }
             };
+
+            httpRequest.open(type, requestUrl, true);
+            httpRequest.setRequestHeader('Content-Type', contentType);
+            httpRequest.setRequestHeader('Accept', accept);
+            httpRequest.send(data);
+            return deferrer.promise;
+        };
+
+        getJSON = function (url, headers) {
+            return makeRequest({
+                url: url,
+                type: 'GET',
+                contentType: headers.contentType,
+                accept: headers.accept
+            });
+        };
+        
+        postJSON = function (url, data, headers) {
+            return makeRequest({
+                url: url,
+                type: 'POST',
+                contentType: headers.contentType,
+                accept: headers.accept,
+                data: JSON.stringify(data)
+            });
+        };
         return {
             getJSON: getJSON,
             postJSON: postJSON
