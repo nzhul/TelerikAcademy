@@ -24,6 +24,7 @@ app.configure('development', function () {
 
 app.all('*', function (req, res, next) {
   res.header('Access-Control-Allow-Origin', '*');
+  res.header('Access-Controls-Allow-Methods','GET,POST,DELETE');
   res.header('Access-Control-Allow-Headers', 'X-Requested-With,Content-type');
   next();
 });

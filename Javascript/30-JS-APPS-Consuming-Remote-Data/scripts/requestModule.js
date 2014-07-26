@@ -87,9 +87,17 @@ define(['q'], function (Q) {
                 data: JSON.stringify(data)
             });
         };
+        
+        deleteStudent = function (url) {
+            return makeRequest({
+                url: url,
+                type: 'DELETE'
+        });
+        }
         return {
             getJSON: getJSON,
-            postJSON: postJSON
+            postJSON: postJSON,
+            deleteStudent: deleteStudent
         };
     }());
     return module;
