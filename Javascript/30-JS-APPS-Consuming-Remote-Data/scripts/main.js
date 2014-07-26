@@ -34,6 +34,8 @@
                 requestModule.postJSON(url, simpleStudent, headerOptions)
                     .then(function () {
                         notificationArea.innerHTML = '<span style="color: green">Random Student Successfully added to the server database!</span>';
+                    }, function () {
+                        notificationArea.innerHTML = 'Error: Please start the nodeJS Server';
                     });
             })
         }
@@ -63,6 +65,8 @@
                     })
                     .then(function () {
                         notificationArea.innerHTML = '';
+                    }, function () {
+                        notificationArea.innerHTML = 'Error: Please start the nodeJS Server';
                     })
             });
         }
