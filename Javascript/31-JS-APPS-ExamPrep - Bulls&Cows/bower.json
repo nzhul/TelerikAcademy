@@ -1,0 +1,21 @@
+{
+  "name": "Exam Prep - nzhul",
+  "version": "0.0.1",
+  "homepage": "https://github.com/nzhul/TelerikAcademy",
+  "authors": [
+    "Dobromir Ivanov <dobromirivanov1@gmail.com>"
+  ],
+  "description": "Exam prep",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~2.1.1",
+    "requirejs": "~2.1.14"
+  }
+}
