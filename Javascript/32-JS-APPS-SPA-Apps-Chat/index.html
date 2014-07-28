@@ -2,10 +2,24 @@
 <html>
 <head lang="en">
     <meta charset="UTF-8">
-    <title></title>
+    <title>Simple Chat</title>
     <script src="scripts/libs/require.js" data-main="scripts/main"></script>
+    <link rel="stylesheet" href="style/main.css"/>
 </head>
 <body>
-
+<div id="wrapper">
+    <form id="loginForm" class="appLayer">
+        <label for="tb-login-username">username: </label>
+        <input type="text" id="tb-login-username" autofocus/>
+        <button id="btn-login">Login</button>
+    </form>
+    <div id="chatBox" class="appLayer">
+        <a href="index.html" style="float:left; margin: 7px 0 0 5px">Refresh the page</a>
+        <p id="welcomeBox"><span>Hello, <span id="usernameUi">nzhul</span> </span><button id="btn-logout">Logout</button></p>
+        <ul id="messagesList">
+        </ul>
+        <input type="text" id="tb-chat-submit" autofocus/><button id="btn-message-submit">Send</button>
+    </div>
+</div>
 </body>
 </html>

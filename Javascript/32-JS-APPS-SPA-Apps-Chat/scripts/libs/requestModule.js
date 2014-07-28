@@ -6,7 +6,7 @@ define(['jquery'], function () {
                 url: url,
                 type: 'GET',
                 contentType: 'application/json',
-                timeout: 5000,
+                timeout: 10000,
                 success: success,
                 error: error
             })

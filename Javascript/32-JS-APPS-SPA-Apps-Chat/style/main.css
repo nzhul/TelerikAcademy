@@ -1,0 +1,51 @@
+#wrapper {
+    display: block;
+    width: 500px;
+    height: 380px;
+    border: 1px solid black;
+    margin: 0 auto;
+}
+
+#welcomeBox {
+    border-bottom: 1px solid #000;
+    text-align: right;
+    margin: 0 0 0 0px;
+    padding: 5px;
+}
+
+#messagesList {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    height: 250px;
+}
+#messagesList li {
+    height: 20px;
+    border-bottom: 1px solid lightgray;
+    padding: 5px;
+    background: lightgoldenrodyellow;
+}
+#messagesList li:hover {
+    background: lightyellow;
+}
+#tb-chat-submit {
+    margin: 10px 5px 0 10px;
+    width: 385px;
+    height: 34px;
+    padding: 0 0 0 10px;
+}
+#btn-message-submit {
+    width: 76px;
+    height: 40px;
+}
+
+#loginForm {
+    text-align: center;
+    margin-top: 100px;
+}
+
+.appLayer {
+    display: none;
+}
