@@ -4,8 +4,31 @@
     <meta charset="UTF-8">
     <title></title>
     <script src="bower_components/requirejs/require.js" data-main="scripts/main"></script>
+    <link rel="stylesheet" href="style/main.css"/>
 </head>
 <body>
-<div id="wrapper"></div>
+<div id="wrapper">
+    <form id="loginForm" class="gameLayer">
+        <label for="tb-login-username">Username</label>
+        <input type="text" id="tb-login-username"><br/>
+        <label for="tb-login-password">Password</label>
+        <input type="text" id="tb-login-password"><br/>
+        <button id="btn-login">Login</button>
+    </form>
+    <div id="gameUI" class="gameLayer">
+        <span id="user-nickname"></span> <button id="btn-logout">Logout</button>
+        <hr/>
+        <div class="box">
+            <h2>Open</h2>
+            <div id="open-games-container"></div>
+        </div>
+        <div class="box">
+            <h2>Active</h2>
+            <div id="active-games-container">
+        </div>
+        </div>
+    </div>
+    <div style="clear:both;">&nbsp;</div>
+</div>
 </body>
 </html>

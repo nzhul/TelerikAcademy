@@ -1,0 +1,39 @@
+#wrapper {
+    display: block;
+    width: 500px;
+    border: 1px solid black;
+    margin: 0 auto;
+}
+.gameLayer{
+    display: none;
+}
+
+.box{
+    border: 1px solid #000;
+    width: 240px;
+    float: left;
+    margin: 0 0 0 5px;
+    min-height: 200px;
+}
+
+.box ul li {
+    width: 100%;
+    height: 40px;
+    border-bottom: 1px solid #000;
+    margin: 0 0 0 0px;
+    list-style-type: none;
+    text-align: center;
+    line-height: 40px;
+    cursor: pointer;
+}
+.box ul li:hover {
+    background: lightyellow;
+}
+.box ul li:first-child {
+    border-top: 1px solid #000;
+}
+.box ul {
+    padding: 0;
+    margin: 10px 0 0 0;
+}
+.box h2 {margin: 5px 0 0 10px}
