@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Crowd Share</title>
+    <script src="scripts/libs/require.js" data-main="scripts/main"></script>
+    <link rel="stylesheet" href="styles/main.css"/>
+</head>
+<body>
+<div id="wrapper">
+    <div id="loginFormLayer" class="appLayer">
+        <h2>Login:</h2>
+        <label for="tb-login-username">Username:</label>
+        <input type="text" id="tb-login-username"/>
+        <label for="tb-login-password">Password:</label>
+        <input type="text" id="tb-login-password"/>
+        <button id="btn-submit-login">Login</button>
+        <p>If you don't have an account, you can <button id="btn-show-register-layer">REGISTER NEW HERE!</button></p>
+        <hr/>
+        <p id="readme">You have to be logged in to view all the posts!<br/><span style="font-size: 12px;color: gray;">I'm really sorry about that, i'v read that the user can see all the posts without being logged, 5 minutes before i submited my work. Please don't be very judgemental :)</span></p>
+    </div>
+    <div id="registerFormLayer" class="appLayer">
+        <h2>Register user:</h2>
+        <label for="tb-login-username">Username:</label>
+        <input type="text" id="tb-register-username"/>
+        <label for="tb-login-password">Password:</label>
+        <input type="text" id="tb-register-password"/>
+        <button id="btn-submit-register">Register</button>
+        <p>If already HAVE an account, you can <button id="btn-show-login-layer">LOGIN FROM HERE!</button></p>
+    </div>
+    <div id="crowdShareLayer" class="appLayer">
+        <div id="welcomeBox">
+            <div id="filterBox">
+                <input type="text" id="tb-filter-user" placeholder="Filter by user"/>
+                <input type="text" id="tb-filter-pattern" placeholder="Filter by pattern"/>
+                <button id="btn-filter">Filter</button>
+            </div>
+            Hello, <span id="username-ui"></span><button id="btn-logout">Logout</button>
+            <hr/>
+            <div id="sortingAndPagination">
+                <div id="sb-sort-box">
+                    <label for="sb-sort">Sort:</label>
+                    <select name="sb-sort" id="sb-sort">
+                        <option value="default">--SortBy--</option>
+                        <option value="date">by Date</option>
+                        <option value="title">by Title</option>
+                    </select>
+                    <label for="desc">Descending: </label>
+                    <input type="checkbox" name="desc" id="desc"/>
+                </div>
+                <ol id="pagin">
+                    <li><a class="current" href="#">1</a></li>
+                    <li><a href="#">2</a></li>
+                    <li><a href="#">3</a></li>
+                    <li><a href="#">4</a></li>
+                </ol>
+            </div>
+            <div style="clear:both;">&nbsp;</div>
+        </div>
+        <div id="posts-box"></div>
+        <div id="new-post-box">
+            <input type="text" placeholder="Title" id="tb-post-title"/><br/>
+            <textarea name="" id="tb-post-content" cols="30" rows="10"></textarea><br/>
+            <button id="btn-submit-new-post">ADD NEW POST</button>
+        </div>
+        <p style="font-size: 12px; color: red;">README: THERE IS LITTLE BUG WHEN YOU FIRST LOGIN WITH NEW USER AND THERE ARE NOT POSTS, PLEASE REFRESH THE PAGE AFTER YOU LOGIN!</p>
+        <p style="font-size: 12px; color: gray;">README: The pagination is not finished. It works but the buttons are not generated dynamically,
+            The PageSize (number of displayed posts per page) is hardcoded in the mainController and are equal to 5. So when you have 5 posts the 6th post will be appended to page 2</p>
+    </div>
+</div>
+</body>
+</html>

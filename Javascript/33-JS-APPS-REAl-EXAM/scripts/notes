@@ -1,0 +1,6 @@
+username: nzhul1
+password: 12345
+
+Object {title: "Title of the Post",
+body: "Content of the fucking post bro", userId: 3,
+postDate: "2014-07-29T16:21:13.956Z", id: 1}
