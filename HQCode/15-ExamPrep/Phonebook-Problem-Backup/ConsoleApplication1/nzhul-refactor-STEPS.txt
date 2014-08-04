@@ -1,0 +1,8 @@
+﻿0. Properties - > Default NameSpace!
+1. Extract Classes!, fix usings (Ctrl+.)
+2. Auto Format Code -> Ctrl+E+D ( delete the last bracket and write it again)
+3. Fix the bugs -> the application should compile and run
+4. Clear the mess in the code -> new lines, spaces, tabs and other shit
+5. Implement Some Creational Pattern - Command, Factory, Strategy, Singleton
+	 - Create folder for the pattern - Eg: Command
+	 - Create Interface

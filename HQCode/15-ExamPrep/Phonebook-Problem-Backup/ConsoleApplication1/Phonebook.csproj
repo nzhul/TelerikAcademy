@@ -50,13 +50,9 @@
     <Compile Include="Command\IPhonebookCommand.cs" />
     <Compile Include="Command\ListPhonesCommand.cs" />
     <Compile Include="IPhonebookRepository.cs" />
-    <Compile Include="IPhoneNumberSanitizer.cs" />
-    <Compile Include="IPrinter.cs" />
     <Compile Include="PhonebookEntryPoint.cs" />
-    <Compile Include="PhoneNumberSanitizer.cs" />
     <Compile Include="REP.cs" />
     <Compile Include="RepNew.cs" />
-    <Compile Include="StringBuilderPrinter.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
