@@ -45,7 +45,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CommandFactoryWithLazyLoading.cs" />
+    <Compile Include="CommandInfo.cs" />
+    <Compile Include="CommandParser.cs" />
+    <Compile Include="ConsolePrinterVisitorWithNewLine.cs" />
+    <Compile Include="ConsolePrinterVisitorWithoutNewLine.cs" />
     <Compile Include="ICommandFactory.cs" />
+    <Compile Include="ICommandParser.cs" />
+    <Compile Include="IPrinterVisitor.cs" />
     <Compile Include="PhoneEntry.cs" />
     <Compile Include="Command\AddPhoneCommand.cs" />
     <Compile Include="Command\ChangePhoneCommand.cs" />

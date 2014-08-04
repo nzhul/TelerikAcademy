@@ -4,6 +4,6 @@
     {
         void Print(string text);
 
-        string GetAllText();
+        void Accept(IPrinterVisitor visitor);
     }
 }

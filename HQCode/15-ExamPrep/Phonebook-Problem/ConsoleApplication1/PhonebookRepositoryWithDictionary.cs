@@ -45,7 +45,7 @@
         {
             if (first < 0 || first + num > this.dict.Count)
             {
-                Console.WriteLine("Invalid start index or count."); return null;
+                throw new ArgumentOutOfRangeException();
             }
 
             PhoneEntry[] list = new PhoneEntry[num];

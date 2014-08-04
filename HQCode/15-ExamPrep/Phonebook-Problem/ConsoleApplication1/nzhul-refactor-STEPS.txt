@@ -15,3 +15,6 @@
 8. BOTTLENECKS
 	- Check for lot of messy clustered code - DUPLICATED CODE!!!!
 	- Dupplicated Classes - One class is better than the other!!!
+9. Extract all of the code in sepparete Classes!
+10. throw Exceptions where the old code says Console.WriteLine("Error");
+11. Check the output with DIFF CHECKER - Even if the two outputs look the SAME!

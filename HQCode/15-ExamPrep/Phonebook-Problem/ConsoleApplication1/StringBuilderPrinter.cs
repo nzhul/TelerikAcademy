@@ -4,17 +4,16 @@
 
     public class StringBuilderPrinter : IPrinter
     {
-        private static StringBuilder output = new StringBuilder();
+        private StringBuilder output = new StringBuilder();
 
         public void Print(string text)
         {
             output.AppendLine(text);
         }
 
-
-        public string GetAllText()
+        public void Accept(IPrinterVisitor visitor)
         {
-            return output.ToString();
+            visitor.Visit(this.output.ToString());
         }
     }
 }

@@ -1,45 +1,32 @@
 ﻿namespace Phonebook
 {
     using System;
+    using System.Linq;
     using Phonebook.Command;
 
     public static class PhonebookEntryPoint
     {
-        static void Main()
+        internal static void Main()
         {
-            IPhonebookRepository data = new REPNew();
+            IPhonebookRepository data = new PhonebookRepositoryWithDictionary();
             IPrinter printer = new StringBuilderPrinter();
             IPhoneNumberSanitizer sanitizer = new PhoneNumberSanitizer();
             ICommandFactory commandFactory = new CommandFactoryWithLazyLoading(data, printer, sanitizer);
-
+            ICommandParser commandParser = new CommandParser();
             while (true)
             {
                 string userInput = Console.ReadLine();
                 if (userInput == "End" || userInput == null)
                 {
-                    // Error reading from console 
                     break;
                 }
 
-                // TODO: Extract command parsing -> Interpreter or just new Class
-                int i = userInput.IndexOf('('); if (i == -1) { Console.WriteLine("error!"); Environment.Exit(0); }
-
-                string k = userInput.Substring(0, i);
-                if (!userInput.EndsWith(")"))
-                {
-                    Main();
-                }
-                string s = userInput.Substring(i + 1, userInput.Length - i - 2);
-                string[] strings = s.Split(',');
-                for (int j = 0; j < strings.Length; j++)
-                {
-                    strings[j] = strings[j].Trim();
-                }
-
-                IPhonebookCommand command = commandFactory.CreateCommand(k, strings.Length);
-                command.Execute(strings);
+                var commandInfo = commandParser.Parse(userInput);
+                IPhonebookCommand command = commandFactory.CreateCommand(commandInfo.CommandName, commandInfo.Arguments.Count());
+                command.Execute(commandInfo.Arguments.ToArray());
             }
-            Console.Write(printer.GetAllText());
+
+            printer.Accept(new ConsolePrinterVisitorWithNewLine());
         }
     }
 }

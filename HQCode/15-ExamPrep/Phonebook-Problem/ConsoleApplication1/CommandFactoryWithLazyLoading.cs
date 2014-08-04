@@ -12,6 +12,9 @@
         private IPhonebookRepository data;
         private IPrinter printer;
         private IPhoneNumberSanitizer sanitizer;
+        private IPhonebookCommand addCommand;
+        private IPhonebookCommand changeCommand;
+        private IPhonebookCommand listCommand;
 
         public CommandFactoryWithLazyLoading(IPhonebookRepository data, IPrinter printer, IPhoneNumberSanitizer sanitizer)
         {
@@ -23,23 +26,36 @@
         public IPhonebookCommand CreateCommand(string commandName, int argumentsCount)
         {
             IPhonebookCommand command;
-            if ((k.StartsWith("AddPhone")) && (argumentsCount >= 2))
+            if ((commandName.StartsWith("AddPhone")) && (argumentsCount >= 2))
             {
-                command = new AddPhoneCommand(this.data, this.printer, this.sanitizer);
+                if (this.addCommand == null)
+                {
+                    this.addCommand = new AddPhoneCommand(this.data, this.printer, this.sanitizer);
+                }
+                command = this.addCommand;
 
             }
-            else if ((k == "ChangePhone") && (argumentsCount == 2))
+            else if ((commandName == "ChangePhone") && (argumentsCount == 2))
             {
-                command = new ChangePhoneCommand(this.data, this.printer, this.sanitizer);
+                if (this.changeCommand == null)
+                {
+                    this.changeCommand = new ChangePhoneCommand(this.data, this.printer, this.sanitizer);
+                }
+                command = this.changeCommand;
             }
-            else if ((k == "List") && (argumentsCount == 2))
+            else if ((commandName == "List") && (argumentsCount == 2))
             {
-                command = new ListPhonesCommand(this.data, this.printer);
+                if (this.listCommand == null)
+                {
+                    this.listCommand = new ListPhonesCommand(this.data, this.printer);
+                }
+                command = this.listCommand;
             }
             else
             {
                 throw new ArgumentException("Invalid command!");
             }
+            return command;
         }
     }
 }
