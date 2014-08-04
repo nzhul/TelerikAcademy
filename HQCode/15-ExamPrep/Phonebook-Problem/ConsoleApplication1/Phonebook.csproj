@@ -44,7 +44,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="PhoneEntry.cs" />
     <Compile Include="Command\AddPhoneCommand.cs" />
     <Compile Include="Command\ChangePhoneCommand.cs" />
     <Compile Include="Command\IPhonebookCommand.cs" />

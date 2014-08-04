@@ -6,7 +6,7 @@
     using System.Text;
     using System.Threading.Tasks;
 
-    class Class1 : IComparable<Class1>
+    public class PhoneEntry : IComparable<PhoneEntry>
     {
         private string name; 
         private string name2;
@@ -50,7 +50,7 @@
             return sb.ToString();
         }
 
-        public int CompareTo(Class1 other)
+        public int CompareTo(PhoneEntry other)
         {
             return this.name2.CompareTo(other.name2);
         }

@@ -1,12 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Phonebook.Command
+﻿namespace Phonebook.Command
 {
-    class ChangePhoneCommand : IPhonebookCommand
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Text;
+    using System.Threading.Tasks;
+    public class ChangePhoneCommand : IPhonebookCommand
     {
         private IPrinter printer;
         private IPhonebookRepository data;
@@ -21,7 +20,10 @@ namespace Phonebook.Command
 
         public void Execute(string[] arguments)
         {
-            printer.Print("" + data.ChangePhone(sanitizer.Sanitize(arguments[0]), sanitizer.Sanitize(arguments[1])) + " numbers changed");
+            var currentPhoneNumber = sanitizer.Sanitize(arguments[0]);
+            var newPhoneNumber = sanitizer.Sanitize(arguments[1]);
+            var phoneNumbersChanged = data.ChangePhone(currentPhoneNumber, newPhoneNumber);
+            printer.Print(phoneNumbersChanged + " numbers changed");
         }
     }
 }

@@ -7,19 +7,19 @@
     using System.Threading.Tasks;
     using Wintellect.PowerCollections;
 
-    class REP : IPhonebookRepository
+    public class REP : IPhonebookRepository
     {
-        private OrderedSet<Class1> sorted = new OrderedSet<Class1>();
-        private Dictionary<string, Class1> dict = new Dictionary<string, Class1>();
-        private MultiDictionary<string, Class1> multidict = new MultiDictionary<string, Class1>(false);
+        private OrderedSet<PhoneEntry> sorted = new OrderedSet<PhoneEntry>();
+        private Dictionary<string, PhoneEntry> dict = new Dictionary<string, PhoneEntry>();
+        private MultiDictionary<string, PhoneEntry> multidict = new MultiDictionary<string, PhoneEntry>(false);
 
         public bool AddPhone(string name, IEnumerable<string> nums)
         {
             string name2 = name.ToLowerInvariant();
-            Class1 entry; bool flag = !this.dict.TryGetValue(name2, out entry);
+            PhoneEntry entry; bool flag = !this.dict.TryGetValue(name2, out entry);
             if (flag)
             {
-                entry = new Class1(); entry.Name = name;
+                entry = new PhoneEntry(); entry.Name = name;
                 entry.Strings = new SortedSet<string>(); this.dict.Add(name2, entry);
                 this.sorted.Add(entry);
             }
@@ -43,18 +43,18 @@
             return found.Count;
         }
 
-        public Class1[] ListEntries(int first, int num)
+        public PhoneEntry[] ListEntries(int first, int num)
         {
             if (first < 0 || first + num > this.dict.Count)
             {
                 Console.WriteLine("Invalid start index or count."); return null;
             }
 
-            Class1[] list = new Class1[num];
+            PhoneEntry[] list = new PhoneEntry[num];
 
             for (int i = first; i <= first + num - 1; i++)
             {
-                Class1 entry = this.sorted[i];
+                PhoneEntry entry = this.sorted[i];
                 list[i - first] = entry;
             }
             return list;

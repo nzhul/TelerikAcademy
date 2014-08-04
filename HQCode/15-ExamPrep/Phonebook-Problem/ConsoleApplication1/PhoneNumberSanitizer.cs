@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Phonebook
 {
-    class PhoneNumberSanitizer : IPhoneNumberSanitizer
+    public class PhoneNumberSanitizer : IPhoneNumberSanitizer
     {
         private const string Code = "+359";
         public string Sanitize(string phoneNumber)

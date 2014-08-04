@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Phonebook
 {
-    interface IPhoneNumberSanitizer
+    public interface IPhoneNumberSanitizer
     {
         string Sanitize(string phoneNumber);
     }

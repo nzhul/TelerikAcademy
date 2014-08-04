@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Phonebook.Command
 {
-    class ListPhonesCommand : IPhonebookCommand
+    public class ListPhonesCommand : IPhonebookCommand
     {
         private IPrinter printer;
         private IPhonebookRepository data;
@@ -21,7 +21,7 @@ namespace Phonebook.Command
         {
             try
             {
-                IEnumerable<Class1> entries = data.ListEntries(int.Parse(arguments[0]), int.Parse(arguments[1]));
+                IEnumerable<PhoneEntry> entries = data.ListEntries(int.Parse(arguments[0]), int.Parse(arguments[1]));
                 foreach (var entry in entries)
                 {
                     printer.Print(entry.ToString());

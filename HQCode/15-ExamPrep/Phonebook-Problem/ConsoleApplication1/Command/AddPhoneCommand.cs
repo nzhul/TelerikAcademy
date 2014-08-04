@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Phonebook.Command
 {
-    class AddPhoneCommand : IPhonebookCommand
+    public class AddPhoneCommand : IPhonebookCommand
     {
         private IPrinter printer;
         private IPhonebookRepository data;
@@ -21,16 +21,16 @@ namespace Phonebook.Command
 
         public void Execute(string[] arguments)
         {
-            string str0 = arguments[0];
-            var str1 = arguments.Skip(1).ToList();
-            for (int i = 0; i < str1.Count; i++)
+            string name = arguments[0];
+            var phoneNumbers = arguments.Skip(1).ToList();
+            for (int i = 0; i < phoneNumbers.Count; i++)
             {
-                str1[i] = sanitizer.Sanitize(str1[i]);
+                phoneNumbers[i] = sanitizer.Sanitize(phoneNumbers[i]);
             }
 
-            bool flag = data.AddPhone(str0, str1);
+            bool phoneEntryCreated = data.AddPhone(name, phoneNumbers);
 
-            if (flag)
+            if (phoneEntryCreated)
             {
                 printer.Print("Phone entry created.");
             }

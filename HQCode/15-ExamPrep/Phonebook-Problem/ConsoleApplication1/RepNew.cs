@@ -6,9 +6,9 @@
     using System.Text;
     using System.Threading.Tasks;
 
-    class REPNew : IPhonebookRepository
+    public class REPNew : IPhonebookRepository
     {
-        public List<Class1> entries = new List<Class1>();
+        public List<PhoneEntry> entries = new List<PhoneEntry>();
 
         public bool AddPhone(string name, IEnumerable<string> nums)
         {
@@ -17,7 +17,7 @@
             bool flag;
             if (old.Count() == 0)
             {
-                Class1 obj = new Class1(); 
+                PhoneEntry obj = new PhoneEntry(); 
                 obj.Name = name;
                 obj.Strings = new SortedSet<string>();
 
@@ -31,7 +31,7 @@
             }
             else if (old.Count() == 1)
             {
-                Class1 obj2 = old.First();
+                PhoneEntry obj2 = old.First();
                 foreach (var num in nums)
                 {
                     obj2.Strings.Add(num);
@@ -61,16 +61,16 @@
             return nums;
         }
 
-        public Class1[] ListEntries(int start, int num)
+        public PhoneEntry[] ListEntries(int start, int num)
         {
             if (start < 0 || start + num > this.entries.Count)
             {   
                 throw new ArgumentOutOfRangeException("Invalid start index or count.");
             }
             this.entries.Sort();
-            Class1[] ent = new Class1[num]; for (int i = start; i <= start + num - 1; i++)
+            PhoneEntry[] ent = new PhoneEntry[num]; for (int i = start; i <= start + num - 1; i++)
             {
-                Class1 entry = this.entries[i];
+                PhoneEntry entry = this.entries[i];
                 ent[i - start] = entry;
             }
             return ent;
