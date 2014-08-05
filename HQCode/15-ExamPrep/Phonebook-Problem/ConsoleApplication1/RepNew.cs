@@ -3,8 +3,6 @@
     using System;
     using System.Collections.Generic;
     using System.Linq;
-    using System.Text;
-    using System.Threading.Tasks;
 
     public class REPNew : IPhonebookRepository
     {
@@ -19,11 +17,11 @@
             {
                 PhoneEntry obj = new PhoneEntry(); 
                 obj.Name = name;
-                obj.Strings = new SortedSet<string>();
+                obj.PhoneNumbers = new SortedSet<string>();
 
                 foreach (var num in nums)
                 {
-                    obj.Strings.Add(num);
+                    obj.PhoneNumbers.Add(num);
                 }
                 this.entries.Add(obj);
                 
@@ -34,7 +32,7 @@
                 PhoneEntry obj2 = old.First();
                 foreach (var num in nums)
                 {
-                    obj2.Strings.Add(num);
+                    obj2.PhoneNumbers.Add(num);
                 } 
                 
                 flag = false;
@@ -50,12 +48,12 @@
 
         public int ChangePhone(string oldent, string newent)
         {
-            var list = from e in this.entries where e.Strings.Contains(oldent) select e;
+            var list = from e in this.entries where e.PhoneNumbers.Contains(oldent) select e;
 
             int nums = 0;
             foreach (var entry in list)
             {
-                entry.Strings.Remove(oldent); entry.Strings.Add(newent);
+                entry.PhoneNumbers.Remove(oldent); entry.PhoneNumbers.Add(newent);
                 nums++;
             }
             return nums;

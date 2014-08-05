@@ -1,11 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Phonebook
+﻿namespace Phonebook
 {
+    using System.Text;
+
     public class StringBuilderPrinter : IPrinter
     {
         private static StringBuilder output = new StringBuilder();

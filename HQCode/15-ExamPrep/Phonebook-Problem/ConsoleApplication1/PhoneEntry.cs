@@ -2,14 +2,12 @@
 {
     using System;
     using System.Collections.Generic;
-    using System.Linq;
     using System.Text;
-    using System.Threading.Tasks;
 
     public class PhoneEntry : IComparable<PhoneEntry>
     {
         private string name; 
-        private string name2;
+        private string nameForComparison;
 
         public string Name
         {
@@ -20,39 +18,38 @@
             set
             {
                 this.name = value;
-                this.name2 = value.ToLowerInvariant();
+                this.nameForComparison = value.ToLowerInvariant();
             }
         }
 
-        public SortedSet<string> Strings;
+        public SortedSet<string> PhoneNumbers;
 
         public override string ToString()
         {
-            StringBuilder sb = new StringBuilder(); 
-            sb.Clear(); 
-            sb.Append('[');
-            sb.Append(this.Name);
-            bool flag = true;
-            foreach (var phone in this.Strings)
+            StringBuilder entryToString = new StringBuilder(); 
+            entryToString.Append('[');
+            entryToString.Append(this.Name);
+            bool isFirstPhoneNumber = true;
+            foreach (var phone in this.PhoneNumbers)
             {
-                if (flag)
+                if (isFirstPhoneNumber)
                 {
-                    sb.Append(": ");
-                    flag = false;
+                    entryToString.Append(": ");
+                    isFirstPhoneNumber = false;
                 }
                 else
                 {
-                    sb.Append(", ");
+                    entryToString.Append(", ");
                 }
-                sb.Append(phone);
+                entryToString.Append(phone);
             }
-            sb.Append(']');
-            return sb.ToString();
+            entryToString.Append(']');
+            return entryToString.ToString();
         }
 
         public int CompareTo(PhoneEntry other)
         {
-            return this.name2.CompareTo(other.name2);
+            return this.nameForComparison.CompareTo(other.nameForComparison);
         }
     }
 }

@@ -11,3 +11,7 @@
 		* Create IPrinter interface with StringBuilderPrinter implementation
 		* Put the IPrinter property in the constructor of every Command: AddPhone, List, ChangePhone -> Dependensy inversion
 6. Put all dependencies in the constructors of the new classes: Eg: IPhoneNumberSanitizer, IPrinter, IPhonebookRepository
+7. Remove all UNUSED Usings -> Right Click -> Organize Usings -> Remove Unused Usings
+8. BOTTLENECKS
+	- Check for lot of messy clustered code - DUPLICATED CODE!!!!
+	- Dupplicated Classes - One class is better than the other!!!
