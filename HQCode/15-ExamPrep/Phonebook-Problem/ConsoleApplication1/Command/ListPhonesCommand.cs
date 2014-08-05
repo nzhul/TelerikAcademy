@@ -21,15 +21,15 @@ namespace Phonebook.Command
         {
             try
             {
-                IEnumerable<PhoneEntry> entries = data.ListEntries(int.Parse(arguments[0]), int.Parse(arguments[1]));
+                var entries = this.data.ListEntries(int.Parse(arguments[0]), int.Parse(arguments[1]));
                 foreach (var entry in entries)
                 {
-                    printer.Print(entry.ToString());
+                    this.printer.Print(entry.ToString());
                 }
             }
             catch (ArgumentOutOfRangeException)
             {
-                printer.Print("Invalid range");
+                this.printer.Print("Invalid range");
             }
         }
     }

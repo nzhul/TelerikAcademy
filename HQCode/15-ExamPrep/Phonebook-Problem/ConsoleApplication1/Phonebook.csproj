@@ -44,6 +44,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CommandFactoryWithLazyLoading.cs" />
+    <Compile Include="ICommandFactory.cs" />
     <Compile Include="PhoneEntry.cs" />
     <Compile Include="Command\AddPhoneCommand.cs" />
     <Compile Include="Command\ChangePhoneCommand.cs" />
@@ -54,7 +56,7 @@
     <Compile Include="IPrinter.cs" />
     <Compile Include="PhonebookEntryPoint.cs" />
     <Compile Include="PhoneNumberSanitizer.cs" />
-    <Compile Include="REP.cs" />
+    <Compile Include="PhonebookRepositoryWithDictionary.cs" />
     <Compile Include="RepNew.cs" />
     <Compile Include="StringBuilderPrinter.cs" />
   </ItemGroup>
@@ -65,6 +67,7 @@
     <Folder Include="Properties\" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="KPK-Input.txt" />
     <Content Include="nzhul-refactor-STEPS.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

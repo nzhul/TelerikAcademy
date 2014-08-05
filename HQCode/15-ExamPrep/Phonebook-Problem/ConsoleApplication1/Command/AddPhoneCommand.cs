@@ -25,18 +25,18 @@ namespace Phonebook.Command
             var phoneNumbers = arguments.Skip(1).ToList();
             for (int i = 0; i < phoneNumbers.Count; i++)
             {
-                phoneNumbers[i] = sanitizer.Sanitize(phoneNumbers[i]);
+                phoneNumbers[i] = this.sanitizer.Sanitize(phoneNumbers[i]);
             }
 
-            bool phoneEntryCreated = data.AddPhone(name, phoneNumbers);
+            bool phoneEntryCreated = this.data.AddPhone(name, phoneNumbers);
 
             if (phoneEntryCreated)
             {
-                printer.Print("Phone entry created.");
+                this.printer.Print("Phone entry created.");
             }
             else
             {
-                printer.Print("Phone entry merged");
+                this.printer.Print("Phone entry merged");
             }
         }
     }

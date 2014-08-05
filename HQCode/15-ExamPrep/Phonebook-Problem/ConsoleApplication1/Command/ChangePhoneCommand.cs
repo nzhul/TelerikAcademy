@@ -20,10 +20,10 @@
 
         public void Execute(string[] arguments)
         {
-            var currentPhoneNumber = sanitizer.Sanitize(arguments[0]);
-            var newPhoneNumber = sanitizer.Sanitize(arguments[1]);
-            var phoneNumbersChanged = data.ChangePhone(currentPhoneNumber, newPhoneNumber);
-            printer.Print(phoneNumbersChanged + " numbers changed");
+            var currentPhoneNumber = this.sanitizer.Sanitize(arguments[0]);
+            var newPhoneNumber = this.sanitizer.Sanitize(arguments[1]);
+            var phoneNumbersChanged = this.data.ChangePhone(currentPhoneNumber, newPhoneNumber);
+            this.printer.Print(phoneNumbersChanged + " numbers changed");
         }
     }
 }
