@@ -1,0 +1,45 @@
+Design pattern: Simple Factory
+	1. Manifacturers.cs
+	2. Dell.cs
+	3. HP.cs
+	4. Lenovo.cs
+
+Design pattern: Strategy
+	1. Almost in the entire Project: VideoCard, Battery, Computers, CPU, HardDrive, ... and so on.
+
+Design pattern: Template Method
+	* 
+
+Design pattern: Abstract factory
+	* Computers: Computer.cs, Laptop.cs, PC.cs
+
+Design pattern: Composite
+	* 
+
+Design pattern: Mediator
+	* 
+
+Found bottlenecks:
+	1. There is unnessesary for loop in CalculateSquareNumber Method. Instead we can use Math.Sqrt();
+	2. In rand() Method there is unnessesary while loop.
+
+Found bugs:
+	1. CalculateSquareNumber() Method in the CPU do not calculate correctly the value!
+	* 
+	* 
+
+Single responsibility principle
+	1. Everything is sepparated in different files. The VideoCard do do work for the drawing, the RAID Class have collection
+of hard drives instead of oposite.
+
+Open/closed principle
+	1. I use interfaces and abstract classes in most of the cases. So this principle is fullfilled.
+
+Liskov substitution principle
+	1. Computers -> Computer is abstract class and it can be used as any concrete implementation -> PC, Laptop or Server
+
+Interface segregation principle
+	1. Everything is splitted in files no bigger than 30-40 rows.
+
+Dependency inversion principle
+	1. Check the sepparation of the files. Every class has only his dependancies and no other. 
