@@ -28,8 +28,47 @@
                 }
             }
 
-            // TODO: Finish me
 
+            int currentSequence = 1;
+            int maxSequence = 0;
+            int sequenceDigit = 0;
+            for (int i = 0; i < numbers.Count - 1; i++)
+            {
+                if (numbers[i] == numbers[i + 1])
+                {
+                    currentSequence++;
+                }
+                else
+                {
+                    if (currentSequence > maxSequence)
+                    {
+                        maxSequence = currentSequence;
+                        sequenceDigit = numbers[i];
+                    }
+                    currentSequence = 1;
+                }
+            }
+
+            //Special Case
+            if (currentSequence > maxSequence)
+            {
+                maxSequence = currentSequence;
+                sequenceDigit = numbers[numbers.Count - 1];
+            }
+
+            // Display the maximum sequence
+            Console.WriteLine("The input sequence is: ");
+            for (int i = 0; i < numbers.Count; i++)
+            {
+                Console.Write(numbers[i] + " ");
+            }
+            Console.WriteLine("\n-----------------");
+
+            Console.WriteLine("The longest subsequence is: ");
+            for (int i = 0; i < maxSequence; i++)
+            {
+                Console.Write(sequenceDigit + " ");
+            }
         }
     }
 }
