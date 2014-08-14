@@ -65,6 +65,21 @@ namespace TreeTraversal
                 Console.Write("{0}, ", leaf.Value);
             }
             Console.WriteLine();
+
+            //3. Find all middle nodes
+            // For one node to be middle-node it must not be root and must have childrens
+            var middleNodes = FindAllMiddleNodes(nodes);
+            Console.WriteLine("Middle nodes: ");
+            foreach (var node in middleNodes)
+            {
+                Console.Write("{0}, ", node.Value);
+            }
+            Console.WriteLine();
+
+            //4. Find the longest path
+            var longestPath = FindLongestPath(FindRoot(nodes));
+            Console.WriteLine("Longest path from the root is: {0}", longestPath);
+
         }
 
         private static List<Node<int>> FindAllLeafs(Node<int>[] nodes)
@@ -82,7 +97,36 @@ namespace TreeTraversal
             return leafs;
         }
 
-        //3. Find all middle nodes
+        private static List<Node<int>> FindAllMiddleNodes(Node<int>[] nodes)
+        {
+            List<Node<int>> middleNodes = new List<Node<int>>();
+
+            foreach (var node in nodes)
+            {
+                if (node.HasParent && node.Children.Count > 0)
+                {
+                    middleNodes.Add(node);
+                }
+            }
+
+            return middleNodes;
+        }
+
+        private static int FindLongestPath(Node<int> root)
+        {
+            if (root.Children.Count == 0)
+            {
+                return 0;
+            }
+
+            int maxPath = 0;
+            foreach (var node in root.Children)
+            {
+                maxPath = Math.Max(maxPath, FindLongestPath(node));
+            }
+
+            return maxPath + 1;
+        }
 
 
     }
