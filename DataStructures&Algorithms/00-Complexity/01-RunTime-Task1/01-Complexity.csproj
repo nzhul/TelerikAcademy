@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{488520EE-4123-45FB-AC4D-7A0BBDEA773A}</ProjectGuid>
+    <ProjectGuid>{BD72A15E-1E5C-4404-8881-F51A480AE750}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>ShortestSequence</RootNamespace>
-    <AssemblyName>10-ShortestSequence</AssemblyName>
+    <RootNamespace>_01_RunTime_Task1</RootNamespace>
+    <AssemblyName>01-RunTime-Task1</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -41,8 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="10-ShortestSequence.cs" />
-    <Compile Include="Node.cs" />
+    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
