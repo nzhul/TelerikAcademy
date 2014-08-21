@@ -1,0 +1,74 @@
+Database Systems – Overview
+
+1. What database models do you know?
+    - Hierarchical (tre)
+    - Network / graph
+    - Relational (table)
+    - Object-oriented
+
+2. Which are the main functions performed by a Relational Database Management System (RDBMS)?
+    - Create tables, users, database structure and more.
+    - Read the stored data ( SELECT )
+    - Support for the SQL language
+    - Transaction management (optional)
+
+3. Define what is "table" in database terms.
+    - Table is grid-like structure that stores the actual data. It is sepparated by columns and rows.
+
+4. Explain the difference between a primary and a foreign key.
+    - the primary key is used as indentifier for the row item.
+    - the foreign key is used to make the correlation between two tables
+
+5. Explain the different kinds of relationships between tables in relational databases.
+    - One-to-many – it represents a single record in the first table has many
+        coresponding records in the second table and it’s used very often.
+    - Many-to-many – A single record in the first table has many coresponding
+        records in the second table and A single record in the first table has many
+        coresponding records in the second table.
+    - One-to-one – A single record in the first table has many coresponding
+        records in the second table and it’s used to model inheritance betwen tables.
+
+6. When is a certain database schema normalized? What are the advantages of normalized databases?
+    - Normalized database is database that is cleared from repeating information:
+        Eg: "city" in students table -> can be stored as cityID instead of actual city name;
+    - Normalized databases are faster and smaller than non-normalized one.
+
+7. What are database integrity constraints and when are they used?
+    - Integrity constraints ensure data integrity in the database tables.
+
+8. Point out the pros and cons of using indexes in a database.
+    - Pro – quick search operations.
+    - Con – slow add and remove operations.
+
+9. What's the main purpose of the SQL language?
+    - Manipulation of relational database. CRUD operations: Create, Update, Delete
+
+10. What are transactions used for? Give an example.
+    - Transactions are used to make possible for us to make multiple SQL Queries at once.
+        That enshures that the SQL Querie will be executed or not-executed. There is no middle situation.
+    - Example: Bank account user wants to withdraw some money from his account. The check if the money exists and the actual update for the account
+    are executed at the same time. This way there cannot be errors, when other user tries to do the same at the exact same time.
+
+11. What is a NoSQL database?
+    - A NoSQL database, uses document-based model (non-relational) and is schema-fre document storage.
+
+12. Explain the clasical non-relational data models.
+    - Document model – set of documents, e.g. JSON strings
+    - Key-value model – set of key-value pairs
+    - Hierarchical key-value – hierarchy of key-value pairs
+    - Wide-column model – key-value model with schema
+    - Object model – set of OOP-style objects
+
+13. Give few examples of NoSQL databases and their pros and cons.
+    a. The pros and cons form most of the NoSQL DBs are the folowing:
+    i. Pros:
+        1. It's Open Source.
+        2. Elastic Scaling.
+        3. It’s in the cloud!
+    ii. Cons:
+        1. It's Open Source.3
+        2. Not mature enough for enterprise. 3. A bit new witch leads to lack of expertise and resources. 4. Compatibilty Isues. b. And some examples:
+            i. Redis
+            i. MongoDB
+            i. CouchDB
+            iv. Casandra
