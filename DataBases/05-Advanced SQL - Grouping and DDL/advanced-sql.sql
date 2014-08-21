@@ -10,16 +10,33 @@ WHERE Salary < (SELECT MIN(Salary) * 1.1 FROM Employees)
 ORDER BY Salary;
 
 --03 Write a SQL query to find the full name, salary and department of the employees that take the minimal salary in their department. Use a nested SELECT statement.
+SELECT e.FirstName + ' ' + e.LastName as EmployeeFullname, d.Name as DepartmentName, e.Salary
+FROM Employees e INNER JOIN Departments d
+ON e.DepartmentID = d.DepartmentID
+WHERE Salary = 
+	(
+		SELECT MIN(Salary) 
+		FROM Employees 
+		WHERE DepartmentID = d.DepartmentID
+	)
 
 
 --04 Write a SQL query to find the average salary in the department #1.
-
+SELECT AVG(Salary) as AverageSalary
+FROM Employees
+WHERE DepartmentID = 1;
 
 --05 Write a SQL query to find the average salary  in the "Sales" department.
-
+SELECT AVG(e.Salary) as AverageSalary
+FROM Employees e INNER JOIN Departments d
+ON e.DepartmentID = d.DepartmentID
+WHERE d.Name = 'Sales';
 
 --06 Write a SQL query to find the number of employees in the "Sales" department.
-
+SELECT COUNT(e.EmployeeID)
+FROM Employees e INNER JOIN Departments d
+ON e.DepartmentID = d.DepartmentID
+WHERE d.Name = 'Sales'
 
 --07 Write a SQL query to find the number of all employees that have manager.
 
