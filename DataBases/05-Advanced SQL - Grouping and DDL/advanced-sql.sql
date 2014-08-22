@@ -85,41 +85,92 @@ WHERE LEN(LastName) = 5
 
 
 --14 Write a SQL query to display the current date and time in the following format "day.month.year hour:minutes:seconds:milliseconds". Search in  Google to find how to format dates in SQL Server.
+SELECT convert(varchar, getdate(), 100)
  
 
 
 --15 Write a SQL statement to create a table Users. Users should have username, password, full name and last login time. Choose appropriate data types for the table fields. Define a primary key column with a primary key constraint. Define the primary key column as identity to facilitate inserting records. Define unique constraint to avoid repeating usernames. Define a check constraint to ensure the password is at least 5 characters long.
+CREATE TABLE Users (
+  UserID int IDENTITY,
+  Username nvarchar(100) NOT NULL UNIQUE,
+  Password_name nvarchar(30) NOT NULL,
+  Last_login_date date GETDATE(),
+  CONSTRAINT PK_Cities PRIMARY KEY(UserID),
+  CONSTRAINT LN_Pass CHECK (LEN(Password_name) >= 5)
+)
 
 
 --16 Write a SQL statement to create a view that displays the users from the Users table that have been in the system today. Test if the view works correctly.
-
+CREATE VIEW AllUsers AS
+SELECT * FROM Users
 
 --17 Write a SQL statement to create a table Groups. Groups should have unique name (use unique constraint). Define primary key and identity column.
-
+CREATE TABLE Groups (
+  GroupID int IDENTITY,
+  Name nvarchar(30) NOT NULL UNIQUE,
+  CONSTRAINT PK_Groups PRIMARY KEY(GroupID),
+)
 
 --18 Write a SQL statement to add a column GroupID to the table Users. Fill some data in this new column and as well in the Groups table. Write a SQL statement to add a foreign key constraint between tables Users and Groups tables.
-
+ALTER TABLE Users
+ADD GroupID int;
+ALTER TABLE Users
+ADD CONSTRAINT FK_Users_Groups
+  FOREIGN KEY (GroupID)
+  REFERENCES Groups(GroupID);
  
 --19. Write SQL statements to insert several records in the Users and Groups tables.
-
+INSERT INTO Users(Username, Password_name, Last_login_date)
+VALUES ('Petar', 'password', GETDATE()),
+('HellSlayer', 'password1', GETDATE()),
+('Dagon', 'password2', GETDATE()),
+('Gosho', 'password3', GETDATE())
+INSERT INTO Groups(Name)
+VALUES ('GroupName1'),
+('GroupName2'),
+('GroupName3'),
+('GroupName4'),
+('GroupName5'),
+('GroupName6'),
+('GroupName7');
 
 --20 Write SQL statements to update some of the records in the Users and Groups tables.
+UPDATE Users
+SET Password_name = 'CoolPassword'
+WHERE Username = 'Petar'
 
+UPDATE Groups
+SET Name = 'NewGroupName'
+WHERE GroupID = 1
 
 --21 Write SQL statements to delete some of the records from the Users and Groups tables.
+DELETE FROM Users 
+WHERE UserID = 3
 
+DELETE FROM Groups 
+WHERE GroupID = 2
 
 --22 Write SQL statements to insert in the Users table the names of all employees from the Employees table. Combine the first and last names as a full name. For username use the first letter of the first name + the last name (in lowercase). Use the same for the password, and NULL for last login time.
-
+INSERT INTO Users(Username, Password_name, Last_login_date)
+  SELECT SUBSTRING(FirstName, 0, 4) + '' + LOWER(LastName) + 'Magic', SUBSTRING(FirstName, 0, 1) + '' + LOWER(LastName) + 'Magic', NULL
+  FROM Employees
 
 --23 Write a SQL statement that changes the password to NULL for all users that have not been in the system since 10.03.2010.
-
+UPDATE Users
+SET Password_name = NULL
+WHERE Last_login_date < '10/03/2020';
 
 --24 Write a SQL statement that deletes all users without passwords (NULL password).
-
+DELETE FROM Users 
+WHERE Password_name is null;
 
 --25 Write a SQL query to display the average employee salary by department and job title.
-
+SELECT JobTitle, Name, AVG(Salary) AS AverageSalary
+FROM Employees e
+JOIN Departments d
+	ON e.DepartmentID = d.DepartmentID
+GROUP BY JobTitle, Name
+ORDER BY AverageSalary
 
 --26 Write a SQL query to display the minimal employee salary by department and job title along with the name of some of the employees that take it.
 
