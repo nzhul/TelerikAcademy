@@ -1,0 +1,149 @@
+USE [master]
+GO
+/****** Object:  Database [BankDatabase]    Script Date: 8/23/2014 3:07:18 PM ******/
+CREATE DATABASE [BankDatabase]
+ CONTAINMENT = NONE
+ ON  PRIMARY 
+( NAME = N'BankDatabase', FILENAME = N'C:\Program Files (x86)\Microsoft SQL Server\MSSQL12.SQLEXPRESS\MSSQL\DATA\BankDatabase.mdf' , SIZE = 3072KB , MAXSIZE = UNLIMITED, FILEGROWTH = 1024KB )
+ LOG ON 
+( NAME = N'BankDatabase_log', FILENAME = N'C:\Program Files (x86)\Microsoft SQL Server\MSSQL12.SQLEXPRESS\MSSQL\DATA\BankDatabase_log.ldf' , SIZE = 1024KB , MAXSIZE = 2048GB , FILEGROWTH = 10%)
+GO
+ALTER DATABASE [BankDatabase] SET COMPATIBILITY_LEVEL = 120
+GO
+IF (1 = FULLTEXTSERVICEPROPERTY('IsFullTextInstalled'))
+begin
+EXEC [BankDatabase].[dbo].[sp_fulltext_database] @action = 'enable'
+end
+GO
+ALTER DATABASE [BankDatabase] SET ANSI_NULL_DEFAULT OFF 
+GO
+ALTER DATABASE [BankDatabase] SET ANSI_NULLS OFF 
+GO
+ALTER DATABASE [BankDatabase] SET ANSI_PADDING OFF 
+GO
+ALTER DATABASE [BankDatabase] SET ANSI_WARNINGS OFF 
+GO
+ALTER DATABASE [BankDatabase] SET ARITHABORT OFF 
+GO
+ALTER DATABASE [BankDatabase] SET AUTO_CLOSE OFF 
+GO
+ALTER DATABASE [BankDatabase] SET AUTO_SHRINK OFF 
+GO
+ALTER DATABASE [BankDatabase] SET AUTO_UPDATE_STATISTICS ON 
+GO
+ALTER DATABASE [BankDatabase] SET CURSOR_CLOSE_ON_COMMIT OFF 
+GO
+ALTER DATABASE [BankDatabase] SET CURSOR_DEFAULT  GLOBAL 
+GO
+ALTER DATABASE [BankDatabase] SET CONCAT_NULL_YIELDS_NULL OFF 
+GO
+ALTER DATABASE [BankDatabase] SET NUMERIC_ROUNDABORT OFF 
+GO
+ALTER DATABASE [BankDatabase] SET QUOTED_IDENTIFIER OFF 
+GO
+ALTER DATABASE [BankDatabase] SET RECURSIVE_TRIGGERS OFF 
+GO
+ALTER DATABASE [BankDatabase] SET  DISABLE_BROKER 
+GO
+ALTER DATABASE [BankDatabase] SET AUTO_UPDATE_STATISTICS_ASYNC OFF 
+GO
+ALTER DATABASE [BankDatabase] SET DATE_CORRELATION_OPTIMIZATION OFF 
+GO
+ALTER DATABASE [BankDatabase] SET TRUSTWORTHY OFF 
+GO
+ALTER DATABASE [BankDatabase] SET ALLOW_SNAPSHOT_ISOLATION OFF 
+GO
+ALTER DATABASE [BankDatabase] SET PARAMETERIZATION SIMPLE 
+GO
+ALTER DATABASE [BankDatabase] SET READ_COMMITTED_SNAPSHOT OFF 
+GO
+ALTER DATABASE [BankDatabase] SET HONOR_BROKER_PRIORITY OFF 
+GO
+ALTER DATABASE [BankDatabase] SET RECOVERY SIMPLE 
+GO
+ALTER DATABASE [BankDatabase] SET  MULTI_USER 
+GO
+ALTER DATABASE [BankDatabase] SET PAGE_VERIFY CHECKSUM  
+GO
+ALTER DATABASE [BankDatabase] SET DB_CHAINING OFF 
+GO
+ALTER DATABASE [BankDatabase] SET FILESTREAM( NON_TRANSACTED_ACCESS = OFF ) 
+GO
+ALTER DATABASE [BankDatabase] SET TARGET_RECOVERY_TIME = 0 SECONDS 
+GO
+ALTER DATABASE [BankDatabase] SET DELAYED_DURABILITY = DISABLED 
+GO
+USE [BankDatabase]
+GO
+/****** Object:  Table [dbo].[Accounts]    Script Date: 8/23/2014 3:07:18 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Accounts](
+	[account_id] [int] IDENTITY(1,1) NOT NULL,
+	[person_id] [int] NOT NULL,
+	[Balance] [money] NOT NULL,
+ CONSTRAINT [PK_Accounts] PRIMARY KEY CLUSTERED 
+(
+	[account_id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+/****** Object:  Table [dbo].[Persons]    Script Date: 8/23/2014 3:07:18 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_PADDING ON
+GO
+CREATE TABLE [dbo].[Persons](
+	[person_id] [int] IDENTITY(1,1) NOT NULL,
+	[FirstName] [varchar](50) NOT NULL,
+	[LastName] [varchar](50) NOT NULL,
+	[SSN] [varchar](50) NOT NULL,
+ CONSTRAINT [PK_Persons] PRIMARY KEY CLUSTERED 
+(
+	[person_id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+SET ANSI_PADDING OFF
+GO
+SET IDENTITY_INSERT [dbo].[Accounts] ON 
+
+GO
+INSERT [dbo].[Accounts] ([account_id], [person_id], [Balance]) VALUES (1, 4, 2456.0977)
+GO
+INSERT [dbo].[Accounts] ([account_id], [person_id], [Balance]) VALUES (3, 3, 105.6897)
+GO
+INSERT [dbo].[Accounts] ([account_id], [person_id], [Balance]) VALUES (4, 1, 58799.6587)
+GO
+INSERT [dbo].[Accounts] ([account_id], [person_id], [Balance]) VALUES (5, 5, 1234.0000)
+GO
+SET IDENTITY_INSERT [dbo].[Accounts] OFF
+GO
+SET IDENTITY_INSERT [dbo].[Persons] ON 
+
+GO
+INSERT [dbo].[Persons] ([person_id], [FirstName], [LastName], [SSN]) VALUES (1, N'John', N'Atanasov', N'BG456123')
+GO
+INSERT [dbo].[Persons] ([person_id], [FirstName], [LastName], [SSN]) VALUES (3, N'Pesho', N'Draganov', N'BG456789')
+GO
+INSERT [dbo].[Persons] ([person_id], [FirstName], [LastName], [SSN]) VALUES (4, N'Gregory', N'McCormick', N'EN789321')
+GO
+INSERT [dbo].[Persons] ([person_id], [FirstName], [LastName], [SSN]) VALUES (5, N'Kevin', N'Weber', N'EN687452')
+GO
+SET IDENTITY_INSERT [dbo].[Persons] OFF
+GO
+ALTER TABLE [dbo].[Accounts]  WITH CHECK ADD  CONSTRAINT [FK_Accounts_Persons] FOREIGN KEY([person_id])
+REFERENCES [dbo].[Persons] ([person_id])
+GO
+ALTER TABLE [dbo].[Accounts] CHECK CONSTRAINT [FK_Accounts_Persons]
+GO
+USE [master]
+GO
+ALTER DATABASE [BankDatabase] SET  READ_WRITE 
+GO
