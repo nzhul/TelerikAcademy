@@ -1,3 +1,6 @@
+-- TIP: You can run specific query by simply selecting it and press F5.
+-- 		That way only the selected query will be executed instead of the whole document.
+
 --01 Write a SQL query to find the names and salaries of the employees that take the minimal salary in the company. Use a nested SELECT statement.
 SELECT FirstName, LastName, Salary
 FROM Employees

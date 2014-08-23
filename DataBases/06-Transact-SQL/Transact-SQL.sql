@@ -1,3 +1,6 @@
+-- TIP: You can run specific query by simply selecting it and press F5.
+-- 		That way only the selected query will be executed instead of the whole document.
+
 -- PLEASE RUN Create-Bank-Database.sql
 
 -- 01. Create a database with two tables: Persons(Id(PK), FirstName, LastName, SSN) and Accounts(Id(PK), PersonId(FK), Balance). Insert few records for testing. Write a stored procedure that selects the full names of all persons.

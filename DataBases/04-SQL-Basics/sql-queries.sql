@@ -1,3 +1,6 @@
+-- TIP: You can run specific query by simply selecting it and press F5.
+-- 		That way only the selected query will be executed instead of the whole document.
+
 -- 4. Write a SQL query to find all information about all departments (use "TelerikAcademy" database).
 SELECT * FROM Departments
 
