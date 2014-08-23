@@ -173,23 +173,165 @@ GROUP BY JobTitle, Name
 ORDER BY AverageSalary
 
 --26 Write a SQL query to display the minimal employee salary by department and job title along with the name of some of the employees that take it.
-
+SELECT MIN(e.FirstName) as EmployeeName, e.JobTitle, d.Name as DepartmentName, MIN(Salary) as MinSalary 
+FROM Employees e JOIN Departments d
+ON e.DepartmentID = d.DepartmentID
+GROUP BY e.JobTitle, d.Name
+ORDER BY MinSalary
 
 --27 Write a SQL query to display the town where maximal number of employees work.
-
+-- use TOP 1 to filter only one result if you want so
+SELECT TOP 10 t.Name, COUNT(e.EmployeeID) as NumberOfEmployees
+FROM Employees e INNER JOIN Addresses a
+ON e.AddressID = a.AddressID
+INNER JOIN Towns t
+ON a.TownID = t.TownID
+GROUP BY t.Name
+ORDER BY NumberOfEmployees DESC
 
 --28 Write a SQL query to display the number of managers from each town.
+SELECT t.Name, COUNT(m.EmployeeID) as ManagersCount
+FROM Employees e INNER JOIN Addresses a
+ON e.AddressID = a.AddressID
+INNER JOIN Towns t
+ON a.TownID = t.TownID
+INNER JOIN Employees m
+ON m.ManagerID = e.EmployeeID
+GROUP BY t.Name
+ORDER BY ManagersCount DESC
 
 
 --29 Write a SQL to create table WorkHours to store work reports for each employee (employee id, date, task, hours, comments). Don't forget to define  identity, primary key and appropriate foreign key. 
 --Issue few SQL statements to insert, update and delete of some data in the table.
 --Define a table WorkHoursLogs to track all changes in the WorkHours table with triggers. For each change keep the old record data, the new record data and the command (insert / update / delete).
+CREATE TABLE WorkHours (
+ EmployeeID INT IDENTITY,
+ OnDate DATETIME,
+ Task NVARCHAR(50),
+ HoursWorked INT,
+ Comments nvarchar(50)
+ CONSTRAINT PK_EmployeeID PRIMARY KEY (EmployeeID)
+ CONSTRAINT FK_EmployeeID FOREIGN KEY (EmployeeID)
+  REFERENCES Employees (EmployeeID)
+)
+GO
+ 
+INSERT INTO WorkHours
+SELECT
+ GETDATE() AS OnDate,
+ 'sometask1' AS Task,
+ 6 AS HoursWorked,
+ 'no comment' AS Comments
+ 
+UPDATE WorkHours
+ SET Task = 'no current task'
+ WHERE Task = 'sometask1'
 
+
+CREATE TABLE WorkHoursLogs
+(
+ NewEmployeeID int,
+ NewOnDate datetime,
+ NewTask nvarchar(50),
+ NewHoursWorked int,
+ NewComments nvarchar(50),
+    CONSTRAINT PK_WorkHoursLogs PRIMARY KEY(NewEmployeeID),
+)
+GO
+ 
+CREATE TRIGGER tr_Update ON dbo.WorkHours FOR UPDATE
+AS
+ BEGIN
+  INSERT INTO dbo.WorkHoursLogs(NewOnDate, NewTask, NewHoursWorked,NewComments)
+  SELECT  i.OnDate ,
+          i.Task,
+          i.HoursWorked,
+          i.Comments         
+  FROM inserted i
+ END
+GO
+
+-- for testing purposes
+DROP TRIGGER tr_Update
+GO
+ 
+CREATE TRIGGER tr_Insert ON dbo.WorkHours FOR INSERT
+AS
+ BEGIN
+  INSERT INTO dbo.WorkHoursLogs(NewOnDate, NewTask, NewHoursWorked,NewComments)
+  SELECT  i.OnDate,
+          i.Task,
+          i.HoursWorked,
+          i.Comments
+  FROM inserted i
+ END
+GO
+
+-- for testing purposes
+DROP TRIGGER tr_Insert
+GO
+ 
+CREATE TRIGGER tr_Delete ON dbo.WorkHours FOR DELETE
+AS
+ BEGIN
+  INSERT INTO dbo.WorkHoursLogs(NewOnDate, NewTask, NewHoursWorked,NewComments)
+  SELECT  d.OnDate,
+          d.Task,
+          d.HoursWorked,
+          d.Comments
+  FROM deleted d
+ END
+GO
+
+-- for testing purposes
+DROP TRIGGER tr_Delete
+GO
 
 --30 Start a database transaction, delete all employees from the 'Sales' department along with all dependent records from the pother tables. At the end rollback the transaction.
+BEGIN TRAN
+ 
+ALTER TABLE Departments
+DROP CONSTRAINT FK_Departments_Employees
+ 
+DELETE FROM Employees
+WHERE Employees.DepartmentID = (
+        SELECT DepartmentID
+        FROM Departments
+        WHERE Departments.Name = 'Sales')
+ 
+ROLLBACK TRAN
 
 
 --31 Start a database transaction and drop the table EmployeesProjects. Now how you could restore back the lost table data?
+BEGIN TRAN
+DROP TABLE EmployeesProjects
+ROLLBACK
 
 
 --32 Find how to use temporary tables in SQL Server. Using temporary tables backup all records from EmployeesProjects and restore them back after dropping and re-creating the table.
+CREATE TABLE #LocalTempTable(
+        EmployeeID INT NOT NULL,
+        ProjectID INT NOT NULL,
+        CONSTRAINT PK_EmployeeesProjects PRIMARY KEY (EmployeeID, ProjectID),
+)
+GO
+
+INSERT INTO #LocalTempTable
+SELECT * FROM EmployeesProjects
+GO
+ 
+DROP TABLE EmployeesProjects
+ 
+CREATE TABLE EmployeesProjects(
+ EmployeeID INT NOT NULL,
+ ProjectID INT NOT NULL,
+ CONSTRAINT PK_EmployeeesProjects PRIMARY KEY (EmployeeID, ProjectID),
+ CONSTRAINT FK_EmployeesProjects_Employees FOREIGN KEY (EmployeeID)
+         REFERENCES Employees(EmployeeId),
+ CONSTRAINT FK_EmployeesProjects_Projects FOREIGN KEY (ProjectID)
+         REFERENCES Projects(ProjectId)
+)
+GO
+ 
+INSERT INTO EmployeesProjects
+SELECT * FROM #LocalTempTable
