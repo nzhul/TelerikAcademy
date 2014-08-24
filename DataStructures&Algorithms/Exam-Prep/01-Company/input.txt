@@ -1,0 +1,19 @@
+﻿11
+6
+stamat
+pesho
+gosho
+tosho
+ivan
+dragan
+petkan
+maria
+mitko
+batman
+robin
+stamat pesho gosho tosho
+pesho ivan
+gosho dragan petkan
+tosho maria
+ivan mitko
+dragan batman robin
