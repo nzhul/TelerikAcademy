@@ -19,7 +19,7 @@
             Console.WriteLine(firstElement);
 
             // There is some bug with the dequeue that i need to find
-            // numbers.Dequeue();
+            //numbers.Dequeue();
 
             try
             {
