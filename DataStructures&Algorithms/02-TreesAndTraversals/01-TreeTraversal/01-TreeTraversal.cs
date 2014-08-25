@@ -74,8 +74,45 @@ namespace TreeTraversal
             Console.WriteLine("Path/s with sum of {0} is/are: {1}", searchedSum, String.Join(" and ", allPaths));
 
             //6 * all subtrees with given sum S of their nodes
-            //TODO: Finish me!
+            searchedSum = 10;
+            HashSet<string> allSubTrees = FindAllSubtrees(nodes, searchedSum);
+            Console.WriteLine("Subtrees with sum of {0} is: {1}", searchedSum, string.Join(" and ", allSubTrees));
 
+        }
+
+        private static HashSet<string> FindAllSubtrees(Node<int>[] nodes, int searchedSum)
+        {
+            HashSet<string> subTrees = new HashSet<string>();
+
+            foreach (var node in nodes)
+            {
+                if (node.Children.Count > 0)
+                {
+                    Queue<int> queue = new Queue<int>();
+
+                    var sum = 0;
+                    BFS(node, n => {
+
+                        queue.Enqueue(n.Value);
+                        sum += n.Value;
+
+                        if (sum == searchedSum)
+                        {
+                            subTrees.Add(String.Join(" -> ", queue));
+                            return false;
+                        }
+
+                        if (sum > searchedSum)
+                        {
+                            return false;
+                        }
+
+                        return true;                        
+                    });
+                }
+            }
+
+            return subTrees;
         }
 
         private static void BFS(Node<int> node, Func<Node<int>, bool> action)
