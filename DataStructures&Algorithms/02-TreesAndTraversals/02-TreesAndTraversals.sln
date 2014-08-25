@@ -1,9 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2012
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01-TreeTraversal", "01-TreeTraversal\01-TreeTraversal.csproj", "{62D8430E-E324-4FCC-BCCD-98A7DD8B9AE4}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02-DirectoryTraverser", "02-DirectoryTraverser\02-DirectoryTraverser.csproj", "{FB9CA84B-6331-4056-A091-968F229836D0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "03-FileTree", "03-FileTree\03-FileTree.csproj", "{7C4F6CB9-3265-4387-A8F1-E9A1232F734A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -19,6 +23,10 @@ Global
 		{FB9CA84B-6331-4056-A091-968F229836D0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FB9CA84B-6331-4056-A091-968F229836D0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FB9CA84B-6331-4056-A091-968F229836D0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7C4F6CB9-3265-4387-A8F1-E9A1232F734A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7C4F6CB9-3265-4387-A8F1-E9A1232F734A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7C4F6CB9-3265-4387-A8F1-E9A1232F734A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7C4F6CB9-3265-4387-A8F1-E9A1232F734A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
