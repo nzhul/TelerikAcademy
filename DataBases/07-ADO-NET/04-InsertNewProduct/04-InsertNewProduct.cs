@@ -29,6 +29,9 @@ namespace InsertNewProduct
 
             using (dbCon)
             {
+                Console.WriteLine("INSERTING NEW PODUCT:");
+                Console.WriteLine("--------------------");
+
                 var result = command.ExecuteNonQuery();
                 Console.WriteLine("({0} row(s) affected)", result); 
             }
