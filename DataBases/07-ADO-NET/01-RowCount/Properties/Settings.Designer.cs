@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace CategoriesRowCount.Properties {
+namespace RowCount.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
