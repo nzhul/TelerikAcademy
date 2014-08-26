@@ -1,6 +1,6 @@
 ﻿// 03. Write a program that retrieves from the Northwind database all product categories
 // and the names of the products in each category. Can you do this with a single SQL query (with table join)?
-namespace RowCount
+namespace CategoriesAndProducts
 {
     using System;
     using System.Collections.Generic;
@@ -10,6 +10,7 @@ namespace RowCount
         static void Main()
         {
             // Please change the connection string with Your Own 
+            // Check the database Name too!!!
             string connectionString = "Server=LENOVO\\SQLEXPRESS; Database=NORTHWND; Integrated Security=true";
             SqlConnection dbCon = new SqlConnection(connectionString);
             dbCon.Open();

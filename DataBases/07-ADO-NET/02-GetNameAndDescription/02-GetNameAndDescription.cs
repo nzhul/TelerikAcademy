@@ -8,6 +8,7 @@ namespace GetNameAndDescription
         static void Main()
         {
             // Please change the connection string with Your Own 
+            // Check the database Name too!!!
             string connectionString = "Server=LENOVO\\SQLEXPRESS; Database=NORTHWND; Integrated Security=true";
             SqlConnection dbCon = new SqlConnection(connectionString);
             dbCon.Open();
