@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "04-InsertNewProduct", "04-I
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "05-CreateJPGFiles", "05-CreateJPGFiles\05-CreateJPGFiles.csproj", "{BA43BDCD-4C16-4936-9A85-6387347299FF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "06-ExcelReader", "06-ExcelReader\06-ExcelReader.csproj", "{655AFCD4-CA56-4AC2-A94B-285100D172CC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{BA43BDCD-4C16-4936-9A85-6387347299FF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BA43BDCD-4C16-4936-9A85-6387347299FF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BA43BDCD-4C16-4936-9A85-6387347299FF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{655AFCD4-CA56-4AC2-A94B-285100D172CC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{655AFCD4-CA56-4AC2-A94B-285100D172CC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{655AFCD4-CA56-4AC2-A94B-285100D172CC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{655AFCD4-CA56-4AC2-A94B-285100D172CC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
