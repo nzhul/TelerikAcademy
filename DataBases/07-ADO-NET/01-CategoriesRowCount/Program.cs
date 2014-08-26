@@ -8,7 +8,7 @@
         static void Main()
         {
             SqlConnection db = 
-                new SqlConnection("Server=SQLEXPRESS; Database=NORTHWIND; Integrated Security=true");
+                new SqlConnection("Server=KAKADU5-PC\\SQLEXPRESS; Database=Northwind; Integrated Security=true");
 
             db.Open();
             using (db)
