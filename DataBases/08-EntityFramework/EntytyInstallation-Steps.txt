@@ -1,0 +1,6 @@
+ - Create ClassLibrary for Database Data
+ - Install EntityFramework
+ - Create Console Project
+ - Install EntityFramework for whole solution
+ - Add REFERENCE for the Client
+ - Copy The Connection String from App.config to the App.Config of the client
