@@ -16,9 +16,9 @@
             {
                 //foreach (var customer in db.Customers)
                 //{
-                //    Console.WriteLine(customer.City);
+                //    Console.WriteLine(customer.CompanyName);
                 //}
-
+                 
                 var customers =
                     from c in db.Customers
                     where c.City == "London"
