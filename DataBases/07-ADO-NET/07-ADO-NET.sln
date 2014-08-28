@@ -1,8 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.21005.1
-MinimumVisualStudioVersion = 10.0.40219.1
+# Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01-RowCount", "01-RowCount\01-RowCount.csproj", "{DCB8C780-6BE6-42AD-B66F-91EC525622C2}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02-GetNameAndDescription", "02-GetNameAndDescription\02-GetNameAndDescription.csproj", "{56C61509-50C4-447A-86CD-E4EF2434A2F3}"
@@ -18,6 +16,10 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "07-InsertExcelRow", "07-InsertExcelRow\07-InsertExcelRow.csproj", "{0D315A78-4CCF-4A1F-A0F2-B06F83D246DF}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "08-SearchProduct", "08-SearchProduct\08-SearchProduct.csproj", "{7D41A681-209A-41D6-87D5-AFD05F2B4465}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "09-Library", "09-Library\09-Library.csproj", "{8D4675B4-AFC5-4E3F-AC67-C18B42783473}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "10-LibrarySQLite", "10-LibrarySQLite\10-LibrarySQLite.csproj", "{5E23EF81-C762-4142-8D8D-26B3E88FBB4E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -57,6 +59,14 @@ Global
 		{7D41A681-209A-41D6-87D5-AFD05F2B4465}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7D41A681-209A-41D6-87D5-AFD05F2B4465}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7D41A681-209A-41D6-87D5-AFD05F2B4465}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8D4675B4-AFC5-4E3F-AC67-C18B42783473}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8D4675B4-AFC5-4E3F-AC67-C18B42783473}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8D4675B4-AFC5-4E3F-AC67-C18B42783473}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8D4675B4-AFC5-4E3F-AC67-C18B42783473}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5E23EF81-C762-4142-8D8D-26B3E88FBB4E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5E23EF81-C762-4142-8D8D-26B3E88FBB4E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5E23EF81-C762-4142-8D8D-26B3E88FBB4E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5E23EF81-C762-4142-8D8D-26B3E88FBB4E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
