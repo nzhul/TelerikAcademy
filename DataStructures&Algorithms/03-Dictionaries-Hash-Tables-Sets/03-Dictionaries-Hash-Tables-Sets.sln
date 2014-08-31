@@ -9,6 +9,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02-OddNumberOfTimes", "02-O
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "03-WordOccurance", "03-WordOccurance\03-WordOccurance.csproj", "{60F04124-D0A0-4045-8A83-6FC48BF62E61}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "04-05-MyHashTable", "04-MyHashTable\04-05-MyHashTable.csproj", "{B2555E20-7152-4E5A-A3A1-AC2541858BB8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "06-PhoneBook", "06-PhoneBook\06-PhoneBook.csproj", "{EDFDA866-0268-4587-9F91-FB2DB2BC5105}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +31,14 @@ Global
 		{60F04124-D0A0-4045-8A83-6FC48BF62E61}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{60F04124-D0A0-4045-8A83-6FC48BF62E61}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{60F04124-D0A0-4045-8A83-6FC48BF62E61}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B2555E20-7152-4E5A-A3A1-AC2541858BB8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B2555E20-7152-4E5A-A3A1-AC2541858BB8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B2555E20-7152-4E5A-A3A1-AC2541858BB8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B2555E20-7152-4E5A-A3A1-AC2541858BB8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EDFDA866-0268-4587-9F91-FB2DB2BC5105}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EDFDA866-0268-4587-9F91-FB2DB2BC5105}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EDFDA866-0268-4587-9F91-FB2DB2BC5105}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EDFDA866-0268-4587-9F91-FB2DB2BC5105}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
