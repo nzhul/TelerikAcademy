@@ -38,14 +38,22 @@ namespace ConnectingToMongoDb
         {
             var db = GetDatabase(DatabaseName, DatabaseHost);
 
-            var logs = db.GetCollection<Message>("Messages");
+            var messages = db.GetCollection<Message>("Messages");
 
-            logs.Insert(new Message()
+            var query = Query.EQ("Author", "nzhul");
+            var entities = messages.Find(query);
+
+            foreach (var entity in entities)
             {
-                DateAdded = DateTime.Now,
-                Text = "This is my first message",
-                Author = "Stamat"
-            });
+                Console.WriteLine(entity.Text);
+            }
+
+            //messages.Insert(new Message()
+            //{
+            //    DateAdded = DateTime.Now,
+            //    Text = "Second message from nzhul",
+            //    Author = "nzhul"
+            //});
         }
     }
 
