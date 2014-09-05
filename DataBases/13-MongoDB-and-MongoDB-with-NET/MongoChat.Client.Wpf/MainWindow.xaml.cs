@@ -1,4 +1,6 @@
-﻿using System;
+﻿using MongoChat.Data;
+using MongoChat.Model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +25,25 @@ namespace MongoChat.Client.Wpf
         public MainWindow()
         {
             InitializeComponent();
+            FillMessageData();
+        }
+
+        private void FillMessageData()
+        {
+            MongoDataFetcher dataFetcher = new MongoDataFetcher();
+            var allMessages = dataFetcher.ReadAllMessages();
+            lvMessages.ItemsSource = allMessages;
+        }
+
+        private void SendMessage()
+        {
+            MongoDataFetcher dataFetcher = new MongoDataFetcher();
+
+            Message newMessage = new Message();
+            newMessage.Author = "Atanas";
+            newMessage.DateAdded = DateTime.Now;
+            newMessage.Text = "Хайде пичове и аз съм в играта вече!";
+            dataFetcher.SendMessage(newMessage);
         }
 
         private void userInput_KeyDown_1(object sender, KeyEventArgs e)
@@ -30,7 +51,7 @@ namespace MongoChat.Client.Wpf
             var newWindow = new Window();
             if (e.Key == Key.Enter) 
             {
-                newWindow.Show();
+                SendMessage();
             }
         }
     }

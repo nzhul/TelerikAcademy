@@ -100,6 +100,16 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MongoChat.Data\MongoChat.Data.csproj">
+      <Project>{f47cda2e-2bb1-40a7-9b55-bee4836c472d}</Project>
+      <Name>MongoChat.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MongoChat.Model\MongoChat.Model.csproj">
+      <Project>{3330c94c-e124-4451-9e94-4cf1ca9037c0}</Project>
+      <Name>MongoChat.Model</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

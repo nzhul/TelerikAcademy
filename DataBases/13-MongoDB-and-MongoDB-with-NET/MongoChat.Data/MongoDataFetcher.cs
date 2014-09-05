@@ -22,7 +22,25 @@
 
         public MongoCursor<Message> ReadAllMessages(string byUser)
         {
-            throw new NotImplementedException();
+            var collection = this.database.Value.GetCollection<Message>("Messages");
+
+            var query = Query.EQ("Author", byUser);
+            var messages = collection.Find(query);
+
+            return messages;
+        }
+
+        public void SendMessage(Message message)
+        {
+            var collection = this.database.Value.GetCollection<Message>("Messages");
+            try
+            {
+                collection.Insert(message);
+            }
+            catch (Exception)
+            {
+                throw new MongoConnectionException("Problem Sending the message!");
+            }
         }
 
         private static MongoDatabase GetDatabase()
