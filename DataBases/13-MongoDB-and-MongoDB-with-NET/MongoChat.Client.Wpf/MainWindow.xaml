@@ -1,0 +1,22 @@
+﻿<Window x:Class="MongoChat.Client.Wpf.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="350" Width="507.899">
+        <StackPanel Grid.Row="2" Margin="0, 0, 0, 0">
+            <Border Grid.ColumnSpan="2" Background="#878787" Height="40" >
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Foreground="#fff" FontSize="16" Margin="10, 0, 0, 0" VerticalAlignment="Center">Mongo Chat</TextBlock>
+                </StackPanel>
+            </Border>
+            <ListView Name="lvStudents">
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn Header="User" Width="80" DisplayMemberBinding="{Binding UserName}" />
+                        <GridViewColumn Header="Message" Width="350" DisplayMemberBinding="{Binding Message}" />
+                        <GridViewColumn Header="Date" Width="60" DisplayMemberBinding="{Binding Date}" />
+                    </GridView>
+                </ListView.View>
+            </ListView>
+        <TextBox Name="userInput" KeyDown="userInput_KeyDown_1"></TextBox>
+        </StackPanel>
+</Window>

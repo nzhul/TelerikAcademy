@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace MongoChat
+namespace MongoChat.Client.Wpf
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
@@ -23,6 +23,15 @@ namespace MongoChat
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private void userInput_KeyDown_1(object sender, KeyEventArgs e)
+        {
+            var newWindow = new Window();
+            if (e.Key == Key.Enter) 
+            {
+                newWindow.Show();
+            }
         }
     }
 }

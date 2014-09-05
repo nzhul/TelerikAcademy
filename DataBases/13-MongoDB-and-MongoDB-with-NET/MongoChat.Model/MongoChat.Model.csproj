@@ -1,14 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{F47CDA2E-2BB1-40A7-9B55-BEE4836C472D}</ProjectGuid>
+    <ProjectGuid>{3330C94C-E124-4451-9E94-4CF1CA9037C0}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>MongoChat.Data</RootNamespace>
-    <AssemblyName>MongoChat.Data</AssemblyName>
+    <RootNamespace>MongoChat.Model</RootNamespace>
+    <AssemblyName>MongoChat.Model</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -45,27 +45,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ChatSettings.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTimeSharedInput>True</DesignTimeSharedInput>
-      <DependentUpon>ChatSettings.settings</DependentUpon>
-    </Compile>
-    <Compile Include="MongoDataFetcher.cs" />
+    <Compile Include="Message.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="app.config" />
-    <None Include="ChatSettings.settings">
-      <Generator>SettingsSingleFileGenerator</Generator>
-      <LastGenOutput>ChatSettings.Designer.cs</LastGenOutput>
-    </None>
     <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\MongoChat.Model\MongoChat.Model.csproj">
-      <Project>{3330c94c-e124-4451-9e94-4cf1ca9037c0}</Project>
-      <Name>MongoChat.Model</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

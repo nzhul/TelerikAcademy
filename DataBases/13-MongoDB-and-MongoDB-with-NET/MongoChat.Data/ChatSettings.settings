@@ -1,0 +1,12 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="MongoChat.Data" GeneratedClassName="ChatSettings">
+  <Profiles />
+  <Settings>
+    <Setting Name="DataBaseHost" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">mongodb://root:root@ds063779.mongolab.com:63779/chat</Value>
+    </Setting>
+    <Setting Name="DataBaseName" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">chat</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>
