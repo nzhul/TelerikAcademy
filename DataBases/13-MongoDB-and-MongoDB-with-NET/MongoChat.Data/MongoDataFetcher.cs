@@ -45,7 +45,7 @@
 
         private static MongoDatabase GetDatabase()
         {
-            var mongoClient = new MongoClient(ChatSettings.Default.DataBaseHost);
+            var mongoClient = new MongoClient(ChatSettings.Default.DatabaseLocalHost);
             var server = mongoClient.GetServer();
             return server.GetDatabase(ChatSettings.Default.DataBaseName);
         }

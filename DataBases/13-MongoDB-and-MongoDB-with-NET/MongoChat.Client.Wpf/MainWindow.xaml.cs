@@ -14,6 +14,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using MongoDB.Driver;
 
 namespace MongoChat.Client.Wpf
 {
@@ -22,37 +23,56 @@ namespace MongoChat.Client.Wpf
     /// </summary>
     public partial class MainWindow : Window
     {
+        private MongoDataFetcher dataFetcher;
         public MainWindow()
         {
             InitializeComponent();
+            this.dataFetcher = new MongoDataFetcher();
             FillMessageData();
         }
 
         private void FillMessageData()
         {
-            MongoDataFetcher dataFetcher = new MongoDataFetcher();
-            var allMessages = dataFetcher.ReadAllMessages();
-            lvMessages.ItemsSource = allMessages;
-        }
+            var allMessages = this.dataFetcher.ReadAllMessages();
 
-        private void SendMessage()
-        {
-            MongoDataFetcher dataFetcher = new MongoDataFetcher();
-
-            Message newMessage = new Message();
-            newMessage.Author = "Atanas";
-            newMessage.DateAdded = DateTime.Now;
-            newMessage.Text = "Хайде пичове и аз съм в играта вече!";
-            dataFetcher.SendMessage(newMessage);
-        }
-
-        private void userInput_KeyDown_1(object sender, KeyEventArgs e)
-        {
-            var newWindow = new Window();
-            if (e.Key == Key.Enter) 
+            foreach (var message in allMessages)
             {
-                SendMessage();
+                Message currentMessage = new Message();
+                currentMessage.Author = message.Author;
+                currentMessage.Text = message.Text;
+                currentMessage.DateAdded = message.DateAdded;
+                lvMessages.Items.Add(currentMessage);
             }
         }
+
+
+        private void UserInputKeyDownEnter(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Enter) 
+            {
+                var userInput = sender as TextBox;
+
+                Message newMessage = new Message();
+                newMessage.Author = "nzhul";
+                newMessage.DateAdded = DateTime.Now;
+                newMessage.Text = userInput.Text;
+                userInput.Text = "";
+
+                UpdateMessagesUI(newMessage);
+                this.dataFetcher.SendMessage(newMessage);
+            }
+        }
+
+        private void UpdateMessagesUI(Message newMessage)
+        {
+            lvMessages.Items.Add(newMessage);
+        }
+
+        private void SubmitMsg_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+
     }
 }

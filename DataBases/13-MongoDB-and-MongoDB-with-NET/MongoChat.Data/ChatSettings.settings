@@ -8,5 +8,8 @@
     <Setting Name="DataBaseName" Type="System.String" Scope="Application">
       <Value Profile="(Default)">chat</Value>
     </Setting>
+    <Setting Name="DatabaseLocalHost" Type="System.String" Scope="User">
+      <Value Profile="(Default)">mongodb://127.0.0.1</Value>
+    </Setting>
   </Settings>
 </SettingsFile>
