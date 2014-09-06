@@ -5,6 +5,15 @@ VisualStudioVersion = 12.0.21005.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "00-XMLTesting", "00-XMLTesting\00-XMLTesting.csproj", "{BCC94D45-3793-4BF0-A69B-C6C7591F458B}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{FFC126B1-E6B3-494A-9C71-75576902EBD5}"
+	ProjectSection(SolutionItems) = preProject
+		catalog.xml = catalog.xml
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01-AllArtists", "01-AllArtists\01-AllArtists.csproj", "{2BFE442B-2699-4A4A-AF8B-1DA7078FCEC5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02-SongCount-XPath", "02-SongCount-XPath\02-SongCount-XPath.csproj", "{0296BDBC-AF87-4983-8A52-7CED9B17DB06}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +24,14 @@ Global
 		{BCC94D45-3793-4BF0-A69B-C6C7591F458B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BCC94D45-3793-4BF0-A69B-C6C7591F458B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BCC94D45-3793-4BF0-A69B-C6C7591F458B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2BFE442B-2699-4A4A-AF8B-1DA7078FCEC5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2BFE442B-2699-4A4A-AF8B-1DA7078FCEC5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2BFE442B-2699-4A4A-AF8B-1DA7078FCEC5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2BFE442B-2699-4A4A-AF8B-1DA7078FCEC5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0296BDBC-AF87-4983-8A52-7CED9B17DB06}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0296BDBC-AF87-4983-8A52-7CED9B17DB06}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0296BDBC-AF87-4983-8A52-7CED9B17DB06}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0296BDBC-AF87-4983-8A52-7CED9B17DB06}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

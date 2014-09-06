@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{BCC94D45-3793-4BF0-A69B-C6C7591F458B}</ProjectGuid>
+    <ProjectGuid>{2BFE442B-2699-4A4A-AF8B-1DA7078FCEC5}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>_00_XMLTesting</RootNamespace>
-    <AssemblyName>00-XMLTesting</AssemblyName>
+    <RootNamespace>AllArtists</RootNamespace>
+    <AssemblyName>01-AllArtists</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>

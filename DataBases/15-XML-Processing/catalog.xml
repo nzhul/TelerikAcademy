@@ -13,7 +13,7 @@
     <producer>
       Awesome Records
     </producer>
-    <price>23.988</price>
+    <price>34.54272</price>
     <songs>
       <song>
         <title>Blackened</title>
@@ -31,6 +31,35 @@
   </album>
   <album>
     <name>
+      Master of Pupets
+    </name>
+    <artist>
+      Metallica
+    </artist>
+    <year>
+      1986
+    </year>
+    <producer>
+      Awesome Records
+    </producer>
+    <price>33.54272</price>
+    <songs>
+      <song>
+        <title>Battery</title>
+        <duration>5.12</duration>
+      </song>
+      <song>
+        <title>Master of Puppets</title>
+        <duration>8.38</duration>
+      </song>
+      <song>
+        <title>Damage, Inc.</title>
+        <duration>5.31</duration>
+      </song>
+    </songs>
+  </album>
+  <album>
+    <name>
       Kings of Metal
     </name>
     <artist>
@@ -42,7 +71,7 @@
     <producer>
       Atlantic Records
     </producer>
-    <price>35.988</price>
+    <price>51.82272</price>
     <songs>
       <song>
         <title>Hearth of Steel</title>
@@ -71,7 +100,7 @@
     <producer>
       Epic Records
     </producer>
-    <price>47.988</price>
+    <price>69.10272</price>
     <songs>
       <song>
         <title>Be Quick or Be Dead</title>
@@ -100,7 +129,7 @@
     <producer>
       EMI
     </producer>
-    <price>39.588</price>
+    <price>57.00672</price>
     <songs>
       <song>
         <title>Standing in the Shadow</title>

@@ -11,7 +11,7 @@
         static void Main()
         {
             XmlDocument doc = new XmlDocument();
-            doc.Load("../../catalog.xml");
+            doc.Load("../../../catalog.xml");
 
             XmlNode catalog = doc.DocumentElement;
 
@@ -22,7 +22,7 @@
                 node["price"].InnerText = newPrice.ToString();
             }
 
-            doc.Save("../../catalog.xml");
+            doc.Save("../../../catalog.xml");
 
         }
     }
