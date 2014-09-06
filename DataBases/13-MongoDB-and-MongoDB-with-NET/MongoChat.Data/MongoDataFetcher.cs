@@ -9,7 +9,7 @@
     public class MongoDataFetcher
     {
 
-        private Lazy<MongoDatabase> database = new Lazy<MongoDatabase>(GetDatabase);
+        private readonly Lazy<MongoDatabase> database = new Lazy<MongoDatabase>(GetDatabase);
 
         public MongoCursor<Message> ReadAllMessages()
         {
@@ -45,7 +45,8 @@
 
         private static MongoDatabase GetDatabase()
         {
-            var mongoClient = new MongoClient(ChatSettings.Default.DatabaseLocalHost);
+            //var mongoClient = new MongoClient(ChatSettings.Default.DatabaseLocalHost);
+            var mongoClient = new MongoClient(ChatSettings.Default.DataBaseHost);
             var server = mongoClient.GetServer();
             return server.GetDatabase(ChatSettings.Default.DataBaseName);
         }

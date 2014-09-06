@@ -1,7 +1,7 @@
 ﻿<Window x:Class="MongoChat.Client.Wpf.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="MainWindow" Height="auto" Width="510" ResizeMode="NoResize">
+        Title="MainWindow" Height="auto" Width="570" ResizeMode="NoResize">
         <StackPanel Grid.Row="2" Margin="0, 0, 0, 0">
             <Border Grid.ColumnSpan="2" Background="#878787" Height="40" >
                 <StackPanel Orientation="Horizontal">
@@ -25,7 +25,7 @@
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>
                     </GridViewColumn>
-                    <GridViewColumn Header="Date" Width="60" DisplayMemberBinding="{Binding DateAdded}" />
+                    <GridViewColumn Header="Date" Width="120" DisplayMemberBinding="{Binding DateAdded, StringFormat=hh:mm - dd/MM/yyyy}" />
                 </GridView>
             </ListView.View>
         </ListView>

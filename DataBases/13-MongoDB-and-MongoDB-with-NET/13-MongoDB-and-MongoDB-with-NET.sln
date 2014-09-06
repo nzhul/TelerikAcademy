@@ -1,25 +1,26 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2012
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "00-TestingMongo", "00-TestingMongo\00-TestingMongo.csproj", "{E1CC35BF-B3C2-43D8-9D4D-19EB5AAF96A9}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "00-01-MongoLabTesting", "00-01-MongoLabTesting\00-01-MongoLabTesting.csproj", "{512D2D44-CA44-428F-A414-CE4539A27F96}"
-EndProject
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MongoChat.Data", "MongoChat.Data\MongoChat.Data.csproj", "{F47CDA2E-2BB1-40A7-9B55-BEE4836C472D}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Client", "Client", "{65C0E56E-D50F-4A27-8678-69F245116C3B}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Data", "Data", "{F67F914A-ECFB-4210-B8B8-A5D38044ADF8}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Testing", "Testing", "{325AADEF-D713-4E91-8523-4CC54A8E2A2E}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Model", "Model", "{1F6511FA-1BCD-453A-BD27-01A67F40F590}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MongoChat.Client.Console", "MongoChat.Client.Console\MongoChat.Client.Console.csproj", "{5B007153-7FA6-4234-A2CA-595D4CB679E3}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MongoChat.Client.Wpf", "MongoChat.Client.Wpf\MongoChat.Client.Wpf.csproj", "{87E05D1F-D873-4432-91A6-E6979FF78349}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MongoChat.Model", "MongoChat.Model\MongoChat.Model.csproj", "{3330C94C-E124-4451-9E94-4CF1CA9037C0}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{D07A4C1A-7599-4565-A09B-11BC2B73B743}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\NuGet.Config = .nuget\NuGet.Config
+		.nuget\NuGet.exe = .nuget\NuGet.exe
+		.nuget\NuGet.targets = .nuget\NuGet.targets
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,22 +28,10 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{E1CC35BF-B3C2-43D8-9D4D-19EB5AAF96A9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E1CC35BF-B3C2-43D8-9D4D-19EB5AAF96A9}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{E1CC35BF-B3C2-43D8-9D4D-19EB5AAF96A9}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{E1CC35BF-B3C2-43D8-9D4D-19EB5AAF96A9}.Release|Any CPU.Build.0 = Release|Any CPU
-		{512D2D44-CA44-428F-A414-CE4539A27F96}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{512D2D44-CA44-428F-A414-CE4539A27F96}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{512D2D44-CA44-428F-A414-CE4539A27F96}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{512D2D44-CA44-428F-A414-CE4539A27F96}.Release|Any CPU.Build.0 = Release|Any CPU
 		{F47CDA2E-2BB1-40A7-9B55-BEE4836C472D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{F47CDA2E-2BB1-40A7-9B55-BEE4836C472D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F47CDA2E-2BB1-40A7-9B55-BEE4836C472D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F47CDA2E-2BB1-40A7-9B55-BEE4836C472D}.Release|Any CPU.Build.0 = Release|Any CPU
-		{5B007153-7FA6-4234-A2CA-595D4CB679E3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{5B007153-7FA6-4234-A2CA-595D4CB679E3}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{5B007153-7FA6-4234-A2CA-595D4CB679E3}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{5B007153-7FA6-4234-A2CA-595D4CB679E3}.Release|Any CPU.Build.0 = Release|Any CPU
 		{87E05D1F-D873-4432-91A6-E6979FF78349}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{87E05D1F-D873-4432-91A6-E6979FF78349}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{87E05D1F-D873-4432-91A6-E6979FF78349}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -56,11 +45,8 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{512D2D44-CA44-428F-A414-CE4539A27F96} = {325AADEF-D713-4E91-8523-4CC54A8E2A2E}
-		{E1CC35BF-B3C2-43D8-9D4D-19EB5AAF96A9} = {325AADEF-D713-4E91-8523-4CC54A8E2A2E}
-		{5B007153-7FA6-4234-A2CA-595D4CB679E3} = {65C0E56E-D50F-4A27-8678-69F245116C3B}
-		{87E05D1F-D873-4432-91A6-E6979FF78349} = {65C0E56E-D50F-4A27-8678-69F245116C3B}
 		{F47CDA2E-2BB1-40A7-9B55-BEE4836C472D} = {F67F914A-ECFB-4210-B8B8-A5D38044ADF8}
+		{87E05D1F-D873-4432-91A6-E6979FF78349} = {65C0E56E-D50F-4A27-8678-69F245116C3B}
 		{3330C94C-E124-4451-9E94-4CF1CA9037C0} = {1F6511FA-1BCD-453A-BD27-01A67F40F590}
 	EndGlobalSection
 EndGlobal

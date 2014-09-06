@@ -1,20 +1,9 @@
 ﻿using MongoChat.Data;
 using MongoChat.Model;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
-using MongoDB.Driver;
 
 namespace MongoChat.Client.Wpf
 {
@@ -53,7 +42,7 @@ namespace MongoChat.Client.Wpf
                 var userInput = sender as TextBox;
 
                 Message newMessage = new Message();
-                newMessage.Author = "nzhul";
+                newMessage.Author = "Guest";
                 newMessage.DateAdded = DateTime.Now;
                 newMessage.Text = userInput.Text;
                 userInput.Text = "";
@@ -70,7 +59,14 @@ namespace MongoChat.Client.Wpf
 
         private void SubmitMsg_Click(object sender, RoutedEventArgs e)
         {
+            Message newMessage = new Message();
+            newMessage.Author = "Guest";
+            newMessage.DateAdded = DateTime.Now;
+            newMessage.Text = userInput.Text;
+            userInput.Text = "";
 
+            UpdateMessagesUI(newMessage);
+            this.dataFetcher.SendMessage(newMessage);
         }
 
 
