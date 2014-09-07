@@ -1,0 +1,562 @@
+﻿{
+  "rss": {
+    "@version": "2.0",
+    "channel": {
+      "title": "Telerik Academy Forums - Recent questions and answers",
+      "link": "http://forums.academy.telerik.com/qa",
+      "description": "Powered by Question2Answer",
+      "item": [
+        {
+          "title": "Answered: [DSA] Домашно Sorting and Searching Algorithms",
+          "link": "http://forums.academy.telerik.com/98217/dsa-%D0%B4%D0%BE%D0%BC%D0%B0%D1%88%D0%BD%D0%BE-sorting-and-searching-algorithms?show=172533#a172533",
+          "description": "<div>\n\tАз си направих един клас да тествам performance на сортиращите алгоритми. Използва се много лесно:</div>\n<div>\n\t&nbsp;</div>\n<div>\n\t<span style=\"color: rgb(0, 0, 0);\">PerformanceTester</span><span class=\"sy0\" style=\"color: rgb(0, 128, 0);\">.</span><span class=\"me1\" style=\"color: rgb(0, 0, 255);\">Test</span><span class=\"br0\" style=\"color: rgb(0, 128, 0);\">(</span></div>\n<div>\n\t<div class=\"de2 li2\" style=\"-webkit-user-select: none;-webkit-user-select: text; padding: 0px 5px; vertical-align: top; color: rgb(0, 0, 0); border-left-width: 1px; border-left-style: solid; border-left-color: rgb(204, 204, 204); margin: 0px 0px 0px -7px; position: relative; background: rgb(255, 255, 255);\">\n\t\t&nbsp; &nbsp;&nbsp;<span class=\"kw3\" style=\"color: rgb(0, 128, 0);\">new</span>&nbsp;SelectionSorter<span class=\"sy0\" style=\"color: rgb(0, 128, 0);\">&lt;</span><span class=\"kw4\" style=\"color: rgb(102, 102, 204); font-weight: bold;\">int</span><span class=\"sy0\" style=\"color: rgb(0, 128, 0);\">&gt;</span><span class=\"br0\" style=\"color: rgb(0, 128, 0);\">(</span><span class=\"br0\" style=\"color: rgb(0, 128, 0);\">)</span>,</div>\n\t<div class=\"de1 li1\" style=\"-webkit-user-select: none;-webkit-user-select: text; padding: 0px 5px; vertical-align: top; color: rgb(0, 0, 0); border-left-width: 1px; border-left-style: solid; border-left-color: rgb(204, 204, 204); margin: 0px 0px 0px -7px; position: relative; background: rgb(255, 255, 255);\">\n\t\t&nbsp; &nbsp;&nbsp;<span class=\"kw3\" style=\"color: rgb(0, 128, 0);\">new</span>&nbsp;QuickSorter<span class=\"sy0\" style=\"color: rgb(0, 128, 0);\">&lt;</span><span class=\"kw4\" style=\"color: rgb(102, 102, 204); font-weight: bold;\">int</span><span class=\"sy0\" style=\"color: rgb(0, 128, 0);\">&gt;</span><span class=\"br0\" style=\"color: rgb(0, 128, 0);\">(</span><span class=\"br0\" style=\"color: rgb(0, 128, 0);\">)</span>,</div>\n\t<div class=\"de2 li2\" style=\"-webkit-user-select: none;-webkit-user-select: text; padding: 0px 5px; vertical-align: top; color: rgb(0, 0, 0); border-left-width: 1px; border-left-style: solid; border-left-color: rgb(204, 204, 204); margin: 0px 0px 0px -7px; position: relative; background: rgb(255, 255, 255);\">\n\t\t&nbsp; &nbsp;&nbsp;<span class=\"kw3\" style=\"color: rgb(0, 128, 0);\">new</span>&nbsp;MergeSorter<span class=\"sy0\" style=\"color: rgb(0, 128, 0);\">&lt;</span><span class=\"kw4\" style=\"color: rgb(102, 102, 204); font-weight: bold;\">int</span><span class=\"sy0\" style=\"color: rgb(0, 128, 0);\">&gt;</span><span class=\"br0\" style=\"color: rgb(0, 128, 0);\">(</span><span class=\"br0\" style=\"color: rgb(0, 128, 0);\">)</span><span class=\"br0\" style=\"color: rgb(0, 128, 0);\">)</span><span class=\"sy0\" style=\"color: rgb(0, 128, 0);\">;</span></div>\n</div>\n<div>\n\t&nbsp;</div>\n<div>\n\tТества всеки ISorter със колекция от 10,000 случайни числа. Ето резулатат от теста:</div>\n<div>\n\t&nbsp;</div>\n<div>\n\tSelectionSorter: &nbsp;792.90ms</div>\n<div>\n\tQuickSorter &nbsp; &nbsp;: &nbsp; &nbsp;2.30ms</div>\n<div>\n\tMergeSorter &nbsp; &nbsp;: &nbsp; &nbsp;3.60ms</div>\n<div>\n\t&nbsp;</div>\n<div>\n\t&nbsp;</div>\n<div>\n\t<a rel=\"nofollow\" href=\"https://github.com/neutrino-git/TelerikAcademy/blob/master/Programming/05.DataStructuresAndAlgorithms/08.Sorting-and-Seraching-Algorithms/Sorting.Demo/PerformanceTester.cs\">PerformanceTester</a></div>",
+          "category": "Data Structures & Algorithms",
+          "guid": {
+            "@isPermaLink": "true",
+            "#text": "http://forums.academy.telerik.com/98217/dsa-%D0%B4%D0%BE%D0%BC%D0%B0%D1%88%D0%BD%D0%BE-sorting-and-searching-algorithms?show=172533#a172533"
+          },
+          "pubDate": "Sat, 06 Sep 2014 10:58:53 +0000"
+        },
+        {
+          "title": "Answered: [Databases] Домашно Processing XML in .NET",
+          "link": "http://forums.academy.telerik.com/109854/databases-%D0%B4%D0%BE%D0%BC%D0%B0%D1%88%D0%BD%D0%BE-processing-xml-in-net?show=172532#a172532",
+          "description": "<p>\n\tАко някой има нужда от още едно hint-че, може да погледне и <span style=\"font-size:14px;\"><strong><a rel=\"nofollow\" href=\"http://github.com/Daniel-Todorov/Telerik-Academy/tree/master/Databases/14.%20XmlParsers\" target=\"_blank\">тук</a>&nbsp;</strong></span>- всички задачи без тази с звездичка.</p>",
+          "category": "Databases",
+          "guid": {
+            "@isPermaLink": "true",
+            "#text": "http://forums.academy.telerik.com/109854/databases-%D0%B4%D0%BE%D0%BC%D0%B0%D1%88%D0%BD%D0%BE-processing-xml-in-net?show=172532#a172532"
+          },
+          "pubDate": "Sat, 06 Sep 2014 10:56:04 +0000"
+        },
+        {
+          "title": "Answered: [Databases] Видео от подготовка за изпит",
+          "link": "http://forums.academy.telerik.com/172514/databases-%D0%B2%D0%B8%D0%B4%D0%B5%D0%BE-%D0%BE%D1%82-%D0%BF%D0%BE%D0%B4%D0%B3%D0%BE%D1%82%D0%BE%D0%B2%D0%BA%D0%B0-%D0%B7%D0%B0-%D0%B8%D0%B7%D0%BF%D0%B8%D1%82?show=172531#a172531",
+          "description": "Видеото е готово за гледане, нападайте !",
+          "category": "Databases",
+          "guid": {
+            "@isPermaLink": "true",
+            "#text": "http://forums.academy.telerik.com/172514/databases-%D0%B2%D0%B8%D0%B4%D0%B5%D0%BE-%D0%BE%D1%82-%D0%BF%D0%BE%D0%B4%D0%B3%D0%BE%D1%82%D0%BE%D0%B2%D0%BA%D0%B0-%D0%B7%D0%B0-%D0%B8%D0%B7%D0%BF%D0%B8%D1%82?show=172531#a172531"
+          },
+          "pubDate": "Sat, 06 Sep 2014 10:41:51 +0000"
+        },
+        {
+          "title": "Answered: [Databases] MongoDB with .NET: Chat client (CrowdChat)",
+          "link": "http://forums.academy.telerik.com/172244/databases-mongodb-with-net-chat-client-crowdchat?show=172523#a172523",
+          "description": "Тази задача се реализира по-правилно с webservice който да кисне между различните инстанции на WPF програмата и базата данни.<br />\n<br />\nТака няма нужда WPF клиента да пита постоянно: има ли ново съобщение, има ли ново съобщение, има ли ново съобщение, има ли ново съобщение, има ли ново съобщение, има ли ново съобщение<br />\n<br />\nДосадно е. Представете си, че вас постоянно ви питат едно и също нещо. ( Дончо знае :) ) Няма ли да е по-добре ако вие си кажете като имате ново съобщение вместо постоянно да ви питат X на брой хора ( инстанции на WPF клиента )<br />\n<br />\nЗа целта се ползва някаква notification система като pubnub, parse, signalR. Клиента праща съобщение до сървъра. Той го записва в базата. Нотифицира останалите свързани в момента инстанции на WPF програмата че има нова информация. Директно може да им я прати в този случай. Те като получат новото съобщение си го изписват на екрана.<br />\n<br />\nТук има няколко предимства.<br />\n<br />\n1. Не си отваряте базата данни за достъп до всеки, защото минава през webservice връзката с нея.<br />\n<br />\n2. Може да си ползвате програмата от всякъде. При затворена база данни трябwа да се около нея. Този проблем при mongolab и cloud бази го няма, но не винаги така стоят нещата.<br />\n<br />\n3. Може да кеширате данни на webservicа за да не се допитвате до базата за едно и също нещо. Примерно нов клиент на програмата ако се свърже може от кеша да му се дадът старите съобщения, а не да се вземат от базата.<br />\n<br />\n4. Не се товари постоянно мрежата с трафик да питате едно и също.<br />\n<br />\n5. Не товарите излишно сървъра Дончо да отговаря постоянно на всички инстанции, че не е проверил още изпитите :)<br />\n<br />\n6. Може да се направят на други езици и платформи клиенти които да работят през същия webservice<br />\n<br />\nТа за да Ви е по-интересно като минете webservice курса може да си разширите програмата. Pubnub се ползва с няколко реда код.",
+          "category": "Databases",
+          "guid": {
+            "@isPermaLink": "true",
+            "#text": "http://forums.academy.telerik.com/172244/databases-mongodb-with-net-chat-client-crowdchat?show=172523#a172523"
+          },
+          "pubDate": "Sat, 06 Sep 2014 08:44:08 +0000"
+        },
+        {
+          "title": "Prosodyim сървър",
+          "link": "http://forums.academy.telerik.com/172489/prosodyim-%D1%81%D1%8A%D1%80%D0%B2%D1%8A%D1%80",
+          "description": "<p>\n\tЗдравейте. Тъй като сървърната страна не ми е много ясна ще питам, а вие ще ми се смеете евентуално :) Опитвам се да подкарам Prosodyim на windows. Правя някаква конфигурация за локално ползване. Сега въпросът ми е как мога да изпълня някой js файл. Примерно както мога да го изпълня с nodejs.От къде да дам заявка към сървъра. По друг начин казано къде, в коя директория, какъв URL, как да видя някой файл, къде трябва да ги съхранявам. Извинявам се за глупавия въпрос, но нещо ми се губи сериозно. Навсякъде където гледах пише сървър за 1 минута, много лесно, но аз не мога да се ориентирам. Дано въпроса ми е ясен<img alt=\"blush\" height=\"20\" src=\"http://forums.academy.telerik.com/qa-plugin/wysiwyg-editor/plugins/smiley/images/embaressed_smile.gif\" title=\"blush\" width=\"20\"></p>",
+          "category": "Web services and cloud",
+          "guid": {
+            "@isPermaLink": "true",
+            "#text": "http://forums.academy.telerik.com/172489/prosodyim-%D1%81%D1%8A%D1%80%D0%B2%D1%8A%D1%80"
+          },
+          "pubDate": "Fri, 05 Sep 2014 21:20:26 +0000"
+        },
+        {
+          "title": "Answered: [Database] Ще има ли задължителни парсъри на изпита ?",
+          "link": "http://forums.academy.telerik.com/172486/database-%D1%89%D0%B5-%D0%B8%D0%BC%D0%B0-%D0%BB%D0%B8-%D0%B7%D0%B0%D0%B4%D1%8A%D0%BB%D0%B6%D0%B8%D1%82%D0%B5%D0%BB%D0%BD%D0%B8-%D0%BF%D0%B0%D1%80%D1%81%D1%8A%D1%80%D0%B8-%D0%BD%D0%B0-%D0%B8%D0%B7%D0%BF%D0%B8%D1%82%D0%B0?show=172488#a172488",
+          "description": "Днес на подготовката за изпита Ивайло каза, че няма никакви изисквания за ползването на каквито и да е XML парсери, като добави, че не е изключено и да имаме обработка на JSON обекти. :)",
+          "category": "Databases",
+          "guid": {
+            "@isPermaLink": "true",
+            "#text": "http://forums.academy.telerik.com/172486/database-%D1%89%D0%B5-%D0%B8%D0%BC%D0%B0-%D0%BB%D0%B8-%D0%B7%D0%B0%D0%B4%D1%8A%D0%BB%D0%B6%D0%B8%D1%82%D0%B5%D0%BB%D0%BD%D0%B8-%D0%BF%D0%B0%D1%80%D1%81%D1%8A%D1%80%D0%B8-%D0%BD%D0%B0-%D0%B8%D0%B7%D0%BF%D0%B8%D1%82%D0%B0?show=172488#a172488"
+          },
+          "pubDate": "Fri, 05 Sep 2014 21:13:22 +0000"
+        },
+        {
+          "title": "Answered: Дата, час и продължителност на изпита",
+          "link": "http://forums.academy.telerik.com/172400/%D0%B4%D0%B0%D1%82%D0%B0-%D1%87%D0%B0%D1%81-%D0%B8-%D0%BF%D1%80%D0%BE%D0%B4%D1%8A%D0%BB%D0%B6%D0%B8%D1%82%D0%B5%D0%BB%D0%BD%D0%BE%D1%81%D1%82-%D0%BD%D0%B0-%D0%B8%D0%B7%D0%BF%D0%B8%D1%82%D0%B0?show=172483#a172483",
+          "description": "За да не отварям нова тема, бих искала да попитам дали ще бъде качено видеото от днешната подготовка, тъй като все пак предстоят почивни дни...",
+          "category": "Databases",
+          "guid": {
+            "@isPermaLink": "true",
+            "#text": "http://forums.academy.telerik.com/172400/%D0%B4%D0%B0%D1%82%D0%B0-%D1%87%D0%B0%D1%81-%D0%B8-%D0%BF%D1%80%D0%BE%D0%B4%D1%8A%D0%BB%D0%B6%D0%B8%D1%82%D0%B5%D0%BB%D0%BD%D0%BE%D1%81%D1%82-%D0%BD%D0%B0-%D0%B8%D0%B7%D0%BF%D0%B8%D1%82%D0%B0?show=172483#a172483"
+          },
+          "pubDate": "Fri, 05 Sep 2014 20:27:19 +0000"
+        },
+        {
+          "title": "Answered: Генератор на фалшиви обекти за тестване",
+          "link": "http://forums.academy.telerik.com/172442/%D0%B3%D0%B5%D0%BD%D0%B5%D1%80%D0%B0%D1%82%D0%BE%D1%80-%D0%BD%D0%B0-%D1%84%D0%B0%D0%BB%D1%88%D0%B8%D0%B2%D0%B8-%D0%BE%D0%B1%D0%B5%D0%BA%D1%82%D0%B8-%D0%B7%D0%B0-%D1%82%D0%B5%D1%81%D1%82%D0%B2%D0%B0%D0%BD%D0%B5?show=172482#a172482",
+          "description": "<p>\n\t<span style=\"color: rgb(0, 0, 0); font-family: arial, sans-serif; font-size: 13.333333015441895px; line-height: 16.399999618530273px;\"><a href=\"http://code.google.com/p/csvtest/\" rel=\"nofollow\">CSVTest</a> is a test data generator which produces CSV data suitable for use in relational database applications.</span></p>\n<p>\n\t<span style=\"color: rgb(0, 0, 0); font-family: arial, sans-serif; font-size: 13.333333015441895px; line-height: 16.399999618530273px;\">Ако ви трябва и фалшива база данни :)</span></p>",
+          "category": "Предложения",
+          "guid": {
+            "@isPermaLink": "true",
+            "#text": "http://forums.academy.telerik.com/172442/%D0%B3%D0%B5%D0%BD%D0%B5%D1%80%D0%B0%D1%82%D0%BE%D1%80-%D0%BD%D0%B0-%D1%84%D0%B0%D0%BB%D1%88%D0%B8%D0%B2%D0%B8-%D0%BE%D0%B1%D0%B5%D0%BA%D1%82%D0%B8-%D0%B7%D0%B0-%D1%82%D0%B5%D1%81%D1%82%D0%B2%D0%B0%D0%BD%D0%B5?show=172482#a172482"
+          },
+          "pubDate": "Fri, 05 Sep 2014 20:15:07 +0000"
+        },
+        {
+          "title": "Answered: Unique constraint за not null values",
+          "link": "http://forums.academy.telerik.com/172463/unique-constraint-%D0%B7%D0%B0-not-null-values?show=172479#a172479",
+          "description": "<p>\n\t<span style=\"color: rgb(51, 51, 51); font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 11.8181819915771px;\">Здравей, мисля, че говориш за филтриран индекс от типа ([ISBN] IS NOT NULL) - виж <a href=\"http://www.mssqltips.com/sqlservertip/3096/sql-server-index-properties-in-management-studio/.\" rel=\"nofollow\">тук</a> как става с Management Studio.</span><span style=\"color: rgb(51, 51, 51); font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 11.8181819915771px;\">&nbsp;</span><br style=\"color: rgb(51, 51, 51); font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 11.8181819915771px;\">\n\t<span style=\"color: rgb(51, 51, 51); font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 11.8181819915771px;\">Не съм търсил как се прави с Code First (по-точно с Data Annotations)</span><br style=\"color: rgb(51, 51, 51); font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 11.8181819915771px;\">\n\t<span style=\"color: rgb(51, 51, 51); font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 11.8181819915771px;\">Може ли само да ми цитираш кое от примерната изпитна тема тълкуваш като такова изискване?</span></p>",
+          "category": "Databases",
+          "guid": {
+            "@isPermaLink": "true",
+            "#text": "http://forums.academy.telerik.com/172463/unique-constraint-%D0%B7%D0%B0-not-null-values?show=172479#a172479"
+          },
+          "pubDate": "Fri, 05 Sep 2014 19:59:58 +0000"
+        },
+        {
+          "title": "Answered: Ползване на SQL Express / SQL Server на изпита",
+          "link": "http://forums.academy.telerik.com/172468/%D0%BF%D0%BE%D0%BB%D0%B7%D0%B2%D0%B0%D0%BD%D0%B5-%D0%BD%D0%B0-sql-express-sql-server-%D0%BD%D0%B0-%D0%B8%D0%B7%D0%BF%D0%B8%D1%82%D0%B0?show=172471#a172471",
+          "description": "<p>\n\tОт бъдещите програмисти ще се очаква поне малко да могат да мислят и да могат да си сменят connection stringa. Ако това елементарно нещо някой не може то за какви сертификати се бори и за каква работа в IT индустрията?</p>\n<p>\n\tВсе пак проверката е нож в 2 остриета. Би трябвало да се оцени и знанието/незнанието на проверяващия до колко може да смени един connection string.</p>\n<p>\n\tpublic class ApplicationDbContext : DbContext</p>\n<div>\n\t&nbsp; &nbsp; {</div>\n<div>\n\t&nbsp; &nbsp; &nbsp; &nbsp; private static string _connection;</div>\n<div>\n\t&nbsp;</div>\n<div>\n\t&nbsp; &nbsp; &nbsp; &nbsp; public ApplicationDbContext()</div>\n<div>\n\t&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; : base(_connection ?? \"appContext\")</div>\n<div>\n\t&nbsp; &nbsp; &nbsp; &nbsp; {</div>\n<div>\n\t&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Database.SetInitializer(new MigrateDatabaseToLatestVersion&lt;ApplicationDbContext, Migrations.Configuration&gt;());</div>\n<div>\n\t&nbsp; &nbsp; &nbsp; &nbsp; }</div>\n<div>\n\t&nbsp;</div>\n<div>\n\t&nbsp; &nbsp; &nbsp; &nbsp; public ApplicationDbContext(string connection)</div>\n<div>\n\t&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; : base(connection)</div>\n<div>\n\t&nbsp; &nbsp; &nbsp; &nbsp; {</div>\n<div>\n\t&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; _connection = connection;</div>\n<div>\n\t&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Database.SetInitializer(new MigrateDatabaseToLatestVersion&lt;ApplicationDbContext, Migrations.Configuration&gt;());</div>\n<div>\n\t&nbsp; &nbsp; &nbsp; &nbsp; }</div>\n<div>\n\t}</div>\n<div>\n\t&nbsp;</div>\n<div>\n\tvar Context = new ApplicationDbContext([userchoice]);</div>\n<div>\n\t&nbsp;</div>\n<div>\n\tРепозирай си го :)</div>",
+          "category": "Databases",
+          "guid": {
+            "@isPermaLink": "true",
+            "#text": "http://forums.academy.telerik.com/172468/%D0%BF%D0%BE%D0%BB%D0%B7%D0%B2%D0%B0%D0%BD%D0%B5-%D0%BD%D0%B0-sql-express-sql-server-%D0%BD%D0%B0-%D0%B8%D0%B7%D0%BF%D0%B8%D1%82%D0%B0?show=172471#a172471"
+          },
+          "pubDate": "Fri, 05 Sep 2014 18:55:25 +0000"
+        },
+        {
+          "title": "Answered: [DSA] Домашно Recursion - 12 Задача",
+          "link": "http://forums.academy.telerik.com/100218/dsa-%D0%B4%D0%BE%D0%BC%D0%B0%D1%88%D0%BD%D0%BE-recursion-12-%D0%B7%D0%B0%D0%B4%D0%B0%D1%87%D0%B0?show=172470#a172470",
+          "description": "<p style=\"text-align: justify;\">\n\tЕто едно решение на 30 реда:&nbsp;<a href=\"https://github.com/neutrino-git/TelerikAcademy/blob/master/Programming/05.DataStructuresAndAlgorithms/07.Recursion/12.EightQueensPuzzleShort/EightQueensPuzzleShort.cs\" rel=\"nofollow\">Source</a></p>\n<p style=\"text-align: justify;\">\n\tНамерих начин да отбелязвам кои диагонали са заети в bool масив с 32 елемента - точно толкова колкото са всички диагонали на дъската. Единия диагонал се маркира еднозначно с разликата между реда и колоната, а другия - със сумата. Т.е. ако една фигура е на позиция (2,3), това значи, че всяка друга фигура, за която сумата от нейните ред и колона е 5, или разликата е -1, лежи на един диагонал с първата фигура. Решението работи за произволно N.</p>",
+          "category": "Data Structures & Algorithms",
+          "guid": {
+            "@isPermaLink": "true",
+            "#text": "http://forums.academy.telerik.com/100218/dsa-%D0%B4%D0%BE%D0%BC%D0%B0%D1%88%D0%BD%D0%BE-recursion-12-%D0%B7%D0%B0%D0%B4%D0%B0%D1%87%D0%B0?show=172470#a172470"
+          },
+          "pubDate": "Fri, 05 Sep 2014 18:52:55 +0000"
+        },
+        {
+          "title": "Answered: [DSA] Домашно Recursion - 10 Задача",
+          "link": "http://forums.academy.telerik.com/100119/dsa-%D0%B4%D0%BE%D0%BC%D0%B0%D1%88%D0%BD%D0%BE-recursion-10-%D0%B7%D0%B0%D0%B4%D0%B0%D1%87%D0%B0?show=172467#a172467",
+          "description": "<div style=\"text-align: justify;\">\n\tТук реших да отпечатам отговора по-визуално :) Ако на някой му е интересно, метода е DrawArea() - подава се стек с координатите (row, col) на празните клетки и реда от екрана, от който да започне изчертаването.</div>\n<div>\n\t&nbsp;</div>\n<div>\n\t<img alt=\"\" src=\"http://forums.academy.telerik.com/?qa=blob&amp;qa_blobid=5174046343483687062\" style=\"width: 291px; height: 276px;\"></div>\n<div>\n\t&nbsp;</div>\n<div>\n\t<a href=\"https://github.com/neutrino-git/TelerikAcademy/blob/master/Programming/05.DataStructuresAndAlgorithms/07.Recursion/10.AllAreasOfPassableCells/AllAreasOfPassableCells.cs\" rel=\"nofollow\">Source</a></div>",
+          "category": "Data Structures & Algorithms",
+          "guid": {
+            "@isPermaLink": "true",
+            "#text": "http://forums.academy.telerik.com/100119/dsa-%D0%B4%D0%BE%D0%BC%D0%B0%D1%88%D0%BD%D0%BE-recursion-10-%D0%B7%D0%B0%D0%B4%D0%B0%D1%87%D0%B0?show=172467#a172467"
+          },
+          "pubDate": "Fri, 05 Sep 2014 18:13:44 +0000"
+        },
+        {
+          "title": "Answered: [DSA] Домашно Recursion - 9 Задача",
+          "link": "http://forums.academy.telerik.com/100007/dsa-%D0%B4%D0%BE%D0%BC%D0%B0%D1%88%D0%BD%D0%BE-recursion-9-%D0%B7%D0%B0%D0%B4%D0%B0%D1%87%D0%B0?show=172464#a172464",
+          "description": "<div>\n\tТук линейно минавам през всички клетки, докато срещна празна клетка. От там пускам рекурсивно обхождане в дълбочина, като броя всяка клетка, през която минавам, и я отбелязвам като посетена. Като приключи, рекурсивната функция връща броя свързани клетки, които сравнявам с най-големия брой до момента. След това продължавам да търся друга празна клетка, която не е маркирана като посетена. Ако е маркирана, това значи, че е част от вече обработена площ от свързани клетки. Ето примерен тест:</div>\n<div>\n\t&nbsp;</div>\n<div>\n\t<span style=\"font-family:courier new,courier,monospace;\">var matrix = new[]&nbsp;</span></div>\n<div>\n\t<span style=\"font-family:courier new,courier,monospace;\">{</span></div>\n<div>\n\t<span style=\"font-family:courier new,courier,monospace;\">&nbsp; &nbsp; \"##################\",</span></div>\n<div>\n\t<span style=\"font-family:courier new,courier,monospace;\">&nbsp; &nbsp; \"#.##.##.##...##..#\",</span></div>\n<div>\n\t<span style=\"font-family:courier new,courier,monospace;\">&nbsp; &nbsp; \"####.##.##.#.##..#\",</span></div>\n<div>\n\t<span style=\"font-family:courier new,courier,monospace;\">&nbsp; &nbsp; \"#######.##...#####\",</span></div>\n<div>\n\t<span style=\"font-family:courier new,courier,monospace;\">&nbsp; &nbsp; \"##################\",</span></div>\n<div>\n\t<span style=\"font-family:courier new,courier,monospace;\">};</span></div>\n<div>\n\t&nbsp;</div>\n<div>\n\t<a href=\"https://github.com/neutrino-git/TelerikAcademy/blob/master/Programming/05.DataStructuresAndAlgorithms/07.Recursion/09.LargestConnectedArea/LargestConnectedArea.cs\" rel=\"nofollow\">Решение</a></div>\n<div>\n\t&nbsp;</div>\n<div>\n\t&nbsp;</div>",
+          "category": "Data Structures & Algorithms",
+          "guid": {
+            "@isPermaLink": "true",
+            "#text": "http://forums.academy.telerik.com/100007/dsa-%D0%B4%D0%BE%D0%BC%D0%B0%D1%88%D0%BD%D0%BE-recursion-9-%D0%B7%D0%B0%D0%B4%D0%B0%D1%87%D0%B0?show=172464#a172464"
+          },
+          "pubDate": "Fri, 05 Sep 2014 17:53:58 +0000"
+        },
+        {
+          "title": "Answered: [DSA] Домашно Recursion - 7 Задача",
+          "link": "http://forums.academy.telerik.com/100128/dsa-%D0%B4%D0%BE%D0%BC%D0%B0%D1%88%D0%BD%D0%BE-recursion-7-%D0%B7%D0%B0%D0%B4%D0%B0%D1%87%D0%B0?show=172461#a172461",
+          "description": "<div style=\"text-align: justify;\">\n\tАз допускам, без ограничения на общността, че търся пътища между горния-ляв и долния-десен ъгъл на матрицата. След това обхождам матрицата в дълбочина започвайки от началната клетка, в четирите възможни посоки. Ако попадна на крайната клетка - отпечатвам пътя, който пазя в стек. При всяко влизане в клетка я отбелязвам като посетена и я слагам в стека, а като приключа обхождането от нея във всички посоки, отбелязвам че е свободна и я изваждам от стека. Така давам възможност и друг път да мине от там.</div>\n<div style=\"text-align: justify;\">\n\t&nbsp;</div>\n<div style=\"text-align: justify;\">\n\t<a href=\"https://github.com/neutrino-git/TelerikAcademy/blob/master/Programming/05.DataStructuresAndAlgorithms/07.Recursion/07.AllPathsInLabyrinth/AllPathsInLabyrinth.cs\" rel=\"nofollow\">Решение</a></div>",
+          "category": "Data Structures & Algorithms",
+          "guid": {
+            "@isPermaLink": "true",
+            "#text": "http://forums.academy.telerik.com/100128/dsa-%D0%B4%D0%BE%D0%BC%D0%B0%D1%88%D0%BD%D0%BE-recursion-7-%D0%B7%D0%B0%D0%B4%D0%B0%D1%87%D0%B0?show=172461#a172461"
+          },
+          "pubDate": "Fri, 05 Sep 2014 17:36:46 +0000"
+        },
+        {
+          "title": "Answered: [DSA] Домашно Recursion - 6 Задача",
+          "link": "http://forums.academy.telerik.com/100121/dsa-%D0%B4%D0%BE%D0%BC%D0%B0%D1%88%D0%BD%D0%BE-recursion-6-%D0%B7%D0%B0%D0%B4%D0%B0%D1%87%D0%B0?show=172459#a172459",
+          "description": "<div>\n\tАз я направих с { \"<strong>rock</strong>\", \"<strong>paper</strong>\", \"<strong>scissors</strong>\", \"<strong>lizard</strong>\", \"<strong>Spock</strong>\" }. Ето го резултата:</div>\n<div>\n\t&nbsp;</div>\n<div>\n\t(rock paper)</div>\n<div>\n\t(rock scissors)</div>\n<div>\n\t(rock lizard)</div>\n<div>\n\t(rock Spock)</div>\n<div>\n\t(paper scissors)</div>\n<div>\n\t(paper lizard)</div>\n<div>\n\t(paper Spock)</div>\n<div>\n\t(scissors lizard)</div>\n<div>\n\t(scissors Spock)</div>\n<div>\n\t(lizard Spock)</div>\n<div>\n\t&nbsp;</div>\n<div>\n\t<a href=\"https://github.com/neutrino-git/TelerikAcademy/blob/master/Programming/05.DataStructuresAndAlgorithms/07.Recursion/06.StringCombinations/StringCombinations.cs\" rel=\"nofollow\">Решение</a></div>",
+          "category": "Data Structures & Algorithms",
+          "guid": {
+            "@isPermaLink": "true",
+            "#text": "http://forums.academy.telerik.com/100121/dsa-%D0%B4%D0%BE%D0%BC%D0%B0%D1%88%D0%BD%D0%BE-recursion-6-%D0%B7%D0%B0%D0%B4%D0%B0%D1%87%D0%B0?show=172459#a172459"
+          },
+          "pubDate": "Fri, 05 Sep 2014 17:22:44 +0000"
+        },
+        {
+          "title": "Answered: Съвети за разработчици (spoiler: хумор)",
+          "link": "http://forums.academy.telerik.com/14123/%D1%81%D1%8A%D0%B2%D0%B5%D1%82%D0%B8-%D0%B7%D0%B0-%D1%80%D0%B0%D0%B7%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D1%87%D0%B8%D1%86%D0%B8-spoiler-%D1%85%D1%83%D0%BC%D0%BE%D1%80?show=172457#a172457",
+          "description": "<p>\n\t<span style=\"color: rgb(20, 24, 35); font-family: Helvetica, Arial, 'lucida grande', tahoma, verdana, arial, sans-serif; font-size: 14px; line-height: 19.3199996948242px;\">Защо е сложно да се пише софтуер, обяснение за филолози:</span><br style=\"color: rgb(20, 24, 35); font-family: Helvetica, Arial, 'lucida grande', tahoma, verdana, arial, sans-serif; font-size: 14px; line-height: 19.3199996948242px;\">\n\t<span style=\"color: rgb(20, 24, 35); font-family: Helvetica, Arial, 'lucida grande', tahoma, verdana, arial, sans-serif; font-size: 14px; line-height: 19.3199996948242px;\">Представете си, че сте писател и поддържате проекта Война и Мир. По задание трябва да се напише нов епизод, в който Наташа Ростова се разхожда под дъжда в парка. Звучи просто - пишете \"заваля дъжд\", запис. Програмата гърми с грешка \"Наташа Ростова умря\". Започва се неколкодневно ровене - как е умряла, защо е умряла... Оказва се, че Пиер Безухов е бил в парка с обувки с гладка подметка, подхлъзнал се е в дъжда, изпуснал е пистолета си, пистолетът е гръмнал, куршумът е рикоширал в един стълб и е убил Наташа Ростова. Как може да се оправи това? Да смените обувките на Пиер Безухов? Да заредите пистолета с халостни патрони? Решавате да махнете стълба. Запис и нова грешка - \"Поручик Ржевски умря\". Оказва се, че в следващата глава поручикът се обляга на стълба, който току що сте махнали</span></p>",
+          "category": "Общи приказки",
+          "guid": {
+            "@isPermaLink": "true",
+            "#text": "http://forums.academy.telerik.com/14123/%D1%81%D1%8A%D0%B2%D0%B5%D1%82%D0%B8-%D0%B7%D0%B0-%D1%80%D0%B0%D0%B7%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D1%87%D0%B8%D1%86%D0%B8-spoiler-%D1%85%D1%83%D0%BC%D0%BE%D1%80?show=172457#a172457"
+          },
+          "pubDate": "Fri, 05 Sep 2014 16:58:05 +0000"
+        },
+        {
+          "title": "Answered: Can I change the language in RadGrid (PagerStyle and tooltips) to other language using ResourceKey?",
+          "link": "http://forums.academy.telerik.com/172418/language-radgrid-pagerstyle-tooltips-language-resourcekey?show=172455#a172455",
+          "description": "<p>\n\tNabila,</p>\n<p>\n\tIt really would be better to ask there, you just need to create account <a rel=\"nofollow\" href=\"https://www.telerik.com/login/v2/telerik?ReturnUrl=https%3a%2f%2fidentity.telerik.com%2fv2%2foauth%2ftelerik%2fauthorize%3fclient_id%3dhttp%253a%252f%252fwww.lean.telerik.com%26redirect_uri%3dhttp%253a%252f%252fwww.telerik.com%252faccount%26response_type%3dcode%26state%3dCFCBABA0439B6035BE72B0B0281765F54094BBF8F0F70CEECE7D701BB35F5E93\">here</a>&nbsp;and then to open new thread <a rel=\"nofollow\" href=\"http://www.telerik.com/forums/aspnet-ajax/grid\">here</a>.&nbsp;</p>\n<p>\n\tBut during that time you can check <a rel=\"nofollow\" href=\"http://www.telerik.com/forums/radgrid-language-localization\">this </a>thread. There is something like your problem, reffering RadGrid, language localization and&nbsp;resource files, so you might find your solution there. And if not it will be very easy to open new thread, where you will be assisted from Telerik support team very soon :)</p>\n<p>\n\tBut please keep in mind that in&nbsp;<a href=\"http://forums.academy.telerik.com/\" rel=\"nofollow\" target=\"_blank\">http://forums.academy.telerik.com/</a> we are mostly students in Telerik academy and not employees or part ot the support team, so it would be harder(or impossible) for us to answer :)</p>\n<p>\n\tBest regards!</p>\n<p>\n\t&nbsp;</p>",
+          "category": "Общи приказки",
+          "guid": {
+            "@isPermaLink": "true",
+            "#text": "http://forums.academy.telerik.com/172418/language-radgrid-pagerstyle-tooltips-language-resourcekey?show=172455#a172455"
+          },
+          "pubDate": "Fri, 05 Sep 2014 16:03:49 +0000"
+        },
+        {
+          "title": "Answered: Конфигурация за графична станция",
+          "link": "http://forums.academy.telerik.com/172396/%D0%BA%D0%BE%D0%BD%D1%84%D0%B8%D0%B3%D1%83%D1%80%D0%B0%D1%86%D0%B8%D1%8F-%D0%B7%D0%B0-%D0%B3%D1%80%D0%B0%D1%84%D0%B8%D1%87%D0%BD%D0%B0-%D1%81%D1%82%D0%B0%D0%BD%D1%86%D0%B8%D1%8F?show=172441#a172441",
+          "description": "Съветвам те да мислиш и за възможност за 2 видеокарти (като евентуален ъпгрейд след известно време, ще им паднат цените и за по-малко кинти ще получиш по-голяма производителност, отколкото да смениш с 1 нова, като имаш предвид и скоростие на дъното). Също провери за РАЙД с ССД та - дали си заслужава за твоите цели - не знам , но проучи и това в зависимост от нуждите си.",
+          "category": "Общи приказки",
+          "guid": {
+            "@isPermaLink": "true",
+            "#text": "http://forums.academy.telerik.com/172396/%D0%BA%D0%BE%D0%BD%D1%84%D0%B8%D0%B3%D1%83%D1%80%D0%B0%D1%86%D0%B8%D1%8F-%D0%B7%D0%B0-%D0%B3%D1%80%D0%B0%D1%84%D0%B8%D1%87%D0%BD%D0%B0-%D1%81%D1%82%D0%B0%D0%BD%D1%86%D0%B8%D1%8F?show=172441#a172441"
+          },
+          "pubDate": "Fri, 05 Sep 2014 11:35:35 +0000"
+        },
+        {
+          "title": "Answered: Подмяна на, Palit GTX 750 Ti с r9 270/270x?",
+          "link": "http://forums.academy.telerik.com/172421/%D0%BF%D0%BE%D0%B4%D0%BC%D1%8F%D0%BD%D0%B0-%D0%BD%D0%B0-palit-gtx-750-ti-%D1%81-r9-270-270x?show=172426#a172426",
+          "description": "r9 270/270x са стари карти с нови имена. Стой си с 750 Ti, не си струва.",
+          "category": "Игри",
+          "guid": {
+            "@isPermaLink": "true",
+            "#text": "http://forums.academy.telerik.com/172421/%D0%BF%D0%BE%D0%B4%D0%BC%D1%8F%D0%BD%D0%B0-%D0%BD%D0%B0-palit-gtx-750-ti-%D1%81-r9-270-270x?show=172426#a172426"
+          },
+          "pubDate": "Fri, 05 Sep 2014 10:10:47 +0000"
+        },
+        {
+          "title": "Answered: SQL Server Express 2014 - проблем с инсталация",
+          "link": "http://forums.academy.telerik.com/171501/sql-server-express-2014-%D0%BF%D1%80%D0%BE%D0%B1%D0%BB%D0%B5%D0%BC-%D1%81-%D0%B8%D0%BD%D1%81%D1%82%D0%B0%D0%BB%D0%B0%D1%86%D0%B8%D1%8F?show=172408#a172408",
+          "description": "<p>\n\tКолеги, пробвах да инсталирам MS SQL 2014 Express, и накрая получих следните <a rel=\"nofollow\" href=\"https://www.dropbox.com/s/sosgtuinyu37b9y/01.jpg?dl=0\">грешки</a>. Преинсталирах го, и пак стана същото. Някой може ли да помогне?</p>",
+          "category": "Databases",
+          "guid": {
+            "@isPermaLink": "true",
+            "#text": "http://forums.academy.telerik.com/171501/sql-server-express-2014-%D0%BF%D1%80%D0%BE%D0%B1%D0%BB%D0%B5%D0%BC-%D1%81-%D0%B8%D0%BD%D1%81%D1%82%D0%B0%D0%BB%D0%B0%D1%86%D0%B8%D1%8F?show=172408#a172408"
+          },
+          "pubDate": "Fri, 05 Sep 2014 00:49:41 +0000"
+        },
+        {
+          "title": "Answered: [Databases] Изтекла дата за изпращане на отборните проекти",
+          "link": "http://forums.academy.telerik.com/172356/databases-%D0%B8%D0%B7%D1%82%D0%B5%D0%BA%D0%BB%D0%B0-%D0%B4%D0%B0%D1%82%D0%B0-%D0%B7%D0%B0-%D0%B8%D0%B7%D0%BF%D1%80%D0%B0%D1%89%D0%B0%D0%BD%D0%B5-%D0%BD%D0%B0-%D0%BE%D1%82%D0%B1%D0%BE%D1%80%D0%BD%D0%B8%D1%82%D0%B5-%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82%D0%B8?show=172387#a172387",
+          "description": "С риск за хейт. Тези срокове не са от вчера и си се знаят. Това че някой забравя си е негов пропуск и не мисля, че трябва да се прави нещо по въпроса а просто да се вземе конкретния урок и да се следят датите повече честно казано. Ако някой срок е сгрешен се оправя от лекторите но ако е стар и си се знае от седмица е различно.",
+          "category": "Databases",
+          "guid": {
+            "@isPermaLink": "true",
+            "#text": "http://forums.academy.telerik.com/172356/databases-%D0%B8%D0%B7%D1%82%D0%B5%D0%BA%D0%BB%D0%B0-%D0%B4%D0%B0%D1%82%D0%B0-%D0%B7%D0%B0-%D0%B8%D0%B7%D0%BF%D1%80%D0%B0%D1%89%D0%B0%D0%BD%D0%B5-%D0%BD%D0%B0-%D0%BE%D1%82%D0%B1%D0%BE%D1%80%D0%BD%D0%B8%D1%82%D0%B5-%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82%D0%B8?show=172387#a172387"
+          },
+          "pubDate": "Thu, 04 Sep 2014 14:20:05 +0000"
+        },
+        {
+          "title": "Answered: Как да получа стойността на \"id\" - то на бутон при натискането му HTML/PHP?",
+          "link": "http://forums.academy.telerik.com/172377/%D0%BA%D0%B0%D0%BA-%D0%B4%D0%B0-%D0%BF%D0%BE%D0%BB%D1%83%D1%87%D0%B0-%D1%81%D1%82%D0%BE%D0%B9%D0%BD%D0%BE%D1%81%D1%82%D1%82%D0%B0-%D1%82%D0%BE-%D0%B1%D1%83%D1%82%D0%BE%D0%BD-%D0%BF%D1%80%D0%B8-%D0%BD%D0%B0%D1%82%D0%B8%D1%81%D0%BA%D0%B0%D0%BD%D0%B5%D1%82%D0%BE-%D0%BC%D1%83-html-php?show=172383#a172383",
+          "description": "До колкото разбрах той иска да вземе стойността на самото ID, когато направи POST ще му върне стойността на value. <br />\n<br />\nС чисто php не се сещам как може да стане това, но има една готина библиотека с която можеш да правиш DOM операции върху елементите. <br />\n<br />\nPHPQuery - <a href=\"https://code.google.com/p/phpquery/\" rel=\"nofollow\" target=\"_blank\">https://code.google.com/p/phpquery/</a> <br />\n<br />\nРазгледай документацията всичко е описано, как да си include-неш библиотеката. И вече от там можеш да достъпваш атрибутите на елемента.",
+          "category": "HTML/CSS",
+          "guid": {
+            "@isPermaLink": "true",
+            "#text": "http://forums.academy.telerik.com/172377/%D0%BA%D0%B0%D0%BA-%D0%B4%D0%B0-%D0%BF%D0%BE%D0%BB%D1%83%D1%87%D0%B0-%D1%81%D1%82%D0%BE%D0%B9%D0%BD%D0%BE%D1%81%D1%82%D1%82%D0%B0-%D1%82%D0%BE-%D0%B1%D1%83%D1%82%D0%BE%D0%BD-%D0%BF%D1%80%D0%B8-%D0%BD%D0%B0%D1%82%D0%B8%D1%81%D0%BA%D0%B0%D0%BD%D0%B5%D1%82%D0%BE-%D0%BC%D1%83-html-php?show=172383#a172383"
+          },
+          "pubDate": "Thu, 04 Sep 2014 13:02:12 +0000"
+        },
+        {
+          "title": "Create MongoLab Account and Database Tutorial",
+          "link": "http://forums.academy.telerik.com/172382/create-mongolab-account-and-database-tutorial",
+          "description": "<a href=\"https://www.youtube.com/watch?v=dPXURXyIzYM\" rel=\"nofollow\" target=\"_blank\">https://www.youtube.com/watch?v=dPXURXyIzYM</a><br />\n<br />\n&nbsp;<br />\n<br />\nМалко помощ!",
+          "category": "Databases",
+          "guid": {
+            "@isPermaLink": "true",
+            "#text": "http://forums.academy.telerik.com/172382/create-mongolab-account-and-database-tutorial"
+          },
+          "pubDate": "Thu, 04 Sep 2014 12:56:08 +0000"
+        },
+        {
+          "title": "Answered: Macbook Air vs Toshiba Satellite Z30",
+          "link": "http://forums.academy.telerik.com/172301/macbook-air-vs-toshiba-satellite-z30?show=172371#a172371",
+          "description": "Ако ще даваш такива пари за ultrabook бих те посъветвал за други модели.<br />\n<br />\nИ майка ми и приятелката ми имат Samsung Ativ Book 9 plus. Страхотен ултрабук, алуминиев корпус, бърз надежден, лек и много удобен. Дисплеят е страхотен! Ако можеш да си набавиш такъв от Щатите за 2300 лева ще вземеш най-мощния модел с i7. Батерията издържа около 7-8 часа с интернет и тежко ползване - клипове и т.н.<br />\n<br />\nАко пък парите въобще не са проблем --&gt; Lenovo X1 Carbon Touch. Имал съм Thinkpad, който вече е притежание на сестра ми. 6 години и все още работи безупречно! Имат най-невероятните клавиатури в света на лаптопите според мен и сервиза им в София е доста добър. Един мой много добър приятел QA инженер от много години, си купи този след дълго четене. Казва, че е предоволен. <br />\n<br />\n&nbsp;<br />\n<br />\nТова е от мен :)",
+          "category": "Общи приказки",
+          "guid": {
+            "@isPermaLink": "true",
+            "#text": "http://forums.academy.telerik.com/172301/macbook-air-vs-toshiba-satellite-z30?show=172371#a172371"
+          },
+          "pubDate": "Thu, 04 Sep 2014 10:22:36 +0000"
+        },
+        {
+          "title": "Профилактика на електрическото захранване в \"Академията на Телерик\"",
+          "link": "http://forums.academy.telerik.com/172366/%D0%BF%D1%80%D0%BE%D1%84%D0%B8%D0%BB%D0%B0%D0%BA%D1%82%D0%B8%D0%BA%D0%B0-%D0%B5%D0%BB%D0%B5%D0%BA%D1%82%D1%80%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%BE%D1%82%D0%BE-%D0%B7%D0%B0%D1%85%D1%80%D0%B0%D0%BD%D0%B2%D0%B0%D0%BD%D0%B5-%D0%B0%D0%BA%D0%B0%D0%B4%D0%B5%D0%BC%D0%B8%D1%8F%D1%82%D0%B0-%D1%82%D0%B5%D0%BB%D0%B5%D1%80%D0%B8%D0%BA",
+          "description": "<p>\n\tЗдравейте,</p>\n<p>\n\tНа <strong>05.09.2014 (петък)</strong> в интервала <strong>15.00 - 15.30 часа</strong> ще бъде направена профилактика на електрическото захранване във всички зали в \"Академията на Телерик\". В този интервал от 30 минути електрическото захранване ще бъде преустановено.</p>\n<p>\n\tМолим всички курсисти, които са в Академията в минутите преди профилактиката, да изключат работните си машини от контактите и да изчакат възобновяването на захранването, преди да ги включат отново.</p>\n<p>\n\tВъв връзка с <a href=\"http://www.cez.bg/bg/novini/1096.html\" rel=\"nofollow\">ремонт на електропроводи</a>, собственотст на Електроенергиен системен оператор (ЕСО), в периода<strong> 06.09 - 14.09 </strong>са възможни смущения в електроподаването в районите, в които се намира и \"Академията на Телерик\". Имайте предвид, че в този период също са възможни прекъсвания на електрозахранването, за които няма как да ви информираме предварително.</p>\n<p>\n\tПоздрави,</p>",
+          "category": "Важни съобщения",
+          "guid": {
+            "@isPermaLink": "true",
+            "#text": "http://forums.academy.telerik.com/172366/%D0%BF%D1%80%D0%BE%D1%84%D0%B8%D0%BB%D0%B0%D0%BA%D1%82%D0%B8%D0%BA%D0%B0-%D0%B5%D0%BB%D0%B5%D0%BA%D1%82%D1%80%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%BE%D1%82%D0%BE-%D0%B7%D0%B0%D1%85%D1%80%D0%B0%D0%BD%D0%B2%D0%B0%D0%BD%D0%B5-%D0%B0%D0%BA%D0%B0%D0%B4%D0%B5%D0%BC%D0%B8%D1%8F%D1%82%D0%B0-%D1%82%D0%B5%D0%BB%D0%B5%D1%80%D0%B8%D0%BA"
+          },
+          "pubDate": "Thu, 04 Sep 2014 09:21:09 +0000"
+        },
+        {
+          "title": "Answered: R programming language",
+          "link": "http://forums.academy.telerik.com/149055/r-programming-language?show=172365#a172365",
+          "description": "Открих R случайно в началото на годината. Занимавам се с анализ на финансови данни, като използвам доста иконометрика. SPSS никога не ми е бил приятен за разлика от EVIWS. Последният е подходящ за иконометрично моделиране, като и дава възможност за програмиране, така че да си насториш моделите според изискванията.<br />\n<br />\nВече използвам R. Трябва много ровене и четене, докато устиш езика и спецификата му. Вятно има доста пакети, но трябва да си убеден в тяхната акуратност, като една и съща функция може да е в 3 пакета и ако ги използваш може да има конфликт.<br />\n<br />\nНа мене ми върши страхотна работа - както за излседователска, така и за бизнес. Но имам 1 на ум, когаот исползвам готови пакети, а не мои.",
+          "category": "Общи приказки",
+          "guid": {
+            "@isPermaLink": "true",
+            "#text": "http://forums.academy.telerik.com/149055/r-programming-language?show=172365#a172365"
+          },
+          "pubDate": "Thu, 04 Sep 2014 08:21:09 +0000"
+        },
+        {
+          "title": "Answered: [Databases] Защита на отборни проекти?",
+          "link": "http://forums.academy.telerik.com/172220/databases-%D0%B7%D0%B0%D1%89%D0%B8%D1%82%D0%B0-%D0%BD%D0%B0-%D0%BE%D1%82%D0%B1%D0%BE%D1%80%D0%BD%D0%B8-%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82%D0%B8?show=172363#a172363",
+          "description": "<p>\n\tЗдравейте,</p>\n<p>\n\tДнес от 18.00 часа в зала „Ultimate“ ще се проведе лекцията „Ролята на специалиста по поддръжка на софтуера (Support Officer) в „Телерик““.</p>\n<p>\n\tПоради тази причина защитите отборните проекти, които трябва да се проведат след 17.00 часа, ще се състоят в зала „Enterprise“.</p>\n<p>\n\tОтборите, които са засегнати от промяната, са:</p>\n<table border=\"1\" cellpadding=\"1\" cellspacing=\"1\" style=\"width: 517px;\" width=\"517\">\n\t<tbody>\n\t\t<tr>\n\t\t\t<td style=\"width:244px;height:17px; white-space: nowrap;\">\n\t\t\t\t<p style=\"text-align: center;\">\n\t\t\t\t\t<strong>Team</strong></p>\n\t\t\t</td>\n\t\t\t<td style=\"width:55px;height:17px; white-space: nowrap;\">\n\t\t\t\t<p style=\"text-align: center;\">\n\t\t\t\t\t<strong>Type</strong></p>\n\t\t\t</td>\n\t\t\t<td style=\"width:104px;height:17px; white-space: nowrap;\">\n\t\t\t\t<p style=\"text-align: center;\">\n\t\t\t\t\t<strong>Training hall</strong></p>\n\t\t\t</td>\n\t\t\t<td style=\"width:57px;height:17px; white-space: nowrap;\">\n\t\t\t\t<p style=\"text-align: center;\">\n\t\t\t\t\t<strong>Date</strong></p>\n\t\t\t</td>\n\t\t\t<td style=\"width:57px;height:17px; white-space: nowrap;\">\n\t\t\t\t<p style=\"text-align: center;\">\n\t\t\t\t\t<strong>Time</strong></p>\n\t\t\t</td>\n\t\t</tr>\n\t\t<tr>\n\t\t\t<td style=\"width:244px;height:17px; white-space: nowrap;\">\n\t\t\t\t<p style=\"text-align: center;\">\n\t\t\t\t\tTeam \"Ancient Behemoth\"</p>\n\t\t\t</td>\n\t\t\t<td style=\"width:55px;height:17px; white-space: nowrap;\">\n\t\t\t\t<p style=\"text-align: center;\">\n\t\t\t\t\ton-site</p>\n\t\t\t</td>\n\t\t\t<td style=\"width:104px;height:17px; white-space: nowrap;\">\n\t\t\t\t<p style=\"text-align: center;\">\n\t\t\t\t\tEnterprise</p>\n\t\t\t</td>\n\t\t\t<td style=\"width:57px;height:17px; white-space: nowrap;\">\n\t\t\t\t<p style=\"text-align: center;\">\n\t\t\t\t\t4.9.2014</p>\n\t\t\t</td>\n\t\t\t<td style=\"width:57px;height:17px; white-space: nowrap;\">\n\t\t\t\t<p style=\"text-align: center;\">\n\t\t\t\t\t17:00:00</p>\n\t\t\t</td>\n\t\t</tr>\n\t\t<tr>\n\t\t\t<td style=\"width:244px;height:17px; white-space: nowrap;\">\n\t\t\t\t<p style=\"text-align: center;\">\n\t\t\t\t\tTeam \"Roc\"</p>\n\t\t\t</td>\n\t\t\t<td style=\"width:55px;height:17px; white-space: nowrap;\">\n\t\t\t\t<p style=\"text-align: center;\">\n\t\t\t\t\ton-site</p>\n\t\t\t</td>\n\t\t\t<td style=\"width:104px;height:17px; white-space: nowrap;\">\n\t\t\t\t<p style=\"text-align: center;\">\n\t\t\t\t\tEnterprise</p>\n\t\t\t</td>\n\t\t\t<td style=\"width:57px;height:17px; white-space: nowrap;\">\n\t\t\t\t<p style=\"text-align: center;\">\n\t\t\t\t\t4.9.2014</p>\n\t\t\t</td>\n\t\t\t<td style=\"width:57px;height:17px; white-space: nowrap;\">\n\t\t\t\t<p style=\"text-align: center;\">\n\t\t\t\t\t17:15:00</p>\n\t\t\t</td>\n\t\t</tr>\n\t\t<tr>\n\t\t\t<td style=\"width:244px;height:17px; white-space: nowrap;\">\n\t\t\t\t<p style=\"text-align: center;\">\n\t\t\t\t\tTeam \"Centaur\"</p>\n\t\t\t</td>\n\t\t\t<td style=\"width:55px;height:17px; white-space: nowrap;\">\n\t\t\t\t<p style=\"text-align: center;\">\n\t\t\t\t\ton-site</p>\n\t\t\t</td>\n\t\t\t<td style=\"width:104px;height:17px; white-space: nowrap;\">\n\t\t\t\t<p style=\"text-align: center;\">\n\t\t\t\t\tEnterprise</p>\n\t\t\t</td>\n\t\t\t<td style=\"width:57px;height:17px; white-space: nowrap;\">\n\t\t\t\t<p style=\"text-align: center;\">\n\t\t\t\t\t4.9.2014</p>\n\t\t\t</td>\n\t\t\t<td style=\"width:57px;height:17px; white-space: nowrap;\">\n\t\t\t\t<p style=\"text-align: center;\">\n\t\t\t\t\t17:30:00</p>\n\t\t\t</td>\n\t\t</tr>\n\t\t<tr>\n\t\t\t<td style=\"width:244px;height:17px; white-space: nowrap;\">\n\t\t\t\t<p style=\"text-align: center;\">\n\t\t\t\t\tTeam \"Orc\"</p>\n\t\t\t</td>\n\t\t\t<td style=\"width:55px;height:17px; white-space: nowrap;\">\n\t\t\t\t<p style=\"text-align: center;\">\n\t\t\t\t\ton-site</p>\n\t\t\t</td>\n\t\t\t<td style=\"width:104px;height:17px; white-space: nowrap;\">\n\t\t\t\t<p style=\"text-align: center;\">\n\t\t\t\t\tEnterprise</p>\n\t\t\t</td>\n\t\t\t<td style=\"width:57px;height:17px; white-space: nowrap;\">\n\t\t\t\t<p style=\"text-align: center;\">\n\t\t\t\t\t4.9.2014</p>\n\t\t\t</td>\n\t\t\t<td style=\"width:57px;height:17px; white-space: nowrap;\">\n\t\t\t\t<p style=\"text-align: center;\">\n\t\t\t\t\t17:45:00</p>\n\t\t\t</td>\n\t\t</tr>\n\t\t<tr>\n\t\t\t<td style=\"width:244px;height:17px; white-space: nowrap;\">\n\t\t\t\t<p style=\"text-align: center;\">\n\t\t\t\t\tTeam \"Griffin\"</p>\n\t\t\t</td>\n\t\t\t<td style=\"width:55px;height:17px; white-space: nowrap;\">\n\t\t\t\t<p style=\"text-align: center;\">\n\t\t\t\t\ton-site</p>\n\t\t\t</td>\n\t\t\t<td style=\"width:104px;height:17px; white-space: nowrap;\">\n\t\t\t\t<p style=\"text-align: center;\">\n\t\t\t\t\tEnterprise</p>\n\t\t\t</td>\n\t\t\t<td style=\"width:57px;height:17px; white-space: nowrap;\">\n\t\t\t\t<p style=\"text-align: center;\">\n\t\t\t\t\t4.9.2014</p>\n\t\t\t</td>\n\t\t\t<td style=\"width:57px;height:17px; white-space: nowrap;\">\n\t\t\t\t<p style=\"text-align: center;\">\n\t\t\t\t\t18:00:00</p>\n\t\t\t</td>\n\t\t</tr>\n\t\t<tr>\n\t\t\t<td style=\"width:244px;height:17px; white-space: nowrap;\">\n\t\t\t\t<p style=\"text-align: center;\">\n\t\t\t\t\tTeam \"Wolf Rider\"</p>\n\t\t\t</td>\n\t\t\t<td style=\"width:55px;height:17px; white-space: nowrap;\">\n\t\t\t\t<p style=\"text-align: center;\">\n\t\t\t\t\ton-site</p>\n\t\t\t</td>\n\t\t\t<td style=\"width:104px;height:17px; white-space: nowrap;\">\n\t\t\t\t<p style=\"text-align: center;\">\n\t\t\t\t\tEnterprise</p>\n\t\t\t</td>\n\t\t\t<td style=\"width:57px;height:17px; white-space: nowrap;\">\n\t\t\t\t<p style=\"text-align: center;\">\n\t\t\t\t\t4.9.2014</p>\n\t\t\t</td>\n\t\t\t<td style=\"width:57px;height:17px; white-space: nowrap;\">\n\t\t\t\t<p style=\"text-align: center;\">\n\t\t\t\t\t18:15:00</p>\n\t\t\t</td>\n\t\t</tr>\n\t\t<tr>\n\t\t\t<td style=\"width:244px;height:17px; white-space: nowrap;\">\n\t\t\t\t<p style=\"text-align: center;\">\n\t\t\t\t\tTeam \"Fire Elemental\"</p>\n\t\t\t</td>\n\t\t\t<td style=\"width:55px;height:17px; white-space: nowrap;\">\n\t\t\t\t<p style=\"text-align: center;\">\n\t\t\t\t\ton-site</p>\n\t\t\t</td>\n\t\t\t<td style=\"width:104px;height:17px; white-space: nowrap;\">\n\t\t\t\t<p style=\"text-align: center;\">\n\t\t\t\t\tEnterprise</p>\n\t\t\t</td>\n\t\t\t<td style=\"width:57px;height:17px; white-space: nowrap;\">\n\t\t\t\t<p style=\"text-align: center;\">\n\t\t\t\t\t4.9.2014</p>\n\t\t\t</td>\n\t\t\t<td style=\"width:57px;height:17px; white-space: nowrap;\">\n\t\t\t\t<p style=\"text-align: center;\">\n\t\t\t\t\t18:30:00</p>\n\t\t\t</td>\n\t\t</tr>\n\t\t<tr>\n\t\t\t<td style=\"width:244px;height:17px; white-space: nowrap;\">\n\t\t\t\t<p style=\"text-align: center;\">\n\t\t\t\t\tTeam \"Wyvern\"</p>\n\t\t\t</td>\n\t\t\t<td style=\"width:55px;height:17px; white-space: nowrap;\">\n\t\t\t\t<p style=\"text-align: center;\">\n\t\t\t\t\ton-site</p>\n\t\t\t</td>\n\t\t\t<td style=\"width:104px;height:17px; white-space: nowrap;\">\n\t\t\t\t<p style=\"text-align: center;\">\n\t\t\t\t\tEnterprise</p>\n\t\t\t</td>\n\t\t\t<td style=\"width:57px;height:17px; white-space: nowrap;\">\n\t\t\t\t<p style=\"text-align: center;\">\n\t\t\t\t\t4.9.2014</p>\n\t\t\t</td>\n\t\t\t<td style=\"width:57px;height:17px; white-space: nowrap;\">\n\t\t\t\t<p style=\"text-align: center;\">\n\t\t\t\t\t18:45:00</p>\n\t\t\t</td>\n\t\t</tr>\n\t\t<tr>\n\t\t\t<td style=\"width:244px;height:17px; white-space: nowrap;\">\n\t\t\t\t<p style=\"text-align: center;\">\n\t\t\t\t\tTeam \"Inferno\"</p>\n\t\t\t</td>\n\t\t\t<td style=\"width:55px;height:17px; white-space: nowrap;\">\n\t\t\t\t<p style=\"text-align: center;\">\n\t\t\t\t\tonline</p>\n\t\t\t</td>\n\t\t\t<td style=\"width:104px;height:17px; white-space: nowrap;\">\n\t\t\t\t<p style=\"text-align: center;\">\n\t\t\t\t\tEnterprise</p>\n\t\t\t</td>\n\t\t\t<td style=\"width:57px;height:17px; white-space: nowrap;\">\n\t\t\t\t<p style=\"text-align: center;\">\n\t\t\t\t\t4.9.2014</p>\n\t\t\t</td>\n\t\t\t<td style=\"width:57px;height:17px; white-space: nowrap;\">\n\t\t\t\t<p style=\"text-align: center;\">\n\t\t\t\t\t19:00:00</p>\n\t\t\t</td>\n\t\t</tr>\n\t\t<tr>\n\t\t\t<td style=\"width:244px;height:17px; white-space: nowrap;\">\n\t\t\t\t<p style=\"text-align: center;\">\n\t\t\t\t\tTeam \"Tower\"</p>\n\t\t\t</td>\n\t\t\t<td style=\"width:55px;height:17px; white-space: nowrap;\">\n\t\t\t\t<p style=\"text-align: center;\">\n\t\t\t\t\tonline</p>\n\t\t\t</td>\n\t\t\t<td style=\"width:104px;height:17px; white-space: nowrap;\">\n\t\t\t\t<p style=\"text-align: center;\">\n\t\t\t\t\tEnterprise</p>\n\t\t\t</td>\n\t\t\t<td style=\"width:57px;height:17px; white-space: nowrap;\">\n\t\t\t\t<p style=\"text-align: center;\">\n\t\t\t\t\t4.9.2014</p>\n\t\t\t</td>\n\t\t\t<td style=\"width:57px;height:17px; white-space: nowrap;\">\n\t\t\t\t<p style=\"text-align: center;\">\n\t\t\t\t\t19:15:00</p>\n\t\t\t</td>\n\t\t</tr>\n\t\t<tr>\n\t\t\t<td style=\"width:244px;height:17px; white-space: nowrap;\">\n\t\t\t\t<p style=\"text-align: center;\">\n\t\t\t\t\tTeam \"Stronghold\"</p>\n\t\t\t</td>\n\t\t\t<td style=\"width:55px;height:17px; white-space: nowrap;\">\n\t\t\t\t<p style=\"text-align: center;\">\n\t\t\t\t\tonline</p>\n\t\t\t</td>\n\t\t\t<td style=\"width:104px;height:17px; white-space: nowrap;\">\n\t\t\t\t<p style=\"text-align: center;\">\n\t\t\t\t\tEnterprise</p>\n\t\t\t</td>\n\t\t\t<td style=\"width:57px;height:17px; white-space: nowrap;\">\n\t\t\t\t<p style=\"text-align: center;\">\n\t\t\t\t\t4.9.2014</p>\n\t\t\t</td>\n\t\t\t<td style=\"width:57px;height:17px; white-space: nowrap;\">\n\t\t\t\t<p style=\"text-align: center;\">\n\t\t\t\t\t19:30:00</p>\n\t\t\t</td>\n\t\t</tr>\n\t\t<tr>\n\t\t\t<td style=\"width:244px;height:17px; white-space: nowrap;\">\n\t\t\t\t<p style=\"text-align: center;\">\n\t\t\t\t\tTeam \"Conflux\"</p>\n\t\t\t</td>\n\t\t\t<td style=\"width:55px;height:17px; white-space: nowrap;\">\n\t\t\t\t<p style=\"text-align: center;\">\n\t\t\t\t\tonline</p>\n\t\t\t</td>\n\t\t\t<td style=\"width:104px;height:17px; white-space: nowrap;\">\n\t\t\t\t<p style=\"text-align: center;\">\n\t\t\t\t\tEnterprise</p>\n\t\t\t</td>\n\t\t\t<td style=\"width:57px;height:17px; white-space: nowrap;\">\n\t\t\t\t<p style=\"text-align: center;\">\n\t\t\t\t\t4.9.2014</p>\n\t\t\t</td>\n\t\t\t<td style=\"width:57px;height:17px; white-space: nowrap;\">\n\t\t\t\t<p style=\"text-align: center;\">\n\t\t\t\t\t19:45:00</p>\n\t\t\t</td>\n\t\t</tr>\n\t\t<tr>\n\t\t\t<td style=\"width:244px;height:17px; white-space: nowrap;\">\n\t\t\t\t<p style=\"text-align: center;\">\n\t\t\t\t\tTeam \"Castle\"</p>\n\t\t\t</td>\n\t\t\t<td style=\"width:55px;height:17px; white-space: nowrap;\">\n\t\t\t\t<p style=\"text-align: center;\">\n\t\t\t\t\tonline</p>\n\t\t\t</td>\n\t\t\t<td style=\"width:104px;height:17px; white-space: nowrap;\">\n\t\t\t\t<p style=\"text-align: center;\">\n\t\t\t\t\tEnterprise</p>\n\t\t\t</td>\n\t\t\t<td style=\"width:57px;height:17px; white-space: nowrap;\">\n\t\t\t\t<p style=\"text-align: center;\">\n\t\t\t\t\t4.9.2014</p>\n\t\t\t</td>\n\t\t\t<td style=\"width:57px;height:17px; white-space: nowrap;\">\n\t\t\t\t<p style=\"text-align: center;\">\n\t\t\t\t\t20:00:00</p>\n\t\t\t</td>\n\t\t</tr>\n\t\t<tr>\n\t\t\t<td style=\"width:244px;height:17px; white-space: nowrap;\">\n\t\t\t\t<p style=\"text-align: center;\">\n\t\t\t\t\tTeam \"Dungeon\"</p>\n\t\t\t</td>\n\t\t\t<td style=\"width:55px;height:17px; white-space: nowrap;\">\n\t\t\t\t<p style=\"text-align: center;\">\n\t\t\t\t\tonline</p>\n\t\t\t</td>\n\t\t\t<td style=\"width:104px;height:17px; white-space: nowrap;\">\n\t\t\t\t<p style=\"text-align: center;\">\n\t\t\t\t\tEnterprise</p>\n\t\t\t</td>\n\t\t\t<td style=\"width:57px;height:17px; white-space: nowrap;\">\n\t\t\t\t<p style=\"text-align: center;\">\n\t\t\t\t\t4.9.2014</p>\n\t\t\t</td>\n\t\t\t<td style=\"width:57px;height:17px; white-space: nowrap;\">\n\t\t\t\t<p style=\"text-align: center;\">\n\t\t\t\t\t20:15:00</p>\n\t\t\t</td>\n\t\t</tr>\n\t</tbody>\n</table>\n<p>\n\t&nbsp;</p>\n<p>\n\tПоздрави,</p>",
+          "category": "Софтуерна академия на Телерик",
+          "guid": {
+            "@isPermaLink": "true",
+            "#text": "http://forums.academy.telerik.com/172220/databases-%D0%B7%D0%B0%D1%89%D0%B8%D1%82%D0%B0-%D0%BD%D0%B0-%D0%BE%D1%82%D0%B1%D0%BE%D1%80%D0%BD%D0%B8-%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82%D0%B8?show=172363#a172363"
+          },
+          "pubDate": "Thu, 04 Sep 2014 07:57:20 +0000"
+        },
+        {
+          "title": "Answered: XML парсери - Demo Live различно от това в системата",
+          "link": "http://forums.academy.telerik.com/172336/xml-%D0%BF%D0%B0%D1%80%D1%81%D0%B5%D1%80%D0%B8-demo-live-%D1%80%D0%B0%D0%B7%D0%BB%D0%B8%D1%87%D0%BD%D0%BE-%D0%BE%D1%82-%D1%82%D0%BE%D0%B2%D0%B0-%D0%B2-%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D0%B0%D1%82%D0%B0?show=172352#a172352",
+          "description": "Колега, нещо си се объркал - &nbsp;аз бях на лекцията и видеата са тези",
+          "category": "Софтуерна академия на Телерик",
+          "guid": {
+            "@isPermaLink": "true",
+            "#text": "http://forums.academy.telerik.com/172336/xml-%D0%BF%D0%B0%D1%80%D1%81%D0%B5%D1%80%D0%B8-demo-live-%D1%80%D0%B0%D0%B7%D0%BB%D0%B8%D1%87%D0%BD%D0%BE-%D0%BE%D1%82-%D1%82%D0%BE%D0%B2%D0%B0-%D0%B2-%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D0%B0%D1%82%D0%B0?show=172352#a172352"
+          },
+          "pubDate": "Thu, 04 Sep 2014 06:13:53 +0000"
+        },
+        {
+          "title": "Answered: [DSA] Домашно Data Structures Efficiency - 1 Задача",
+          "link": "http://forums.academy.telerik.com/99969/dsa-%D0%B4%D0%BE%D0%BC%D0%B0%D1%88%D0%BD%D0%BE-data-structures-efficiency-1-%D0%B7%D0%B0%D0%B4%D0%B0%D1%87%D0%B0?show=172327#a172327",
+          "description": "<p>\n\tАз не съм го направил по най-бързия възможен начин - използвам само &nbsp;SortedDictionary с ключ курса и стойност - списък (List) от студентите. Съответно, при отпечатаването курсовете излизат сортирани, но студентите ги сортирам с Linq. Може да стане по-бързо, ако вместо списък се използва <a rel=\"nofollow\" href=\"http://submain.com/ghostdoc/samples/PowerCollections/HTML/html/609522445.htm\">OrderedBag</a>, която позволява повтарящи се елементи и ги държи сортирани.</p>\n<p>\n\t<a rel=\"nofollow\" href=\"https://github.com/neutrino-git/TelerikAcademy/blob/master/Programming/05.DataStructuresAndAlgorithms/06.Data-Structures-Efficiency/01.StudentCourses/StudentCourses.cs\">Решение</a></p>",
+          "category": "Data Structures & Algorithms",
+          "guid": {
+            "@isPermaLink": "true",
+            "#text": "http://forums.academy.telerik.com/99969/dsa-%D0%B4%D0%BE%D0%BC%D0%B0%D1%88%D0%BD%D0%BE-data-structures-efficiency-1-%D0%B7%D0%B0%D0%B4%D0%B0%D1%87%D0%B0?show=172327#a172327"
+          },
+          "pubDate": "Wed, 03 Sep 2014 17:59:22 +0000"
+        },
+        {
+          "title": "[Databases] Изпит и проблем с входните данни",
+          "link": "http://forums.academy.telerik.com/172285/databases-%D0%B8%D0%B7%D0%BF%D0%B8%D1%82-%D0%B8-%D0%BF%D1%80%D0%BE%D0%B1%D0%BB%D0%B5%D0%BC-%D1%81-%D0%B2%D1%85%D0%BE%D0%B4%D0%BD%D0%B8%D1%82%D0%B5-%D0%B4%D0%B0%D0%BD%D0%BD%D0%B8",
+          "description": "Здравейте,<br />\n<br />\nпробвам да реша пробния изпит и срещам един проблем, който искам да измисля сега, а не да губя време да го мисля на изпита, самият проблем е следният:<br />\n<br />\nUse C# to implement an application for generating random sample data in the toys store. Create at least 100 manufacturers, 10 000 categories, 100 price ranges and 1 000 0000 toys.<br />\n<br />\nТова съм го направил и имплементирал, но става адски бавно, защото всеки път се създава нова инстанция на класа, който трябва да подам през ADO-то и след това се запазва в базата. Издиша още на вкарването на 10000 категории, като за милион играчки сигурно ще ми трябват часове да ги вкарам. Имате ли идея как да оптимизирам вкарването им, че да стане бързо, а не толкова бавно. Кода е следния:<br />\n<br />\nIList&lt;Category&gt; categoriesCollection = new List&lt;Category&gt;();<br />\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for (int i = 0; i &lt; limit; i++)<br />\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br />\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Console.WriteLine(string.Format(&quot;Adding {0} / {1}&quot;, i, limit));<br />\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Category category = new Category();<br />\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;category.Name = populateCategories[i % 10] + &quot; &quot; + i;<br />\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;categoriesCollection.Add(category);<br />\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//toyStoreDb.Categories.Add(category);<br />\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;toyStoreDb.Categories.AddRange(categoriesCollection);<br />\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br />\n<br />\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;toyStoreDb.SaveChanges();",
+          "category": "Databases",
+          "guid": {
+            "@isPermaLink": "true",
+            "#text": "http://forums.academy.telerik.com/172285/databases-%D0%B8%D0%B7%D0%BF%D0%B8%D1%82-%D0%B8-%D0%BF%D1%80%D0%BE%D0%B1%D0%BB%D0%B5%D0%BC-%D1%81-%D0%B2%D1%85%D0%BE%D0%B4%D0%BD%D0%B8%D1%82%D0%B5-%D0%B4%D0%B0%D0%BD%D0%BD%D0%B8"
+          },
+          "pubDate": "Wed, 03 Sep 2014 10:09:14 +0000"
+        },
+        {
+          "title": "Проблем при свързване на SQLite и C#!",
+          "link": "http://forums.academy.telerik.com/172273/%D0%BF%D1%80%D0%BE%D0%B1%D0%BB%D0%B5%D0%BC-%D0%BF%D1%80%D0%B8-%D1%81%D0%B2%D1%8A%D1%80%D0%B7%D0%B2%D0%B0%D0%BD%D0%B5-%D0%BD%D0%B0-sqlite-%D0%B8-c%23",
+          "description": "Здравейте!<br />\n<br />\nПри използване на библиотеката System.Data.SQLite правя връзка от C# към SQLite база данни, но в повечето случаи, когато се опита да се върже, ми хвърля Exception: Unable to load DLL 'SQLite.Interop.dll'. При рефериране на библиотеката System.Data.SQLite от Nugget само си генерира две папки x86 и x64, във всяка от които се съдържа проблемната dll-ка SQLite.Interop.dll. Тоест би трябвало в зависимост от операционната система да зарежда нужната dll-ка, защото явно има разлика при 32-битова и 64-битова операционна система. До тук всичко е добре, но в повечето случаи ми се хвърля горния Exception, като казва, че не може да откриe нужната dll-ка. Случва се да я намери понякога, без да съм променял абсолютно нищо, но след като се опита да го направи още няколко пъти, гърми, без даже да съм променял нещо по кода или да съм размествал папките в solution-а. Търсих по интернет и се оказа, че е доста срещан проблем, но нищо не успя да ми помогне да го избегна. Даже някой беше писал в StackOverFlow, че му се е случвало да не му прави проблеми с дни за някое уеб приложение, но изведнъж му гърми точно с презумпцията, че файлът не може да бъде намерен. Ако някой се е сблъсквал с подобен проблем покрай отборната работа или като цяло при използване на SQLite, би ми било много полезно, да разбера как се е справил с проблема, защото изгубих много часове в търсене на решение на проблема. :)",
+          "category": "Databases",
+          "guid": {
+            "@isPermaLink": "true",
+            "#text": "http://forums.academy.telerik.com/172273/%D0%BF%D1%80%D0%BE%D0%B1%D0%BB%D0%B5%D0%BC-%D0%BF%D1%80%D0%B8-%D1%81%D0%B2%D1%8A%D1%80%D0%B7%D0%B2%D0%B0%D0%BD%D0%B5-%D0%BD%D0%B0-sqlite-%D0%B8-c%23"
+          },
+          "pubDate": "Wed, 03 Sep 2014 09:03:25 +0000"
+        },
+        {
+          "title": "Материали за лекциите MongoDB и Redis",
+          "link": "http://forums.academy.telerik.com/172265/%D0%BC%D0%B0%D1%82%D0%B5%D1%80%D0%B8%D0%B0%D0%BB%D0%B8-%D0%B7%D0%B0-%D0%BB%D0%B5%D0%BA%D1%86%D0%B8%D0%B8%D1%82%D0%B5-mongodb-%D0%B8-redis",
+          "description": "Здравейте,<br />\n<br />\nВ лекцията MongoDB и използване на MongoDB с .NET е сложена лекцията за Redis и използване на Redis с .NET. Проверих, да не би да са разменени, но и в лекцията за Redis си е лекцията за Redis. Тъй като в миналогодишната версия на курса има една обща лекция с около 4 слайда за Mongo ще бъдем благодарни да получим тазгодишната версия, тъй като срока за домашната наближава, а е полезно да имаш добре структурирани помощни материали.<br />\n<br />\nПоздрави!",
+          "category": "Databases",
+          "guid": {
+            "@isPermaLink": "true",
+            "#text": "http://forums.academy.telerik.com/172265/%D0%BC%D0%B0%D1%82%D0%B5%D1%80%D0%B8%D0%B0%D0%BB%D0%B8-%D0%B7%D0%B0-%D0%BB%D0%B5%D0%BA%D1%86%D0%B8%D0%B8%D1%82%D0%B5-mongodb-%D0%B8-redis"
+          },
+          "pubDate": "Wed, 03 Sep 2014 07:41:25 +0000"
+        },
+        {
+          "title": "Кога ще се качат видеота от Обработка на транзакции и Обработка на транзакции с ADO.NET и Entity Framework",
+          "link": "http://forums.academy.telerik.com/172240/%D0%B2%D0%B8%D0%B4%D0%B5%D0%BE%D1%82%D0%B0-%D0%BE%D0%B1%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%BA%D0%B0-%D1%82%D1%80%D0%B0%D0%BD%D0%B7%D0%B0%D0%BA%D1%86%D0%B8%D0%B8-%D0%BE%D0%B1%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%BA%D0%B0-%D1%82%D1%80%D0%B0%D0%BD%D0%B7%D0%B0%D0%BA%D1%86%D0%B8%D0%B8-framework",
+          "description": "",
+          "category": "Databases",
+          "guid": {
+            "@isPermaLink": "true",
+            "#text": "http://forums.academy.telerik.com/172240/%D0%B2%D0%B8%D0%B4%D0%B5%D0%BE%D1%82%D0%B0-%D0%BE%D0%B1%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%BA%D0%B0-%D1%82%D1%80%D0%B0%D0%BD%D0%B7%D0%B0%D0%BA%D1%86%D0%B8%D0%B8-%D0%BE%D0%B1%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%BA%D0%B0-%D1%82%D1%80%D0%B0%D0%BD%D0%B7%D0%B0%D0%BA%D1%86%D0%B8%D0%B8-framework"
+          },
+          "pubDate": "Tue, 02 Sep 2014 15:21:22 +0000"
+        },
+        {
+          "title": "[Databases] ADO.NET параметри и string.Format()",
+          "link": "http://forums.academy.telerik.com/172235/databases-ado-net-%D0%BF%D0%B0%D1%80%D0%B0%D0%BC%D0%B5%D1%82%D1%80%D0%B8-%D0%B8-string-format",
+          "description": "Има ли някакви предимства да се използват параметрите в ADO.NET вместо string.Format?",
+          "category": "Databases",
+          "guid": {
+            "@isPermaLink": "true",
+            "#text": "http://forums.academy.telerik.com/172235/databases-ado-net-%D0%BF%D0%B0%D1%80%D0%B0%D0%BC%D0%B5%D1%82%D1%80%D0%B8-%D0%B8-string-format"
+          },
+          "pubDate": "Tue, 02 Sep 2014 13:34:46 +0000"
+        },
+        {
+          "title": "Работа с ASP.NET mvc и  AJAX",
+          "link": "http://forums.academy.telerik.com/172199/%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%B0-%D1%81-asp-net-mvc-%D0%B8-ajax",
+          "description": "Здравейте, Имам следните няколко въпроса. След задолбочен анализ от няколко часа преглеждане на форуми, видеа &nbsp;не намерих нищо което може да ми свърши работа. Въпросите ми са следните:<br />\n<br />\nКак да направя пост заявка с AJAX &nbsp;без да правя нов View модел в самият контролер.<br />\n<br />\nКак да направя Get заявка пак без правя нов View модел.<br />\n<br />\nБлагодаря предварително.<br />\n<br />\nПоздрви",
+          "category": "ASP.NET MVC",
+          "guid": {
+            "@isPermaLink": "true",
+            "#text": "http://forums.academy.telerik.com/172199/%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%B0-%D1%81-asp-net-mvc-%D0%B8-ajax"
+          },
+          "pubDate": "Tue, 02 Sep 2014 00:36:23 +0000"
+        },
+        {
+          "title": "Priority Queue",
+          "link": "http://forums.academy.telerik.com/172178/priority-queue",
+          "description": "<p>\n\tЕто от <a rel=\"nofollow\" href=\"http://www.avk.name/2010/11/priority-queue-in-c-with-help-of-heap.html\">тук</a> може да си свалите PriorityQueue имплементирана с Heap.</p>\n<p>\n\tПри мен генерира 1 000 000 елемента стринг с 10 - 15 случайни символа за около 2 - 3 секунди.</p>\n<p>\n\tСъщо така може да мърджва две опашки - при мен две опашки от по 1 000 000 елемента ги мърджва за около 4 сек.</p>",
+          "category": "Data Structures & Algorithms",
+          "guid": {
+            "@isPermaLink": "true",
+            "#text": "http://forums.academy.telerik.com/172178/priority-queue"
+          },
+          "pubDate": "Mon, 01 Sep 2014 16:19:10 +0000"
+        },
+        {
+          "title": "[DSA] Алгоритъм за сортиране с линейна сложност",
+          "link": "http://forums.academy.telerik.com/172171/dsa-%D0%B0%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D1%8A%D0%BC-%D0%B7%D0%B0-%D1%81%D0%BE%D1%80%D1%82%D0%B8%D1%80%D0%B0%D0%BD%D0%B5-%D1%81-%D0%BB%D0%B8%D0%BD%D0%B5%D0%B9%D0%BD%D0%B0-%D1%81%D0%BB%D0%BE%D0%B6%D0%BD%D0%BE%D1%81%D1%82",
+          "description": "<p>\n\tНамерих този алгоритъм случайно и много ме впечатли.<br>\n\tНарича се&nbsp;<b style=\"color: rgb(0, 0, 0); font-family: Verdana, Tahoma, Arial, sans-serif; line-height: 19.200000762939453px; background-color: rgb(244, 244, 244);\">Radix sort</b>&nbsp;и научих за него от тази статия:&nbsp;<a href=\"http://forums.bgdev.org/index.php?showtopic=22740\" rel=\"nofollow\">http://forums.bgdev.org/index.php?showtopic=22740</a><br>\n\t<br>\n\tКаква е идеята:<br>\n\tАлгоритъма подрежда елементите по битовете на някакви прости стойности (букви, интове и тн). Сложен е за имплементиране, но е ужасно бърз.<br>\n\t<br>\n\tСложността му е О(n*length) където length е дължината на битовете на това което сортирате. Съответно ако сортирате по интове сложността ще е n*32 докато ако сортирате по long ще е n*64.<br>\n\t<br>\n\tУловката е че алгоритъма всъщност не сравнява обекти, а битове. На него не му пука дали класа ви има IComparable. Ако не му дадете прост вид стойност по която да подрежда, той е неприложим.<br>\n\t<br>\n\tЗа повече информация прочетете статията.<br>\n\t<br>\n\tСподелете други интересни алгоритми на които сте попадали.</p>",
+          "category": "Data Structures & Algorithms",
+          "guid": {
+            "@isPermaLink": "true",
+            "#text": "http://forums.academy.telerik.com/172171/dsa-%D0%B0%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D1%8A%D0%BC-%D0%B7%D0%B0-%D1%81%D0%BE%D1%80%D1%82%D0%B8%D1%80%D0%B0%D0%BD%D0%B5-%D1%81-%D0%BB%D0%B8%D0%BD%D0%B5%D0%B9%D0%BD%D0%B0-%D1%81%D0%BB%D0%BE%D0%B6%D0%BD%D0%BE%D1%81%D1%82"
+          },
+          "pubDate": "Mon, 01 Sep 2014 15:39:54 +0000"
+        },
+        {
+          "title": "[Databases] Изпит, ще има ли sql server & management studio на машините в залата?",
+          "link": "http://forums.academy.telerik.com/172169/databases-%D0%B8%D0%B7%D0%BF%D0%B8%D1%82-server-management-studio-%D0%BC%D0%B0%D1%88%D0%B8%D0%BD%D0%B8%D1%82%D0%B5-%D0%B7%D0%B0%D0%BB%D0%B0%D1%82%D0%B0",
+          "description": "Здравейте,<br />\n<br />\nизпита наближава и ме интересува дали на машините ще има инсталирани ms sql server и sql server management tools, с които да работим?",
+          "category": "Databases",
+          "guid": {
+            "@isPermaLink": "true",
+            "#text": "http://forums.academy.telerik.com/172169/databases-%D0%B8%D0%B7%D0%BF%D0%B8%D1%82-server-management-studio-%D0%BC%D0%B0%D1%88%D0%B8%D0%BD%D0%B8%D1%82%D0%B5-%D0%B7%D0%B0%D0%BB%D0%B0%D1%82%D0%B0"
+          },
+          "pubDate": "Mon, 01 Sep 2014 15:25:53 +0000"
+        },
+        {
+          "title": "[Database] Сам ли да пиша отборната работа?",
+          "link": "http://forums.academy.telerik.com/172163/database-%D1%81%D0%B0%D0%BC-%D0%BB%D0%B8-%D0%B4%D0%B0-%D0%BF%D0%B8%D1%88%D0%B0-%D0%BE%D1%82%D0%B1%D0%BE%D1%80%D0%BD%D0%B0%D1%82%D0%B0-%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%B0",
+          "description": "[Database Teamwork]<br />\n<br />\nНяма никаква активност от страна на съотборниците ми, а срока наближава.<br />\n<br />\nЕдва ли ще намеря време да свърша всичко сам за 2 дни. Какво да правя?",
+          "category": "Софтуерна академия на Телерик",
+          "guid": {
+            "@isPermaLink": "true",
+            "#text": "http://forums.academy.telerik.com/172163/database-%D1%81%D0%B0%D0%BC-%D0%BB%D0%B8-%D0%B4%D0%B0-%D0%BF%D0%B8%D1%88%D0%B0-%D0%BE%D1%82%D0%B1%D0%BE%D1%80%D0%BD%D0%B0%D1%82%D0%B0-%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%B0"
+          },
+          "pubDate": "Mon, 01 Sep 2014 13:37:32 +0000"
+        },
+        {
+          "title": "Как да взема имената на пропъртитата?",
+          "link": "http://forums.academy.telerik.com/172147/%D0%BA%D0%B0%D0%BA-%D0%B4%D0%B0-%D0%B2%D0%B7%D0%B5%D0%BC%D0%B0-%D0%B8%D0%BC%D0%B5%D0%BD%D0%B0%D1%82%D0%B0-%D0%BD%D0%B0-%D0%BF%D1%80%D0%BE%D0%BF%D1%8A%D1%80%D1%82%D0%B8%D1%82%D0%B0%D1%82%D0%B0",
+          "description": "Как да взема имената на колоните след подобна заявка за да ги вкарам в репорта без да ги знам предварително.<br />\n<br />\ndb.Towns.Select(t =&gt; new { t.TownID, t.Name }).Take(10);<br />\n<br />\nТака получавам само броя колони.<br />\n<br />\nqueryResult.First().GetType().GetProperties().Length",
+          "category": "Databases",
+          "guid": {
+            "@isPermaLink": "true",
+            "#text": "http://forums.academy.telerik.com/172147/%D0%BA%D0%B0%D0%BA-%D0%B4%D0%B0-%D0%B2%D0%B7%D0%B5%D0%BC%D0%B0-%D0%B8%D0%BC%D0%B5%D0%BD%D0%B0%D1%82%D0%B0-%D0%BD%D0%B0-%D0%BF%D1%80%D0%BE%D0%BF%D1%8A%D1%80%D1%82%D0%B8%D1%82%D0%B0%D1%82%D0%B0"
+          },
+          "pubDate": "Mon, 01 Sep 2014 10:23:48 +0000"
+        },
+        {
+          "title": "[Databases] Домашни и отборната работа.",
+          "link": "http://forums.academy.telerik.com/172146/databases-%D0%B4%D0%BE%D0%BC%D0%B0%D1%88%D0%BD%D0%B8-%D0%B8-%D0%BE%D1%82%D0%B1%D0%BE%D1%80%D0%BD%D0%B0%D1%82%D0%B0-%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%B0",
+          "description": "Имам едно предложение... Нека домашните за сряда да се преместят с един ден(Четвъртък) или за уикенда, за да имаме повече време за отборните работи.",
+          "category": "Databases",
+          "guid": {
+            "@isPermaLink": "true",
+            "#text": "http://forums.academy.telerik.com/172146/databases-%D0%B4%D0%BE%D0%BC%D0%B0%D1%88%D0%BD%D0%B8-%D0%B8-%D0%BE%D1%82%D0%B1%D0%BE%D1%80%D0%BD%D0%B0%D1%82%D0%B0-%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%B0"
+          },
+          "pubDate": "Mon, 01 Sep 2014 10:07:56 +0000"
+        },
+        {
+          "title": "Wintellect.PowerCollections Namespace",
+          "link": "http://forums.academy.telerik.com/172053/wintellect-powercollections-namespace",
+          "description": "<p>\n\tНа лекцията за&nbsp;Advanced Data Structures Иво спомена, че миналата година е успял да намери всички класове на&nbsp;Wintellect.PowerCollections, но не можа да ни покаже къде са.</p>\n<p>\n\tМисля че <a rel=\"nofollow\" href=\"http://submain.com/ghostdoc/samples/PowerCollections/HTML/html/526895641.htm\">тук</a> е това което търсеше :)</p>",
+          "category": "Data Structures & Algorithms",
+          "guid": {
+            "@isPermaLink": "true",
+            "#text": "http://forums.academy.telerik.com/172053/wintellect-powercollections-namespace"
+          },
+          "pubDate": "Sun, 31 Aug 2014 16:35:07 +0000"
+        },
+        {
+          "title": "Рекурсия за ТОТО комбинациите",
+          "link": "http://forums.academy.telerik.com/172027/%D1%80%D0%B5%D0%BA%D1%83%D1%80%D1%81%D0%B8%D1%8F-%D0%B7%D0%B0-%D1%82%D0%BE%D1%82%D0%BE-%D0%BA%D0%BE%D0%BC%D0%B1%D0%B8%D0%BD%D0%B0%D1%86%D0%B8%D0%B8%D1%82%D0%B5",
+          "description": "<p>\n\tЗдравейте,&nbsp;</p>\n<p>\n\tОсвен с фор цикли, исках да пробвам с рекурсия да изкарам броя комбинации 6/49. Трябва да са&nbsp;<span style=\"color: rgb(0, 0, 0); font-family: sans-serif; font-size: 14px; line-height: 22.3999996185303px; background-color: rgb(227, 227, 227);\">13,983,816</span>, но моя код очевидно е грешен и изкарва доста повече. Много съм бос с рекурсията.</p>\n<div>\n\tclass Program</div>\n<div>\n\t&nbsp; &nbsp; {</div>\n<div>\n\t&nbsp; &nbsp; &nbsp; &nbsp; static int counter;</div>\n<div>\n\t&nbsp; &nbsp; &nbsp; &nbsp; static void Main()</div>\n<div>\n\t&nbsp; &nbsp; &nbsp; &nbsp; {</div>\n<div>\n\t&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; GenerateCombinations();</div>\n<div>\n\t&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Console.WriteLine(counter);</div>\n<div>\n\t&nbsp; &nbsp; &nbsp; &nbsp; }</div>\n<div>\n\t&nbsp;</div>\n<div>\n\t&nbsp; &nbsp; &nbsp; &nbsp; private static void GenerateCombinations(int start = 1, int end = 5)</div>\n<div>\n\t&nbsp; &nbsp; &nbsp; &nbsp; {</div>\n<div>\n\t&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; counter++;</div>\n<div>\n\t&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; for (int i = start; i &lt;= 49 - end; i++)</div>\n<div>\n\t&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; {</div>\n<div>\n\t&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</div>\n<div>\n\t&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if (end == 0)</div>\n<div>\n\t&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; {</div>\n<div>\n\t&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; break;</div>\n<div>\n\t&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</div>\n<div>\n\t&nbsp;</div>\n<div>\n\t&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; GenerateCombinations(start + 1, end - 1);</div>\n<div>\n\t&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</div>\n<div>\n\t&nbsp; &nbsp; &nbsp; &nbsp; }</div>\n<div>\n\t&nbsp; &nbsp; }</div>",
+          "category": "Data Structures & Algorithms",
+          "guid": {
+            "@isPermaLink": "true",
+            "#text": "http://forums.academy.telerik.com/172027/%D1%80%D0%B5%D0%BA%D1%83%D1%80%D1%81%D0%B8%D1%8F-%D0%B7%D0%B0-%D1%82%D0%BE%D1%82%D0%BE-%D0%BA%D0%BE%D0%BC%D0%B1%D0%B8%D0%BD%D0%B0%D1%86%D0%B8%D0%B8%D1%82%D0%B5"
+          },
+          "pubDate": "Sun, 31 Aug 2014 11:15:20 +0000"
+        },
+        {
+          "title": "Позволени библиотеки за Team work",
+          "link": "http://forums.academy.telerik.com/172026/%D0%BF%D0%BE%D0%B7%D0%B2%D0%BE%D0%BB%D0%B5%D0%BD%D0%B8-%D0%B1%D0%B8%D0%B1%D0%BB%D0%B8%D0%BE%D1%82%D0%B5%D0%BA%D0%B8-%D0%B7%D0%B0-team-work",
+          "description": "<p>\n\tТъй като в заданието пише</p>\n<ul>\n\t<li>\n\t\tFor the PDF export use a non-commercial third party framework.</li>\n</ul>\n<p>\n\tТова включва ли</p>\n<h3 class=\"r\">\n\t<a rel=\"nofollow\" href=\"http://sourceforge.net/projects/itextsharp/\"><em>iTextSharp</em></a></h3>\n<p>\n\tкато не позволена библиотека.</p>",
+          "category": "Databases",
+          "guid": {
+            "@isPermaLink": "true",
+            "#text": "http://forums.academy.telerik.com/172026/%D0%BF%D0%BE%D0%B7%D0%B2%D0%BE%D0%BB%D0%B5%D0%BD%D0%B8-%D0%B1%D0%B8%D0%B1%D0%BB%D0%B8%D0%BE%D1%82%D0%B5%D0%BA%D0%B8-%D0%B7%D0%B0-team-work"
+          },
+          "pubDate": "Sun, 31 Aug 2014 11:08:46 +0000"
+        },
+        {
+          "title": "EF Домашно Task 8",
+          "link": "http://forums.academy.telerik.com/172016/ef-%D0%B4%D0%BE%D0%BC%D0%B0%D1%88%D0%BD%D0%BE-task-8",
+          "description": "Здравейте,<br />\n<br />\nнякой да е направил наследяването в Task 8 - да даде някой жокер.<br />\n<br />\nАз правя public partial class EmployeeExtended : Employee, след което public override ICollection&lt;Territory&gt; Territories и..... дотук",
+          "category": "Databases",
+          "guid": {
+            "@isPermaLink": "true",
+            "#text": "http://forums.academy.telerik.com/172016/ef-%D0%B4%D0%BE%D0%BC%D0%B0%D1%88%D0%BD%D0%BE-task-8"
+          },
+          "pubDate": "Sun, 31 Aug 2014 09:13:35 +0000"
+        },
+        {
+          "title": "[Database] Проблем при избор на модел за работа с база данни",
+          "link": "http://forums.academy.telerik.com/171987/database-%D0%BF%D1%80%D0%BE%D0%B1%D0%BB%D0%B5%D0%BC-%D0%BF%D1%80%D0%B8-%D0%B8%D0%B7%D0%B1%D0%BE%D1%80-%D0%BD%D0%B0-%D0%BC%D0%BE%D0%B4%D0%B5%D0%BB-%D0%B7%D0%B0-%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%B0-%D1%81-%D0%B1%D0%B0%D0%B7%D0%B0-%D0%B4%D0%B0%D0%BD%D0%BD%D0%B8",
+          "description": "Здравейте колеги,<br />\n<br />\nСлед като изгледах видеото за ORM технологии и &nbsp;Entity Framework, видях как се правят различните модели за работа с базата данни. Съответно на видеото Иво показва, че са възможни четири варианта за създаване на Entiry Framework - EF Designer from database, Empty EF Designer model, Empty code first model и Code first from database. Също така се споменава, че тези четири варианта са при Entity Framework 6. Инсталирам си Entity Framework към съответния проект през nuGet, версията е 6.1.1., обаче след това ми се показват само пърите два модела, няма Empty code first model и Code first from database. Моля за съвет как да се справя с проблема. Работя с VS2012 Ultimate.<br />\n<br />\nБлагодаря предварително.",
+          "category": "Databases",
+          "guid": {
+            "@isPermaLink": "true",
+            "#text": "http://forums.academy.telerik.com/171987/database-%D0%BF%D1%80%D0%BE%D0%B1%D0%BB%D0%B5%D0%BC-%D0%BF%D1%80%D0%B8-%D0%B8%D0%B7%D0%B1%D0%BE%D1%80-%D0%BD%D0%B0-%D0%BC%D0%BE%D0%B4%D0%B5%D0%BB-%D0%B7%D0%B0-%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%B0-%D1%81-%D0%B1%D0%B0%D0%B7%D0%B0-%D0%B4%D0%B0%D0%BD%D0%BD%D0%B8"
+          },
+          "pubDate": "Sat, 30 Aug 2014 16:45:25 +0000"
+        },
+        {
+          "title": "[Databases] Достъп на данни през навигационни полета",
+          "link": "http://forums.academy.telerik.com/171975/databases-%D0%B4%D0%BE%D1%81%D1%82%D1%8A%D0%BF-%D0%BD%D0%B0-%D0%B4%D0%B0%D0%BD%D0%BD%D0%B8-%D0%BF%D1%80%D0%B5%D0%B7-%D0%BD%D0%B0%D0%B2%D0%B8%D0%B3%D0%B0%D1%86%D0%B8%D0%BE%D0%BD%D0%BD%D0%B8-%D0%BF%D0%BE%D0%BB%D0%B5%D1%82%D0%B0",
+          "description": "<p>\n\tЗдравейте,</p>\n<p>\n\tОпитвам се да изпълня следната заявка -&gt; <strong><a rel=\"nofollow\" href=\"http://pastebin.com/BShHSmX1\" target=\"_blank\">цък.</a></strong></p>\n<p>\n\tВзимам си всички курсове през контекста и мога да принтирам полетата, които има всеки курс. Когато обаче се опитвам да достъпя студентите през навигационното поле в курса ми хвърля следната грешка:</p>\n<p>\n\tThere is already an open DataReader associated with this Command which must be closed first.</p>\n<p>\n\tНякой има ли представа какъв е проблема и съответно как могат да се достъпят данните по този начин?</p>",
+          "category": "Databases",
+          "guid": {
+            "@isPermaLink": "true",
+            "#text": "http://forums.academy.telerik.com/171975/databases-%D0%B4%D0%BE%D1%81%D1%82%D1%8A%D0%BF-%D0%BD%D0%B0-%D0%B4%D0%B0%D0%BD%D0%BD%D0%B8-%D0%BF%D1%80%D0%B5%D0%B7-%D0%BD%D0%B0%D0%B2%D0%B8%D0%B3%D0%B0%D1%86%D0%B8%D0%BE%D0%BD%D0%BD%D0%B8-%D0%BF%D0%BE%D0%BB%D0%B5%D1%82%D0%B0"
+          },
+          "pubDate": "Sat, 30 Aug 2014 12:03:53 +0000"
+        },
+        {
+          "title": "Въпрос относно Code First with Many to Many Relationship",
+          "link": "http://forums.academy.telerik.com/171973/%D0%B2%D1%8A%D0%BF%D1%80%D0%BE%D1%81-%D0%BE%D1%82%D0%BD%D0%BE%D1%81%D0%BD%D0%BE-code-first-with-many-to-many-relationship",
+          "description": "<p>\n\tЗдравейте,</p>\n<p>\n\tИмам въпрос относно създаването на класовете в <strong>Code First </strong>за връзка много към много. Някой има ли представа как се добавя трета колона към създадената от <strong>Entity Framework </strong>междинна таблица <span style=\"font-size:14px;\"><strong>без</strong></span> да се създава нов клас в който другите два &nbsp;вече създадени класове да сочат към него, както е посочено тук:&nbsp;<a href=\"http://stackoverflow.com/questions/7050404/create-code-first-many-to-many-with-additional-fields-in-association-table\" rel=\"nofollow\">http://stackoverflow.com/questions/7050404/create-code-first-many-to-many-with-additional-fields-in-association-table </a>. В случая конкретната колона може да се използва единственно в контекста на междинната таблица и всякакъв друг вариант за преместването ѝ е неприемлив.</p>\n<p>\n\tАко някой с повече опит в EF и Code First има представа ще се радвам да сподели. :)</p>",
+          "category": "Databases",
+          "guid": {
+            "@isPermaLink": "true",
+            "#text": "http://forums.academy.telerik.com/171973/%D0%B2%D1%8A%D0%BF%D1%80%D0%BE%D1%81-%D0%BE%D1%82%D0%BD%D0%BE%D1%81%D0%BD%D0%BE-code-first-with-many-to-many-relationship"
+          },
+          "pubDate": "Sat, 30 Aug 2014 11:46:09 +0000"
+        },
+        {
+          "title": "[Databases] Repository pattern",
+          "link": "http://forums.academy.telerik.com/171972/databases-repository-pattern",
+          "description": "Здравейте, колеги. Имам следния проблем: Става въпрос за домашното StudentSystem от темата Code first. Опитвам се да направя домашното с Repository pattern, както беше показано на лекцията. Тъй като не го разбрах напълно и има неща от кода по него, които са ми малко магия, копирах кода от демото за StudentSystem, което е качено в системата. Единствено довърших останалите reppository-та (CoursesRepository и HomeworksRepository), катo ги направих по аналогичен начин със StudentsRepository(което е направено в демото). Нищо останало по кода за Repository pattern не съм пипала, всичко беше copy-paste от демото. Иво каза на лекцията, че кодът в демото работи със сигурност, но при мен нещо не работи частта с repository pattern-a. Получавам InvalidCastException в StudentSystemData при връщането на CoursesRepository или HomeworksRepository. Опитах се да разбера откъде идва проблема, но не успях. Не виждам къде е грешката. Ще се радвам, ако някой разбира повече от този Repository pattern или го е писал и при него работи &nbsp;и ми каже къде е грешката. Благодаря предварително.<br />\n<br />\nЕто и кодът: <a href=\"https://github.com/izabelk/StudentSystem\" rel=\"nofollow\" target=\"_blank\">https://github.com/izabelk/StudentSystem</a>",
+          "category": "Databases",
+          "guid": {
+            "@isPermaLink": "true",
+            "#text": "http://forums.academy.telerik.com/171972/databases-repository-pattern"
+          },
+          "pubDate": "Sat, 30 Aug 2014 11:20:56 +0000"
+        },
+        {
+          "title": "Срок на домашното по Sorting and Searching Algorithms",
+          "link": "http://forums.academy.telerik.com/171969/%D1%81%D1%80%D0%BE%D0%BA-%D0%BD%D0%B0-%D0%B4%D0%BE%D0%BC%D0%B0%D1%88%D0%BD%D0%BE%D1%82%D0%BE-%D0%BF%D0%BE-sorting-and-searching-algorithms",
+          "description": "<p>\n\tЧудих се дали да отворя нова тема или да пиша във <a href=\"http://forums.academy.telerik.com/98217/dsa-%D0%B4%D0%BE%D0%BC%D0%B0%D1%88%D0%BD%D0%BE-sorting-and-searching-algorithms?show=98217#q98217\" rel=\"nofollow\" target=\"_blank\">вече създадената за това домашно</a>, но ми се струва, че новата тема ще бъде видяна от повече хора. Така или иначе винаги може да бъде преместена <img alt=\"smiley\" height=\"20\" src=\"http://forums.academy.telerik.com/qa-plugin/wysiwyg-editor/plugins/smiley/images/regular_smile.gif\" title=\"smiley\" width=\"20\"></p>\n<p>\n\tТа не знам дали е грешка, все пак сроковете за предаване на домашните беше променян, но в момента в системата стои<span style=\"color: Red;\"><b> Краен срок: <b>05/09/2014, 23:59</b></b></span> , докато на предишното е <span style=\"color: Red;\"><b>Краен срок: <b>08/09/2014, 23:59</b></b></span> .</p>\n<p>\n\tДори и тези срокове да са коректни може някой просто да не го види и после да се изненада. Имайте го предвид <img alt=\"wink\" height=\"20\" src=\"http://forums.academy.telerik.com/qa-plugin/wysiwyg-editor/plugins/smiley/images/wink_smile.gif\" title=\"wink\" width=\"20\"></p>\n<p>\n\t&nbsp;</p>",
+          "category": "Data Structures & Algorithms",
+          "guid": {
+            "@isPermaLink": "true",
+            "#text": "http://forums.academy.telerik.com/171969/%D1%81%D1%80%D0%BE%D0%BA-%D0%BD%D0%B0-%D0%B4%D0%BE%D0%BC%D0%B0%D1%88%D0%BD%D0%BE%D1%82%D0%BE-%D0%BF%D0%BE-sorting-and-searching-algorithms"
+          },
+          "pubDate": "Sat, 30 Aug 2014 10:08:03 +0000"
+        }
+      ]
+    }
+  }
+}
