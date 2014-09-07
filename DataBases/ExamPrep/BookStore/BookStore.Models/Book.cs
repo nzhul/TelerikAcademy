@@ -17,8 +17,7 @@
 
         [Required]
         public string Title { get; set; }
-
-        [Index(IsUnique = true)]
+        
         [StringLength(13, MinimumLength = 13)]
         public string ISBN { get; set; }
 
