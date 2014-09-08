@@ -1,0 +1,19 @@
+Connection string for "Company" database: 
+	(Problem-2-SampleData\Company\Company.Data\App.Config), 				
+	(Problem-2-SampleData\Company\Company.DataGenerator\App.Config)
+	
+Connection string for "Cars" database: (location)
+	NB: If you want to test the JSON Importer or the XMLSearcher - Please change the Startup Project!
+	(Problem-5-6-7-CodeFirst\Cars\Cars.Data\App.Config), 
+	(Problem-5-6-7-CodeFirst\Cars\Cars.Models\App.Config)	
+	(Problem-5-6-7-CodeFirst\Cars\Cars.Importer\App.Config), 				
+	(Problem-5-6-7-CodeFirst\Cars\Cars.XMLSearcher\App.Config)			
+
+Relationships for "Company" database: (first-table : second-table - type of relationship)
+	Check the ScreenShot of the Database Diagram at: (Problem-1-DatabaseFirst\Company-Database-Diagram.jpg)
+	
+Relationships for "Cars" database:
+	Check the ScreenShot of the Database Diagram at: (Problem-5-6-7-CodeFirst\Cars-Database-Diagram.jpg)
+
+Query files: 
+	(Problem-3-SQLQueries\queries.sql)
