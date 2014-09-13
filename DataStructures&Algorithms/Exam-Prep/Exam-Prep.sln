@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02-3D-Labyrinth", "02-3D-La
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "03-FriendsOfPesho", "03-FriendsOfPesho\03-FriendsOfPesho.csproj", "{8C81AA75-4AFD-4127-BD51-20EDD2028709}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "04-Frames", "04-Frames\04-Frames.csproj", "{7C2E57C9-65A7-4D46-BD75-B9E175C03FA0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{8C81AA75-4AFD-4127-BD51-20EDD2028709}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8C81AA75-4AFD-4127-BD51-20EDD2028709}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8C81AA75-4AFD-4127-BD51-20EDD2028709}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7C2E57C9-65A7-4D46-BD75-B9E175C03FA0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7C2E57C9-65A7-4D46-BD75-B9E175C03FA0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7C2E57C9-65A7-4D46-BD75-B9E175C03FA0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7C2E57C9-65A7-4D46-BD75-B9E175C03FA0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
