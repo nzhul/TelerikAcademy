@@ -11,6 +11,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "03-FriendsOfPesho", "03-Fri
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "04-Frames", "04-Frames\04-Frames.csproj", "{7C2E57C9-65A7-4D46-BD75-B9E175C03FA0}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "05-RecoverMessage", "05-RecoverMessage\05-RecoverMessage.csproj", "{2594186D-706C-44AA-9D54-1D769118D4AB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "06-SuperMarketQueue", "06-SuperMarketQueue\06-SuperMarketQueue.csproj", "{73C9610D-D442-410D-9642-64BA7382018D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +37,14 @@ Global
 		{7C2E57C9-65A7-4D46-BD75-B9E175C03FA0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7C2E57C9-65A7-4D46-BD75-B9E175C03FA0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7C2E57C9-65A7-4D46-BD75-B9E175C03FA0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2594186D-706C-44AA-9D54-1D769118D4AB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2594186D-706C-44AA-9D54-1D769118D4AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2594186D-706C-44AA-9D54-1D769118D4AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2594186D-706C-44AA-9D54-1D769118D4AB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{73C9610D-D442-410D-9642-64BA7382018D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{73C9610D-D442-410D-9642-64BA7382018D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{73C9610D-D442-410D-9642-64BA7382018D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{73C9610D-D442-410D-9642-64BA7382018D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
