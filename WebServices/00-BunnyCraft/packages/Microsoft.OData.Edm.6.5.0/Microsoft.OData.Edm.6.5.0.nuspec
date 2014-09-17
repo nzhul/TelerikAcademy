@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <id>Microsoft.OData.Edm</id>
+    <version>6.5.0</version>
+    <title>EdmLib</title>
+    <authors>Microsoft Corporation</authors>
+    <owners>Microsoft Corporation</owners>
+    <licenseUrl>http://go.microsoft.com/?linkid=9809688</licenseUrl>
+    <projectUrl>http://go.microsoft.com/fwlink/?LinkId=220868</projectUrl>
+    <iconUrl>http://static.tumblr.com/hgchgxz/9ualgdf98/icon.png</iconUrl>
+    <requireLicenseAcceptance>true</requireLicenseAcceptance>
+    <description>Classes to represent, construct, parse, serialize and validate entity data models. Supports OData v4 only. Targets .NET Portable Lib with support for .NET 4.0, SL 5.0, Win Phone 8, Win Phone 8.1, and Win 8. Localized for CHS, CHT, DEU, ESN, FRA, ITA, JPN, KOR and RUS.
+OData .NET library is open source at http://odata.codeplex.com</description>
+    <summary>Classes to represent, construct, parse, serialize and validate entity data models. Supports OData v4 only.</summary>
+    <releaseNotes>Bug Fix
+•    Fix a bug for supporting “Core.OptimisticConcurrency” annotation.
+•    Fix bugs for enum
+    -    ODataUriParser should support nullable Enum as a function parameter.
+    -    Dynamic enum property should have @odata.type annotation.
+
+New Features
+•    EdmLib &amp; ODataLib now support TypeDefinition 
+•    EdmLib &amp; ODataLib now support serializing and deserializing unsigned integers.
+•    ODataLib now supports $count on collection of Primitive or complex type
+•    Support Capabilities.ChangeTracking annotation
+•    OData Client for .Net now supports changing http method in BuildingRequest event handler.
+•    OData Client for .Net &amp; ODataLib now support Windows Phone 8.1 project.
+•    Rename client portable dll from “Microsoft.Data.Services.Client.Portable” to “Microsoft.Data.Services.Client”</releaseNotes>
+    <tags>wcf data services odata odatalib edmlib spatial ado.net ef entity framework open protocol wcfds wcfdataservices dataservices</tags>
+  </metadata>
+</package>
