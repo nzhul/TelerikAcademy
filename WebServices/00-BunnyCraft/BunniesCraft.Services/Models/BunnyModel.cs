@@ -16,5 +16,7 @@
 
         [Required]
         public ColorType Color { get; set; }
+
+        public int? AirCraftId { get; set; }
     }
 }

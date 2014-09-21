@@ -47,6 +47,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BunniesDbContext.cs" />
+    <Compile Include="BunniesData.cs" />
+    <Compile Include="IBunniesData.cs" />
     <Compile Include="IBunniesDbContext.cs" />
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

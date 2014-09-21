@@ -1,35 +1,35 @@
-﻿using BunniesCraft.Data.Repositories;
-using BunniesCraft.Models;
-using System.Web.Http;
+﻿using System.Web.Http;
 using System.Linq;
 using BunniesCraft.Services.Models;
+using BunniesCraft.Data;
+using BunniesCraft.Models;
 
 namespace BunniesCraft.Services.Controllers
 {
     public class BunniesController : ApiController
     {
-        private IRepository<Bunny> bunnies;
+        private IBunniesData data;
 
         public BunniesController()
-            : this(new Repository<Bunny>())
+            : this(new BunniesData())
         {
 
         }
-
-        public BunniesController(IRepository<Bunny> bunnies)
+        public BunniesController(IBunniesData data)
         {
-            this.bunnies = bunnies;
+            this.data = data;
         }
 
         [HttpGet]
         public IHttpActionResult All()
         {
-            var bunnies = this.bunnies.All().Select(b => new BunnyModel
+            var bunnies = this.data.Bunnies.All().Select(b => new BunnyModel
             {
                 Id = b.Id,
                 Name = b.Name,
                 Health = b.Health,
-                Color = b.Color
+                Color = b.Color,
+                AirCraftId = b.AircraftId
             });
             return Ok(bunnies);
         }
@@ -50,12 +50,27 @@ namespace BunniesCraft.Services.Controllers
                     Color = bunny.Color,
                 };
 
-                this.bunnies.Add(newBunny);
-                this.bunnies.SaveChanges();
+                this.data.Bunnies.Add(newBunny);
+                this.data.Bunnies.SaveChanges();
 
                 bunny.Id = newBunny.Id;
                 return Ok(newBunny);
             }
+        }
+
+        [HttpGet]
+        public IHttpActionResult GetByAirCraftId(int id)
+        {
+            var bunniesByAirCraftId = this.data.Bunnies.All().Where(b => b.AircraftId == id)
+                .Select(b => new BunnyModel 
+                {
+                    Id = b.Id,
+                    Name = b.Name,
+                    Health = b.Health,
+                    Color = b.Color,
+                    AirCraftId = b.AircraftId
+                });
+            return Ok(bunniesByAirCraftId);
         }
     }
 }

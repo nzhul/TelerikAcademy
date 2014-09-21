@@ -1,35 +1,44 @@
 ﻿namespace BunniesCraft.Services.Controllers
 {
-    using BunniesCraft.Data.Repositories;
     using System.Web.Http;
-    using BunniesCraft.Models;
     using System.Linq;
+    using BunniesCraft.Models;
     using BunniesCraft.Services.Models;
+    using BunniesCraft.Data;
     public class AirCraftsController : ApiController
     {
-        private IRepository<AirCraft> aircrafts;
-        private IRepository<Bunny> bunnies;
+        private IBunniesData data;
 
         public AirCraftsController()
-            : this(new Repository<AirCraft>(), new Repository<Bunny>())
+            : this(new BunniesData())
         {
 
         }
-        public AirCraftsController(IRepository<AirCraft> airCrafts, IRepository<Bunny> bunnies)
+        public AirCraftsController(IBunniesData data)
         {
-            this.aircrafts = airCrafts;
-            this.bunnies = bunnies;
+            this.data = data;
         }
 
         [HttpGet]
         public IHttpActionResult All()
         {
-            var aircrafts = this.aircrafts.All().Select(a => new AirCraftModel
+            var aircrafts = this.data.AirCrafts.All().Select(a => new AirCraftModel
             {
                 Id = a.Id,
                 Model = a.Model
             });
             return Ok(aircrafts);
+        }
+
+        [HttpGet]
+        public IHttpActionResult GetById(int id)
+        {
+            var airCraft = this.data.AirCrafts.All().FirstOrDefault(a=>a.Id == id);
+            if (airCraft == null)
+            {
+                return BadRequest("AirCraft does not exists - invalid ID");
+            }
+            return Ok(airCraft);
         }
 
         [HttpPost]
@@ -45,8 +54,8 @@
                 Model = airCraft.Model
             };
 
-            this.aircrafts.Add(newAirCraft);
-            this.aircrafts.SaveChanges();
+            this.data.AirCrafts.Add(newAirCraft);
+            this.data.AirCrafts.SaveChanges();
 
             airCraft.Id = newAirCraft.Id;
             return Ok(newAirCraft);
@@ -60,14 +69,14 @@
                 return BadRequest(ModelState);
             }
 
-            var existingAirCraft = this.aircrafts.All().FirstOrDefault(a => a.Id == id);
+            var existingAirCraft = this.data.AirCrafts.All().FirstOrDefault(a => a.Id == id);
             if (existingAirCraft == null)
             {
                 return BadRequest("Such aircraft does not exists!");
             }
 
             existingAirCraft.Model = airCraft.Model;
-            this.aircrafts.SaveChanges();
+            this.data.AirCrafts.SaveChanges();
 
             return Ok(airCraft);
         }
@@ -75,14 +84,14 @@
         [HttpDelete]
         public IHttpActionResult Delete(int id)
         {
-            var existingAirCraft = this.aircrafts.All().FirstOrDefault(a => a.Id == id);
+            var existingAirCraft = this.data.AirCrafts.All().FirstOrDefault(a => a.Id == id);
             if (existingAirCraft == null)
             {
                 return BadRequest("Such aircraft does not exists!");
             }
 
-            this.aircrafts.Delete(existingAirCraft);
-            this.aircrafts.SaveChanges();
+            this.data.AirCrafts.Delete(existingAirCraft);
+            this.data.AirCrafts.SaveChanges();
 
             return Ok();
         }
@@ -90,23 +99,23 @@
         [HttpPost]
         public IHttpActionResult AddBunny(int id, int bunnyId)
         {
-            var theAirCraft = this.aircrafts.All().FirstOrDefault(a => a.Id == id);
+            var theAirCraft = this.data.AirCrafts.All().FirstOrDefault(a => a.Id == id);
             if (theAirCraft == null)
             {
-                return BadRequest("Such airCraft does not exists! - invalid ID");
+                BadRequest("Such aircraft does not exists!");
             }
 
-            var theBunny = this.bunnies.All().FirstOrDefault(b => b.Id == id);
+            var theBunny = this.data.Bunnies.All().FirstOrDefault(b => b.Id == bunnyId);
             if (theBunny == null)
             {
                 return BadRequest("Such bunny does not exists! - invalid ID");
             }
 
-            //theAirCraft.Bunnies.Add(theBunny);
+            theAirCraft.Bunnies.Add(theBunny);
             theBunny.AircraftId = id;
-            this.bunnies.SaveChanges();
+            this.data.Bunnies.SaveChanges();
             
-            return Ok();
+            return Ok("Success");
         }
     }
 }
