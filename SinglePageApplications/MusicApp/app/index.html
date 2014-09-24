@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Music Artists</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="css/bootstrap-theme.min.css"/> <!-- theme: Cosmo: http://bootswatch.com/cosmo/ -->
+    <link rel="stylesheet" href="css/app.css"/>
+</head>
+<body ng-app="musicApp" ng-controller="PageController">
+<div class="navbar navbar-default">
+    <div class="navbar-header">
+        <a class="navbar-brand" href="#">Music Artists</a>
+    </div>
+    <div class="navbar-collapse collapse navbar-responsive-collapse">
+        <ul class="nav navbar-nav">
+            <li><a href="#">Add Artist</a></li>
+        </ul>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            Col 1
+        </div>
+    </div>
+</div>
+<footer class="text-center">
+    <hr/>
+    <small>
+        Author: {{ author }}. Date: {{ date.day }}.{{date.month}}.{{date.year}}
+    </small>
+</footer>
+<script src="lib/jquery-2.1.1.min.js"></script>
+<script src="lib/bootstrap.min.js"></script>
+<script src="lib/angular/angular.min.js"></script>
+<script src="js/app.js"></script>
+<script src="js/controllers/PageController.js"></script>
+</body>
+</html>
