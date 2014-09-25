@@ -1,3 +1,18 @@
 .image-container img {
     width: 100%;
 }
+
+.blue-text {
+    color: green;
+}
+.gray-background {
+    background: gray;
+}
+
+.gray-background a {
+    color: #ffffff;
+}
+.album-picture {
+    width: 140%;
+    border: 1px solid #000;
+}

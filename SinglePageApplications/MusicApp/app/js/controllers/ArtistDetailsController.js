@@ -50,17 +50,22 @@ musicApp.controller('ArtistDetailsController',
                 status:3
             },
             {
+                id:4,
                 name:"Reanimation",
                 image:"http://upload.wikimedia.org/wikipedia/en/7/7b/Linkin_park_reanimation.jpg",
-                year:"2002",
-                songs:"25",
-                price:"24",
-                status:"2"
+                year:2002,
+                songs:25,
+                rating:0,
+                price: 24,
+                status:2
             }
         ]
-        }
+        };
 
         $scope.artist = artist;
+
+        $scope.blueTextClass = "blue-text";
+        $scope.grayBackgroundClass = "gray-background";
 
         $scope.hideInformation = true;
         $scope.showInfoText = "Show";
@@ -69,6 +74,25 @@ musicApp.controller('ArtistDetailsController',
         $scope.hideBandMembers = true;
         $scope.showBandMembersText = "Show";
         $scope.showBandMembers = showBandMembers;
+
+        $scope.hideRecords = true;
+        $scope.showRecordsText = "Show";
+        $scope.showRecords = showRecords;
+
+        $scope.upVoteRating = upVoteRating;
+        $scope.downVoteRating = downVoteRating;
+
+        $scope.sort = "rating";
+
+        function showRecords () {
+            if($scope.hideRecords == true){
+                $scope.hideRecords = false;
+                $scope.showRecordsText = "Hide";
+            } else {
+                $scope.showRecordsTextText = "Show";
+                $scope.hideRecords = true;
+            }
+        }
 
         function showBandMembers () {
             if($scope.hideBandMembers == true){
@@ -88,6 +112,17 @@ musicApp.controller('ArtistDetailsController',
             } else {
                 $scope.showInfoText = "Show";
                 $scope.hideInformation = true;
+            }
+        }
+
+        function upVoteRating(album){
+            album.rating++;
+        }
+
+        function downVoteRating (album) {
+            if(album.rating > 0)
+            {
+                album.rating--;
             }
         }
 });

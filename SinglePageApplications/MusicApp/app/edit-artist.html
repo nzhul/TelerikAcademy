@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Music Artists</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="css/bootstrap-theme.min.css"/> <!-- theme: Cosmo: http://bootswatch.com/cosmo/ -->
+    <link rel="stylesheet" href="css/app.css"/>
+</head>
+<body ng-app="musicApp" ng-controller="PageController">
+<div class="navbar navbar-default">
+    <div class="navbar-header">
+        <a class="navbar-brand" href="#">Music Artists</a>
+    </div>
+    <div class="navbar-collapse collapse navbar-responsive-collapse">
+        <ul class="nav navbar-nav">
+            <li><a href="edit-artist.html">Add Artist</a></li>
+        </ul>
+    </div>
+</div>
+<div class="container" ng-controller="EditArtistController">
+    <div class="row">
+        <div class="col-md-6">
+            <form class="form-horizontal" name="newArtistForm">
+                <h1>Artist</h1>
+                <fieldset>
+                    <legend>Main Information</legend>
+                    <div class="form-group">
+                        <label for="name" class="col-lg-2 control-label">Name</label>
+                        <div class="col-lg-10">
+                            <input type="text" required="required" class="form-control" id="name" placeholder="Name" ng-model="artist.name" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="image" class="col-lg-2 control-label">Image</label>
+                        <div class="col-lg-10">
+                            <input type="text" required="required" class="form-control" id="image" placeholder="Image URL" ng-model="artist.image">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="date" class="col-lg-2 control-label">Created</label>
+                        <div class="col-lg-10">
+                            <input type="text" required="required" ng-pattern="/\d\d/\d\d/\d\d\d\d/" class="form-control" id="date" placeholder="Date Created (dd/mm/yyyy)" ng-model="artist.created">
+                        </div>
+                    </div>
+                </fieldset>
+                <fieldset>
+                    <legend>Optional Information</legend>
+                    <div class="form-group">
+                        <label for="location" class="col-lg-2 control-label">Location</label>
+                        <div class="col-lg-10">
+                            <input type="text" class="form-control" id="location" placeholder="Location" ng-model="artist.additionalInformation.location">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="albums" class="col-lg-2 control-label">Albums</label>
+                        <div class="col-lg-10">
+                            <input type="text" class="form-control" id="albums" placeholder="Albums" ng-model="artist.additionalInformation.albums">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="singles" class="col-lg-2 control-label">Singles</label>
+                        <div class="col-lg-10">
+                            <input type="text" class="form-control" id="singles" placeholder="Singles" ng-model="artist.additionalInformation.singles">
+                        </div>
+                    </div>
+                </fieldset>
+                <div class="form-group">
+                    <div class="pull-right">
+                        <button type="submit" class="btn btn-primary" ng-click="saveArtist(artist, newArtistForm)">Save</button>
+                        <button class="btn btn-default" ng-click="cancel()">Cancel</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<footer class="text-center">
+    <hr/>
+    <small>
+        Author: {{ author }}. Date: {{ date.day }}.{{date.month}}.{{date.year}}
+    </small>
+</footer>
+<script src="lib/jquery-2.1.1.min.js"></script>
+<script src="lib/bootstrap.min.js"></script>
+<script src="lib/angular/angular.min.js"></script>
+<script src="js/app.js"></script>
+<script src="js/controllers/EditArtistController.js"></script>
+<script src="js/controllers/ArtistDetailsController.js"></script>
+<script src="js/controllers/PageController.js"></script>
+<script src="js/filters/status.js"></script>
+</body>
+</html>

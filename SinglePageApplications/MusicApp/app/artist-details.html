@@ -14,7 +14,7 @@
     </div>
     <div class="navbar-collapse collapse navbar-responsive-collapse">
         <ul class="nav navbar-nav">
-            <li><a href="#">Add Artist</a></li>
+            <li><a href="edit-artist.html">Add Artist</a></li>
         </ul>
     </div>
 </div>
@@ -22,34 +22,83 @@
     <div class="jumbotron" ng-controller="ArtistDetailsController">
         <div class="row">
             <div class="col-md-6">
-                <h1>{{artist.name}}</h1>
+                <h1>{{artist.name | uppercase}}</h1>
                 <p>
                     <stromg>{{artist.created}}</stromg>
                 </p>
                 <p>
                     <strong>More Information: </strong>
                     <button class="btn btn-primary pull-right" ng-click="showMoreInfo()">{{showInfoText}}</button>
-                    <div ng-hide="hideInformation">
-                        <p>
-                            <strong>Location: </strong> {{artist.additionalInformation.location}}
-                        </p>
-                        <p>
-                            <strong>Albums: </strong> {{artist.additionalInformation.albums}}
-                        </p>
-                        <p>
-                            <strong>Singles: </strong> <span>{{artist.additionalInformation.singles}}</span>
-                        </p>
+                    <div class="panel panel-default" ng-hide="hideInformation">
+                        <div class="panel-body">
+                            <p>
+                                <strong>Location: </strong> {{artist.additionalInformation.location}}
+                            </p>
+                            <p>
+                                <strong>Albums: </strong> {{artist.additionalInformation.albums}}
+                            </p>
+                            <p>
+                                <strong>Singles: </strong> <span>{{artist.additionalInformation.singles}}</span>
+                            </p>
+                        </div>
                     </div>
                 </p>
                 <p>
                 <strong>Band members: </strong>
                     <button class="btn btn-primary pull-right" ng-click="showBandMembers()">{{showBandMembersText}}</button>
                 <ul class="list-group" ng-hide="hideBandMembers">
-                    <li class="list-group-item" ng-repeat="member in artist.additionalInformation.bandMembers">
-                        {{member}}
+                    <li class="list-group-item" ng-repeat="member in artist.additionalInformation.bandMembers" ng-class-odd="grayBackgroundClass">
+                        <a href="#" ng-class="blueTextClass">{{member}}</a>
                     </li>
                 </ul>
                 </p>
+                <p>
+                    <strong>Records:</strong> {{artist.additionalInformation.albums}} albums and {{artist.additionalInformation.singles}} singles
+                    <button class="btn btn-primary pull-right" ng-click="showRecords()">{{showRecordsText}}</button>
+                <div class="container" ng-hide="hideRecords">
+                <div class="row">
+                    Sort: <select ng-model="sort">
+                    <option value="id" selected="selected">Default</option>
+                    <option value="name">Name</option>
+                    <option value="year">Year</option>
+                    <option value="price">Price</option>
+                    <option value="-rating">Rating</option>
+                </select>
+                    <div class="pull-right">
+                        Search:
+                        <input type="text" ng-model="search"/>
+                    </div>
+                </div>
+
+                    <ul class="nav nav-tabs">
+                        <li ng-repeat="album in artist.albums | limitTo: 3 | orderBy: sort | filter: search">
+                            <a href="#album-{{album.id}}" data-toggle="tab">{{album.name}} ({{album.rating}})</a>
+                        </li>
+                    </ul>
+                    <div class="tab-content">
+                        <div class="tab-pane fade" id="album-{{album.id}}" ng-repeat="album in artist.albums | limitTo: 3">
+                            <div class="panel panel-default">
+                                <div class="panel-body row">
+                                    <div class="col-md-4">
+                                            Name: <strong>{{album.name}}</strong><br/>
+                                            Year: <strong>{{album.year}}</strong><br/>
+                                            Price: <strong>{{album.price | number: 2 | currency}}</strong><br/>
+                                            Songs: <strong>{{album.songs}}</strong><br/>
+                                            Rating: <strong>{{album.rating}}</strong>
+                                        <button class="btn btn-sm btn-success" ng-click="upVoteRating(album)">+</button>
+                                        <button class="btn btn-sm btn-danger" ng-click="downVoteRating(album)">-</button>
+                                        <strong>Status:</strong> {{album.status | status}}
+                                    </div>
+                                    <div class="col-md-6">
+                                        <img class="album-picture" ng-src="{{album.image}}" alt="{{album.name}}"/></strong>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                </p>
+                <p><strong>Rating:</strong> {{100 * (5 / 8) - 8}}</p>
             </div>
             <div class="col-md-6 image-container">
                 <img src="{{artist.image}}" alt=""/>
@@ -69,5 +118,6 @@
 <script src="js/app.js"></script>
 <script src="js/controllers/PageController.js"></script>
 <script src="js/controllers/ArtistDetailsController.js"></script>
+<script src="js/filters/status.js"></script>
 </body>
 </html>
