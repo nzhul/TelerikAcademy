@@ -16,3 +16,11 @@
     width: 140%;
     border: 1px solid #000;
 }
+
+input.ng-invalid.ng-dirty.form-validation {
+    background: pink;
+}
+
+input.ng-valid.ng-dirty.form-validation {
+    background: lightgreen;
+}
