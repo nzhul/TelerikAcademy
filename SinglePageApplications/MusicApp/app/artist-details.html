@@ -14,7 +14,7 @@
     </div>
     <div class="navbar-collapse collapse navbar-responsive-collapse">
         <ul class="nav navbar-nav">
-            <li><a href="edit-artist.html">Add Artist</a></li>
+            <li><a href="add-artist.html">Add Artist</a></li>
         </ul>
     </div>
 </div>
@@ -101,7 +101,7 @@
                 <p><strong>Rating:</strong> {{100 * (5 / 8) - 8}}</p>
             </div>
             <div class="col-md-6 image-container">
-                <img src="{{artist.image}}" alt=""/>
+                <img ng-src="{{artist.image}}" alt=""/>
             </div>
         </div>
     </div>
@@ -114,10 +114,12 @@
 </footer>
 <script src="lib/jquery-2.1.1.min.js"></script>
 <script src="lib/bootstrap.min.js"></script>
-<script src="lib/angular/angular.min.js"></script>
+<script src="lib/angular/angular.js"></script>
+<script src="lib/angular/angular-resource.js"></script>
 <script src="js/app.js"></script>
 <script src="js/controllers/PageController.js"></script>
 <script src="js/controllers/ArtistDetailsController.js"></script>
 <script src="js/filters/status.js"></script>
+<script src="js/services/artistData.js"></script>
 </body>
 </html>

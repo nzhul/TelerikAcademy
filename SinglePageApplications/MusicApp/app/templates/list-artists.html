@@ -1,0 +1,14 @@
+<div class="jumbotron" ng-controller="ListArtistsController">
+    <div class="row">
+        <div class="col-md-4">
+            <search-artists class="pull-right"/>
+        </div>
+    </div>
+    <div class="row">
+        <div ng-repeat="artist in artists">
+            <div class="col-md-4 text-center" >
+                <h3><a href="#/artist-details/{{artist.id}}">{{artist.name}}</a></h3>
+            </div>
+        </div>
+    </div>
+</div>

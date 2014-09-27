@@ -14,14 +14,14 @@
     </div>
     <div class="navbar-collapse collapse navbar-responsive-collapse">
         <ul class="nav navbar-nav">
-            <li><a href="edit-artist.html">Add Artist</a></li>
+            <li><a href="add-artist.html">Add Artist</a></li>
         </ul>
     </div>
 </div>
-<div class="container" ng-controller="EditArtistController">
+<div class="container" ng-controller="AddArtistController">
     <div class="row">
         <div class="col-md-6">
-            <form class="form-horizontal" name="newArtistForm">
+            <form class="form-horizontal" name="addArtistForm">
                 <h1>Artist</h1>
                 <fieldset>
                     <legend>Main Information</legend>
@@ -67,7 +67,7 @@
                 </fieldset>
                 <div class="form-group">
                     <div class="pull-right">
-                        <button type="submit" ng-disabled="newArtistForm.$invalid" class="btn btn-primary" ng-click="saveArtist(artist, newArtistForm)">Save</button>
+                        <button type="submit" ng-disabled="addArtistForm.$invalid" class="btn btn-primary" ng-click="saveArtist(artist, addArtistForm)">Save</button>
                         <button class="btn btn-default" ng-click="cancel()">Cancel</button>
                     </div>
                 </div>
@@ -86,11 +86,14 @@
 </footer>
 <script src="lib/jquery-2.1.1.min.js"></script>
 <script src="lib/bootstrap.min.js"></script>
-<script src="lib/angular/angular.min.js"></script>
+<script src="lib/angular/angular.js"></script>
+<script src="lib/angular/angular-resource.js"></script>
+<script src="lib/angular/angular-route.js"></script>
 <script src="js/app.js"></script>
-<script src="js/controllers/EditArtistController.js"></script>
+<script src="js/controllers/AddArtistController.js"></script>
 <script src="js/controllers/ArtistDetailsController.js"></script>
 <script src="js/controllers/PageController.js"></script>
 <script src="js/filters/status.js"></script>
+<script src="js/services/artistData.js"></script>
 </body>
 </html>

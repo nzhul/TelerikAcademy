@@ -1,9 +1,9 @@
 'use strict';
 musicApp.controller('ArtistDetailsController',
-    function ArtistDetailsController ($scope) {
+    function ArtistDetailsController ($scope, $routeParams, artistData) {
 
 
-        $scope.artist = artist;
+        $scope.artist = artistData.getArtist($routeParams.id);
 
         $scope.blueTextClass = "blue-text";
         $scope.grayBackgroundClass = "gray-background";
