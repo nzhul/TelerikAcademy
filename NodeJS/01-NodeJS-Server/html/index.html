@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>File upload system</title>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+</head>
+<body>
+<form id="file-form" method="POST">
+    <input type="file" id="file-select" name="photos" enctype="multipart/form-data" multiple/>
+    <button type="submit" id="upload-button">Upload photos</button>
+</form>
+<br/>
+<div id="guidLinks"></div>
+<script src="scripts/file-sender.js"></script>
+</body>
+</html>

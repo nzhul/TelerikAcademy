@@ -1,0 +1,15 @@
+{
+  "name": "ImgUploadServer",
+  "version": "0.0.1",
+  "description": "simple image upload server",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "drumev",
+  "license": "mit",
+  "dependencies": {
+    "formidable": "^1.0.15",
+    "node-uuid": "^1.4.1"
+  }
+}
