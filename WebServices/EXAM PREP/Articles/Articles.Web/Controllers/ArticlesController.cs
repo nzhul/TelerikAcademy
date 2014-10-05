@@ -12,7 +12,7 @@
     using Microsoft.AspNet.Identity;
     public class ArticlesController : BaseApiController
     {
-        const int defaultPageSize = 2;
+        const int defaultPageSize = 10;
 
         // Ninject Constructor
         //public ArticlesController(IArticlesData data)

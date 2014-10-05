@@ -11,6 +11,8 @@ using Owin;
 using Articles.Web.Providers;
 using Articles.Web.Models;
 using Articles.Data;
+using System.Web.Http.Cors;
+using Microsoft.Owin.Cors;
 
 namespace Articles.Web
 {
@@ -45,6 +47,8 @@ namespace Articles.Web
 
             // Enable the application to use bearer tokens to authenticate users
             app.UseOAuthBearerTokens(OAuthOptions);
+
+            app.UseCors(CorsOptions.AllowAll);
 
             // Uncomment the following lines to enable logging in with third party login providers
             //app.UseMicrosoftAccountAuthentication(

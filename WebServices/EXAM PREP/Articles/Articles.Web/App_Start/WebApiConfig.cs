@@ -62,7 +62,7 @@ namespace Articles.Web
             );
 
             // Added from nzhul
-            config.EnableCors(new EnableCorsAttribute("*", "*", "*")); // Enable Cross-Origin Access - nzhul
+            //config.EnableCors(new EnableCorsAttribute("*", "*", "*")); // Enable Cross-Origin Access - nzhul
         }
     }
 }
