@@ -1,0 +1,20 @@
+body {
+  padding-top: 80px;
+}
+.navbar-right .navbar-form input {
+  margin-right: 10px;
+}
+.navbar-right .navbar-form a.btn {
+  margin-left: 10px;
+}
+.toast-top-right {
+  top: 70px;
+}
+footer {
+  padding-left: 120px;
+  padding-right: 120px;
+}
+footer p {
+  border-top: 1px solid #808080;
+  padding-top: 10px;
+}

@@ -1,0 +1,20 @@
+extends includes/layout
+block main-content
+    header.nav.navbar-inverse.navbar-fixed-top
+        .container
+            .navbar-header
+                a.navbar-brand(href="#/") TA Courses
+            .navbar-collapse.collapse
+                ul.nav.navbar-nav
+                    li
+                        a(href="#/") Home
+                    li
+                        a(href="#/courses") Courses
+                div(ng-include="'partials/account/login'")
+
+    section
+        div(ng-view)
+
+    footer
+        p.text-center
+            | &copy; Telerik Academy 2014
