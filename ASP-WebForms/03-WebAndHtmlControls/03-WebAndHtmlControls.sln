@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "03-HtmlEscaping", "03-HtmlE
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "04-StudentRegistration", "04-StudentRegistration\04-StudentRegistration.csproj", "{06456694-A71C-4E18-8F30-46EE4E633AB1}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "05-Calculator", "05-Calculator\05-Calculator.csproj", "{EDAAE8AA-AA20-446A-ABE9-6956ED05D358}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{06456694-A71C-4E18-8F30-46EE4E633AB1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{06456694-A71C-4E18-8F30-46EE4E633AB1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{06456694-A71C-4E18-8F30-46EE4E633AB1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EDAAE8AA-AA20-446A-ABE9-6956ED05D358}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EDAAE8AA-AA20-446A-ABE9-6956ED05D358}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EDAAE8AA-AA20-446A-ABE9-6956ED05D358}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EDAAE8AA-AA20-446A-ABE9-6956ED05D358}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
