@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Application.Data
 {
-    public interface IData
+    public interface IUoWData
     {
         IRepository<ApplicationUser> Users { get; }
         IRepository<Manufacturer> Manufacturers { get; }

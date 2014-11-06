@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Application.Web.Models
 {
@@ -79,6 +80,11 @@ namespace Application.Web.Models
         [Display(Name = "Confirm password")]
         [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
         public string ConfirmPassword { get; set; }
+
+        [Required]
+        [Display(Name = "Battle Tag")]
+        [RegularExpression(@"^\D.{2,11}#\d{4}$", ErrorMessage="Invalid BattleTag")]
+        public string BattleTag { get; set; }
     }
 
     public class ResetPasswordViewModel

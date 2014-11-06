@@ -2,6 +2,7 @@
 using Microsoft.AspNet.Identity.EntityFramework;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Security.Claims;
 using System.Text;
@@ -18,5 +19,7 @@ namespace Application.Models
             // Add custom user claims here
             return userIdentity;
         }
+
+        public string BattleTag { get; set; }
     }
 }

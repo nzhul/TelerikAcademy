@@ -1,4 +1,5 @@
-﻿using Application.Models;
+﻿using Application.Data.Migrations;
+using Application.Models;
 using Microsoft.AspNet.Identity.EntityFramework;
 using System;
 using System.Collections.Generic;
@@ -14,6 +15,7 @@ namespace Application.Data
         public ApplicationDbContext()
             : base("LaptopSystemConnection", throwIfV1Schema: false)
         {
+            Database.SetInitializer(new MigrateDatabaseToLatestVersion<ApplicationDbContext, Configuration>());
         }
 
         public static ApplicationDbContext Create()

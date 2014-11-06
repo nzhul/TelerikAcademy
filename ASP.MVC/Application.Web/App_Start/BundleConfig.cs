@@ -23,9 +23,18 @@ namespace Application.Web
                       "~/Scripts/bootstrap.js",
                       "~/Scripts/respond.js"));
 
+            // KENDOUI
+            bundles.Add(new ScriptBundle("~/bundles/kendo").Include(
+                "~/Scripts/KendoUI/kendo.all.min.js",
+                "~/Scripts/KendoUI/kendo.aspnetmvc.min.js"));
+
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
                       "~/Content/site.css"));
+
+            bundles.Add(new StyleBundle("~/Content/kendo").Include( 
+                      "~/Content/KendoUI/kendo.common.min.css", 
+                      "~/Content/KendoUI/kendo.black.min.css"));
 
             // Set EnableOptimizations to false for debugging. For more information,
             // visit http://go.microsoft.com/fwlink/?LinkId=301862
