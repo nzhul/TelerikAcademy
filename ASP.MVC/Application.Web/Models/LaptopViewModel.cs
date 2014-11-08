@@ -5,7 +5,7 @@ using System.Web;
 
 namespace Application.Web.Models
 {
-    public class HomePageLaptopViewModel
+    public class LaptopViewModel
     {
         public int Id { get; set; }
         public string Model { get; set; }

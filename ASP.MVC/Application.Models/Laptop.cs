@@ -19,9 +19,9 @@ namespace Application.Models
 
         [Key]
         public int ID { get; set; }
-        public int ManufacturerId { get; set; }
 
         [Required]
+        public int ManufacturerId { get; set; }
         public virtual Manufacturer Manufacturer { get; set; }
 
         [Required]

@@ -18,7 +18,7 @@ namespace Application.Web.Controllers
                 var listOfLaptops = this.Data.Laptops.All()
                     .OrderByDescending(x => x.Votes.Count())
                     .Take(8)
-                    .Select(x => new HomePageLaptopViewModel
+                    .Select(x => new LaptopViewModel
                     {
                         Id = x.ID,
                         Manufacturer = x.Manufacturer.Name,

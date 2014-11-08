@@ -12,14 +12,14 @@ namespace Application.Models
         [Key]
         public int ID { get; set; }
 
+        [Required]
         public string AuthorId { get; set; }
 
-        [Required]
         public virtual ApplicationUser Author { get; set; }
 
+        [Required]
         public int LaptopId { get; set; }
 
-        [Required]
         public virtual Laptop Laptop { get; set; }
 
         [Required]

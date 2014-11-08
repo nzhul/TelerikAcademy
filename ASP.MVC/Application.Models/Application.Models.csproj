@@ -57,6 +57,7 @@
     <Compile Include="Laptop.cs" />
     <Compile Include="Manufacturer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ShouldNotContainEmailAttribute.cs" />
     <Compile Include="Vote.cs" />
   </ItemGroup>
   <ItemGroup>

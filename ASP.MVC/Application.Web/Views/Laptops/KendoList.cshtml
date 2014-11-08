@@ -1,0 +1,60 @@
+﻿@{
+    ViewBag.Title = "KendoList";
+}
+
+<h2>KendoList</h2>
+
+<div class="row">
+    <div>
+        Search by model name:
+    </div>
+    @(Html
+    .Kendo()
+    .AutoComplete()
+    .Name("modelsearch")
+    .DataTextField("Model")
+    .MinLength(3)
+    .Placeholder("Enter model")
+    .DataSource(data =>
+    {
+        data.Read(read =>
+            {
+                read.Action("GetLaptopModelData", "Laptops")
+                    .Data("onAdditionalData");
+            })
+            .ServerFiltering(true);
+    })
+    ))
+</div>
+
+@(Html.Kendo()
+.ListView<Application.Web.Models.LaptopViewModel>()
+.Name("laptops")
+.TagName("div")
+.ClientTemplateId("laptop-template")
+.Pageable()
+.DataSource(data => 
+{
+    data.Read("GetLaptops", "Laptops");
+    data.ServerOperation(true);
+    data.PageSize(5);
+}))
+<script id="laptop-template" type="text/x-kendo-template">
+    <div class="row">
+        <div class="col-md-2">
+            <img src="#= ImageUrl #" alt="Alternate Text" />
+        </div>
+        <div class="col-md-2">
+            <p class="pull-left">#= Manufacturer # #= Model #</p>
+        </div>
+        <div class="col-md-2">
+            <a href="Details/#: Id #" class="btn btn-primary">Price #= Price #</a>
+        </div>
+    </div>
+</script>
+<script>
+    function onAdditionalData()
+    {
+        return {}
+    }
+</script>

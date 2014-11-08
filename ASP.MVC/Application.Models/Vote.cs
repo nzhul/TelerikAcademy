@@ -11,15 +11,15 @@ namespace Application.Models
     {
         [Key]
         public int ID { get; set; }
-        
-        public string VotedById { get; set; }
 
         [Required]
-        public virtual ApplicationUser VotedBy { get; set; }
+        public string VotedById { get; set; }
         
+        public virtual ApplicationUser VotedBy { get; set; }
+
+        [Required]
         public int LaptopId { get; set; }
 
-        [Required]
         public virtual Laptop Laptop { get; set; }
     }
 }

@@ -2,6 +2,60 @@
 @{
     ViewBag.Title = "Details";
 }
+<h2>@Model.ManufacturerName @Model.Model</h2>
+<div class="row">
+    <div class="col-md-6">
+        <div class="row">
+            <div class="col-md-6">
+                <strong>Monitor:</strong> @Model.MonitorSize <br />
+                <strong>RAM:</strong> @Model.RamMemorySize<br />
+                <strong>Price:</strong> @Model.Price <br />
+            </div>
+            <div class="col-md-6">
+                <img src="@Model.ImageUrl" alt="@Model.Model" />
+            </div>
+        </div>
+        <div class="row" id="CommentsBox">
+            <hr />
+            @if (Model.Comments.Count() <= 0)
+            {
+                <p class="text-danger">No comments for this laptop</p>
+            }
+            else
+            {
+                 <h3>Comments:</h3>
+                foreach (var comment in Model.Comments)
+                {
+                    @Html.Partial("_CommentPartial", comment)
+                }
+            }
 
-<h2>Details</h2>
+        </div>
+    </div>
+    <div class="col-md-4 pull-right">
+        @if (Model.Weight.HasValue){ <strong>Weight:</strong> @Model.Weight<br />}
+        @if (!String.IsNullOrEmpty(Model.AdditionalParts)){ <strong>Additional Parts:</strong> @Model.AdditionalParts<br />}
+        @if (!String.IsNullOrEmpty(Model.Description)){ <strong>Description:</strong> @Model.Description <br />}
+    </div>
+</div>
 
+@if (User.Identity.IsAuthenticated)
+{
+    using (Ajax.BeginForm("PostComment", new AjaxOptions{ HttpMethod = "Post", InsertionMode = InsertionMode.InsertAfter, UpdateTargetId = "CommentsBox", OnFailure="commentPostFailure"}))
+    {
+        @Html.Hidden("LaptopId", Model.Id)
+        @Html.TextArea("comment")
+        @Html.AntiForgeryToken()
+        <input type="submit" value="Submit comment"/>
+    }
+}
+
+@section scripts {
+        <script src="~/Scripts/jquery.unobtrusive-ajax.js"></script>
+    <script>
+        function commentPostFailure()
+        {
+            alert("Error");
+        }
+    </script>
+    }

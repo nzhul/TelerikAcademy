@@ -10,6 +10,7 @@ using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using Application.Web.Models;
 using Application.Models;
+using Application.Data;
 
 namespace Application.Web.Controllers
 {
@@ -17,6 +18,7 @@ namespace Application.Web.Controllers
     public class AccountController : Controller
     {
         private ApplicationUserManager _userManager;
+        private ApplicationDbContext db = new ApplicationDbContext();
 
         public AccountController()
         {
@@ -153,6 +155,11 @@ namespace Application.Web.Controllers
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> Register(RegisterViewModel model)
         {
+            if (db.Users.Any(x => x.BattleTag == model.BattleTag))
+            {
+                ModelState.AddModelError("BattleTag", "This Battle Tag is allready registered!");
+            } 
+
             if (ModelState.IsValid)
             {
                 var user = new ApplicationUser { UserName = model.Email, Email = model.Email, BattleTag = model.BattleTag };

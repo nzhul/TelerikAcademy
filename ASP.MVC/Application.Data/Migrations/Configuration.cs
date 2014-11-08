@@ -50,7 +50,15 @@ namespace Application.Data.Migrations
                         laptop.Votes.Add(new Vote { Laptop = laptop, VotedBy = user });
                     }
                     context.Laptops.Add(laptop);
+
+                    var commentsCount = rand.Next(0, 10);
+                    for (int j = 0; j < commentsCount; j++)
+                    {
+                        laptop.Comments.Add(new Comment { Laptop = laptop, Author = user, Content = "Mnogo qk laptop brat " + j });
+                    }
+                    context.Laptops.Add(laptop);
                 }
+
 
                 context.SaveChanges();
             }
