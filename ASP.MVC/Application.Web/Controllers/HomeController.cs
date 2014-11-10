@@ -26,7 +26,9 @@ namespace Application.Web.Controllers
                         Model = x.Model,
                         Price = x.Price
                     });
-                this.HttpContext.Cache.Add("HomePageLaptops", listOfLaptops.ToList(), null, DateTime.Now.AddHours(1), TimeSpan.Zero, System.Web.Caching.CacheItemPriority.Default, null);
+                this.HttpContext.Cache.Add("HomePageLaptops", 
+                    listOfLaptops.ToList(), null, DateTime.Now.AddHours(1), 
+                    TimeSpan.Zero, System.Web.Caching.CacheItemPriority.Default, null);
             }
 
 
