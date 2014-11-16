@@ -15,6 +15,20 @@
                 <img src="@Model.ImageUrl" alt="@Model.Model" />
             </div>
         </div>
+
+        <div>
+            Votes: <span id="laptop-votes">@Model.VotesCount</span>
+            @if (User.Identity.IsAuthenticated && Model.UserCanVote)
+            {
+                @Ajax.ActionLink("Vote", "Vote", new { id = Model.Id }, new AjaxOptions
+                   {
+                       InsertionMode = InsertionMode.Replace,
+                       UpdateTargetId = "laptop-votes",
+                       HttpMethod = "Post",
+                       OnSuccess = "hideVoteButton"
+                   }, new { @id="vote-button", @class = "btn btn-primary" })
+            }
+        </div>
         <div class="row" id="CommentsBox">
             <hr />
             @if (Model.Comments.Count() <= 0)
@@ -56,6 +70,11 @@
         function commentPostFailure()
         {
             alert("Error");
+        }
+
+        function hideVoteButton()
+        {
+            $("#vote-button").hide();
         }
     </script>
     }

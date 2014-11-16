@@ -31,6 +31,8 @@ namespace Application.Web.Controllers
         }
         public ActionResult Details(int id)
         {
+            var userId = this.User.Identity.GetUserId();
+
             var viewModel = this.Data.Laptops.All()
                 .Where(x => x.ID == id)
                 .Select(x => new LaptopDetailsViewModel
@@ -46,9 +48,32 @@ namespace Application.Web.Controllers
                     MonitorSize = x.MonitorSize,
                     Price = x.Price,
                     RamMemorySize = x.RamMemorySize,
-                    Weight = x.Weight
+                    Weight = x.Weight,
+                    VotesCount = x.Votes.Count(),
+                    UserCanVote = !x.Votes.Any(v => v.VotedById == userId)
                 }).FirstOrDefault();
+
             return View(viewModel);
+        }
+
+        public ActionResult Vote(int id)
+        {
+            var userId = this.User.Identity.GetUserId();
+            var canVote = !this.Data.Votes.All().Any(x => x.LaptopId == id && x.VotedById == userId);
+            if (canVote)
+            {
+                this.Data.Laptops.Find(id).Votes.Add(new Vote
+                {
+                    LaptopId = id,
+                    VotedById = userId
+                });
+
+                this.Data.SaveChanges();
+            }
+
+            var votes = this.Data.Laptops.Find(id).Votes.Count();
+
+            return Content(votes.ToString());
         }
 
         public ActionResult KendoList()
@@ -59,6 +84,58 @@ namespace Application.Web.Controllers
         public JsonResult GetLaptops([DataSourceRequest] DataSourceRequest request)
         {
             return Json(this.GetAllLaptops().ToDataSourceResult(request), JsonRequestBehavior.AllowGet);
+        }
+
+        public JsonResult GetLaptopModelData(string text)
+        {
+            var result = this.Data.Laptops
+                .All()
+                .Where(x => x.Model.ToLower().Contains(text.ToLower()))
+                .Select(x => new  
+                {
+                    Model = x.Model
+                });
+
+            return Json(result, JsonRequestBehavior.AllowGet);
+        }
+
+        public ActionResult Search(SubmitSearchModel submitModel)
+        {
+            var result = this.Data.Laptops.All();
+            if (!String.IsNullOrEmpty(submitModel.ModelSearch))
+            {
+                result = result.Where(x => x.Model.ToLower().Contains(submitModel.ModelSearch.ToLower()));
+            }
+            if (submitModel.ManufSearch != "All")
+            {
+                result = result.Where(x => x.Manufacturer.Name.ToLower() == submitModel.ManufSearch);
+            }
+            if (submitModel.PriceSearch != 0)
+            {
+                result = result.Where(x => x.Price < submitModel.PriceSearch);
+            }
+
+            var endResult = result.Select(x => new LaptopViewModel
+                {
+                    Id = x.ID,
+                    Model = x.Model,
+                    Manufacturer = x.Manufacturer.Name,
+                    ImageUrl = x.ImageUrl,
+                    Price = x.Price
+                });
+
+            return View(endResult);
+        }
+
+        public JsonResult GetLaptopManufacturerData()
+        {
+            var result = this.Data.Manufacturers.All()
+                .Select(x => new 
+                { 
+                    ManufacturerName = x.Name
+                });
+
+            return Json(result, JsonRequestBehavior.AllowGet);
         }
 
         [Authorize]

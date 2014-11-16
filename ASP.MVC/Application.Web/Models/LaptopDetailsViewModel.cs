@@ -34,6 +34,10 @@ namespace Application.Web.Models
 
         public string Description { get; set; }
 
+        public bool UserCanVote { get; set; }
+
+        public int VotesCount { get; set; }
+
         public IEnumerable<CommentViewModel> Comments
         {
             get { return this.comments; }
